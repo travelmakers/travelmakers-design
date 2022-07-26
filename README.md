@@ -21,6 +21,7 @@
 | Package name                                      | Description                                 |
 | ------------------------------------------------- | ------------------------------------------- |
 | [`@tm-design/core`](./packages/tm-design-core)    |  |
+| [`@tm-design/hooks`](./packages/tm-design-hooks)    |  |
 |                                                   |  |
 
 ## :page_facing_up: License

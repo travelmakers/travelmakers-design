@@ -1,0 +1,25 @@
+{
+  "name": "@tm-design/core",
+  "version": "0.7.11",
+  "main": "cjs/index.js",
+  "module": "esm/index.js",
+  "types": "lib/index.d.ts",
+  "license": "MIT",
+  "author": "Travelmakers. Inc.",
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "esno ../../scripts/build tm-design-core"
+  },
+  "repository": {
+    "url": "https://github.com/travelmakers/tm-design.git",
+    "type": "git",
+    "directory": "packages/tm-design-core"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
+  }
+}

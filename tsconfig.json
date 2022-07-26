@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.base.json",
+  "include": ["packages/tm-design-*/src", "./scripts", "./config"],
+  "exclude": ["public", ".cache", "config/storybook/main.js"],
+  "compilerOptions": {
+    "paths": {
+      "@tm-design/*": ["packages/tm-design-*/src"]
+    }
+  }
+}
