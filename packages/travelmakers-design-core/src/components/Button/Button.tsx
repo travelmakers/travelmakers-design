@@ -5,7 +5,7 @@ import {
   CoSize,
   PolymorphicComponentProps,
   PolymorphicRef,
-  useCoTheme,
+  useTmTheme,
 } from "@travelmakers-design/styles";
 import React, { forwardRef } from "react";
 import { Spinner, SpinnerProps } from "../Spinner";
@@ -77,7 +77,7 @@ export const Button: ButtonComponent & { displayName?: string } = forwardRef(
     }: ButtonProps<C>,
     ref: PolymorphicRef<C>
   ) => {
-    const theme = useCoTheme();
+    const theme = useTmTheme();
     const color = _color || theme.primaryColor;
     const { classes, cx } = useStyles(
       {

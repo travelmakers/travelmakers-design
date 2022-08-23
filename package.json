@@ -1,6 +1,6 @@
 {
   "name": "travelmakers-design",
-  "private": false,
+  "private": true,
   "author": "Travelmakers. Inc.",
   "license": "MIT",
   "workspaces": {
@@ -65,5 +65,5 @@
       "name": "GiDong Seong"
     }
   ],
-  "version": "0.0.0"
+  "version": "0.0.1"
 }

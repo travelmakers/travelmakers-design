@@ -1,9 +1,9 @@
 import {
   ClassNames,
-  CoColor,
   CoComponentProps,
   CoPalette,
   CoSize,
+  TmColor,
 } from "@travelmakers-design/styles";
 import React, { forwardRef } from "react";
 
@@ -19,7 +19,7 @@ export interface SpinnerProps
   size?: CoSize | number;
 
   /** Spinner 컴포넌트의 색상을 정합니다. */
-  color?: CoPalette | CoColor | string;
+  color?: CoPalette | TmColor | string;
 }
 
 export const Spinner = forwardRef<HTMLDivElement, SpinnerProps>(

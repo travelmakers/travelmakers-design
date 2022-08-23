@@ -42,7 +42,7 @@ function useBoxCo(co: ViewCo, className: string) {
 
 export const View: ViewComponent & { displayName?: string } = forwardRef(
   <C extends React.ElementType = "div">(
-    { component, className, style, co, ...props }: ViewProps<C>,
+    { component, className, style, co, ...props }: any,
     ref: PolymorphicRef<C>
   ) => {
     // const { mergedStyles, rest } = useExtractedMargins({ others, style });

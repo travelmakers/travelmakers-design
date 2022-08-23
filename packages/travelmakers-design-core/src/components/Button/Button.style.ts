@@ -1,7 +1,7 @@
 import {
   CoPalette,
   CoSize,
-  CoTheme,
+  TmTheme,
   createStyles,
   defaultFontStyles,
 } from "@travelmakers-design/styles";
@@ -44,7 +44,7 @@ const sizes = {
   },
 };
 
-const getFontStyles = (theme: CoTheme) => ({
+const getFontStyles = (theme: TmTheme) => ({
   xsmall: {
     fontWeight: "normal",
     fontSize: theme.fontSizes.xsmall,

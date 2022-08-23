@@ -1,7 +1,7 @@
 import {
-  CoColor,
   CoPalette,
   CoSize,
+  TmColor,
   createStyles,
 } from "@travelmakers-design/styles";
 
@@ -9,7 +9,7 @@ import { TM_HEIGHTS } from "../../constants";
 
 interface SpinnerStyles {
   size: CoSize | number;
-  color?: CoPalette | CoColor | string;
+  color?: CoPalette | TmColor | string;
 }
 
 export default createStyles((theme, { size, color }: SpinnerStyles) => {
