@@ -6,7 +6,7 @@ import { useHover } from "../../useHover";
 import { useMergedRef } from "../useMergedRef";
 
 export default {
-  title: "@tm-design/hooks/useMergedRef",
+  title: "@travelmakers-design/hooks/useMergedRef",
 };
 
 export const Default = () => {

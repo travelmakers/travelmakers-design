@@ -3,7 +3,7 @@ import {
   CoSize,
   createStyles,
   defaultFontStyles,
-} from "@tm-design/styles";
+} from "@travelmakers-design/styles";
 
 import { TM_HEIGHTS } from "../../constants";
 import { getFieldValue } from "../../utils";

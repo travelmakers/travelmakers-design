@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { useIsomorphicEffect } from "../useIsomorphicEffect";
 
 export default {
-  title: "@tm-design/hooks/useIsomorphicEffect",
+  title: "@travelmakers-design/hooks/useIsomorphicEffect",
 };
 
 export const Default = () => {

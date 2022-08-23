@@ -1,6 +1,11 @@
 {
-  "name": "@tm-design/styles",
-  "version": "0.7.3",
+  "name": "@travelmakers-design/styles",
+  "version": "0.0.1",
+  "engines": {
+    "node": "16.15.1",
+    "npm": "8.15.0",
+    "yarn": "1.22.19"
+  },
   "main": "cjs/index.js",
   "module": "esm/index.js",
   "types": "lib/index.d.ts",
@@ -11,12 +16,12 @@
     "access": "public"
   },
   "repository": {
-    "url": "https://github.com/travelmakers/tm-design.git",
+    "url": "https://github.com/travelmakers/travelmakers-design.git",
     "type": "git",
-    "directory": "packages/tm-design-styles"
+    "directory": "packages/travelmakers-design-styles"
   },
   "scripts": {
-    "build": "esno ../../scripts/build tm-design-styles"
+    "build": "esno ../../scripts/build travelmakers-design-styles"
   },
   "peerDependencies": {
     "react": ">=16.8.0",

@@ -2,7 +2,7 @@ import {
   ClassNames,
   PolymorphicComponentProps,
   PolymorphicRef,
-} from "@tm-design/styles";
+} from "@travelmakers-design/styles";
 import React, { forwardRef } from "react";
 
 import { SharedButtonProps } from "../Button/Button";
@@ -82,4 +82,4 @@ export const IconButton: IconButtonComponent & { displayName?: string } =
     }
   );
 
-IconButton.displayName = "@tm-design/core/IconButton";
+IconButton.displayName = "@travelmakers-design/core/IconButton";

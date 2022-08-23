@@ -6,7 +6,7 @@ import {
   PolymorphicComponentProps,
   PolymorphicRef,
   useCoTheme,
-} from "@tm-design/styles";
+} from "@travelmakers-design/styles";
 import React, { forwardRef } from "react";
 import { Spinner, SpinnerProps } from "../Spinner";
 import useStyles, { ButtonVariant } from "./Button.style";
@@ -136,4 +136,4 @@ export const Button: ButtonComponent & { displayName?: string } = forwardRef(
   }
 );
 
-Button.displayName = "@tm-design/core/Button";
+Button.displayName = "@travelmakers-design/core/Button";

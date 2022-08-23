@@ -1,13 +1,13 @@
-# @tm-design/styles
+# @travelmakers-design/styles
 
 ## Installation
 ```bash
 # With npm
-npm install @tm-design/styles
+npm install @travelmakers-design/styles
 
 # With yarn
-yarn add @tm-design/styles
+yarn add @travelmakers-design/styles
 ```
 
 ## License
-@tm-design/styles is made available under the MIT License.
+@travelmakers-design/styles is made available under the MIT License.

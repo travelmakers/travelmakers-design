@@ -97,4 +97,4 @@ export const TmProvider = ({
   );
 };
 
-TmProvider.displayName = "@tm-design/styles/TmProvider";
+TmProvider.displayName = "@travelmakers-design/styles/TmProvider";

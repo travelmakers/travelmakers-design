@@ -4,7 +4,7 @@ import { useForceUpdate } from "../../useForceUpdate";
 import { useHover } from "../useHover";
 
 export default {
-  title: "@tm-design/hooks/useHover",
+  title: "@travelmakers-design/hooks/useHover",
 };
 
 export const Default = () => {

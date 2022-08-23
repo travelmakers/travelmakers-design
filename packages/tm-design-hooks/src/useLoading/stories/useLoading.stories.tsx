@@ -2,7 +2,7 @@ import React from "react";
 import { useLoading } from "../useLoading";
 
 export default {
-  title: "@tm-design/hooks/useLoading",
+  title: "@travelmakers-design/hooks/useLoading",
 };
 
 const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));

@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { useScrollLock } from "../useScrollLock";
 
 export default {
-  title: "@tm-design/hooks/useScrollLock",
+  title: "@travelmakers-design/hooks/useScrollLock",
 };
 
 export const Default = () => {

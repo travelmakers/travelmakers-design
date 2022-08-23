@@ -2,7 +2,7 @@ import React from "react";
 import { useOrientation } from "../useOrientation";
 
 export default {
-  title: "@tm-design/hooks/useOrientation",
+  title: "@travelmakers-design/hooks/useOrientation",
 };
 
 export const Default = () => {

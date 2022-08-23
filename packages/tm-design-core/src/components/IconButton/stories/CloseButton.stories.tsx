@@ -2,7 +2,7 @@ import { CloseButton } from "../CloseButton";
 import React from "react";
 
 export default {
-  title: "@tm-design/core/CloseButton",
+  title: "@travelmakers-design/core/CloseButton",
   component: CloseButton,
   argTypes: {
     size: {

@@ -6,7 +6,7 @@ import {
   PolymorphicComponentProps,
   PolymorphicRef,
   useTmTheme,
-} from "@tm-design/styles";
+} from "@travelmakers-design/styles";
 import React, { forwardRef } from "react";
 
 import { View } from "../View";
@@ -139,4 +139,4 @@ export const Input: InputComponent & { displayName?: string } = forwardRef(
   }
 );
 
-Input.displayName = "@tm-design/core/Input";
+Input.displayName = "@travelmakers-design/core/Input";

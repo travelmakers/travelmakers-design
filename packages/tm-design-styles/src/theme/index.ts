@@ -10,4 +10,4 @@ export {
 } from "./defaultTheme";
 
 export { TmProvider, useTmTheme } from "./TmProvider";
-export { ColorSchemeProvider, useCoColorScheme } from "./ColorSchemeProvider";
+export { ColorSchemeProvider, useTmColorScheme } from "./ColorSchemeProvider";

@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { useQueue } from "../useQueue";
 
 export default {
-  title: "@tm-design/hooks/useQueue",
+  title: "@travelmakers-design/hooks/useQueue",
 };
 
 export const Default = () => {

@@ -4,7 +4,7 @@ import {
   CoComponentProps,
   CoPalette,
   CoSize,
-} from "@tm-design/styles";
+} from "@travelmakers-design/styles";
 import React, { forwardRef } from "react";
 
 import { View } from "../View";
@@ -76,4 +76,4 @@ export const Spinner = forwardRef<HTMLDivElement, SpinnerProps>(
   }
 );
 
-Spinner.displayName = "@tm-design/core/Spinner";
+Spinner.displayName = "@travelmakers-design/core/Spinner";

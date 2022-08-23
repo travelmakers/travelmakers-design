@@ -2,7 +2,7 @@ import React from "react";
 import { useColorScheme } from "../useColorScheme";
 
 export default {
-  title: "@tm-design/hooks/useColorScheme",
+  title: "@travelmakers-design/hooks/useColorScheme",
 };
 
 export const Default = () => {

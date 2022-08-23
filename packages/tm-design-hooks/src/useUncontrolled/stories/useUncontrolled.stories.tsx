@@ -4,7 +4,7 @@ import { useId } from "../../useId";
 import { useUncontrolled } from "../useUncontrolled";
 
 export default {
-  title: "@tm-design/hooks/useUncontrolled",
+  title: "@travelmakers-design/hooks/useUncontrolled",
 };
 
 interface CustomInputProps {

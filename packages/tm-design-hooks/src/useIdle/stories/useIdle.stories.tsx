@@ -2,7 +2,7 @@ import React from "react";
 import { useIdle } from "../useIdle";
 
 export default {
-  title: "@tm-design/hooks/useIdle",
+  title: "@travelmakers-design/hooks/useIdle",
 };
 
 export const Default = () => {

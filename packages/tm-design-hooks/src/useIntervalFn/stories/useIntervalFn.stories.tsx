@@ -2,7 +2,7 @@ import React from "react";
 import { useIntervalFn } from "../useIntervalFn";
 
 export default {
-  title: "@tm-design/hooks/useIntervalFn",
+  title: "@travelmakers-design/hooks/useIntervalFn",
 };
 
 export const Default = () => {

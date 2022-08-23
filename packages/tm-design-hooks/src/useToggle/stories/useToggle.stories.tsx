@@ -2,7 +2,7 @@ import React from "react";
 import { useToggle } from "../useToggle";
 
 export default {
-  title: "@tm-design/hooks/useToggle",
+  title: "@travelmakers-design/hooks/useToggle",
 };
 
 export const Default = () => {

@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useUpdateEffect } from "../useUpdateEffect";
 
 export default {
-  title: "@tm-design/hooks/useUpdateEffect",
+  title: "@travelmakers-design/hooks/useUpdateEffect",
 };
 
 export const Default = () => {

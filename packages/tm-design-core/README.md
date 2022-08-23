@@ -1,15 +1,15 @@
-# @tm-design/core
+# @travelmakers-design/core
 
 ## Installation
 
 ```bash
 # With npm
-npm install @tm-design/core
+npm install @travelmakers-design/core
 
 # With yarn
-yarn add @tm-design/core
+yarn add @travelmakers-design/core
 ```
 
 ## License
 
-@tm-design/core is made available under the MIT License.
+@travelmakers-design/core is made available under the MIT License.

@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { usePageLeave } from "../usePageLeave";
 
 export default {
-  title: "@tm-design/hooks/usePageLeave",
+  title: "@travelmakers-design/hooks/usePageLeave",
 };
 
 export const Default = () => {

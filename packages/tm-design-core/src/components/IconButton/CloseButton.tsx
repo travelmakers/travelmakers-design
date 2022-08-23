@@ -18,4 +18,4 @@ export const CloseButton: CloseButtonComponent & { displayName?: string } =
     }
   );
 
-CloseButton.displayName = "@tm-design/core/CloseButton";
+CloseButton.displayName = "@travelmakers-design/core/CloseButton";

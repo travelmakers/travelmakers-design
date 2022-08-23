@@ -2,7 +2,7 @@ import React from "react";
 import { useMediaQuery } from "../useMediaQuery";
 
 export default {
-  title: "@tm-design/hooks/useMediaQuery",
+  title: "@travelmakers-design/hooks/useMediaQuery",
 };
 
 export const Default = () => {

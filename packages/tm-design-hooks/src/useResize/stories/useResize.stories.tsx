@@ -4,7 +4,7 @@ import { useForceUpdate } from "../../useForceUpdate";
 import { useResize } from "../useResize";
 
 export default {
-  title: "@tm-design/hooks/useResize",
+  title: "@travelmakers-design/hooks/useResize",
 };
 
 export const Default = () => {

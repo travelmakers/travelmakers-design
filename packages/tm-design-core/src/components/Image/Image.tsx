@@ -1,4 +1,8 @@
-import { ClassNames, CoComponentProps, CoRadius } from "@tm-design/styles";
+import {
+  ClassNames,
+  CoComponentProps,
+  CoRadius,
+} from "@travelmakers-design/styles";
 import React, {
   CSSProperties,
   forwardRef,
@@ -137,4 +141,4 @@ export const Image = forwardRef<HTMLImageElement, ImageProps>(
   }
 );
 
-Image.displayName = "@tm-design/core/Image";
+Image.displayName = "@travelmakers-design/core/Image";

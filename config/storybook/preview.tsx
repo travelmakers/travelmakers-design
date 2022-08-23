@@ -1,4 +1,4 @@
-import { ColorSchemeProvider, TmProvider } from "@tm-design/core";
+import { ColorSchemeProvider, TmProvider } from "@travelmakers-design/core";
 
 import React from "react";
 import { useDarkMode } from "storybook-dark-mode";

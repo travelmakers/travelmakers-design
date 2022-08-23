@@ -20,4 +20,4 @@ export const CloseIcon = (props: React.ComponentPropsWithoutRef<"svg">) => {
   );
 };
 
-CloseIcon.displayName = "@tm-design/core/CloseIcon";
+CloseIcon.displayName = "@travelmakers-design/core/CloseIcon";

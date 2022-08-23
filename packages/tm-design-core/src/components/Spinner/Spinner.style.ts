@@ -1,4 +1,9 @@
-import { CoColor, CoPalette, CoSize, createStyles } from "@tm-design/styles";
+import {
+  CoColor,
+  CoPalette,
+  CoSize,
+  createStyles,
+} from "@travelmakers-design/styles";
 
 import { TM_HEIGHTS } from "../../constants";
 

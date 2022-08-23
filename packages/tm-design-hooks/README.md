@@ -1,13 +1,13 @@
-# @tm-design/hooks
+# @travelmakers-design/hooks
 
 ## Installation
 ```bash
 # With npm
-npm install @tm-design/hooks
+npm install @travelmakers-design/hooks
 
 # With yarn
-yarn add @tm-design/hooks
+yarn add @travelmakers-design/hooks
 ```
 
 ## License
-@tm-design/hooks is made available under the MIT License.
+@travelmakers-design/hooks is made available under the MIT License.

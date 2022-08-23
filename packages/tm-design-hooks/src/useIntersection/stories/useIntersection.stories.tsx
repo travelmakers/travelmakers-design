@@ -3,7 +3,7 @@ import React, { useRef } from "react";
 import { useIntersection } from "../useIntersection";
 
 export default {
-  title: "@tm-design/hooks/useIntersection",
+  title: "@travelmakers-design/hooks/useIntersection",
 };
 
 export const Default = () => {

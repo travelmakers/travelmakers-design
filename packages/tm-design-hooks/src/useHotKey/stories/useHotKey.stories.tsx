@@ -3,7 +3,7 @@ import React, { useRef, useState } from "react";
 import { useHotKey } from "../useHotKey";
 
 export default {
-  title: "@tm-design/hooks/useHotKey",
+  title: "@travelmakers-design/hooks/useHotKey",
 };
 
 export const Default = () => {

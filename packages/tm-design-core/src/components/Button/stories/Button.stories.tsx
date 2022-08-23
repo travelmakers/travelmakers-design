@@ -2,7 +2,7 @@ import { Button } from "../Button";
 import React from "react";
 
 export default {
-  title: "@tm-design/core/Button",
+  title: "@travelmakers-design/core/Button",
   component: Button,
   argTypes: {
     size: {

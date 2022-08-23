@@ -2,7 +2,7 @@ import React from "react";
 import { useClickAway } from "../useClickAway";
 
 export default {
-  title: "@tm-design/hooks/useClickAway",
+  title: "@travelmakers-design/hooks/useClickAway",
 };
 
 export const Default = () => {

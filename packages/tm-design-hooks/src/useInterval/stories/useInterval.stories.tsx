@@ -2,7 +2,7 @@ import React from "react";
 import { useInterval } from "../useInterval";
 
 export default {
-  title: "@tm-design/hooks/useInterval",
+  title: "@travelmakers-design/hooks/useInterval",
 };
 
 export const Default = () => {

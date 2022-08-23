@@ -2,7 +2,7 @@ import React from "react";
 import { useList } from "../useList";
 
 export default {
-  title: "@tm-design/hooks/useList",
+  title: "@travelmakers-design/hooks/useList",
 };
 
 let count = 5;

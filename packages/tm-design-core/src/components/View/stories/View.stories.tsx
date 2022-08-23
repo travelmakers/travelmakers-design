@@ -2,7 +2,7 @@ import React from "react";
 import { View } from "../View";
 
 export default {
-  title: "@tm-design/core/View",
+  title: "@travelmakers-design/core/View",
   component: View,
 };
 

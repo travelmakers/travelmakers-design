@@ -1,6 +1,6 @@
 {
-  "name": "tm-design",
-  "private": true,
+  "name": "travelmakers-design",
+  "private": false,
   "author": "Travelmakers. Inc.",
   "license": "MIT",
   "workspaces": {
@@ -64,5 +64,6 @@
       "email": "sgd0947@gmail.com",
       "name": "GiDong Seong"
     }
-  ]
+  ],
+  "version": "0.0.0"
 }

@@ -9,12 +9,12 @@ interface ColorSchemeContextProps {
 
 const ColorSchemeContext = createContext<ColorSchemeContextProps>(null);
 
-export const useCoColorScheme = () => {
+export const useTmColorScheme = () => {
   const ctx = useContext(ColorSchemeContext);
 
   if (!ctx) {
     throw new Error(
-      "useCoColorScheme hook was called outside of context, make sure your app is wrapped with ColorSchemeProvider component"
+      "useTmColorScheme hook was called outside of context, make sure your app is wrapped with ColorSchemeProvider component"
     );
   }
 
@@ -46,4 +46,5 @@ export const ColorSchemeProvider = ({
   );
 };
 
-ColorSchemeProvider.displayName = "@tm-design/styles/ColorSchemeProvider";
+ColorSchemeProvider.displayName =
+  "@travelmakers-design/styles/ColorSchemeProvider";

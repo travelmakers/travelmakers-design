@@ -2,7 +2,7 @@ import { IconButton } from "../IconButton";
 import React from "react";
 
 export default {
-  title: "@tm-design/core/IconButton",
+  title: "@travelmakers-design/core/IconButton",
   component: IconButton,
   argTypes: {
     size: {

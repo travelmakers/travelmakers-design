@@ -6,7 +6,7 @@ import {
   TmTheme,
   useCss,
   useTmTheme,
-} from "@tm-design/styles";
+} from "@travelmakers-design/styles";
 import React, { forwardRef } from "react";
 
 type ViewCo = Co | Co[];
@@ -62,4 +62,4 @@ export const View: ViewComponent & { displayName?: string } = forwardRef(
   }
 );
 
-View.displayName = "@tm-design/core/View";
+View.displayName = "@travelmakers-design/core/View";

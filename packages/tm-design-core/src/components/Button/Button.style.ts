@@ -4,7 +4,7 @@ import {
   CoTheme,
   createStyles,
   defaultFontStyles,
-} from "@tm-design/styles";
+} from "@travelmakers-design/styles";
 
 import { TM_HEIGHTS } from "../../constants";
 import { addAlpha } from "../../utils";

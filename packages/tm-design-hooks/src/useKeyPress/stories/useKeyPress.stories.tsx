@@ -2,7 +2,7 @@ import React from "react";
 import { useKeyPress } from "../useKeyPress";
 
 export default {
-  title: "@tm-design/hooks/useKeyPress",
+  title: "@travelmakers-design/hooks/useKeyPress",
 };
 
 export const Default = () => {

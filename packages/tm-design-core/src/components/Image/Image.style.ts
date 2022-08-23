@@ -1,4 +1,4 @@
-import { CoRadius, createStyles } from "@tm-design/styles";
+import { CoRadius, createStyles } from "@travelmakers-design/styles";
 
 interface ImageStyles {
   radius?: CoRadius | number;

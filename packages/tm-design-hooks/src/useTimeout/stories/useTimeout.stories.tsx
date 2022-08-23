@@ -2,7 +2,7 @@ import React from "react";
 import { useTimeout } from "../useTimeout";
 
 export default {
-  title: "@tm-design/hooks/useTimeout",
+  title: "@travelmakers-design/hooks/useTimeout",
 };
 
 export const Default = () => {
