@@ -1,8 +1,14 @@
-<h1 align='center'>
-  Travelmakers Design System 💫
-</h1>
+<p align="center">
+  <a href="https://travelmakers.github.io/travelmakers-design/">
+    <img width="200" src="https://hotel-01.s3.ap-northeast-2.amazonaws.com/resource/logos/travelmakers/WHITE_LOGO_SQUARE_2.png">
+  </a>
+</p>
 
-<p align="center"><strong>Tm Design is an open-source design system built by <a href="https://livinginhotel.com">Travelmakers, Inc.</a></strong></p>
+<h1 align="center">Travelmakers Design</h1>
+
+<div align="center">
+
+<p align="center"><strong>Travelmakers Design is an open-source design system built by <a href="https://livinginhotel.com">Travelmakers, Inc.</a></strong></p>
 
 <p align='center'>
   <a href="https://livinginhotel.com">
@@ -15,6 +21,19 @@
     <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs welcome" />
   </a>
 </p>
+</div>
+
+## 📦 Install
+
+```bash
+npm install @travelmakers-design
+```
+
+```bash
+yarn add @travelmakers-design
+```
+
+<!-- 구분!!! -->
 
 ## :rocket: Getting started
 
@@ -22,8 +41,9 @@
 | ------------------------------------------------- | ------------------------------------------- |
 | [`@travelmakers-design/core`](./packages/travelmakers-design-core)    |  |
 | [`@travelmakers-design/hooks`](./packages/travelmakers-design-hooks)    |  |
-|                                                   |  |
+| [`@travelmakers-design/styles`](./packages/travelmakers-design-styles)    |  |
 
 ## :page_facing_up: License
 
 Tm Design is made available under the [MIT License](./LICENSE).
+
