@@ -68,6 +68,16 @@ export default {
       },
       control: { type: "boolean" },
     },
+    disabled: {
+      defaultValue: false,
+      description: "true일 경우 button이 disabled 됩니다.",
+      table: {
+        type: {
+          summary: "boolean",
+        },
+      },
+      control: { type: "boolean" },
+    },
     type: {
       defaultValue: "button",
       description: "button 요소의 type을 지정합니다.",
@@ -78,16 +88,6 @@ export default {
         },
       },
       control: { type: "inline-radio" },
-    },
-    disabled: {
-      defaultValue: false,
-      description: "true일 경우 button이 disabled 됩니다.",
-      table: {
-        type: {
-          summary: "boolean",
-        },
-      },
-      control: { type: "boolean" },
     },
     leftIcon: {
       defaultValue: "",

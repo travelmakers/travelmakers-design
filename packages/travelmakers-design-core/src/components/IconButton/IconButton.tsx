@@ -6,8 +6,6 @@ import {
 import React, { forwardRef } from "react";
 
 import { SharedButtonProps } from "../Button/Button";
-import { Spinner } from "../Spinner";
-import { TM_HEIGHTS } from "../../constants";
 import { View } from "../View";
 import useStyles from "./IconButton.style";
 
@@ -27,12 +25,10 @@ export const IconButton: IconButtonComponent & { displayName?: string } =
         children,
         component,
         size = "medium",
-        color: _color,
-        variant = "solid",
+        variant: _variant,
+        line,
         type = "button",
         disabled = false,
-        loading = false,
-        spinnerProps,
         className,
         co,
         overrideStyles,
@@ -40,43 +36,31 @@ export const IconButton: IconButtonComponent & { displayName?: string } =
       }: IconButtonProps<C>,
       ref: PolymorphicRef<C>
     ) => {
-      const { theme, classes, cx } = useStyles(
+      const { classes, cx } = useStyles(
         {
-          color: _color,
+          variant: _variant,
           size,
+          line,
         },
         { overrideStyles, name: "Button" }
-      );
-
-      const color = _color || theme.colors.navy1;
-      const spinner = (
-        <Spinner
-          color={
-            variant === "solid" ? theme.colors.white : theme.palettes[color][6]
-          }
-          size={TM_HEIGHTS[size] / 2}
-          {...spinnerProps}
-        />
       );
 
       return (
         <View<any>
           component={component || "button"}
           className={cx(
-            { [classes.loading]: loading },
             classes.root,
-            classes[variant],
+            classes[line ? "ghost" : "solid"],
             className
           )}
           type={type}
-          disabled={disabled || loading}
+          disabled={disabled}
           ref={ref}
           onTouchStart={() => {}}
           co={co}
           {...props}
         >
           <div className={classes.inner}>{children}</div>
-          <div className={classes.spinnerWrapper}>{spinner}</div>
         </View>
       );
     }

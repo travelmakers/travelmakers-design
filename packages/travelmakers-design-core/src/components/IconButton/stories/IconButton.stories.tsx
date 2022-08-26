@@ -1,4 +1,15 @@
+import {
+  ArgsTable,
+  Description,
+  PRIMARY_STORY,
+  Primary,
+  Stories,
+  Subtitle,
+  Title,
+} from "@storybook/addon-docs";
+
 import { IconButton } from "../IconButton";
+import { Meta } from "@storybook/react";
 import React from "react";
 
 export default {
@@ -7,29 +18,65 @@ export default {
   argTypes: {
     size: {
       defaultValue: "medium",
-      options: ["xsmall", "small", "medium", "large", "xlarge"],
+      description: "Button 컴포넌트의 크기를 정합니다.",
+      options: ["xsmall", "small", "medium", "large"],
+      table: {
+        type: {
+          summary: "string",
+        },
+      },
       control: { type: "inline-radio" },
     },
     variant: {
-      defaultValue: "solid",
-      options: ["solid", "ghost", "light-solid", "text"],
+      defaultValue: "primary",
+      description: "Button 컴포넌트의 색상을 정합니다.",
+      options: ["primary", "secondary", "tertiary"],
+      table: {
+        type: {
+          summary: "string",
+        },
+      },
       control: { type: "inline-radio" },
     },
-    color: {
-      defaultValue: "purple",
-      options: ["purple", "gray", "red", "blue"],
-      control: { type: "inline-radio" },
-    },
-    loading: {
+    line: {
       defaultValue: false,
+      description: "Button 컴포넌트의 모양을 지정합니다.",
+      table: {
+        type: {
+          summary: "boolean",
+        },
+      },
       control: { type: "boolean" },
     },
     disabled: {
       defaultValue: false,
+      description: "true일 경우 button이 disabled 됩니다.",
+      table: {
+        type: {
+          summary: "boolean",
+        },
+      },
       control: { type: "boolean" },
     },
   },
-};
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Title />
+          <Subtitle />
+          <Description />
+          <Primary />
+          <ArgsTable story={PRIMARY_STORY} />
+          <Stories />
+        </>
+      ),
+    },
+    actions: {
+      handles: ["click button"],
+    },
+  },
+} as Meta;
 
 export const Default = (props) => {
   const icon = (

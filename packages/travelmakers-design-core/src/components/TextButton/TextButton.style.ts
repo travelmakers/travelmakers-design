@@ -192,6 +192,49 @@ export default createStyles(
         },
       },
 
+      // text: {
+      //   backgroundColor: "transparent",
+      //   color: theme.palettes[variant][theme.colorScheme === "light" ? 0 : 0],
+
+      //   "&:not(:disabled):hover": {
+      //     backgroundColor: addAlpha(
+      //       theme.palettes[variant][theme.colorScheme === "light" ? 1 : 1],
+      //       theme.opacity.opacity2
+      //     ),
+      //   },
+
+      //   "&:not(:disabled):active": {
+      //     backgroundColor: addAlpha(
+      //       theme.palettes[variant][theme.colorScheme === "light" ? 2 : 2],
+      //       theme.opacity.opacity3
+      //     ),
+      //   },
+
+      //   "&:not(:disabled):focus-visible": {
+      //     outline: `1px solid ${
+      //       theme.palettes[variant][theme.colorScheme === "light" ? 0 : 0]
+      //     }`,
+
+      //     "&::before": {
+      //       content: '""',
+      //       position: "absolute",
+      //       top: -2,
+      //       bottom: -2,
+      //       left: -3,
+      //       right: -3,
+      //       borderRadius: 4,
+      //       outline: `1px solid ${
+      //         theme.palettes[variant][theme.colorScheme === "light" ? 0 : 0]
+      //       }`,
+      //     },
+      //   },
+
+      //   [`&:disabled:not(.${loading})`]: {
+      //     backgroundColor: theme.colors.gray5,
+      //     color: line ? theme.colors.black : theme.colors.white,
+      //   },
+      // },
+
       root: {
         ...sizes[size],
         ...getWidthStyles(fullWidth),

@@ -9,8 +9,9 @@ import { TM_HEIGHTS } from "../../constants";
 import { addAlpha } from "../../utils";
 
 interface IconButtonStylesProps {
-  color?: TmPalette;
+  variant?: TmPalette;
   size: TmSize;
+  line?: boolean;
 }
 
 const sizes = {
@@ -33,11 +34,6 @@ const sizes = {
     width: TM_HEIGHTS.large,
     height: TM_HEIGHTS.large,
   },
-
-  xlarge: {
-    width: TM_HEIGHTS.xlarge,
-    height: TM_HEIGHTS.xlarge,
-  },
 };
 
 const paddings = {
@@ -49,11 +45,11 @@ const paddings = {
 };
 
 export default createStyles(
-  (theme, { color: _color, size }: IconButtonStylesProps, getRef) => {
+  (theme, { variant: _variant, size, line }: IconButtonStylesProps, getRef) => {
     const loading = getRef("loading");
     const inner = getRef("inner");
     const spinner = getRef("spinner");
-    const color = _color || theme.colors.navy1;
+    const variant = _variant || theme.colors.navy1;
 
     return {
       loading: {
@@ -81,20 +77,20 @@ export default createStyles(
 
       solid: {
         backgroundColor:
-          theme.palettes[color][theme.colorScheme === "light" ? 5 : 3],
+          theme.palettes[variant][theme.colorScheme === "light" ? 0 : 0],
         color:
           theme.colorScheme === "light"
             ? theme.colors.white
-            : theme.palettes.gray[9],
+            : theme.colors.black,
 
         "&:not(:disabled):hover": {
           backgroundColor:
-            theme.palettes[color][theme.colorScheme === "light" ? 6 : 2],
+            theme.palettes[variant][theme.colorScheme === "light" ? 1 : 1],
         },
 
         "&:not(:disabled):active": {
           backgroundColor:
-            theme.palettes[color][theme.colorScheme === "light" ? 7 : 1],
+            theme.palettes[variant][theme.colorScheme === "light" ? 2 : 2],
         },
 
         "&:not(:disabled):focus-visible": {
@@ -107,33 +103,33 @@ export default createStyles(
             right: -2,
             borderRadius: 4,
             outline: `1px solid ${
-              theme.palettes[color][theme.colorScheme === "light" ? 5 : 3]
+              theme.palettes[variant][theme.colorScheme === "light" ? 0 : 0]
             }`,
           },
         },
 
         [`&:disabled:not(.${loading})`]: {
-          backgroundColor: theme.palettes.gray[2],
-          color: addAlpha(theme.colors.black, theme.opacity.opacity3),
+          backgroundColor: theme.colors.gray5,
+          color: line ? theme.colors.black : theme.colors.white,
         },
       },
       ghost: {
         backgroundColor: theme.colors.transparent,
         border: `1px solid ${
-          theme.palettes[color][theme.colorScheme === "light" ? 5 : 3]
+          theme.palettes[variant][theme.colorScheme === "light" ? 0 : 0]
         }`,
-        color: theme.palettes[color][theme.colorScheme === "light" ? 5 : 3],
+        color: theme.palettes[variant][theme.colorScheme === "light" ? 0 : 0],
 
         "&:not(:disabled):hover": {
           backgroundColor: addAlpha(
-            theme.palettes[color][theme.colorScheme === "light" ? 0 : 8],
+            theme.palettes[variant][theme.colorScheme === "light" ? 0 : 0],
             theme.opacity.opacity3
           ),
         },
 
         "&:not(:disabled):active": {
           backgroundColor: addAlpha(
-            theme.palettes[color][theme.colorScheme === "light" ? 1 : 7],
+            theme.palettes[variant][theme.colorScheme === "light" ? 1 : 1],
             theme.opacity.opacity3
           ),
         },
@@ -148,114 +144,14 @@ export default createStyles(
             right: -2,
             borderRadius: 4,
             outline: `1px solid ${
-              theme.palettes[color][theme.colorScheme === "light" ? 5 : 3]
+              theme.palettes[variant][theme.colorScheme === "light" ? 0 : 0]
             }`,
           },
         },
 
         [`&:disabled:not(.${loading})`]: {
-          color: addAlpha(theme.palettes[color][1], theme.opacity.opacity3),
-          border: `1px solid ${addAlpha(
-            theme.palettes[color][1],
-            theme.opacity.opacity3
-          )}`,
-        },
-      },
-      "light-solid": {
-        backgroundColor: addAlpha(
-          theme.colorScheme === "light"
-            ? theme.colors.black
-            : theme.colors.white,
-          theme.opacity.opacity1
-        ),
-        color: theme.palettes[color][theme.colorScheme === "light" ? 5 : 3],
-
-        "&:not(:disabled):hover": {
-          backgroundColor: addAlpha(
-            theme.palettes.dark[theme.colorScheme === "light" ? 8 : 1],
-            theme.opacity.opacity2
-          ),
-        },
-
-        "&:not(:disabled):active": {
-          backgroundColor: addAlpha(
-            theme.palettes.dark[theme.colorScheme === "light" ? 7 : 2],
-            theme.opacity.opacity3
-          ),
-        },
-
-        "&:not(:disabled):focus-visible": {
-          outline: `1px solid ${
-            theme.palettes[color][theme.colorScheme === "light" ? 5 : 3]
-          }`,
-
-          "&::before": {
-            content: '""',
-            position: "absolute",
-            top: -2,
-            bottom: -2,
-            left: -3,
-            right: -3,
-            borderRadius: 4,
-            outline: `1px solid ${
-              theme.palettes[color][theme.colorScheme === "light" ? 5 : 3]
-            }`,
-          },
-        },
-
-        [`&:disabled:not(.${loading})`]: {
-          backgroundColor: addAlpha(
-            theme.palettes.dark[theme.colorScheme === "light" ? 4 : 1],
-            theme.opacity.opacity1
-          ),
-          color: addAlpha(
-            theme.palettes[color][theme.colorScheme === "light" ? 7 : 3],
-            theme.opacity.opacity3
-          ),
-        },
-      },
-      text: {
-        backgroundColor: "transparent",
-        color: theme.palettes[color][theme.colorScheme === "light" ? 5 : 3],
-
-        "&:not(:disabled):hover": {
-          backgroundColor: addAlpha(
-            theme.palettes[color][theme.colorScheme === "light" ? 8 : 1],
-            theme.opacity.opacity2
-          ),
-        },
-
-        "&:not(:disabled):active": {
-          backgroundColor: addAlpha(
-            theme.palettes[color][theme.colorScheme === "light" ? 7 : 2],
-            theme.opacity.opacity3
-          ),
-        },
-
-        "&:not(:disabled):focus-visible": {
-          outline: `1px solid ${
-            theme.palettes[color][theme.colorScheme === "light" ? 5 : 3]
-          }`,
-
-          "&::before": {
-            content: '""',
-            position: "absolute",
-            top: -2,
-            bottom: -2,
-            left: -3,
-            right: -3,
-            borderRadius: 4,
-            outline: `1px solid ${
-              theme.palettes[color][theme.colorScheme === "light" ? 5 : 3]
-            }`,
-          },
-        },
-
-        [`&:disabled:not(.${loading})`]: {
-          color: addAlpha(
-            theme.palettes[color][theme.colorScheme === "light" ? 7 : 3],
-            theme.opacity.opacity3
-          ),
+          backgroundColor: theme.colors.gray5,
+          color: line ? theme.colors.black : theme.colors.white,
         },
       },
 
