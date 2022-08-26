@@ -8,12 +8,12 @@ import {
   Title,
 } from "@storybook/addon-docs";
 
-import { Button } from "../Button";
+import { Button } from "../TextButton";
 import { Meta } from "@storybook/react";
 import React from "react";
 
 export default {
-  title: "@travelmakers-design/core/Button",
+  title: "@travelmakers-design/core/TextButton",
   component: Button,
   argTypes: {
     size: {

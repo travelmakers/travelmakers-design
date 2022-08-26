@@ -67,7 +67,7 @@ const GlobalStyles = () => {
               ? theme.colors.white
               : theme.colors.black,
           lineHeight: theme.lineHeight,
-          fontSizes: theme.fontSizes.medium,
+          fontSizes: theme.fontSizes.b3,
         } as any,
       })}
     />

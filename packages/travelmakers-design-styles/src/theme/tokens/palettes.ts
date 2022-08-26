@@ -1,7 +1,7 @@
 import { DEFAULT_COLORS } from "./colors";
 import type { Tuple } from "../types";
 
-export type TmPalette = "dark" | "white" | "green" | (string & {});
+export type TmPalette = "primary" | "secondary" | "tertiary" | (string & {});
 
 /**
  * NOTE: DEFAULT_PALETTES
@@ -10,9 +10,13 @@ export type TmPalette = "dark" | "white" | "green" | (string & {});
  * 2: clicked
  */
 export const DEFAULT_PALETTES = {
-  dark: [DEFAULT_COLORS.navy1, DEFAULT_COLORS.navy1, DEFAULT_COLORS.navy2],
+  primary: [DEFAULT_COLORS.navy1, DEFAULT_COLORS.navy1, DEFAULT_COLORS.navy2],
 
-  white: [DEFAULT_COLORS.white, DEFAULT_COLORS.white, DEFAULT_COLORS.gray6],
+  secondary: [
+    DEFAULT_COLORS.green2,
+    DEFAULT_COLORS.green2,
+    DEFAULT_COLORS.green1,
+  ],
 
-  green: [DEFAULT_COLORS.green2, DEFAULT_COLORS.green2, DEFAULT_COLORS.green1],
+  tertiary: [DEFAULT_COLORS.white, DEFAULT_COLORS.white, DEFAULT_COLORS.gray6],
 } as Record<TmPalette, Tuple<string, 3>>;

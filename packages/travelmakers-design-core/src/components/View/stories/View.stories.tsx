@@ -12,7 +12,7 @@ export const Default = () => {
       co={(theme) => ({
         width: 100,
         height: 100,
-        backgroundColor: theme.palettes.dark[0],
+        backgroundColor: theme.colors.gray3,
       })}
     />
   );

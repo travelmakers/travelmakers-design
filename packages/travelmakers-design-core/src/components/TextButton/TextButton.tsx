@@ -12,7 +12,7 @@ import { Spinner, SpinnerProps } from "../Spinner";
 
 import { TM_HEIGHTS } from "../../constants";
 import { View } from "../View";
-import useStyles from "./Button.style";
+import useStyles from "./TextButton.style";
 
 export type ButtonStylesNames = ClassNames<typeof useStyles>;
 
@@ -120,4 +120,4 @@ export const Button: ButtonComponent & { displayName?: string } = forwardRef(
   }
 );
 
-Button.displayName = "@travelmakers-design/core/Button";
+Button.displayName = "@travelmakers-design/core/TextButton";

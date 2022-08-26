@@ -10,6 +10,6 @@ export type TmFontSize =
   | "h1"
   | "caption";
 
-export type TmSize = "xsmall" | "small" | "medium" | "large" | "xlarge";
+export type TmSize = "xsmall" | "small" | "medium" | "large";
 
 export type CoNumberSize = TmSize | TmFontSize | number;
