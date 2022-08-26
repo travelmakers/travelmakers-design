@@ -1,6 +1,6 @@
 import {
-  CoPalette,
-  CoSize,
+  TmPalette,
+  TmSize,
   TmTheme,
   createStyles,
   defaultFontStyles,
@@ -9,23 +9,25 @@ import {
 import { TM_HEIGHTS } from "../../constants";
 import { addAlpha } from "../../utils";
 
-export type ButtonVariant = "solid" | "ghost" | "light-solid" | "text";
+export type ButtonVariant = "solid" | "ghost";
 
 interface ButtonStylesProps {
-  color?: CoPalette;
-  size: CoSize;
+  color?: TmPalette;
+  size: TmSize;
   fullWidth: boolean;
+  radius?: boolean;
+  variant?: ButtonVariant;
 }
 
 const sizes = {
   xsmall: {
     height: TM_HEIGHTS.xsmall,
-    padding: "0 16px",
+    padding: "0 24px",
   },
 
   small: {
     height: TM_HEIGHTS.small,
-    padding: "0 16px",
+    padding: "0 24px",
   },
 
   medium: {
@@ -40,41 +42,51 @@ const sizes = {
 
   xlarge: {
     height: TM_HEIGHTS.xlarge,
-    padding: "0 30px",
+    padding: "0 24px",
   },
 };
 
 const getFontStyles = (theme: TmTheme) => ({
   xsmall: {
+    fontFamily: "Pretendard",
     fontWeight: "normal",
-    fontSize: theme.fontSizes.xsmall,
+    lineHeight: theme.lineHeights.caption,
+    fontSize: theme.fontSizes.caption,
   },
 
   small: {
+    fontFamily: "Pretendard",
     fontWeight: "normal",
-    fontSize: theme.fontSizes.xsmall,
+    lineHeight: theme.lineHeights.b3,
+    fontSize: theme.fontSizes.b3,
   },
 
   medium: {
+    fontFamily: "Pretendard",
     fontWeight: "normal",
-    fontSize: theme.fontSizes.small,
+    lineHeight: theme.lineHeights.b2,
+    fontSize: theme.fontSizes.b2,
   },
 
   large: {
-    fontWeight: "bold",
-    fontSize: theme.fontSizes.medium,
+    fontFamily: "Pretendard",
+    fontWeight: "normal",
+    lineHeight: theme.lineHeights.h5,
+    fontSize: theme.fontSizes.h5,
   },
 
   xlarge: {
-    fontWeight: "bold",
-    fontSize: theme.fontSizes.xlarge,
+    fontFamily: "Pretendard",
+    fontWeight: "normal",
+    lineHeight: theme.lineHeights.h5,
+    fontSize: theme.fontSizes.h5,
   },
 });
 
 export const heights = Object.keys(sizes).reduce((acc, size) => {
   acc[size] = sizes[size].height;
   return acc;
-}, {} as Record<CoSize, number>);
+}, {} as Record<TmSize, number>);
 
 const getWidthStyles = (fullWidth: boolean) => ({
   display: fullWidth ? "block" : "inline-block",
@@ -82,11 +94,15 @@ const getWidthStyles = (fullWidth: boolean) => ({
 });
 
 export default createStyles(
-  (theme, { color: _color, size, fullWidth }: ButtonStylesProps, getRef) => {
+  (
+    theme,
+    { color: _color, size, fullWidth, radius, variant }: ButtonStylesProps,
+    getRef
+  ) => {
     const loading = getRef("loading");
     const inner = getRef("inner");
     const spinner = getRef("spinner");
-    const color = _color || theme.primaryColor;
+    const color = _color || theme.colors.navy1;
 
     return {
       loading: {
@@ -112,22 +128,20 @@ export default createStyles(
         },
       },
 
+      // ANCHOR: variant(solid)
       solid: {
         backgroundColor:
-          theme.palettes[color][theme.colorScheme === "light" ? 5 : 3],
-        color:
-          theme.colorScheme === "light"
-            ? theme.colors.white
-            : theme.palettes.gray[9],
+          theme.palettes[color][theme.colorScheme === "light" ? 0 : 0],
+        color: color === "white" ? theme.colors.navy1 : theme.colors.white,
 
         "&:not(:disabled):hover": {
           backgroundColor:
-            theme.palettes[color][theme.colorScheme === "light" ? 6 : 2],
+            theme.palettes[color][theme.colorScheme === "light" ? 1 : 1],
         },
 
         "&:not(:disabled):active": {
           backgroundColor:
-            theme.palettes[color][theme.colorScheme === "light" ? 7 : 1],
+            theme.palettes[color][theme.colorScheme === "light" ? 2 : 2],
         },
 
         "&:not(:disabled):focus-visible": {
@@ -138,38 +152,29 @@ export default createStyles(
             bottom: -2,
             left: -2,
             right: -2,
-            borderRadius: 4,
+            borderRadius: radius ? theme.radius.round : 2,
             outline: `1px solid ${
-              theme.palettes[color][theme.colorScheme === "light" ? 5 : 3]
+              theme.palettes[color][theme.colorScheme === "light" ? 0 : 0]
             }`,
           },
         },
 
         [`&:disabled:not(.${loading})`]: {
-          backgroundColor: theme.palettes.gray[2],
-          color: addAlpha(theme.colors.black, theme.opacity.opacity3),
+          backgroundColor: theme.colors.gray5,
+          // color: addAlpha(theme.colors.black, theme.opacity.opacity3),?
+          color: variant === "solid" ? theme.colors.white : theme.colors.black,
         },
       },
+
+      // ANCHOR: variant(ghost)
       ghost: {
         backgroundColor: theme.colors.transparent,
         border: `1px solid ${
-          theme.palettes[color][theme.colorScheme === "light" ? 5 : 3]
+          theme.palettes[color][theme.colorScheme === "light" ? 0 : 0]
         }`,
-        color: theme.palettes[color][theme.colorScheme === "light" ? 5 : 3],
-
-        "&:not(:disabled):hover": {
-          backgroundColor: addAlpha(
-            theme.palettes[color][theme.colorScheme === "light" ? 0 : 8],
-            theme.opacity.opacity3
-          ),
-        },
-
-        "&:not(:disabled):active": {
-          backgroundColor: addAlpha(
-            theme.palettes[color][theme.colorScheme === "light" ? 1 : 7],
-            theme.opacity.opacity3
-          ),
-        },
+        // color: theme.palettes[color][theme.colorScheme === "light" ? 0 : 0],
+        color:
+          color === "white" ? theme.colors.white : theme.palettes[color][0],
 
         "&:not(:disabled):focus-visible": {
           "&::before": {
@@ -179,9 +184,9 @@ export default createStyles(
             bottom: -2,
             left: -2,
             right: -2,
-            borderRadius: 4,
+            borderRadius: radius ? theme.radius.round : 2,
             outline: `1px solid ${
-              theme.palettes[color][theme.colorScheme === "light" ? 5 : 3]
+              theme.palettes[color][theme.colorScheme === "light" ? 0 : 0]
             }`,
           },
         },
@@ -194,110 +199,13 @@ export default createStyles(
           )}`,
         },
       },
-      "light-solid": {
-        backgroundColor: addAlpha(
-          theme.colorScheme === "light"
-            ? theme.colors.black
-            : theme.colors.white,
-          theme.opacity.opacity1
-        ),
-        color: theme.palettes[color][theme.colorScheme === "light" ? 5 : 3],
-
-        "&:not(:disabled):hover": {
-          backgroundColor: addAlpha(
-            theme.palettes.dark[theme.colorScheme === "light" ? 8 : 1],
-            theme.opacity.opacity2
-          ),
-        },
-
-        "&:not(:disabled):active": {
-          backgroundColor: addAlpha(
-            theme.palettes.dark[theme.colorScheme === "light" ? 7 : 2],
-            theme.opacity.opacity3
-          ),
-        },
-
-        "&:not(:disabled):focus-visible": {
-          outline: `1px solid ${
-            theme.palettes[color][theme.colorScheme === "light" ? 5 : 3]
-          }`,
-
-          "&::before": {
-            content: '""',
-            position: "absolute",
-            top: -2,
-            bottom: -2,
-            left: -3,
-            right: -3,
-            borderRadius: 4,
-            outline: `1px solid ${
-              theme.palettes[color][theme.colorScheme === "light" ? 5 : 3]
-            }`,
-          },
-        },
-
-        [`&:disabled:not(.${loading})`]: {
-          backgroundColor: addAlpha(
-            theme.palettes.dark[theme.colorScheme === "light" ? 4 : 1],
-            theme.opacity.opacity1
-          ),
-          color: addAlpha(
-            theme.palettes[color][theme.colorScheme === "light" ? 7 : 3],
-            theme.opacity.opacity3
-          ),
-        },
-      },
-      text: {
-        backgroundColor: "transparent",
-        color: theme.palettes[color][theme.colorScheme === "light" ? 5 : 3],
-
-        "&:not(:disabled):hover": {
-          backgroundColor: addAlpha(
-            theme.palettes[color][theme.colorScheme === "light" ? 8 : 1],
-            theme.opacity.opacity2
-          ),
-        },
-
-        "&:not(:disabled):active": {
-          backgroundColor: addAlpha(
-            theme.palettes[color][theme.colorScheme === "light" ? 7 : 2],
-            theme.opacity.opacity3
-          ),
-        },
-
-        "&:not(:disabled):focus-visible": {
-          outline: `1px solid ${
-            theme.palettes[color][theme.colorScheme === "light" ? 5 : 3]
-          }`,
-
-          "&::before": {
-            content: '""',
-            position: "absolute",
-            top: -2,
-            bottom: -2,
-            left: -3,
-            right: -3,
-            borderRadius: 4,
-            outline: `1px solid ${
-              theme.palettes[color][theme.colorScheme === "light" ? 5 : 3]
-            }`,
-          },
-        },
-
-        [`&:disabled:not(.${loading})`]: {
-          color: addAlpha(
-            theme.palettes[color][theme.colorScheme === "light" ? 7 : 3],
-            theme.opacity.opacity3
-          ),
-        },
-      },
 
       root: {
         ...sizes[size],
         ...getWidthStyles(fullWidth),
         ...defaultFontStyles(theme),
         ...getFontStyles(theme)[size],
-        borderRadius: theme.radius.medium,
+        borderRadius: radius ? theme.radius.round : theme.radius.small,
         position: "relative",
         lineHeight: 1,
         WebkitTapHighlightColor: "transparent",

@@ -1,6 +1,6 @@
-import { CoSize } from "../types/TmSize";
+import { TmSize } from "../types/TmSize";
 
-export type CoShadows = CoSize | "none";
+export type CoShadows = TmSize | "none";
 
 export const DEFAULT_SHADOWS: Record<CoShadows, string> = {
   none: "none",

@@ -1,6 +1,6 @@
 import {
-  CoPalette,
-  CoSize,
+  TmPalette,
+  TmSize,
   createStyles,
   defaultFontStyles,
 } from "@travelmakers-design/styles";
@@ -9,8 +9,8 @@ import { TM_HEIGHTS } from "../../constants";
 import { addAlpha } from "../../utils";
 
 interface IconButtonStylesProps {
-  color?: CoPalette;
-  size: CoSize;
+  color?: TmPalette;
+  size: TmSize;
 }
 
 const sizes = {
@@ -53,7 +53,7 @@ export default createStyles(
     const loading = getRef("loading");
     const inner = getRef("inner");
     const spinner = getRef("spinner");
-    const color = _color || theme.primaryColor;
+    const color = _color || theme.colors.navy1;
 
     return {
       loading: {

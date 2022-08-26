@@ -1,27 +1,27 @@
 import {
-  CoPalette,
-  CoSize,
   TmColor,
+  TmPalette,
+  TmSize,
   createStyles,
 } from "@travelmakers-design/styles";
 
 import { TM_HEIGHTS } from "../../constants";
 
 interface SpinnerStyles {
-  size: CoSize | number;
-  color?: CoPalette | TmColor | string;
+  size: TmSize | number;
+  color?: TmPalette | TmColor | string;
 }
 
 export default createStyles((theme, { size, color }: SpinnerStyles) => {
   const svgColor =
     color === undefined
       ? theme.colorScheme === "light"
-        ? theme.palettes.gray[8]
+        ? theme.colors.black
         : theme.colors.white
       : color in theme.palettes
       ? theme.colorScheme === "light"
-        ? theme.palettes[color][5]
-        : theme.palettes[color][3]
+        ? theme.palettes[color][0]
+        : theme.palettes[color][0]
       : color in theme.colors
       ? theme.colors[color]
       : color;

@@ -1,9 +1,9 @@
 import {
   ClassNames,
-  CoComponentProps,
-  CoPalette,
-  CoSize,
   TmColor,
+  TmComponentProps,
+  TmPalette,
+  TmSize,
 } from "@travelmakers-design/styles";
 import React, { forwardRef } from "react";
 
@@ -13,13 +13,13 @@ import useStyles from "./Spinner.style";
 export type SpinnerStylesNames = ClassNames<typeof useStyles>;
 
 export interface SpinnerProps
-  extends CoComponentProps,
+  extends TmComponentProps,
     React.ComponentPropsWithoutRef<"div"> {
   /** Spinner 컴포넌트의 크기를 정합니다. */
-  size?: CoSize | number;
+  size?: TmSize | number;
 
   /** Spinner 컴포넌트의 색상을 정합니다. */
-  color?: CoPalette | TmColor | string;
+  color?: TmPalette | TmColor | string;
 }
 
 export const Spinner = forwardRef<HTMLDivElement, SpinnerProps>(

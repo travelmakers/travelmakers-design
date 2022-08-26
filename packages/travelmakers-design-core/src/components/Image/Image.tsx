@@ -1,7 +1,7 @@
 import {
   ClassNames,
-  CoComponentProps,
   CoRadius,
+  TmComponentProps,
 } from "@travelmakers-design/styles";
 import React, {
   CSSProperties,
@@ -30,7 +30,7 @@ const onIntersection: IntersectionObserverCallback = (entries, io) => {
 export type ImageStylesNames = ClassNames<typeof useStyles>;
 
 export interface ImageProps
-  extends CoComponentProps<ImageStylesNames>,
+  extends TmComponentProps<ImageStylesNames>,
     Omit<React.ComponentPropsWithoutRef<"h1">, "placeholder"> {
   /** true일 경우 lazy load가 적용됩니다. */
   lazy?: boolean;

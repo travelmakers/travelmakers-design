@@ -1,6 +1,6 @@
 import {
   CoRadius,
-  CoSize,
+  TmSize,
   createStyles,
   defaultFontStyles,
 } from "@travelmakers-design/styles";
@@ -10,7 +10,7 @@ import { getFieldValue } from "../../utils";
 
 interface InputStyles {
   radius: CoRadius | number;
-  size: CoSize;
+  size: TmSize;
   multiline: boolean;
   invalid: boolean;
 }
@@ -68,12 +68,12 @@ export default createStyles(
 
         "&:focus, &:focus-within": {
           outline: `1px solid ${
-            theme.palettes[theme.primaryColor][
+            theme.palettes[theme.colors.navy1][
               theme.colorScheme === "dark" ? 3 : 5
             ]
           }`,
           borderColor:
-            theme.palettes[theme.primaryColor][
+            theme.palettes[theme.colors.navy1][
               theme.colorScheme === "dark" ? 3 : 5
             ],
         },

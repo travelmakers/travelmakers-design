@@ -1,18 +1,18 @@
 import {
   CoBreakpoints,
-  CoFontSizes,
   CoOpacity,
-  CoPalette,
   CoRadius,
   CoShadows,
   CoSpacing,
   CoZIndex,
   TmColor,
+  TmFontSizes,
+  TmPalette,
 } from "../tokens";
 
 import type { CSSProperties } from "react";
-import { CoSize } from "./TmSize";
 import type { DeepPartial } from "./DeepPartial";
+import { TmSize } from "./TmSize";
 import type { Tuple } from "./Tuple";
 
 export interface HeadingStyle {
@@ -25,8 +25,8 @@ interface TmThemeFunctions {
   size(props: { size: string | number; sizes: Record<string, any> }): any;
   linearGradient(deg: number, ...colors: string[]): string;
   radialGradient(...colors: string[]): string;
-  smallerThan(breakpoint: CoSize | number): string;
-  largerThan(breakpoint: CoSize | number): string;
+  smallerThan(breakpoint: TmSize | number): string;
+  largerThan(breakpoint: TmSize | number): string;
   lighten(color: string, alpha: number): string;
   darken(color: string, alpha: number): string;
   spacing(size: number): number;
@@ -41,8 +41,9 @@ export interface TmTheme {
   primaryColor: string;
 
   colors: Record<TmColor, string>;
-  palettes: Record<CoPalette, Tuple<string, 10>>;
-  fontSizes: Record<CoFontSizes, number>;
+  palettes: Record<TmPalette, Tuple<string, 3>>;
+  fontSizes: Record<TmFontSizes, number>;
+  lineHeights: Record<TmFontSizes, number>;
   radius: Record<CoRadius, number | string>;
   spacing: Record<CoSpacing, number>;
   breakpoints: Record<CoBreakpoints, number>;

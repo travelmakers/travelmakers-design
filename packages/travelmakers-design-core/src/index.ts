@@ -9,6 +9,6 @@ export {
 export type {
   TmTheme,
   Co,
-  CoComponentProps,
+  TmComponentProps,
 } from "@travelmakers-design/styles";
 export * from "./components";

@@ -1,10 +1,10 @@
 import {
   ClassNames,
-  CoComponentProps,
   CoRadius,
-  CoSize,
   PolymorphicComponentProps,
   PolymorphicRef,
+  TmComponentProps,
+  TmSize,
   useTmTheme,
 } from "@travelmakers-design/styles";
 import React, { forwardRef } from "react";
@@ -16,7 +16,7 @@ export type InputStylesNames = ClassNames<typeof useStyles>;
 
 export interface InputBaseProps {
   /** Input 컴포넌트의 크기를 정합니다. */
-  size?: CoSize;
+  size?: TmSize;
 
   /** Input 컴포넌트의 radius를 정합니다. */
   radius?: CoRadius | number;
@@ -54,7 +54,7 @@ export interface InputBaseProps {
 
 interface _InputProps
   extends InputBaseProps,
-    CoComponentProps<InputStylesNames> {
+    TmComponentProps<InputStylesNames> {
   /** Static css selector base */
   __staticSelector?: string;
 }

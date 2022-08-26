@@ -64,8 +64,8 @@ const GlobalStyles = () => {
               : theme.colors.white,
           color:
             theme.colorScheme === "dark"
-              ? theme.palettes.gray[0]
-              : theme.palettes.gray[9],
+              ? theme.colors.white
+              : theme.colors.black,
           lineHeight: theme.lineHeight,
           fontSizes: theme.fontSizes.medium,
         } as any,

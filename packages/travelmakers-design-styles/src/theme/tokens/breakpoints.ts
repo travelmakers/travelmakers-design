@@ -1,6 +1,6 @@
-import { CoSize } from "../types/TmSize";
+import { TmSize } from "../types/TmSize";
 
-export type CoBreakpoints = CoSize;
+export type CoBreakpoints = TmSize;
 
 export const DEFAULT_BREAKPOINTS: Record<CoBreakpoints, number> = {
   xsmall: 576,

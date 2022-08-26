@@ -1,9 +1,9 @@
-import { CoSize } from "@travelmakers-design/styles";
+import { TmSize } from "@travelmakers-design/styles";
 
-export const TM_HEIGHTS: Record<CoSize, number> = {
+export const TM_HEIGHTS: Record<TmSize, number> = {
   xsmall: 24,
-  small: 32,
+  small: 28,
   medium: 40,
-  large: 56,
-  xlarge: 64,
+  large: 48,
+  xlarge: 48,
 };

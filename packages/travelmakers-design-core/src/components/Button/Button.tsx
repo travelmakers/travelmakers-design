@@ -1,10 +1,10 @@
 import {
   ClassNames,
-  CoComponentProps,
-  CoPalette,
-  CoSize,
   PolymorphicComponentProps,
   PolymorphicRef,
+  TmComponentProps,
+  TmPalette,
+  TmSize,
   useTmTheme,
 } from "@travelmakers-design/styles";
 import React, { forwardRef } from "react";
@@ -16,15 +16,18 @@ import { View } from "../View";
 
 export type ButtonStylesNames = ClassNames<typeof useStyles>;
 
-export interface SharedButtonProps extends CoComponentProps<ButtonStylesNames> {
+export interface SharedButtonProps extends TmComponentProps<ButtonStylesNames> {
   /** Button 컴포넌트의 크기를 정합니다. */
-  size?: CoSize;
+  size?: TmSize;
 
   /** Button 컴포넌트의 색상을 정합니다. */
-  color?: CoPalette;
+  color?: TmPalette;
 
   /** Button 컴포넌트의 모양을 지정합니다. */
   variant?: ButtonVariant;
+
+  /** true일 경우 radius를 100px로 지정합니다. (default: false) */
+  radius?: boolean;
 
   /** true일 경우 좌우 공간을 모두 차지합니다. */
   fullWidth?: boolean;
@@ -63,6 +66,7 @@ export const Button: ButtonComponent & { displayName?: string } = forwardRef(
       size = "medium",
       color: _color,
       variant = "solid",
+      radius = false,
       fullWidth = false,
       type = "button",
       disabled = false,
@@ -78,21 +82,21 @@ export const Button: ButtonComponent & { displayName?: string } = forwardRef(
     ref: PolymorphicRef<C>
   ) => {
     const theme = useTmTheme();
-    const color = _color || theme.primaryColor;
+    const color = _color || theme.colors.navy1;
     const { classes, cx } = useStyles(
       {
         color: _color,
         size,
         fullWidth,
+        radius,
+        variant,
       },
       { overrideStyles, name: "Button" }
     );
 
     const spinner = (
       <Spinner
-        color={
-          variant === "solid" ? theme.colors.white : theme.palettes[color][6]
-        }
+        color={variant === "solid" ? theme.colors.white : theme.colors.black}
         size={TM_HEIGHTS[size] / 2}
         {...spinnerProps}
       />

@@ -1,6 +1,6 @@
-import { CoSize } from '../types';
+import { TmSize } from "../types";
 
-export type CoSpacing = CoSize;
+export type CoSpacing = TmSize;
 
 export const DEFAULT_SPACING: Record<CoSpacing, number> = {
   xsmall: 4,

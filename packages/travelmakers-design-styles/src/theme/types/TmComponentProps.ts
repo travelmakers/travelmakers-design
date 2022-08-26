@@ -8,7 +8,7 @@ export type OverrideStyles<T extends string = never> =
   | Partial<Record<T, CSSObject>>
   | ((theme: TmTheme) => Partial<Record<T, CSSObject>>);
 
-export interface CoComponentProps<T extends string = never> {
+export interface TmComponentProps<T extends string = never> {
   className?: string;
   style?: CSSProperties;
   co?: Co;

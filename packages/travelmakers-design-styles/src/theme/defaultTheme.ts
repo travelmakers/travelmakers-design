@@ -1,6 +1,7 @@
 import {
   DEFAULT_BREAKPOINTS,
   DEFAULT_COLORS,
+  DEFAULT_FONT_HEIGHT,
   DEFAULT_FONT_SIZES,
   DEFAULT_HEADINGS,
   DEFAULT_OPACITY,
@@ -40,7 +41,7 @@ export const _DEFAULT_THEME: TmThemeBase = {
     "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji",
   fontFamilyMonospace:
     "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace",
-  primaryColor: "purple",
+  primaryColor: DEFAULT_COLORS.black,
 
   colors: DEFAULT_COLORS,
 
@@ -49,6 +50,8 @@ export const _DEFAULT_THEME: TmThemeBase = {
   shadows: DEFAULT_SHADOWS,
 
   fontSizes: DEFAULT_FONT_SIZES,
+
+  lineHeights: DEFAULT_FONT_HEIGHT,
 
   radius: DEFAULT_RADIUS,
 

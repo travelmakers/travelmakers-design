@@ -16,6 +16,8 @@ module.exports = {
     '@storybook/addon-storysource',
     '@storybook/addon-actions',
     '@storybook/addon-a11y',
+    '@storybook/addon-docs',
+    '@storybook/theming',
   ],
   webpackFinal: async (config) => {
     config.resolve = {

@@ -48,7 +48,7 @@ export const IconButton: IconButtonComponent & { displayName?: string } =
         { overrideStyles, name: "Button" }
       );
 
-      const color = _color || theme.primaryColor;
+      const color = _color || theme.colors.navy1;
       const spinner = (
         <Spinner
           color={

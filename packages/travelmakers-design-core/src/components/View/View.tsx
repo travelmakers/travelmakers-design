@@ -1,8 +1,8 @@
 import {
   Co,
-  CoComponentProps,
   PolymorphicComponentProps,
   PolymorphicRef,
+  TmComponentProps,
   TmTheme,
   useCss,
   useTmTheme,
@@ -11,7 +11,7 @@ import React, { forwardRef } from "react";
 
 type ViewCo = Co | Co[];
 
-interface _ViewProps extends Omit<CoComponentProps, "co" | "overrideStyles"> {
+interface _ViewProps extends Omit<TmComponentProps, "co" | "overrideStyles"> {
   co?: ViewCo;
 }
 
