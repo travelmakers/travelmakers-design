@@ -2,7 +2,7 @@ import React from "react";
 import { Spinner } from "../Spinner";
 
 export default {
-  title: "@travelmakers-design/core/Spinner",
+  title: "@travelmakers-design/core/Component/Spinner",
   component: Spinner,
   argTypes: {
     size: {

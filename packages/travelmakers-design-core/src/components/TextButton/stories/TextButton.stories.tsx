@@ -13,7 +13,7 @@ import { Meta } from "@storybook/react";
 import React from "react";
 
 export default {
-  title: "@travelmakers-design/core/TextButton",
+  title: "@travelmakers-design/core/Component/TextButton",
   component: Button,
   argTypes: {
     size: {
@@ -67,17 +67,6 @@ export default {
         },
       },
       control: { type: "boolean" },
-    },
-    type: {
-      defaultValue: "button",
-      description: "button 요소의 type을 지정합니다.",
-      options: ["submit", "button", "reset"],
-      table: {
-        type: {
-          summary: "string",
-        },
-      },
-      control: { type: "inline-radio" },
     },
     disabled: {
       defaultValue: false,

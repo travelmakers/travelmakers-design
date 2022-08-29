@@ -1,78 +1,94 @@
 import {
-  TmPalette,
+  TmFontFamily,
+  TmFontSize,
   TmSize,
   TmTheme,
   createStyles,
   defaultFontStyles,
 } from "@travelmakers-design/styles";
 
-import { TM_HEIGHTS } from "../../constants";
+import { TypographyTextAlign } from "./Typography";
 import { addAlpha } from "../../utils";
 
-interface ButtonStylesProps {
-  variant?: TmPalette;
-  size: TmSize;
-  fullWidth: boolean;
-  roundness?: boolean;
-  line?: boolean;
+interface TypographyStylesProps {
+  family: TmFontFamily;
+  level: TmFontSize;
+  mobile?: TmFontSize;
+  tablet?: TmFontSize;
+  textAlign?: TypographyTextAlign;
+  disabled?: boolean;
+  strong?: boolean;
+  italic?: boolean;
+  underline?: boolean;
 }
 
 const sizes = {
-  xsmall: {
-    height: TM_HEIGHTS.xsmall,
-    padding: "0 24px",
+  h1: {
+    // height: TM_HEIGHTS.small,
   },
 
   small: {
-    height: TM_HEIGHTS.small,
-    padding: "0 24px",
+    // height: TM_HEIGHTS.small,
   },
 
   medium: {
-    height: TM_HEIGHTS.medium,
-    padding: "0 24px",
+    // height: TM_HEIGHTS.medium,
   },
 
   large: {
-    height: TM_HEIGHTS.large,
-    padding: "0 24px",
+    // height: TM_HEIGHTS.large,
   },
 };
 
 const getFontStyles = (theme: TmTheme) => ({
-  xsmall: {
-    fontFamily: "Pretendard",
-    fontWeight: "normal",
-    lineHeight: theme.lineHeights.caption,
+  caption: {
+    lineHeight: `${theme.lineHeights.caption}px`,
     fontSize: theme.fontSizes.caption,
   },
 
-  small: {
-    fontFamily: "Pretendard",
-    fontWeight: "normal",
-    lineHeight: theme.lineHeights.b3,
+  b3: {
+    lineHeight: `${theme.lineHeights.b3}px`,
     fontSize: theme.fontSizes.b3,
   },
 
-  medium: {
-    fontFamily: "Pretendard",
-    fontWeight: "normal",
-    lineHeight: theme.lineHeights.b2,
+  b2: {
+    lineHeight: `${theme.lineHeights.b2}px`,
     fontSize: theme.fontSizes.b2,
   },
 
-  large: {
-    fontFamily: "Pretendard",
-    fontWeight: "normal",
-    lineHeight: theme.lineHeights.h5,
+  b1: {
+    lineHeight: `${theme.lineHeights.b1}px`,
+    fontSize: theme.fontSizes.b1,
+  },
+
+  h6: {
+    lineHeight: `${theme.lineHeights.h6}px`,
+    fontSize: theme.fontSizes.h6,
+  },
+
+  h5: {
+    lineHeight: `${theme.lineHeights.h5}px`,
     fontSize: theme.fontSizes.h5,
   },
 
-  xlarge: {
-    fontFamily: "Pretendard",
-    fontWeight: "normal",
-    lineHeight: theme.lineHeights.h5,
-    fontSize: theme.fontSizes.h5,
+  h4: {
+    lineHeight: `${theme.lineHeights.h4}px`,
+    fontSize: theme.fontSizes.h4,
+  },
+
+  h3: {
+    lineHeight: `${theme.lineHeights.h3}px`,
+    fontSize: theme.fontSizes.h3,
+  },
+
+  h2: {
+    lineHeight: `${theme.lineHeights.h2}px`,
+    fontSize: theme.fontSizes.h2,
+  },
+
+  h1: {
+    lineHeight: `${theme.lineHeights.h1}px`,
+    fontSize: theme.fontSizes.h1,
   },
 });
 
@@ -81,21 +97,30 @@ export const heights = Object.keys(sizes).reduce((acc, size) => {
   return acc;
 }, {} as Record<TmSize, number>);
 
-const getWidthStyles = (fullWidth: boolean) => ({
-  display: fullWidth ? "block" : "inline-block",
-  width: fullWidth ? "100%" : "auto",
+const getWidthStyles = (fullWidth?: boolean) => ({
+  display: "block",
+  width: "100%",
 });
 
 export default createStyles(
   (
     theme,
-    { variant: _variant, size, fullWidth, roundness, line }: ButtonStylesProps,
+    {
+      family,
+      level,
+      textAlign,
+      disabled,
+      strong,
+      italic,
+      underline,
+      mobile,
+      tablet,
+    }: TypographyStylesProps,
     getRef
   ) => {
     const loading = getRef("loading");
     const inner = getRef("inner");
     const spinner = getRef("spinner");
-    const variant = _variant || theme.colors.navy1;
 
     return {
       loading: {
@@ -121,144 +146,43 @@ export default createStyles(
         },
       },
 
-      // ANCHOR: line(solid)
       solid: {
-        backgroundColor:
-          theme.palettes[variant][theme.colorScheme === "light" ? 0 : 0],
-        color: variant === "white" ? theme.colors.navy1 : theme.colors.white,
-
-        "&:not(:disabled):hover": {
-          backgroundColor:
-            theme.palettes[variant][theme.colorScheme === "light" ? 1 : 1],
-        },
-
-        "&:not(:disabled):active": {
-          backgroundColor:
-            theme.palettes[variant][theme.colorScheme === "light" ? 2 : 2],
-        },
-
-        "&:not(:disabled):focus-visible": {
-          "&::before": {
-            content: '""',
-            position: "absolute",
-            top: -2,
-            bottom: -2,
-            left: -2,
-            right: -2,
-            borderRadius: roundness ? theme.radius.round : 2,
-            outline: `1px solid ${
-              theme.palettes[variant][theme.colorScheme === "light" ? 0 : 0]
-            }`,
-          },
-        },
-
-        [`&:disabled:not(.${loading})`]: {
-          backgroundColor: theme.colors.gray5,
-          color: line ? theme.colors.black : theme.colors.white,
-        },
-      },
-
-      // ANCHOR: line(ghost)
-      ghost: {
-        backgroundColor: theme.colors.transparent,
-        border: `1px solid ${
-          theme.palettes[variant][theme.colorScheme === "light" ? 0 : 0]
-        }`,
-        // color: theme.palettes[color][theme.colorScheme === "light" ? 0 : 0],
-        color:
-          variant === "white" ? theme.colors.white : theme.palettes[variant][0],
-
-        "&:not(:disabled):focus-visible": {
-          "&::before": {
-            content: '""',
-            position: "absolute",
-            top: -2,
-            bottom: -2,
-            left: -2,
-            right: -2,
-            borderRadius: roundness ? theme.radius.round : 2,
-            outline: `1px solid ${
-              theme.palettes[variant][theme.colorScheme === "light" ? 0 : 0]
-            }`,
-          },
-        },
-
-        [`&:disabled:not(.${loading})`]: {
-          color: addAlpha(theme.palettes[variant][1], theme.opacity.opacity3),
-          border: `1px solid ${addAlpha(
-            theme.palettes[variant][1],
-            theme.opacity.opacity3
-          )}`,
-        },
+        fontWeight: strong ? (family === "Noto Serif KR" ? 600 : 700) : 400,
+        fontStyle: italic ? "italic" : "normal",
+        textDecoration: underline ? "underline" : "none",
       },
 
       root: {
-        ...sizes[size],
-        ...getWidthStyles(fullWidth),
-        ...defaultFontStyles(theme),
-        ...getFontStyles(theme)[size],
-        borderRadius: roundness ? theme.radius.round : theme.radius.small,
+        ...sizes[level],
+        ...getWidthStyles(),
+        ...getFontStyles(theme)[level],
+        fontFamily: `${family}`,
+        color: disabled ? theme.colors.gray5 : theme.colors.black,
         position: "relative",
-        lineHeight: 1,
         WebkitTapHighlightColor: "transparent",
-        userSelect: "none",
-        boxSizing: "border-box",
-        textDecoration: "none",
-        cursor: "pointer",
         appearance: "none",
+        textAlign: `${textAlign}`,
         WebkitAppearance: "none",
         outline: "none",
         border: "none",
 
-        "&:not(:disabled):active": {
-          transform: "translateY(1px)",
+        [`${theme.media.mobile}`]: {
+          ...getFontStyles(theme)[mobile],
         },
 
-        "&:disabled": {
-          cursor: "not-allowed",
+        [`${theme.media.tablet}`]: {
+          ...getFontStyles(theme)[tablet],
         },
-      },
-
-      icon: {
-        display: "flex",
-        alignItems: "center",
-      },
-
-      leftIcon: {
-        marginRight: 10,
-      },
-
-      rightIcon: {
-        marginLeft: 10,
       },
 
       inner: {
         ref: inner,
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
         height: "100%",
         overflow: "visible",
       },
 
       label: {
-        whiteSpace: "nowrap",
         height: "100%",
-        overflow: "hidden",
-        display: "flex",
-        alignItems: "center",
-      },
-
-      spinnerWrapper: {
-        ref: spinner,
-        position: "absolute",
-        top: 0,
-        right: 0,
-        bottom: 0,
-        left: 0,
-        display: "none",
-        alignItems: "center",
-        justifyContent: "center",
       },
     };
   }

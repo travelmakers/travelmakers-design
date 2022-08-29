@@ -2,7 +2,7 @@ import { Image } from "../Image";
 import React from "react";
 
 export default {
-  title: "@travelmakers-design/core/Image",
+  title: "@travelmakers-design/core/Component/Image",
   component: Image,
   argTypes: {
     src: {

@@ -3,6 +3,7 @@ import {
   PolymorphicComponentProps,
   PolymorphicRef,
   TmComponentProps,
+  TmFontFamily,
   TmPalette,
   TmSize,
   useTmTheme,
@@ -16,12 +17,20 @@ import useStyles from "./TextButton.style";
 
 export type ButtonStylesNames = ClassNames<typeof useStyles>;
 
+export type ButtonPalette = "navy" | "white" | (string & {});
+
 export interface SharedButtonProps extends TmComponentProps<ButtonStylesNames> {
   /** Button 컴포넌트의 크기를 정합니다. */
   size?: TmSize;
 
   /** Button 컴포넌트의 색상을 정합니다. */
   variant?: TmPalette;
+
+  /** Button 컴포넌트의 font-family를 정합니다. */
+  family?: TmFontFamily;
+
+  /** Button 컴포넌트의 색상을 정합니다. */
+  color?: ButtonPalette;
 
   /** Button 컴포넌트의 모양을 지정합니다. */
   line?: boolean;
@@ -57,8 +66,10 @@ export const Button: ButtonComponent & { displayName?: string } = forwardRef(
     {
       children,
       component,
+      family = "Noto Serif KR",
       size = "medium",
       variant: _variant,
+      color = "navy",
       line,
       roundness = false,
       fullWidth = false,

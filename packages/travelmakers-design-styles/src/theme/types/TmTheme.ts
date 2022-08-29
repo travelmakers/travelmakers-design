@@ -7,12 +7,13 @@ import {
   CoZIndex,
   TmColor,
   TmFontSizes,
+  TmMedia,
   TmPalette,
 } from "../tokens";
+import { TmSize, deviceSizes } from "./TmSize";
 
 import type { CSSProperties } from "react";
 import type { DeepPartial } from "./DeepPartial";
-import { TmSize } from "./TmSize";
 import type { Tuple } from "./Tuple";
 
 export interface HeadingStyle {
@@ -50,6 +51,7 @@ export interface TmTheme {
   shadows: Record<CoShadows, string>;
   opacity: Record<CoOpacity, number>;
   zIndex: Record<CoZIndex, number>;
+  media: TmMedia;
 
   headings: {
     h1: HeadingStyle;

@@ -3,7 +3,7 @@ import React from "react";
 // import { Tooltip } from "../../Tooltip";
 
 export default {
-  title: "@travelmakers-design/core/Input",
+  title: "@travelmakers-design/core/Component/Input",
   component: Input,
   argTypes: {
     placeholder: {

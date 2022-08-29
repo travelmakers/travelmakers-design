@@ -13,7 +13,7 @@ import { Meta } from "@storybook/react";
 import React from "react";
 
 export default {
-  title: "@travelmakers-design/core/CloseButton",
+  title: "@travelmakers-design/core/Component/CloseButton",
   component: CloseButton,
   argTypes: {
     size: {

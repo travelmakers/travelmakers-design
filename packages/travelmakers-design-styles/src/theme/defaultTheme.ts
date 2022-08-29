@@ -4,6 +4,7 @@ import {
   DEFAULT_FONT_HEIGHT,
   DEFAULT_FONT_SIZES,
   DEFAULT_HEADINGS,
+  DEFAULT_MEDIA,
   DEFAULT_OPACITY,
   DEFAULT_PALETTES,
   DEFAULT_RADIUS,
@@ -17,12 +18,18 @@ import { attachFunctions } from "./functions/attachFunctions";
 
 export const TM_PALETTES = Object.keys(DEFAULT_PALETTES);
 export const TM_COLORS = Object.keys(DEFAULT_COLORS);
-export const TM_SIZES = [
-  "xsmall",
-  "small",
-  "medium",
-  "large",
-  "xlarge",
+export const TM_SIZES = ["xsmall", "small", "medium", "large"] as const;
+export const TM_FONT_SIZES = [
+  "b3",
+  "b2",
+  "b1",
+  "h6",
+  "h5",
+  "h4",
+  "h3",
+  "h2",
+  "h1",
+  "caption",
 ] as const;
 
 export const defaultFontStyles = (theme: TmTheme) => {
@@ -66,6 +73,8 @@ export const _DEFAULT_THEME: TmThemeBase = {
   zIndex: DEFAULT_Z_INDEX,
 
   extra: {},
+
+  media: DEFAULT_MEDIA,
 };
 
 export const DEFAULT_THEME = attachFunctions(_DEFAULT_THEME);

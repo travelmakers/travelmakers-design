@@ -7,5 +7,4 @@ export const DEFAULT_BREAKPOINTS: Record<CoBreakpoints, number> = {
   small: 768,
   medium: 1024,
   large: 1408,
-  xlarge: 1736,
 };

@@ -7,5 +7,4 @@ export const DEFAULT_SPACING: Record<CoSpacing, number> = {
   small: 8,
   medium: 16,
   large: 24,
-  xlarge: 40,
 };
