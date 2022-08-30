@@ -48,6 +48,16 @@ export default {
       },
       control: { type: "boolean" },
     },
+    roundness: {
+      defaultValue: false,
+      description: "true일 경우 radius를 100px로 지정합니다. (default: false)",
+      table: {
+        type: {
+          summary: "boolean",
+        },
+      },
+      control: { type: "boolean" },
+    },
     disabled: {
       defaultValue: false,
       description: "true일 경우 button이 disabled 됩니다.",

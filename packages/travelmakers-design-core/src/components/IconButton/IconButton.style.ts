@@ -12,6 +12,7 @@ interface IconButtonStylesProps {
   variant?: TmPalette;
   size: TmSize;
   line?: boolean;
+  roundness?: boolean;
 }
 
 const sizes = {
@@ -41,11 +42,14 @@ const paddings = {
   small: 8,
   medium: 16,
   large: 16,
-  xlarge: 24,
 };
 
 export default createStyles(
-  (theme, { variant: _variant, size, line }: IconButtonStylesProps, getRef) => {
+  (
+    theme,
+    { variant: _variant, size, line, roundness }: IconButtonStylesProps,
+    getRef
+  ) => {
     const loading = getRef("loading");
     const inner = getRef("inner");
     const spinner = getRef("spinner");
@@ -101,7 +105,7 @@ export default createStyles(
             bottom: -2,
             left: -2,
             right: -2,
-            borderRadius: 4,
+            borderRadius: roundness ? theme.radius.round : 2,
             outline: `1px solid ${
               theme.palettes[variant][theme.colorScheme === "light" ? 0 : 0]
             }`,
@@ -142,7 +146,7 @@ export default createStyles(
             bottom: -2,
             left: -2,
             right: -2,
-            borderRadius: 4,
+            borderRadius: roundness ? theme.radius.round : 2,
             outline: `1px solid ${
               theme.palettes[variant][theme.colorScheme === "light" ? 0 : 0]
             }`,
@@ -158,7 +162,7 @@ export default createStyles(
       root: {
         ...sizes[size],
         ...defaultFontStyles(theme),
-        borderRadius: theme.radius.medium,
+        borderRadius: roundness ? theme.radius.round : theme.radius.small,
         position: "relative",
         padding: 0,
         lineHeight: 1,

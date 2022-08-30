@@ -29,6 +29,7 @@ export const IconButton: IconButtonComponent & { displayName?: string } =
         line,
         type = "button",
         disabled = false,
+        roundness = false,
         className,
         co,
         overrideStyles,
@@ -41,6 +42,7 @@ export const IconButton: IconButtonComponent & { displayName?: string } =
           variant: _variant,
           size,
           line,
+          roundness,
         },
         { overrideStyles, name: "Button" }
       );
