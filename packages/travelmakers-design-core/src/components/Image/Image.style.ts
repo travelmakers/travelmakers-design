@@ -33,12 +33,12 @@ export default createStyles((theme, { radius }: ImageStyles) => {
       height: "100%",
       color:
         theme.colorScheme === "dark"
-          ? theme.palettes.gray[2]
-          : theme.palettes.gray[8],
+          ? theme.palettes.primary[0]
+          : theme.palettes.primary[0],
       backgroundColor:
         theme.colorScheme === "dark"
-          ? theme.palettes.gray[8]
-          : theme.palettes.gray[2],
+          ? theme.palettes.primary[0]
+          : theme.palettes.primary[0],
       borderRadius: radius
         ? radius in theme.radius
           ? theme.radius[radius]
