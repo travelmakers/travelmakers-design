@@ -1673,9 +1673,9 @@ Textarea.parameters = { storySource: { source: "(props) => {\\n  return (\\n    
     
     // @ts-nocheck
     // @ts-ignore
-    var __STORY__ = "import React from \\"react\\";\\nimport { Spinner } from \\"../Spinner\\";\\n\\nexport default {\\n  title: \\"@travelmakers-design/core/Component/Spinner\\",\\n  component: Spinner,\\n  argTypes: {\\n    size: {\\n      defaultValue: \\"medium\\",\\n      options: [\\"xsmall\\", \\"small\\", \\"medium\\", \\"large\\", \\"xlarge\\"],\\n      control: { type: \\"inline-radio\\" },\\n    },\\n    color: {\\n      control: { type: \\"color\\" },\\n    },\\n  },\\n};\\n\\nexport const Default = (props) => {\\n  return <Spinner {...props} />;\\n};\\n";
+    var __STORY__ = "import React from \\"react\\";\\nimport { Spinner } from \\"../Spinner\\";\\n\\nexport default {\\n  title: \\"@travelmakers-design/core/Component/Spinner\\",\\n  component: Spinner,\\n  argTypes: {\\n    size: {\\n      defaultValue: \\"medium\\",\\n      description: \\"Spinner \uCEF4\uD3EC\uB10C\uD2B8\uC758 \uD06C\uAE30\uB97C \uC815\uD569\uB2C8\uB2E4.\\",\\n      options: [\\"xsmall\\", \\"small\\", \\"medium\\", \\"large\\"],\\n      control: { type: \\"inline-radio\\" },\\n    },\\n    color: {\\n      description: \\"Spinner \uCEF4\uD3EC\uB10C\uD2B8\uC758 \uC0C9\uC0C1\uC744 \uC815\uD569\uB2C8\uB2E4.\\",\\n      control: { type: \\"color\\" },\\n    },\\n  },\\n};\\n\\nexport const Default = (props) => {\\n  return <Spinner {...props} />;\\n};\\n";
     // @ts-ignore
-    var __LOCATIONS_MAP__ = {"Default":{"startLoc":{"col":23,"line":19},"endLoc":{"col":1,"line":21},"startBody":{"col":23,"line":19},"endBody":{"col":1,"line":21}}};
+    var __LOCATIONS_MAP__ = {"Default":{"startLoc":{"col":23,"line":21},"endLoc":{"col":1,"line":23},"startBody":{"col":23,"line":21},"endBody":{"col":1,"line":23}}};
     
 import React from "react";
 import { Spinner } from "../Spinner";
@@ -1686,10 +1686,12 @@ export default {
   argTypes: {
     size: {
       defaultValue: "medium",
-      options: ["xsmall", "small", "medium", "large", "xlarge"],
+      description: "Spinner \uCEF4\uD3EC\uB10C\uD2B8\uC758 \uD06C\uAE30\uB97C \uC815\uD569\uB2C8\uB2E4.",
+      options: ["xsmall", "small", "medium", "large"],
       control: { type: "inline-radio" },
     },
     color: {
+      description: "Spinner \uCEF4\uD3EC\uB10C\uD2B8\uC758 \uC0C9\uC0C1\uC744 \uC815\uD569\uB2C8\uB2E4.",
       control: { type: "color" },
     },
   },
@@ -1701,7 +1703,7 @@ export const Default = (props) => {
 
 
 
-Default.parameters = { storySource: { source: "(props) => {\\n  return <Spinner {...props} />;\\n}" }, ...Default.parameters };`,ee={Default:{startLoc:{col:23,line:27},endLoc:{col:1,line:29},startBody:{col:23,line:27},endBody:{col:1,line:29}}},P=`import React from "react";
+Default.parameters = { storySource: { source: "(props) => {\\n  return <Spinner {...props} />;\\n}" }, ...Default.parameters };`,ee={Default:{startLoc:{col:23,line:29},endLoc:{col:1,line:31},startBody:{col:23,line:29},endBody:{col:1,line:31}}},P=`import React from "react";
 import { Spinner } from "../Spinner";
 
 export default {
@@ -1710,10 +1712,12 @@ export default {
   argTypes: {
     size: {
       defaultValue: "medium",
-      options: ["xsmall", "small", "medium", "large", "xlarge"],
+      description: "Spinner \uCEF4\uD3EC\uB10C\uD2B8\uC758 \uD06C\uAE30\uB97C \uC815\uD569\uB2C8\uB2E4.",
+      options: ["xsmall", "small", "medium", "large"],
       control: { type: "inline-radio" },
     },
     color: {
+      description: "Spinner \uCEF4\uD3EC\uB10C\uD2B8\uC758 \uC0C9\uC0C1\uC744 \uC815\uD569\uB2C8\uB2E4.",
       control: { type: "color" },
     },
   },
@@ -1722,13 +1726,13 @@ export default {
 export const Default = (props) => {
   return <Spinner {...props} />;
 };
-`,ee={Default:{startLoc:{col:23,line:19},endLoc:{col:1,line:21},startBody:{col:23,line:19},endBody:{col:1,line:21}}},K=j.default={parameters:{storySource:{source:`
+`,ee={Default:{startLoc:{col:23,line:21},endLoc:{col:1,line:23},startBody:{col:23,line:21},endBody:{col:1,line:23}}},K=j.default={parameters:{storySource:{source:`
     
     // @ts-nocheck
     // @ts-ignore
-    var __STORY__ = "import React from \\"react\\";\\nimport { Spinner } from \\"../Spinner\\";\\n\\nexport default {\\n  title: \\"@travelmakers-design/core/Component/Spinner\\",\\n  component: Spinner,\\n  argTypes: {\\n    size: {\\n      defaultValue: \\"medium\\",\\n      options: [\\"xsmall\\", \\"small\\", \\"medium\\", \\"large\\", \\"xlarge\\"],\\n      control: { type: \\"inline-radio\\" },\\n    },\\n    color: {\\n      control: { type: \\"color\\" },\\n    },\\n  },\\n};\\n\\nexport const Default = (props) => {\\n  return <Spinner {...props} />;\\n};\\n";
+    var __STORY__ = "import React from \\"react\\";\\nimport { Spinner } from \\"../Spinner\\";\\n\\nexport default {\\n  title: \\"@travelmakers-design/core/Component/Spinner\\",\\n  component: Spinner,\\n  argTypes: {\\n    size: {\\n      defaultValue: \\"medium\\",\\n      description: \\"Spinner \uCEF4\uD3EC\uB10C\uD2B8\uC758 \uD06C\uAE30\uB97C \uC815\uD569\uB2C8\uB2E4.\\",\\n      options: [\\"xsmall\\", \\"small\\", \\"medium\\", \\"large\\"],\\n      control: { type: \\"inline-radio\\" },\\n    },\\n    color: {\\n      description: \\"Spinner \uCEF4\uD3EC\uB10C\uD2B8\uC758 \uC0C9\uC0C1\uC744 \uC815\uD569\uB2C8\uB2E4.\\",\\n      control: { type: \\"color\\" },\\n    },\\n  },\\n};\\n\\nexport const Default = (props) => {\\n  return <Spinner {...props} />;\\n};\\n";
     // @ts-ignore
-    var __LOCATIONS_MAP__ = {"Default":{"startLoc":{"col":23,"line":19},"endLoc":{"col":1,"line":21},"startBody":{"col":23,"line":19},"endBody":{"col":1,"line":21}}};
+    var __LOCATIONS_MAP__ = {"Default":{"startLoc":{"col":23,"line":21},"endLoc":{"col":1,"line":23},"startBody":{"col":23,"line":21},"endBody":{"col":1,"line":23}}};
     
 import React from "react";
 import { Spinner } from "../Spinner";
@@ -1739,10 +1743,12 @@ export default {
   argTypes: {
     size: {
       defaultValue: "medium",
-      options: ["xsmall", "small", "medium", "large", "xlarge"],
+      description: "Spinner \uCEF4\uD3EC\uB10C\uD2B8\uC758 \uD06C\uAE30\uB97C \uC815\uD569\uB2C8\uB2E4.",
+      options: ["xsmall", "small", "medium", "large"],
       control: { type: "inline-radio" },
     },
     color: {
+      description: "Spinner \uCEF4\uD3EC\uB10C\uD2B8\uC758 \uC0C9\uC0C1\uC744 \uC815\uD569\uB2C8\uB2E4.",
       control: { type: "color" },
     },
   },
@@ -1754,7 +1760,7 @@ export const Default = (props) => {
 
 
 
-Default.parameters = { storySource: { source: "(props) => {\\n  return <Spinner {...props} />;\\n}" }, ...Default.parameters };`,locationsMap:{default:{startLoc:{col:23,line:27},endLoc:{col:1,line:29},startBody:{col:23,line:27},endBody:{col:1,line:29}}}}},title:"@travelmakers-design/core/Component/Spinner",component:Z,argTypes:{size:{defaultValue:"medium",options:["xsmall","small","medium","large","xlarge"],control:{type:"inline-radio"}},color:{control:{type:"color"}}}},M=function(T){return Object(V.jsx)(Z,Object.assign({},T))};M.displayName="Default",M.parameters=Object.assign({storySource:{source:`(props) => {
+Default.parameters = { storySource: { source: "(props) => {\\n  return <Spinner {...props} />;\\n}" }, ...Default.parameters };`,locationsMap:{default:{startLoc:{col:23,line:29},endLoc:{col:1,line:31},startBody:{col:23,line:29},endBody:{col:1,line:31}}}}},title:"@travelmakers-design/core/Component/Spinner",component:Z,argTypes:{size:{defaultValue:"medium",description:"Spinner \uCEF4\uD3EC\uB10C\uD2B8\uC758 \uD06C\uAE30\uB97C \uC815\uD569\uB2C8\uB2E4.",options:["xsmall","small","medium","large"],control:{type:"inline-radio"}},color:{description:"Spinner \uCEF4\uD3EC\uB10C\uD2B8\uC758 \uC0C9\uC0C1\uC744 \uC815\uD569\uB2C8\uB2E4.",control:{type:"color"}}}},M=function(T){return Object(V.jsx)(Z,Object.assign({},T))};M.displayName="Default",M.parameters=Object.assign({storySource:{source:`(props) => {
   return <Spinner {...props} />;
 }`}},M.parameters)},"./packages/travelmakers-design-core/src/components/TextButton/stories/TextButton.stories.tsx":function(re,j,e){"use strict";e.r(j),e.d(j,"Default",function(){return k});var F=e("./node_modules/core-js/modules/es.object.assign.js"),U=e("./node_modules/@storybook/addon-docs/dist/esm/index.js"),W=e("./node_modules/react/index.js"),q=e("./node_modules/core-js/modules/es.object.keys.js"),G=e("./node_modules/core-js/modules/es.array.index-of.js"),X=e("./node_modules/core-js/modules/es.symbol.js"),z=e("./packages/travelmakers-design-styles/src/theme/TmProvider.tsx"),J=e("./packages/travelmakers-design-core/src/components/View/View.tsx"),Y=e("./node_modules/core-js/modules/es.string.small.js"),V=e("./packages/travelmakers-design-styles/src/tss/createStyles.ts"),w=e("./packages/travelmakers-design-styles/src/theme/defaultTheme.ts"),$=function(C){return{xsmall:{fontWeight:"normal",lineHeight:C.lineHeights.h6+"px",fontSize:C.fontSizes.h6},small:{fontWeight:"normal",lineHeight:C.lineHeights.h4+"px",fontSize:C.fontSizes.h4},medium:{fontWeight:"normal",lineHeight:C.lineHeights.h2+"px",fontSize:C.fontSizes.h2},large:{fontWeight:"normal",lineHeight:C.lineHeights.h1+"px",fontSize:C.fontSizes.h1}}},A=function(C){return{display:C?"block":"inline-block",width:C?"100%":"auto"}},Z=Object(V.a)(function(x,C,y){var d,s,i=C.color,v=C.size,_=C.fullWidth,o=C.family,t=C.underline,n=C.leftIcon,r=C.rightIcon,a=y("loading"),g=y("inner"),c=y("spinner"),l=i||x.colors.navy1;return{loading:(d={ref:a,pointerEvents:"none","&::before":{content:'""',position:"absolute",top:-1,left:-1,right:-1,bottom:-1,cursor:"not-allowed"}},d["."+g]={opacity:0},d["."+c]={display:"flex"},d),solid:(s={color:l==="white"?x.colors.white:x.colors.navy1,"&:not(:disabled):hover":{color:l==="white"?x.colors.white:x.colors.navy1},"&:not(:disabled):active":{color:l==="white"?x.colors.gray6:x.colors.navy2},"&:not(:disabled):focus-visible":{"&::before":{content:'""',position:"absolute",top:-2,bottom:-2,left:-2,right:-2,borderRadius:2}}},s["&:disabled:not(."+a+")"]={color:x.colors.gray5},s),root:Object.assign({},A(_),Object(w.b)(x),$(x)[v],{fontFamily:""+o,borderRadius:x.radius.small,backgroundColor:"transparent",position:"relative",lineHeight:1,WebkitTapHighlightColor:"transparent",userSelect:"none",textDecoration:t?"underline":"none",textUnderlinePosition:"under",boxSizing:"border-box",cursor:"pointer",appearance:"none",WebkitAppearance:"none",outline:"none",border:"none","&:not(:disabled):active":{transform:"translateY(1px)"},"&:disabled":{cursor:"not-allowed"}}),icon:{display:"flex",alignItems:"center"},leftIcon:{},rightIcon:{},inner:{ref:g,display:"flex",alignItems:"center",justifyContent:"center",height:"100%",overflow:"visible"},label:{whiteSpace:"nowrap",height:"100%",display:"flex",alignItems:"center"}}}),P=e("./node_modules/react/jsx-runtime.js"),ee=["children","component","family","size","color","fullWidth","type","disabled","underline","leftIcon","rightIcon","className","co","overrideStyles"];function K(x,C){if(x==null)return{};var y=M(x,C),d,s;if(Object.getOwnPropertySymbols){var i=Object.getOwnPropertySymbols(x);for(s=0;s<i.length;s++)d=i[s],!(C.indexOf(d)>=0)&&(!Object.prototype.propertyIsEnumerable.call(x,d)||(y[d]=x[d]))}return y}function M(x,C){if(x==null)return{};var y={},d=Object.keys(x),s,i;for(i=0;i<d.length;i++)s=d[i],!(C.indexOf(s)>=0)&&(y[s]=x[s]);return y}var D=Object(W.forwardRef)(function(x,C){var y=x.children,d=x.component,s=x.family,i=s===void 0?"Pretendard":s,v=x.size,_=v===void 0?"medium":v,o=x.color,t=o===void 0?"navy":o,n=x.fullWidth,r=n===void 0?!1:n,a=x.type,g=a===void 0?"button":a,c=x.disabled,l=c===void 0?!1:c,m=x.underline,f=m===void 0?!1:m,u=x.leftIcon,p=x.rightIcon,O=x.className,b=x.co,E=x.overrideStyles,h=K(x,ee),B=Object(z.c)(),L=Z({color:t,size:_,fullWidth:r,family:i,underline:f,leftIcon:u,rightIcon:p},{overrideStyles:E,name:"Button"}),S=L.classes,Q=L.cx;return Object(P.jsx)(J.a,Object.assign({component:d||"button",ref:C,type:g,disabled:l,className:Q(S.root,S.solid,O),co:b,onTouchStart:function(){}},h,{children:Object(P.jsxs)("div",{className:S.inner,children:[u&&Object(P.jsxs)("span",{className:Q(S.icon,S.leftIcon),children:[u,"\xA0"]}),Object(P.jsx)("span",{className:S.label,children:y}),p&&Object(P.jsxs)("span",{className:Q(S.icon,S.rightIcon),children:["\xA0",p]})]})}))});D.displayName="@travelmakers-design/core/TextButton";var T=`
     
