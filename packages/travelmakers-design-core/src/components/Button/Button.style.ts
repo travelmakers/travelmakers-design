@@ -43,35 +43,28 @@ const getFontStyles = (theme: TmTheme) => ({
   xsmall: {
     fontFamily: "Pretendard",
     fontWeight: "normal",
-    lineHeight: theme.lineHeights.caption,
+    lineHeight: `${theme.lineHeights.caption}px`,
     fontSize: theme.fontSizes.caption,
   },
 
   small: {
     fontFamily: "Pretendard",
     fontWeight: "normal",
-    lineHeight: theme.lineHeights.b3,
+    lineHeight: `${theme.lineHeights.b3}px`,
     fontSize: theme.fontSizes.b3,
   },
 
   medium: {
     fontFamily: "Pretendard",
     fontWeight: "normal",
-    lineHeight: theme.lineHeights.b2,
+    lineHeight: `${theme.lineHeights.b2}px`,
     fontSize: theme.fontSizes.b2,
   },
 
   large: {
     fontFamily: "Pretendard",
     fontWeight: "normal",
-    lineHeight: theme.lineHeights.h5,
-    fontSize: theme.fontSizes.h5,
-  },
-
-  xlarge: {
-    fontFamily: "Pretendard",
-    fontWeight: "normal",
-    lineHeight: theme.lineHeights.h5,
+    lineHeight: `${theme.lineHeights.h5}px`,
     fontSize: theme.fontSizes.h5,
   },
 });
@@ -199,7 +192,7 @@ export default createStyles(
         ...getFontStyles(theme)[size],
         borderRadius: roundness ? theme.radius.round : theme.radius.small,
         position: "relative",
-        lineHeight: 1,
+        lineHeight: `${1}px`,
         WebkitTapHighlightColor: "transparent",
         userSelect: "none",
         boxSizing: "border-box",

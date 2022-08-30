@@ -150,6 +150,7 @@ export default createStyles(
         fontWeight: strong ? (family === "Noto Serif KR" ? 600 : 700) : 400,
         fontStyle: italic ? "italic" : "normal",
         textDecoration: underline ? "underline" : "none",
+        textUnderlinePosition: "under",
       },
 
       root: {

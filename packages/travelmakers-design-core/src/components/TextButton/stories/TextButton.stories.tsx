@@ -8,13 +8,13 @@ import {
   Title,
 } from "@storybook/addon-docs";
 
-import { Button } from "../TextButton";
 import { Meta } from "@storybook/react";
 import React from "react";
+import { TextButton } from "../TextButton";
 
 export default {
   title: "@travelmakers-design/core/Component/TextButton",
-  component: Button,
+  component: TextButton,
   argTypes: {
     size: {
       defaultValue: "medium",
@@ -27,10 +27,10 @@ export default {
       },
       control: { type: "inline-radio" },
     },
-    variant: {
-      defaultValue: "primary",
-      description: "Button 컴포넌트의 색상을 정합니다.",
-      options: ["primary", "secondary", "tertiary"],
+    family: {
+      defaultValue: "Pretendard",
+      description: "Typography 컴포넌트의 font-family를 정합니다.",
+      options: ["Noto Serif KR", "Pretendard", "PT Serif"],
       table: {
         type: {
           summary: "string",
@@ -38,25 +38,16 @@ export default {
       },
       control: { type: "inline-radio" },
     },
-    line: {
-      defaultValue: false,
-      description: "Button 컴포넌트의 모양을 지정합니다.",
+    color: {
+      defaultValue: "navy",
+      description: "Button 컴포넌트의 색상을 정합니다.",
+      options: ["navy", "white"],
       table: {
         type: {
-          summary: "boolean",
+          summary: "string",
         },
       },
-      control: { type: "boolean" },
-    },
-    roundness: {
-      defaultValue: false,
-      description: "true일 경우 radius를 100px로 지정합니다. (default: false)",
-      table: {
-        type: {
-          summary: "boolean",
-        },
-      },
-      control: { type: "boolean" },
+      control: { type: "inline-radio" },
     },
     fullWidth: {
       defaultValue: false,
@@ -71,6 +62,16 @@ export default {
     disabled: {
       defaultValue: false,
       description: "true일 경우 button이 disabled 됩니다.",
+      table: {
+        type: {
+          summary: "boolean",
+        },
+      },
+      control: { type: "boolean" },
+    },
+    underline: {
+      defaultValue: false,
+      description: "true일 경우 Text가 underline 됩니다.",
       table: {
         type: {
           summary: "boolean",
@@ -119,9 +120,5 @@ export default {
 } as Meta;
 
 export const Default = (props) => {
-  return (
-    <div style={{ margin: "0 auto" }}>
-      <Button {...props}>Button</Button>
-    </div>
-  );
+  return <TextButton {...props}>Button</TextButton>;
 };

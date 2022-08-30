@@ -9,9 +9,7 @@ import {
   useTmTheme,
 } from "@travelmakers-design/styles";
 import React, { forwardRef } from "react";
-import { Spinner, SpinnerProps } from "../Spinner";
 
-import { TM_HEIGHTS } from "../../constants";
 import { View } from "../View";
 import useStyles from "./TextButton.style";
 
@@ -22,9 +20,6 @@ export type ButtonPalette = "navy" | "white" | (string & {});
 export interface SharedButtonProps extends TmComponentProps<ButtonStylesNames> {
   /** Button 컴포넌트의 크기를 정합니다. */
   size?: TmSize;
-
-  /** Button 컴포넌트의 색상을 정합니다. */
-  variant?: TmPalette;
 
   /** Button 컴포넌트의 font-family를 정합니다. */
   family?: TmFontFamily;
@@ -47,6 +42,9 @@ export interface SharedButtonProps extends TmComponentProps<ButtonStylesNames> {
   /** true일 경우 button이 disabled 됩니다. */
   disabled?: boolean;
 
+  /** true일 경우 Text가 underline 됩니다. */
+  underline?: boolean;
+
   /** Button 컴포넌트 좌측 영역에 요소를 추가합니다. */
   leftIcon?: React.ReactNode;
 
@@ -61,74 +59,73 @@ type ButtonComponent = <C extends React.ElementType = "button">(
   props: ButtonProps<C>
 ) => React.ReactElement;
 
-export const Button: ButtonComponent & { displayName?: string } = forwardRef(
-  <C extends React.ElementType = "button">(
-    {
-      children,
-      component,
-      family = "Noto Serif KR",
-      size = "medium",
-      variant: _variant,
-      color = "navy",
-      line,
-      roundness = false,
-      fullWidth = false,
-      type = "button",
-      disabled = false,
-      leftIcon,
-      rightIcon,
-      className,
-      co,
-      overrideStyles,
-      ...props
-    }: ButtonProps<C>,
-    ref: PolymorphicRef<C>
-  ) => {
-    const theme = useTmTheme();
-    const { classes, cx } = useStyles(
+export const TextButton: ButtonComponent & { displayName?: string } =
+  forwardRef(
+    <C extends React.ElementType = "button">(
       {
-        variant: _variant,
-        size,
-        fullWidth,
-        roundness,
-        line,
-      },
-      { overrideStyles, name: "Button" }
-    );
+        children,
+        component,
+        family = "Pretendard",
+        size = "medium",
+        color: _color = "navy",
+        fullWidth = false,
+        type = "button",
+        disabled = false,
+        underline = false,
+        leftIcon,
+        rightIcon,
+        className,
+        co,
+        overrideStyles,
+        ...props
+      }: ButtonProps<C>,
+      ref: PolymorphicRef<C>
+    ) => {
+      const theme = useTmTheme();
+      const { classes, cx } = useStyles(
+        {
+          color: _color,
+          size,
+          fullWidth,
+          family,
+          underline,
+          leftIcon,
+          rightIcon,
+        },
+        { overrideStyles, name: "Button" }
+      );
 
-    return (
-      <View<any>
-        component={component || "button"}
-        ref={ref}
-        type={type}
-        disabled={disabled}
-        className={cx(
-          classes.root,
-          classes[line ? "ghost" : "solid"],
-          className
-        )}
-        co={co}
-        onTouchStart={() => {}}
-        {...props}
-      >
-        <div className={classes.inner}>
-          {leftIcon && (
-            <span className={cx(classes.icon, classes.leftIcon)}>
-              {leftIcon}
-            </span>
-          )}
+      return (
+        <View<any>
+          component={component || "button"}
+          ref={ref}
+          type={type}
+          disabled={disabled}
+          className={cx(classes.root, classes["solid"], className)}
+          co={co}
+          onTouchStart={() => {}}
+          {...props}
+        >
+          <div className={classes.inner}>
+            {leftIcon && (
+              <span className={cx(classes.icon, classes.leftIcon)}>
+                {leftIcon}
+                &nbsp;
+              </span>
+            )}
 
-          <span className={classes.label}>{children}</span>
+            <span className={classes.label}>{children}</span>
 
-          {rightIcon && (
-            <span className={cx(classes.icon, classes.rightIcon)}>
-              {rightIcon}
-            </span>
-          )}
-        </div>
-      </View>
-    );
-  }
-);
+            {rightIcon && (
+              <span className={cx(classes.icon, classes.rightIcon)}>
+                &nbsp;
+                {rightIcon}
+              </span>
+            )}
+          </div>
+        </View>
+      );
+    }
+  );
 
-Button.displayName = "@travelmakers-design/core/TextButton";
+TextButton.displayName = "@travelmakers-design/core/TextButton";

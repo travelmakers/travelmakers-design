@@ -1,4 +1,5 @@
 import {
+  TmFontFamily,
   TmPalette,
   TmSize,
   TmTheme,
@@ -6,80 +7,41 @@ import {
   defaultFontStyles,
 } from "@travelmakers-design/styles";
 
-import { TM_HEIGHTS } from "../../constants";
-import { addAlpha } from "../../utils";
-
 interface ButtonStylesProps {
-  variant?: TmPalette;
+  color?: TmPalette;
   size: TmSize;
   fullWidth: boolean;
-  roundness?: boolean;
-  line?: boolean;
+  family?: TmFontFamily;
+  underline?: boolean;
+  leftIcon?: React.ReactNode;
+  rightIcon?: React.ReactNode;
 }
-
-const sizes = {
-  xsmall: {
-    height: TM_HEIGHTS.xsmall,
-    padding: "0 24px",
-  },
-
-  small: {
-    height: TM_HEIGHTS.small,
-    padding: "0 24px",
-  },
-
-  medium: {
-    height: TM_HEIGHTS.medium,
-    padding: "0 24px",
-  },
-
-  large: {
-    height: TM_HEIGHTS.large,
-    padding: "0 24px",
-  },
-};
 
 const getFontStyles = (theme: TmTheme) => ({
   xsmall: {
-    fontFamily: "Pretendard",
     fontWeight: "normal",
-    lineHeight: theme.lineHeights.caption,
-    fontSize: theme.fontSizes.caption,
+    lineHeight: `${theme.lineHeights.h6}px`,
+    fontSize: theme.fontSizes.h6,
   },
 
   small: {
-    fontFamily: "Pretendard",
     fontWeight: "normal",
-    lineHeight: theme.lineHeights.b3,
-    fontSize: theme.fontSizes.b3,
+    lineHeight: `${theme.lineHeights.h4}px`,
+    fontSize: theme.fontSizes.h4,
   },
 
   medium: {
-    fontFamily: "Pretendard",
     fontWeight: "normal",
-    lineHeight: theme.lineHeights.b2,
-    fontSize: theme.fontSizes.b2,
+    lineHeight: `${theme.lineHeights.h2}px`,
+    fontSize: theme.fontSizes.h2,
   },
 
   large: {
-    fontFamily: "Pretendard",
     fontWeight: "normal",
-    lineHeight: theme.lineHeights.h5,
-    fontSize: theme.fontSizes.h5,
-  },
-
-  xlarge: {
-    fontFamily: "Pretendard",
-    fontWeight: "normal",
-    lineHeight: theme.lineHeights.h5,
-    fontSize: theme.fontSizes.h5,
+    lineHeight: `${theme.lineHeights.h1}px`,
+    fontSize: theme.fontSizes.h1,
   },
 });
-
-export const heights = Object.keys(sizes).reduce((acc, size) => {
-  acc[size] = sizes[size].height;
-  return acc;
-}, {} as Record<TmSize, number>);
 
 const getWidthStyles = (fullWidth: boolean) => ({
   display: fullWidth ? "block" : "inline-block",
@@ -89,13 +51,21 @@ const getWidthStyles = (fullWidth: boolean) => ({
 export default createStyles(
   (
     theme,
-    { variant: _variant, size, fullWidth, roundness, line }: ButtonStylesProps,
+    {
+      color: _color,
+      size,
+      fullWidth,
+      family,
+      underline,
+      leftIcon,
+      rightIcon,
+    }: ButtonStylesProps,
     getRef
   ) => {
     const loading = getRef("loading");
     const inner = getRef("inner");
     const spinner = getRef("spinner");
-    const variant = _variant || theme.colors.navy1;
+    const color = _color || theme.colors.navy1;
 
     return {
       loading: {
@@ -123,18 +93,14 @@ export default createStyles(
 
       // ANCHOR: line(solid)
       solid: {
-        backgroundColor:
-          theme.palettes[variant][theme.colorScheme === "light" ? 0 : 0],
-        color: variant === "white" ? theme.colors.navy1 : theme.colors.white,
+        color: color === "white" ? theme.colors.white : theme.colors.navy1,
 
         "&:not(:disabled):hover": {
-          backgroundColor:
-            theme.palettes[variant][theme.colorScheme === "light" ? 1 : 1],
+          color: color === "white" ? theme.colors.white : theme.colors.navy1,
         },
 
         "&:not(:disabled):active": {
-          backgroundColor:
-            theme.palettes[variant][theme.colorScheme === "light" ? 2 : 2],
+          color: color === "white" ? theme.colors.gray6 : theme.colors.navy2,
         },
 
         "&:not(:disabled):focus-visible": {
@@ -145,108 +111,29 @@ export default createStyles(
             bottom: -2,
             left: -2,
             right: -2,
-            borderRadius: roundness ? theme.radius.round : 2,
-            outline: `1px solid ${
-              theme.palettes[variant][theme.colorScheme === "light" ? 0 : 0]
-            }`,
+            borderRadius: 2,
           },
         },
 
         [`&:disabled:not(.${loading})`]: {
-          backgroundColor: theme.colors.gray5,
-          color: line ? theme.colors.black : theme.colors.white,
+          color: theme.colors.gray5,
         },
       },
-
-      // ANCHOR: line(ghost)
-      ghost: {
-        backgroundColor: theme.colors.transparent,
-        border: `1px solid ${
-          theme.palettes[variant][theme.colorScheme === "light" ? 0 : 0]
-        }`,
-        // color: theme.palettes[color][theme.colorScheme === "light" ? 0 : 0],
-        color:
-          variant === "white" ? theme.colors.white : theme.palettes[variant][0],
-
-        "&:not(:disabled):focus-visible": {
-          "&::before": {
-            content: '""',
-            position: "absolute",
-            top: -2,
-            bottom: -2,
-            left: -2,
-            right: -2,
-            borderRadius: roundness ? theme.radius.round : 2,
-            outline: `1px solid ${
-              theme.palettes[variant][theme.colorScheme === "light" ? 0 : 0]
-            }`,
-          },
-        },
-
-        [`&:disabled:not(.${loading})`]: {
-          color: addAlpha(theme.palettes[variant][1], theme.opacity.opacity3),
-          border: `1px solid ${addAlpha(
-            theme.palettes[variant][1],
-            theme.opacity.opacity3
-          )}`,
-        },
-      },
-
-      // text: {
-      //   backgroundColor: "transparent",
-      //   color: theme.palettes[variant][theme.colorScheme === "light" ? 0 : 0],
-
-      //   "&:not(:disabled):hover": {
-      //     backgroundColor: addAlpha(
-      //       theme.palettes[variant][theme.colorScheme === "light" ? 1 : 1],
-      //       theme.opacity.opacity2
-      //     ),
-      //   },
-
-      //   "&:not(:disabled):active": {
-      //     backgroundColor: addAlpha(
-      //       theme.palettes[variant][theme.colorScheme === "light" ? 2 : 2],
-      //       theme.opacity.opacity3
-      //     ),
-      //   },
-
-      //   "&:not(:disabled):focus-visible": {
-      //     outline: `1px solid ${
-      //       theme.palettes[variant][theme.colorScheme === "light" ? 0 : 0]
-      //     }`,
-
-      //     "&::before": {
-      //       content: '""',
-      //       position: "absolute",
-      //       top: -2,
-      //       bottom: -2,
-      //       left: -3,
-      //       right: -3,
-      //       borderRadius: 4,
-      //       outline: `1px solid ${
-      //         theme.palettes[variant][theme.colorScheme === "light" ? 0 : 0]
-      //       }`,
-      //     },
-      //   },
-
-      //   [`&:disabled:not(.${loading})`]: {
-      //     backgroundColor: theme.colors.gray5,
-      //     color: line ? theme.colors.black : theme.colors.white,
-      //   },
-      // },
 
       root: {
-        ...sizes[size],
         ...getWidthStyles(fullWidth),
         ...defaultFontStyles(theme),
         ...getFontStyles(theme)[size],
-        borderRadius: roundness ? theme.radius.round : theme.radius.small,
+        fontFamily: `${family}`,
+        borderRadius: theme.radius.small,
+        backgroundColor: "transparent",
         position: "relative",
         lineHeight: 1,
         WebkitTapHighlightColor: "transparent",
         userSelect: "none",
+        textDecoration: underline ? "underline" : "none",
+        textUnderlinePosition: "under",
         boxSizing: "border-box",
-        textDecoration: "none",
         cursor: "pointer",
         appearance: "none",
         WebkitAppearance: "none",
@@ -268,11 +155,11 @@ export default createStyles(
       },
 
       leftIcon: {
-        marginRight: 10,
+        // marginRight: 10,
       },
 
       rightIcon: {
-        marginLeft: 10,
+        // marginLeft: 10,
       },
 
       inner: {
@@ -287,21 +174,8 @@ export default createStyles(
       label: {
         whiteSpace: "nowrap",
         height: "100%",
-        overflow: "hidden",
         display: "flex",
         alignItems: "center",
-      },
-
-      spinnerWrapper: {
-        ref: spinner,
-        position: "absolute",
-        top: 0,
-        right: 0,
-        bottom: 0,
-        left: 0,
-        display: "none",
-        alignItems: "center",
-        justifyContent: "center",
       },
     };
   }
