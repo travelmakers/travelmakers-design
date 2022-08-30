@@ -7,10 +7,12 @@ export default {
   argTypes: {
     size: {
       defaultValue: "medium",
-      options: ["xsmall", "small", "medium", "large", "xlarge"],
+      description: "Spinner 컴포넌트의 크기를 정합니다.",
+      options: ["xsmall", "small", "medium", "large"],
       control: { type: "inline-radio" },
     },
     color: {
+      description: "Spinner 컴포넌트의 색상을 정합니다.",
       control: { type: "color" },
     },
   },
