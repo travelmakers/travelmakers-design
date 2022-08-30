@@ -1,18 +1,20 @@
 import {
   CoRadius,
-  TmSize,
+  TmFontSize,
   createStyles,
   defaultFontStyles,
 } from "@travelmakers-design/styles";
 
+import { InputDescriptionType } from "./Input";
 import { TM_HEIGHTS } from "../../constants";
 import { getFieldValue } from "../../utils";
 
 interface InputStyles {
-  radius: CoRadius | number;
-  size: TmSize;
+  roundness: boolean;
   multiline: boolean;
   invalid: boolean;
+  width?: number;
+  descriptionType?: InputDescriptionType;
 }
 
 const FONT_SIZES = {
@@ -24,7 +26,10 @@ const FONT_SIZES = {
 };
 
 export default createStyles(
-  (theme, { size, multiline, radius, invalid }: InputStyles) => {
+  (
+    theme,
+    { multiline, roundness, invalid, width, descriptionType }: InputStyles
+  ) => {
     const invalidColor = theme.colors.red2;
 
     return {
@@ -34,34 +39,33 @@ export default createStyles(
 
       input: {
         ...defaultFontStyles(theme),
-        height: multiline ? "auto" : getFieldValue(size, TM_HEIGHTS),
+        height: multiline ? "auto" : 44,
         WebkitTapHighlightColor: "transparent",
-        lineHeight: multiline
-          ? theme.lineHeight
-          : `${getFieldValue(size, TM_HEIGHTS) - 2}px`,
+        lineHeight: multiline ? theme.lineHeight : theme.lineHeights.b2,
         appearance: "none",
         resize: "none",
         boxSizing: "border-box",
-        fontSize: getFieldValue(size, FONT_SIZES),
-        width: "100%",
-        color: theme.colors.gray1,
+        fontSize: theme.fontSizes.b2,
+        width: width ? `${width}px` : "100%",
+        color: theme.colors.gray2,
         display: "block",
         textAlign: "left",
-        minHeight: getFieldValue(size, TM_HEIGHTS),
-        paddingLeft: getFieldValue(size, TM_HEIGHTS) / 3,
-        paddingRight: getFieldValue(size, TM_HEIGHTS) / 3,
-        borderRadius: getFieldValue(radius, theme.radius),
-        border: `1px solid ${theme.colors.gray1}`,
+        paddingLeft: 16,
+        paddingRight: 16,
+        borderRadius: roundness ? theme.radius.round : 2,
+        border: `1px solid ${theme.colors.gray5}`,
         backgroundColor: theme.colors.white,
 
         "&:focus, &:focus-within": {
           outline: "none",
           borderColor: theme.colors.gray1,
+          color: theme.colors.gray1,
         },
 
         "&:disabled": {
           backgroundColor: theme.colors.gray7,
-          color: theme.colors.gray5,
+          borderColor: theme.colors.gray5,
+          color: theme.colors.gray3,
           opacity: 0.6,
           cursor: "not-allowed",
 
@@ -87,21 +91,20 @@ export default createStyles(
       },
 
       withIcon: {
-        paddingLeft: `${getFieldValue(size, TM_HEIGHTS)}px !important`,
+        paddingLeft: 48,
       },
 
       invalid: {
-        // color: `${invalidColor} !important`,
-        borderColor: `${invalidColor} !important`,
+        borderColor: `${invalidColor}`,
 
         "&::placeholder": {
           opacity: 1,
-          // color: `${invalidColor} !important`,
         },
       },
 
       disabled: {
         backgroundColor: theme.colors.gray7,
+        borderColor: theme.colors.gray5,
         color: theme.colors.gray5,
         opacity: 0.6,
         cursor: "not-allowed",
@@ -120,13 +123,13 @@ export default createStyles(
         bottom: 0,
         display: "flex",
         alignItems: "center",
-        justifyContent: "center",
-        width: getFieldValue(size, TM_HEIGHTS),
-        color: invalid ? theme.colors.red2 : theme.colors.gray1,
+        justifyContent: "flex-end",
+        width: "44px",
+        color: theme.colors.gray1,
 
         svg: {
-          width: "50%",
-          height: "50%",
+          width: "24px",
+          height: "100%",
         },
       },
 
@@ -137,7 +140,7 @@ export default createStyles(
         right: 0,
         display: "flex",
         alignItems: "center",
-        justifyContent: "center",
+        justifyContent: "flex-start",
       },
     };
   }

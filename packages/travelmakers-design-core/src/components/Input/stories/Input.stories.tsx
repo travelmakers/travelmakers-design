@@ -6,27 +6,98 @@ export default {
   title: "@travelmakers-design/core/Component/Input",
   component: Input,
   argTypes: {
-    placeholder: {
-      defaultValue: "Placeholder",
+    width: {
+      defaultValue: 328,
+      description: "Input 컴포넌트 너비를 설정합니다. (default:100%)",
+      table: {
+        type: {
+          summary: "number",
+        },
+      },
+      control: { type: "number" },
+    },
+    label: {
+      defaultValue: "레이블",
+      description: "Input 컴포넌트 상단 영역에 요소가 추가됩니다.",
+      table: {
+        type: {
+          summary: "string",
+        },
+      },
       control: { type: "text" },
     },
-    size: {
-      defaultValue: "medium",
-      options: ["xsmall", "small", "medium", "large", "xlarge"],
+    description: {
+      defaultValue: "설명을 입력해주세요.",
+      description:
+        "Input 컴포넌트 하단 영역에 요소가 추가됩니다. (descriptionType이 error, sccess의 경우 `invalid:true`일 때에만 표출됩니다.)",
+      table: {
+        type: {
+          summary: "string",
+        },
+      },
+      control: { type: "text" },
+    },
+    descriptionType: {
+      defaultValue: "description",
+      description: "description의 타입을 설정합니다.",
+      options: ["description", "error", "success"],
+      table: {
+        type: {
+          summary: "string",
+        },
+      },
       control: { type: "inline-radio" },
     },
-    radius: {
-      defaultValue: "small",
-      options: ["small", "medium", "large", "round", "circular"],
-      control: { type: "inline-radio" },
+    placeholder: {
+      defaultValue: "Placeholder",
+      description:
+        "Input 컴포넌트 요소에 입력될 값에 대한 짧은 힌트를 명시합니다.",
+      table: {
+        type: {
+          summary: "string",
+        },
+      },
+      control: { type: "text" },
+    },
+    roundness: {
+      defaultValue: false,
+      description: " true일 경우 radius를 100px로 지정합니다. (default: false)",
+      table: {
+        type: {
+          summary: "boolean",
+        },
+      },
+      control: { type: "boolean" },
     },
     invalid: {
       defaultValue: false,
+      description: "invalid 상태가 됩니다. 테두리 색상이 red로 변경됩니다.",
+      table: {
+        type: {
+          summary: "boolean",
+        },
+      },
       control: { type: "boolean" },
     },
     disabled: {
       defaultValue: false,
+      description: "disabled 상태가 됩니다.",
+      table: {
+        type: {
+          summary: "boolean",
+        },
+      },
       control: { type: "boolean" },
+    },
+    rightSection: {
+      defaultValue: "",
+      description: "Input 컴포넌트 오른쪽 영역에 요소가 추가됩니다.",
+      table: {
+        type: {
+          summary: "React.ReactNode",
+        },
+      },
+      control: { type: "text" },
     },
   },
 };
@@ -41,38 +112,17 @@ const Icon = () => (
 );
 
 export const Default = (props) => {
-  return (
-    <div style={{ width: 400, padding: 24 }}>
-      <Input {...props} />
-    </div>
-  );
+  return <Input {...props} />;
 };
 
 export const WithIcon = (props) => {
-  return (
-    <div style={{ width: 400, padding: 24 }}>
-      <Input icon={<Icon />} {...props} />
-    </div>
-  );
+  return <Input icon={<Icon />} {...props} />;
 };
 
 export const WithRightSection = (props) => {
-  // const withTooltip = (
-  //   <Tooltip label="Tutorial" placement="bottom">
-  //     Info
-  //   </Tooltip>
-  // );
+  const withRight = "인증완료";
 
-  return (
-    <div style={{ width: 400, padding: 24 }}>
-      <Input
-        icon={<Icon />}
-        // rightSection={withTooltip}
-        rightSectionWidth={50}
-        {...props}
-      />
-    </div>
-  );
+  return <Input icon={<Icon />} {...props} rightSection={withRight} />;
 };
 
 export const Textarea = (props) => {

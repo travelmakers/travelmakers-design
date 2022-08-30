@@ -2,9 +2,11 @@ import {
   ClassNames,
   PolymorphicComponentProps,
   PolymorphicRef,
+  TmColor,
   TmComponentProps,
   TmFontFamily,
   TmFontSize,
+  TmPalette,
   useTmTheme,
 } from "@travelmakers-design/styles";
 import React, { forwardRef } from "react";
@@ -39,6 +41,9 @@ export interface SharedTypographyProps
   /** true일 경우 Text가 underline 됩니다. */
   underline?: boolean;
 
+  /** Text가 컴포넌트의 색상을 정합니다. */
+  color?: TmPalette | TmColor | string;
+
   /** mobile일 경우의 Typography 컴포넌트의 크기를 지정합니다. */
   mobileLevel?: TmFontSize;
 
@@ -68,6 +73,7 @@ export const Typography: TypographyComponent & { displayName?: string } =
         strong = false,
         italic = false,
         underline = false,
+        color,
         className,
         co,
         overrideStyles,
@@ -85,6 +91,7 @@ export const Typography: TypographyComponent & { displayName?: string } =
           italic,
           underline,
           textAlign,
+          color,
           mobile: mobileLevel,
           tablet: tabletLevel,
         },

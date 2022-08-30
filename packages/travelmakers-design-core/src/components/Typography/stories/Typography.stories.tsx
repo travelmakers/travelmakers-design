@@ -36,7 +36,7 @@ export default {
           summary: "string",
         },
       },
-      control: { type: "inline-radio" },
+      control: { type: "select" },
     },
     family: {
       defaultValue: "Noto Serif KR",
@@ -120,7 +120,7 @@ export default {
           summary: "string",
         },
       },
-      control: { type: "inline-radio" },
+      control: { type: "select" },
     },
     tabletLevel: {
       defaultValue: "",
@@ -142,7 +142,7 @@ export default {
           summary: "string",
         },
       },
-      control: { type: "inline-radio" },
+      control: { type: "select" },
     },
   },
   parameters: {

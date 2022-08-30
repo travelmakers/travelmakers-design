@@ -1,6 +1,8 @@
 import {
+  TmColor,
   TmFontFamily,
   TmFontSize,
+  TmPalette,
   TmSize,
   TmTheme,
   createStyles,
@@ -20,6 +22,7 @@ interface TypographyStylesProps {
   strong?: boolean;
   italic?: boolean;
   underline?: boolean;
+  color?: TmPalette | TmColor | string;
 }
 
 const sizes = {
@@ -113,6 +116,7 @@ export default createStyles(
       strong,
       italic,
       underline,
+      color,
       mobile,
       tablet,
     }: TypographyStylesProps,
@@ -158,7 +162,11 @@ export default createStyles(
         ...getWidthStyles(),
         ...getFontStyles(theme)[level],
         fontFamily: `${family}`,
-        color: disabled ? theme.colors.gray5 : theme.colors.black,
+        color: disabled
+          ? theme.colors.gray5
+          : color
+          ? color
+          : theme.colors.black,
         position: "relative",
         WebkitTapHighlightColor: "transparent",
         appearance: "none",
