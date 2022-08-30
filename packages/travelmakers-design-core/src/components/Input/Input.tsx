@@ -41,7 +41,7 @@ export interface InputBaseProps {
 
   /**
    * invalid 상태가 됩니다.
-   * 테두리와 텍스트 색상이 red로 변경됩니다.
+   * 테두리 색상이 red로 변경됩니다.
    */
   invalid?: boolean;
 

@@ -25,8 +25,7 @@ const FONT_SIZES = {
 
 export default createStyles(
   (theme, { size, multiline, radius, invalid }: InputStyles) => {
-    const invalidColor =
-      theme.palettes.red[theme.colorScheme === "dark" ? 5 : 6];
+    const invalidColor = theme.colors.red2;
 
     return {
       wrapper: {
@@ -45,60 +44,36 @@ export default createStyles(
         boxSizing: "border-box",
         fontSize: getFieldValue(size, FONT_SIZES),
         width: "100%",
-        color:
-          theme.colorScheme === "dark"
-            ? theme.palettes.gray[0]
-            : theme.palettes.gray[9],
+        color: theme.colors.gray1,
         display: "block",
         textAlign: "left",
         minHeight: getFieldValue(size, TM_HEIGHTS),
         paddingLeft: getFieldValue(size, TM_HEIGHTS) / 3,
         paddingRight: getFieldValue(size, TM_HEIGHTS) / 3,
         borderRadius: getFieldValue(radius, theme.radius),
-        border: `1px solid ${
-          theme.colorScheme === "dark"
-            ? theme.palettes.gray[6]
-            : theme.palettes.gray[2]
-        }`,
-        backgroundColor:
-          theme.colorScheme === "dark"
-            ? theme.palettes.gray[8]
-            : theme.colors.white,
-        // transition: 'border-color 100ms ease',
+        border: `1px solid ${theme.colors.gray1}`,
+        backgroundColor: theme.colors.white,
 
         "&:focus, &:focus-within": {
-          outline: `1px solid ${
-            theme.palettes[theme.colors.navy1][
-              theme.colorScheme === "dark" ? 3 : 5
-            ]
-          }`,
-          borderColor:
-            theme.palettes[theme.colors.navy1][
-              theme.colorScheme === "dark" ? 3 : 5
-            ],
+          outline: "none",
+          borderColor: theme.colors.gray1,
         },
 
         "&:disabled": {
-          backgroundColor:
-            theme.colorScheme === "dark"
-              ? theme.palettes.gray[7]
-              : theme.palettes.gray[0],
-          color: theme.palettes.gray[6],
+          backgroundColor: theme.colors.gray7,
+          color: theme.colors.gray5,
           opacity: 0.6,
           cursor: "not-allowed",
 
           "&::placeholder": {
-            color: theme.palettes.gray[6],
+            color: theme.colors.gray5,
           },
         },
 
         "&::placeholder": {
           opacity: 1,
           userSelect: "none",
-          color:
-            theme.colorScheme === "dark"
-              ? theme.palettes.gray[4]
-              : theme.palettes.gray[4],
+          color: theme.colors.gray3,
         },
 
         "&::-webkit-inner-spin-button, &::-webkit-outer-spin-button, &::-webkit-search-decoration, &::-webkit-search-cancel-button, &::-webkit-search-results-button, &::-webkit-search-results-decoration":
@@ -116,30 +91,23 @@ export default createStyles(
       },
 
       invalid: {
-        color: `${invalidColor} !important`,
+        // color: `${invalidColor} !important`,
         borderColor: `${invalidColor} !important`,
 
         "&::placeholder": {
           opacity: 1,
-          color: `${invalidColor} !important`,
-        },
-
-        "&:focus, &:focus-within": {
-          borderWidth: 2,
+          // color: `${invalidColor} !important`,
         },
       },
 
       disabled: {
-        backgroundColor:
-          theme.colorScheme === "dark"
-            ? theme.palettes.gray[7]
-            : theme.palettes.gray[0],
-        color: theme.palettes.gray[6],
+        backgroundColor: theme.colors.gray7,
+        color: theme.colors.gray5,
         opacity: 0.6,
         cursor: "not-allowed",
 
         "&::placeholder": {
-          color: theme.palettes.gray[6],
+          color: theme.colors.gray5,
         },
       },
 
@@ -154,11 +122,7 @@ export default createStyles(
         alignItems: "center",
         justifyContent: "center",
         width: getFieldValue(size, TM_HEIGHTS),
-        color: invalid
-          ? theme.palettes.red[theme.colorScheme === "dark" ? 5 : 6]
-          : theme.colorScheme === "dark"
-          ? theme.palettes.gray[1]
-          : theme.palettes.gray[4],
+        color: invalid ? theme.colors.red2 : theme.colors.gray1,
 
         svg: {
           width: "50%",

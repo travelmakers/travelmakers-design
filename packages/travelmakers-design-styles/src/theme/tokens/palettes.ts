@@ -19,4 +19,6 @@ export const DEFAULT_PALETTES = {
   ],
 
   tertiary: [DEFAULT_COLORS.white, DEFAULT_COLORS.white, DEFAULT_COLORS.gray6],
+
+  red: [DEFAULT_COLORS.red2, DEFAULT_COLORS.red2, DEFAULT_COLORS.red1],
 } as Record<TmPalette, Tuple<string, 3>>;

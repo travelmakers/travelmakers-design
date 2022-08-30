@@ -16,7 +16,7 @@ export default {
       control: { type: "inline-radio" },
     },
     radius: {
-      defaultValue: "medium",
+      defaultValue: "small",
       options: ["small", "medium", "large", "round", "circular"],
       control: { type: "inline-radio" },
     },
