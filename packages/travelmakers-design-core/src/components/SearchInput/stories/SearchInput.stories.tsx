@@ -29,7 +29,7 @@ export default {
     },
     line: {
       defaultValue: true,
-      description: "disabled 상태가 됩니다.",
+      description: "SearchInput 컴포넌트 Style을 지정합니다. (default: true)",
       table: {
         type: {
           summary: "boolean",
