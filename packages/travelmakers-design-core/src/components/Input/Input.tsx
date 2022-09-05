@@ -17,7 +17,7 @@ export type InputStylesNames = ClassNames<typeof useStyles>;
 
 export type InputDescriptionType = "description" | "error" | "success";
 
-export interface InputBaseProps {
+export interface InputBaseProps extends TmComponentProps<InputStylesNames> {
   /** Input 컴포넌트 너비를 설정합니다. (default:100%) */
   width?: number;
 
@@ -25,7 +25,7 @@ export interface InputBaseProps {
   label?: string;
 
   /** Input 컴포넌트 하단 영역에 요소가 추가됩니다.
-   * (descriptionType이 error, sccess의 경우 `invalid:true`일 때에만 표출됩니다.)
+   * (descriptionType이 error, success의 경우 `invalid:true`일 때에만 표출됩니다.)
    */
   description?: string;
 
@@ -66,7 +66,7 @@ export interface InputBaseProps {
   disabled?: boolean;
 }
 
-interface _InputProps
+export interface _InputProps
   extends InputBaseProps,
     TmComponentProps<InputStylesNames> {
   /** Static css selector base */

@@ -5,9 +5,7 @@ import {
   defaultFontStyles,
 } from "@travelmakers-design/styles";
 
-import { InputDescriptionType } from "./Input";
-import { TM_HEIGHTS } from "../../constants";
-import { getFieldValue } from "../../utils";
+import { InputDescriptionType } from "../Input/Input";
 
 interface InputStyles {
   roundness: boolean;
@@ -59,14 +57,14 @@ export default createStyles(
 
         "&:focus, &:focus-within": {
           outline: "none",
-          borderColor: theme.colors.gray1,
           color: theme.colors.gray1,
+          border: `1px solid ${theme.colors.gray1}`,
         },
 
         "&:disabled": {
-          backgroundColor: theme.colors.gray7,
+          // backgroundColor: theme.colors.gray7,
           borderColor: theme.colors.gray5,
-          color: theme.colors.gray3,
+          color: theme.colors.gray5,
           opacity: 0.6,
           cursor: "not-allowed",
 
@@ -106,7 +104,6 @@ export default createStyles(
       },
 
       disabled: {
-        backgroundColor: theme.colors.gray7,
         borderColor: theme.colors.gray5,
         color: theme.colors.gray5,
         opacity: 0.6,
@@ -114,6 +111,17 @@ export default createStyles(
 
         "&::placeholder": {
           color: theme.colors.gray5,
+        },
+      },
+
+      fill: {
+        backgroundColor: theme.colors.gray6,
+        color: theme.colors.navy3,
+        border: `0px solid ${theme.colors.gray5}`,
+
+        "&:disabled": {
+          backgroundColor: theme.colors.gray6,
+          border: `1px solid ${theme.colors.gray5}`,
         },
       },
 
@@ -137,6 +145,7 @@ export default createStyles(
       },
 
       rightSection: {
+        cursor: "pointer",
         position: "absolute",
         top: 0,
         bottom: 0,

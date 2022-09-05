@@ -49,7 +49,7 @@ export default {
       control: { type: "inline-radio" },
     },
     placeholder: {
-      defaultValue: "Placeholder",
+      defaultValue: "정보를 입력해주세요.",
       description:
         "Input 컴포넌트 요소에 입력될 값에 대한 짧은 힌트를 명시합니다.",
       table: {
@@ -112,22 +112,34 @@ const Icon = () => (
 );
 
 export const Default = (props) => {
-  return <Input {...props} />;
+  return (
+    <div style={{ padding: 24 }}>
+      <Input {...props} />
+    </div>
+  );
 };
 
 export const WithIcon = (props) => {
-  return <Input icon={<Icon />} {...props} />;
+  return (
+    <div style={{ padding: 24 }}>
+      <Input icon={<Icon />} {...props} />
+    </div>
+  );
 };
 
 export const WithRightSection = (props) => {
   const withRight = "인증완료";
 
-  return <Input icon={<Icon />} {...props} rightSection={withRight} />;
+  return (
+    <div style={{ padding: 24 }}>
+      <Input icon={<Icon />} {...props} rightSection={withRight} />
+    </div>
+  );
 };
 
 export const Textarea = (props) => {
   return (
-    <div style={{ width: 400, padding: 24 }}>
+    <div style={{ padding: 24 }}>
       <Input component="textarea" multiline {...props} />
     </div>
   );
