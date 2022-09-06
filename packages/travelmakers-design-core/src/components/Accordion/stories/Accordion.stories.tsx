@@ -16,6 +16,17 @@ export default {
   title: "@travelmakers-design/core/Component/Accordion",
   component: Accordion,
   argTypes: {
+    type: {
+      defaultValue: "Default",
+      description: "Accordion 컴포넌트의 type을 결정합니다.",
+      options: ["Default", "Number", "Checkbox"],
+      table: {
+        type: {
+          summary: "string",
+        },
+      },
+      control: { type: "inline-radio" },
+    },
     data: {
       defaultValue: accordionData,
       description: "Accordion 컴포넌트 데이터를 설정합니다.",

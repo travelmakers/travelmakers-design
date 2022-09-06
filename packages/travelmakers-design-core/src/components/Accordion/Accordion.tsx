@@ -6,6 +6,7 @@ import {
 } from "@travelmakers-design/styles";
 import React, { Fragment, forwardRef, useState } from "react";
 
+import { AccordionCheck } from "./AccordionCheck";
 import { AccordionIcon } from "./AccordionIcon";
 import useStyles from "./Accordion.style";
 
@@ -16,8 +17,13 @@ interface AccordionData {
   answer: string;
 }
 
+type AccordionType = "Default" | "Number" | "Checkbox";
+
 export interface AccordionBaseProps
   extends TmComponentProps<AccordionStylesNames> {
+  /** Accordion 컴포넌트의 type을 결정합니다. */
+  type?: AccordionType;
+
   /** Accordion 컴포넌트 주제를 입력합니다. */
   data: AccordionData[];
 
@@ -47,6 +53,7 @@ export const Accordion: AccordionComponent & { displayName?: string } =
     <C extends React.ElementType = "div">(
       {
         component,
+        type = "Default",
         data,
         className,
         containerStyle,
@@ -86,13 +93,21 @@ export const Accordion: AccordionComponent & { displayName?: string } =
                 }
               >
                 <div className={cx(classes.titleWrap)}>
-                  <span className={cx(classes.titleIndex)}>{index + 1}.</span>
+                  {type === "Number" && (
+                    <span className={cx(classes.titleIndex)}>{index + 1}.</span>
+                  )}
+                  {type === "Checkbox" && (
+                    <div style={{ marginRight: 8 }}>
+                      <AccordionCheck />
+                    </div>
+                  )}
                   <span className={cx(classes.title)}>
                     {AccordionData.question}
                   </span>
                 </div>
 
                 <AccordionIcon
+                  className={cx(classes.icon)}
                   style={{
                     transform: `rotate(${open[index] ? 180 : 0}deg)`,
                     ...iconStyle,

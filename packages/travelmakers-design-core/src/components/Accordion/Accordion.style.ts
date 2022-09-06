@@ -44,19 +44,18 @@ export default createStyles((theme, { open }: AccordionStyles) => {
       color: theme.colors.cover1,
       fontStyle: "italic",
       marginRight: "4px",
-      [`${theme.media.desktop}`]: {
-        fontSize: "16px",
-      },
     },
     title: {
       display: "block",
       width: "100%",
-      fontSize: "16px",
+      fontSize: theme.fontSizes.b1,
+      lineHeight: `${theme.lineHeights.b1}px`,
       fontWeight: "bold",
       color: theme.colors.navy1,
-      lineHeight: "1.5",
-      [`${theme.media.desktop}`]: {
-        fontSize: "16px",
+      [`${theme.media.mobile}`]: {
+        fontSize: theme.fontSizes.b2,
+        lineHeight: `${theme.lineHeights.b2}px`,
+        fontWeight: "400",
       },
     },
     icon: {
@@ -64,7 +63,7 @@ export default createStyles((theme, { open }: AccordionStyles) => {
       height: "32px",
       cursor: "pointer",
       marginLeft: "4px",
-      [`${theme.media.desktop}`]: {
+      [`${theme.media.mobile}`]: {
         width: "24px",
         height: "24px",
       },
@@ -94,13 +93,16 @@ export default createStyles((theme, { open }: AccordionStyles) => {
     },
 
     answer: {
-      fontSize: "16px",
+      fontSize: theme.fontSizes.b1,
+      lineHeight: `${theme.lineHeights.b1}px`,
       color: theme.colors.navy1,
-      lineHeight: "1.5",
       width: "100%",
       [`${theme.media.desktop}`]: {
-        fontSize: "16px",
         marginTop: "3px",
+      },
+      [`${theme.media.mobile}`]: {
+        fontSize: theme.fontSizes.b2,
+        lineHeight: `${theme.lineHeights.b2}px`,
       },
     },
   };
