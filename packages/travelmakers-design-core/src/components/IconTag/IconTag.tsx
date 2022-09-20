@@ -11,25 +11,23 @@ import useStyles from "./IconTag.style";
 
 export type IconTagStylesNames = ClassNames<typeof useStyles>;
 
-export interface TagBaseProps extends TmComponentProps<IconTagStylesNames> {
+export interface IconTagBaseProps extends TmComponentProps<IconTagStylesNames> {
   /** IconTag 컴포넌트의 스타일을 정합니다. */
   fill?: boolean;
 }
 
 export interface _IconTagProps
-  extends TagBaseProps,
+  extends IconTagBaseProps,
     TmComponentProps<IconTagStylesNames> {
   /** Static css selector base */
   __staticSelector?: string;
 }
 
-export type TagProps<C extends React.ElementType> = PolymorphicComponentProps<
-  C,
-  _IconTagProps
->;
+export type IconTagProps<C extends React.ElementType> =
+  PolymorphicComponentProps<C, _IconTagProps>;
 
 type TagComponent = <C extends React.ElementType = "span">(
-  props: TagProps<C>
+  props: IconTagProps<C>
 ) => React.ReactElement;
 
 export const IconTag: TagComponent & { displayName?: string } = forwardRef(
@@ -41,7 +39,8 @@ export const IconTag: TagComponent & { displayName?: string } = forwardRef(
       className,
       overrideStyles,
       __staticSelector = "span",
-    }: TagProps<C>,
+      ...props
+    }: IconTagProps<C>,
     ref: PolymorphicRef<C>
   ) => {
     const Element: any = component || "span";
@@ -55,6 +54,7 @@ export const IconTag: TagComponent & { displayName?: string } = forwardRef(
       <Element
         ref={ref}
         className={cx(classes.container, !fill && classes["line"], className)}
+        {...props}
       >
         <CouponPercentIcon />
         {children}
