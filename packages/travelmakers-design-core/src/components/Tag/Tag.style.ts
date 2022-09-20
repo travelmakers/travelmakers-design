@@ -60,6 +60,7 @@ export default createStyles(
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
+        width: "fit-content",
 
         overflow: "hidden",
         textOverflow: "ellipsis",
@@ -93,6 +94,18 @@ export default createStyles(
             : theme.colors.gray3,
         background: "inherit",
         border: "1px solid",
+      },
+      inner: {
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        height: "100%",
+        overflow: "visible",
+
+        // "& > *": {
+        //   width: sizes[size].width - paddings[size],
+        //   height: sizes[size].height - paddings[size],
+        // },
       },
     };
   }
