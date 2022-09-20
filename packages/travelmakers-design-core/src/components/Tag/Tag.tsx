@@ -56,6 +56,7 @@ export const Tag: TagComponent & { displayName?: string } = forwardRef(
       className,
       overrideStyles,
       __staticSelector = "span",
+      ...props
     }: TagProps<C>,
     ref: PolymorphicRef<C>
   ) => {
@@ -75,6 +76,7 @@ export const Tag: TagComponent & { displayName?: string } = forwardRef(
           !fill && classes["line"],
           className
         )}
+        {...props}
       >
         {children}
       </Element>
