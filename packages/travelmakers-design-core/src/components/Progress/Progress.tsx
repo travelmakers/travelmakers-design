@@ -61,7 +61,9 @@ export const Progress = forwardRef<HTMLDivElement, ProgressProps>(
         co={co}
         {...props}
       >
-        <span className={cx(classes.indicator)}>1/1</span>
+        <span className={cx(classes.indicator)}>
+          {currentPage}/{totalPage}
+        </span>
         <div className={cx(classes.barContainer)}>
           <div
             className={cx(classes.barActive)}

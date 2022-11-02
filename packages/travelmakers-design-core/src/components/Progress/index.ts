@@ -1,2 +1,2 @@
-export { HeaderPage } from "./Progress";
-export type { HeaderPageProps } from "./Progress";
+export { Progress } from "./Progress";
+export type { ProgressProps } from "./Progress";
