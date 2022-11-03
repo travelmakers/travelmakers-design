@@ -7,6 +7,7 @@ import {
   useTmTheme,
 } from "@travelmakers-design/styles";
 import React, { forwardRef } from "react";
+import { Indicator } from "../Indicator";
 
 import { View } from "../View";
 import useStyles from "./Progress.style";
@@ -61,9 +62,14 @@ export const Progress = forwardRef<HTMLDivElement, ProgressProps>(
         co={co}
         {...props}
       >
-        <span className={cx(classes.indicator)}>
-          {currentPage}/{totalPage}
-        </span>
+        {indicator && (
+          <Indicator
+            currentPage={currentPage}
+            totalPage={totalPage}
+            color={color}
+            className={cx(classes.indicator)}
+          />
+        )}
         <div className={cx(classes.barContainer)}>
           <div
             className={cx(classes.barActive)}

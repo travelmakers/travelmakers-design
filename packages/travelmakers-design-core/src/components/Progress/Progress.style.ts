@@ -41,13 +41,7 @@ export default createStyles(
       },
 
       indicator: {
-        display: indicator ? "block" : "none",
-        fontFamily: "PT Serif",
-        fontSize: "20px",
-        fontWeight: "700",
-        color: color === "white" ? "white" : theme.colors.navy1,
         marginRight: "16px",
-        letterSpacing: "1.6px",
       },
 
       barContainer: {
