@@ -61,5 +61,58 @@ export default createStyles((theme, { type = "primary" }: PriceStyles) => {
       color: theme.colors.gray2,
       marginLeft: "4px",
     },
+
+    // NOTE: Type is 'secondary'
+    labelSecondary: {
+      fontFamily: "Pretendard",
+      fontSize: theme.fontSizes.b3,
+      lineHeight: `${theme.lineHeights.b3}px`,
+      fontWeight: "400",
+      color: theme.colors.navy1,
+      marginRight: "4px",
+    },
+    nightSecondaryText: {
+      fontFamily: "Pretendard",
+      fontSize: theme.fontSizes.b3,
+      lineHeight: `${theme.lineHeights.b3}px`,
+      fontWeight: "700",
+      color: theme.colors.navy1,
+      textAlign: "right",
+      marginRight: "4px",
+    },
+    priceSecondaryText: {
+      fontFamily: "Pretendard",
+      fontSize: theme.fontSizes.b3,
+      lineHeight: `${theme.lineHeights.b3}px`,
+      fontWeight: "400",
+      textDecorationLine: "line-through",
+      color: theme.colors.gray2,
+    },
+    priceBeforeSecondaryText: {
+      fontFamily: "Pretendard",
+      fontSize: theme.fontSizes.b3,
+      lineHeight: `${theme.lineHeights.b3}px`,
+      fontWeight: "400",
+      textDecorationLine: "line-through",
+      color: theme.colors.gray2,
+    },
+    couponWrap: {
+      display: "flex",
+      alignItems: "center",
+      width: "74px",
+      background: theme.colors.green5,
+      borderRadius: "4px",
+      marginLeft: "4px",
+    },
+    couponWord: {
+      display: "block",
+      width: "fit-content",
+      fontFamily: "Pretendard",
+      fontStyle: "normal",
+      fontWeight: "700",
+      fontSize: "10px",
+      lineHeight: "16px",
+      color: theme.colors.green3,
+    },
   };
 });

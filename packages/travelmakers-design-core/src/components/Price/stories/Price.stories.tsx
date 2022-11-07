@@ -11,6 +11,16 @@ export default {
       options: ["primary", "secondary"],
       control: { type: "inline-radio" },
     },
+    label: {
+      defaultValue: "",
+      description: "(secondary type 한정)Price 컴포넌트의 레이블을 표시합니다.",
+      table: {
+        type: {
+          summary: "string",
+        },
+      },
+      control: { type: "text" },
+    },
     percentText: {
       defaultValue: "70",
       description: "Price 컴포넌트의 할인율을 표시합니다.",
@@ -84,6 +94,17 @@ export default {
     priceStartBool: {
       defaultValue: true,
       description: " Price 컴포넌트의 시작가격 표시여부를 결정합니다.",
+      table: {
+        type: {
+          summary: "boolean",
+        },
+      },
+      control: { type: "boolean" },
+    },
+    couponBool: {
+      defaultValue: true,
+      description:
+        " (secondary type 한정) Price 컴포넌트의 쿠폰 표시여부를 결정합니다.",
       table: {
         type: {
           summary: "boolean",
