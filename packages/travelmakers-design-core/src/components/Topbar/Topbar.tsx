@@ -21,6 +21,9 @@ export type TopbarStylesNames = ClassNames<typeof useStyles>;
 export interface TopbarProps
   extends TmComponentProps,
     React.ComponentPropsWithoutRef<"div"> {
+  /** Topbar 컴포넌트의 검색 타입을 정합니다. */
+  mobileType?: "Expanded" | "Collapsed";
+
   /** Topbar 컴포넌트의 로그인여부를 정합니다. */
   isLogin?: boolean;
 
@@ -40,6 +43,7 @@ export interface TopbarProps
 export const Topbar = forwardRef<HTMLDivElement, TopbarProps>(
   (
     {
+      mobileType = "Expanded",
       isLogin = false,
       isBadge = false,
       logoClick,
@@ -53,7 +57,10 @@ export const Topbar = forwardRef<HTMLDivElement, TopbarProps>(
     ref
   ) => {
     const theme = useTmTheme();
-    const { classes, cx } = useStyles({}, { overrideStyles, name: "Price" });
+    const { classes, cx } = useStyles(
+      { mobileType },
+      { overrideStyles, name: "Price" }
+    );
 
     return (
       <View

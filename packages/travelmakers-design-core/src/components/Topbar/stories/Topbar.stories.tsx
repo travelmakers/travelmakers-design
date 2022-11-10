@@ -15,6 +15,12 @@ export default {
   title: "@travelmakers-design/core/Component/Topbar",
   component: Topbar,
   argTypes: {
+    mobileType: {
+      defaultValue: "Expanded",
+      description: "Topbar 컴포넌트의 검색 타입을 정합니다.",
+      options: ["Expanded", "Collapsed"],
+      control: { type: "inline-radio" },
+    },
     isLogin: {
       defaultValue: false,
       description: "Topbar 컴포넌트의 로그인여부를 정합니다.",
