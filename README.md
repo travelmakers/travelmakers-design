@@ -26,11 +26,11 @@
 ## 📦 Install
 
 ```bash
-npm install @travelmakers-design
+npm install @travelmakers/travelmakers-design
 ```
 
 ```bash
-yarn add @travelmakers-design
+yarn add @travelmakers/travelmakers-design
 ```
 
 <!-- 구분!!! -->
@@ -39,9 +39,9 @@ yarn add @travelmakers-design
 
 | Package name                                      | Description                                 |
 | ------------------------------------------------- | ------------------------------------------- |
-| [`@travelmakers-design/core`](./packages/travelmakers-design-core)    |  |
-| [`@travelmakers-design/hooks`](./packages/travelmakers-design-hooks)    |  |
-| [`@travelmakers-design/styles`](./packages/travelmakers-design-styles)    |  |
+| [`@travelmakers/travelmakers-design/core`](./packages/travelmakers-design-core)    |  |
+| [`@travelmakers/travelmakers-design/hooks`](./packages/travelmakers-design-hooks)    |  |
+| [`@travelmakers/travelmakers-design/styles`](./packages/travelmakers-design-styles)    |  |
 
 ## :page_facing_up: License
 

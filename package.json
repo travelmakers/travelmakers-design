@@ -1,8 +1,9 @@
 {
-  "name": "travelmakers-design",
-  "private": true,
+  "name": "@travelmakers/travelmakers-design",
+  "private": false,
   "author": "Travelmakers. Inc.",
   "license": "MIT",
+  "version": "0.0.1",
   "workspaces": {
     "packages": [
       "packages/*"
@@ -66,6 +67,5 @@
       "email": "sgd0947@gmail.com",
       "name": "GiDong Seong"
     }
-  ],
-  "version": "0.0.1"
+  ]
 }
