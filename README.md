@@ -39,9 +39,9 @@ yarn add @travelmakers/travelmakers-design
 
 | Package name                                      | Description                                 |
 | ------------------------------------------------- | ------------------------------------------- |
-| [`@travelmakers/travelmakers-design/core`](./packages/travelmakers-design-core)    |  |
-| [`@travelmakers/travelmakers-design/hooks`](./packages/travelmakers-design-hooks)    |  |
-| [`@travelmakers/travelmakers-design/styles`](./packages/travelmakers-design-styles)    |  |
+| [`@travelmakers/travelmakers-design/core`](https://github.com/travelmakers/travelmakers-design/tree/main/packages/travelmakers-design-core)    |  |
+| [`@travelmakers/travelmakers-design/hooks`](https://github.com/travelmakers/travelmakers-design/tree/main/packages/travelmakers-design-hooks)    |  |
+| [`@travelmakers/travelmakers-design/styles`](https://github.com/travelmakers/travelmakers-design/tree/main/packages/travelmakers-design-styles)    |  |
 
 ## :page_facing_up: License
 
