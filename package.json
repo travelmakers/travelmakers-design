@@ -1,6 +1,6 @@
 {
   "name": "@travelmakers/travelmakers-design",
-  "private": false,
+  "private": true,
   "author": "Travelmakers. Inc.",
   "license": "MIT",
   "version": "0.0.1",
