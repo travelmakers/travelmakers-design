@@ -126,7 +126,7 @@ export const Image = forwardRef<HTMLImageElement, ImageProps>(
           ref={imgRef}
           src={src}
           alt={alt}
-          className={classes.image}
+          className={cx(classes.image)}
           style={imageStyle}
           onLoad={() => setLoaded(true)}
         />

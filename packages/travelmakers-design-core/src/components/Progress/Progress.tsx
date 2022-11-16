@@ -84,4 +84,4 @@ export const Progress = forwardRef<HTMLDivElement, ProgressProps>(
   }
 );
 
-Progress.displayName = "@travelmakers-design/core/Header/Section";
+Progress.displayName = "@travelmakers-design/core/Progress";
