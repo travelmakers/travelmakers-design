@@ -98,6 +98,16 @@ export default {
       description: "HotelCard 컴포넌트의 몇주살기에 대한 레이블을 표시합니다.",
       control: { type: "object" },
     },
+    soldOut: {
+      defaultValue: false,
+      description: "HotelCard 컴포넌트의 판매가능 여부를 표시합니다.",
+      table: {
+        type: {
+          summary: "boolean",
+        },
+      },
+      control: { type: "boolean" },
+    },
   },
 };
 

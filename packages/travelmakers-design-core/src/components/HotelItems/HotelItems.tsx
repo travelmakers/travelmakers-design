@@ -18,10 +18,24 @@ export interface HotelItemsProps
     React.ComponentPropsWithoutRef<"div"> {
   /** HotelItems 컴포넌트의 레이블을 만들어줍니다. */
   items?: string[];
+
+  /** HotelItems 컴포넌트의 판매가능 여부를 표시합니다. */
+  soldOut?: boolean;
 }
 
 export const HotelItems = forwardRef<HTMLDivElement, HotelItemsProps>(
-  ({ items = [], title, className, co, overrideStyles, ...props }, ref) => {
+  (
+    {
+      items = [],
+      soldOut = false,
+      title,
+      className,
+      co,
+      overrideStyles,
+      ...props
+    },
+    ref
+  ) => {
     const theme = useTmTheme();
     const { classes, cx } = useStyles(
       {},
@@ -32,7 +46,7 @@ export const HotelItems = forwardRef<HTMLDivElement, HotelItemsProps>(
       return (
         <>
           {items.map((item) => (
-            <Tag color="gray" fill roundness size="medium">
+            <Tag color="gray" disabled={soldOut} fill roundness size="medium">
               {item}
             </Tag>
           ))}

@@ -55,6 +55,9 @@ export interface HotelCardProps
 
   /** HotelCard 컴포넌트의 몇주살기에 대한 레이블을 표시합니다. */
   timelineTags?: string[];
+
+  /** HotelCard 컴포넌트의 판매가능 여부를 표시합니다. */
+  soldOut?: boolean;
 }
 
 export const HotelCard = forwardRef<HTMLDivElement, HotelCardProps>(
@@ -71,6 +74,7 @@ export const HotelCard = forwardRef<HTMLDivElement, HotelCardProps>(
       couponBoolean = false,
       coupons,
       timelineTags,
+      soldOut = false,
       className,
       co,
       overrideStyles,
@@ -84,6 +88,57 @@ export const HotelCard = forwardRef<HTMLDivElement, HotelCardProps>(
       { overrideStyles, name: "HotelCard" }
     );
 
+    const SaleTextBox = () => (
+      <>
+        <div className={cx(classes.flexBox, classes.labelBox)}>
+          <Typography
+            family="Pretendard"
+            level="b3"
+            color={theme.colors.navy1}
+            className={cx(classes.label, classes.textNavy1)}
+          >
+            {percentText && "정가"}
+          </Typography>
+          <Typography
+            family="Pretendard"
+            level="b3"
+            color={theme.colors.navy1}
+            className={cx(classes.label, classes.textNavy1)}
+          >
+            {beforePrice}
+          </Typography>
+          {couponBoolean && <IconTag fill>쿠폰 적용가</IconTag>}
+        </div>
+
+        <div className={cx(classes.flexBox, classes.priceBox)}>
+          <Price
+            couponBool
+            percentBool={!!percentText}
+            priceBool={!!priceText}
+            nightBool={false}
+            percentText={percentText}
+            priceStartBool={!!startPrice}
+            priceStartText={startPrice}
+            priceText={priceText}
+            type="primary"
+          />
+        </div>
+      </>
+    );
+
+    const SoldOutBox = () => (
+      <div className={cx(classes.sellout)}>
+        <Typography
+          family="Pretendard"
+          level="b2"
+          color={theme.colors.gray4}
+          className={cx(classes.label)}
+        >
+          판매가 완료되었습니다.
+        </Typography>
+      </div>
+    );
+
     return (
       <View
         ref={ref}
@@ -92,6 +147,7 @@ export const HotelCard = forwardRef<HTMLDivElement, HotelCardProps>(
         {...props}
       >
         <div className={cx(classes.cardContainer)}>
+          {/* SECTION: imageWrapper */}
           <div className={cx(classes.imageWrapper)}>
             <div
               className={cx(
@@ -130,56 +186,43 @@ export const HotelCard = forwardRef<HTMLDivElement, HotelCardProps>(
                 </Typography>
               </div>
             </div>
-            <Image
-              className={cx(classes.image)}
-              src={"https://picsum.photos/600/400"}
-              height={"100%"}
-            />
+            <div className={cx(classes.cardImageBox)}>
+              <Image
+                className={cx(classes.image)}
+                src={"https://picsum.photos/600/400"}
+                height={"100%"}
+              >
+                {soldOut && (
+                  <div className={cx(classes.soldOutBox)}>
+                    <b>Sold Out</b>
+                    <small>다음에 만나요</small>
+                  </div>
+                )}
+              </Image>
+            </div>
           </div>
+
+          {/* SECTION: textWrapper */}
           <div className={cx(classes.textWrapper)}>
-            <Typography family="Pretendard" level="h4" mobileLevel="b2" strong>
+            <Typography
+              family="Pretendard"
+              level="h4"
+              mobileLevel="b2"
+              color={soldOut ? theme.colors.gray4 : theme.colors.navy1}
+              strong
+            >
               {hotelName}
             </Typography>
-            <div className={cx(classes.flexBox, classes.imageBox)}>
-              <HotelLabelType type={type} />
+            <div className={cx(classes.flexBox, classes.labelImageBox)}>
+              <HotelLabelType type={type} soldOut={soldOut} />
             </div>
 
             <div className={cx(classes.divider)} />
 
-            <div className={cx(classes.flexBox, classes.labelBox)}>
-              <Typography
-                family="Pretendard"
-                level="b3"
-                className={cx(classes.label, classes.textNavy1)}
-              >
-                {percentText && "정가"}
-              </Typography>
-              <Typography
-                family="Pretendard"
-                level="b3"
-                className={cx(classes.label, classes.textNavy1)}
-              >
-                {beforePrice}
-              </Typography>
-              {couponBoolean && <IconTag fill>쿠폰 적용가</IconTag>}
-            </div>
-
-            <div className={cx(classes.flexBox, classes.priceBox)}>
-              <Price
-                couponBool
-                percentBool={!!percentText}
-                priceBool={!!priceText}
-                nightBool={false}
-                percentText={percentText}
-                priceStartBool={!!startPrice}
-                priceStartText={startPrice}
-                priceText={priceText}
-                type="primary"
-              />
-            </div>
+            {soldOut ? <SoldOutBox /> : <SaleTextBox />}
 
             <div className={cx(classes.flexBox, classes.tagBox)}>
-              <HotelItems items={timelineTags} />
+              <HotelItems items={timelineTags} soldOut={soldOut} />
             </div>
           </div>
         </div>

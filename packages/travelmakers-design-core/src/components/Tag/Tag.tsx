@@ -26,6 +26,9 @@ export interface TagBaseProps extends TmComponentProps<TagStylesNames> {
 
   /** Tag 컴포넌트의 스타일을 정합니다. */
   fill?: boolean;
+
+  /** Tag 컴포넌트의 disable여부를 정합니다. */
+  disabled?: boolean;
 }
 
 export interface _TagProps
@@ -52,6 +55,7 @@ export const Tag: TagComponent & { displayName?: string } = forwardRef(
       color = "green",
       roundness = false,
       fill = true,
+      disabled = false,
       children,
       className,
       overrideStyles,
@@ -63,7 +67,7 @@ export const Tag: TagComponent & { displayName?: string } = forwardRef(
     const Element: any = component || "span";
 
     const { classes, cx } = useStyles(
-      { color, roundness, fill, size },
+      { color, roundness, fill, size, disabled },
       { overrideStyles, name: "span" }
     );
 
