@@ -136,6 +136,8 @@ export const Image = forwardRef<HTMLImageElement, ImageProps>(
             {placeholder}
           </div>
         )}
+
+        {props.children}
       </View>
     );
   }

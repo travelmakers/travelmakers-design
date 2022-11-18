@@ -6,11 +6,12 @@ import {
 
 import { TagColor, TagSize } from "./Tag";
 
-interface AccordionStyles {
+interface TagStyles {
   color?: TagColor;
   fill?: boolean;
   roundness?: boolean;
   size?: TagSize;
+  disabled?: boolean;
 }
 
 const getFontStyles = (theme: TmTheme) => ({
@@ -51,7 +52,7 @@ const getPaddingStyles = (theme: TmTheme, fill: boolean) => ({
 });
 
 export default createStyles(
-  (theme, { color, roundness, size, fill }: AccordionStyles) => {
+  (theme, { color, roundness, size, fill, disabled = false }: TagStyles) => {
     return {
       container: {
         ...defaultFontStyles(theme),
@@ -65,7 +66,11 @@ export default createStyles(
         overflow: "hidden",
         textOverflow: "ellipsis",
         whiteSpace: "nowrap",
-        color: color === "gray" ? theme.colors.navy1 : theme.colors.white,
+        color: disabled
+          ? theme.colors.gray4
+          : color === "gray"
+          ? theme.colors.navy1
+          : theme.colors.white,
 
         marginRight: "6px",
         gap: "8px",

@@ -17,6 +17,7 @@ export default createStyles((theme, {}: HotelCardStyles) => {
     root: {
       display: "flex",
       alignItems: "center",
+      cursor: "default",
     },
 
     cardContainer: {
@@ -43,6 +44,47 @@ export default createStyles((theme, {}: HotelCardStyles) => {
       alignItems: "flex-start",
       [`${theme.media.mobile}`]: {
         paddingLeft: "16px",
+      },
+    },
+    soldOutBox: {
+      display: "flex",
+      flexFlow: "column",
+      alignItems: "center",
+      justifyContent: "center",
+      width: "100%",
+      background: "rgba(0, 0, 0, 0.5)",
+      position: "absolute",
+      top: 0,
+      left: 0,
+      height: imageHeight,
+      [`${theme.media.mobile}`]: {
+        height: imageMobileHeight,
+      },
+      ["& > b"]: {
+        color: theme.colors.white,
+        fontFamily: "PT Serif",
+        fontStyle: "italic",
+        fontWeight: 700,
+        fontSize: "40px",
+        lineHeight: "60px",
+
+        // @media screen and (max-width: 1000px) {
+        //   font-size: 24px,
+        //   line-height: 36px,
+        // }
+      },
+      ["& > small"]: {
+        color: theme.colors.white,
+        fontFamily: "Pretendard",
+        fontStyle: "normal",
+        fontWeight: 400,
+        fontSize: "20px",
+        lineHeight: "32px",
+
+        // @media screen and (max-width: 1000px) {
+        //   font-size: 14px,
+        //   line-height: 22px,
+        // }
       },
     },
     individualLabel: {
@@ -75,8 +117,17 @@ export default createStyles((theme, {}: HotelCardStyles) => {
     mr2: {
       marginRight: "2px",
     },
-    imageBox: {
+    labelImageBox: {
       height: "20px",
+    },
+    cardImageBox: {
+      width: imageWidth,
+      height: imageHeight,
+      overflow: "hidden",
+      [`${theme.media.mobile}`]: {
+        width: imageMobileWidth,
+        height: imageMobileHeight,
+      },
     },
     labelBox: {
       height: "20px",
@@ -102,6 +153,17 @@ export default createStyles((theme, {}: HotelCardStyles) => {
       width: imageWidth,
       height: imageHeight,
       position: "inherit",
+
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "end",
+      ["&: hover"]: {
+        width: "110%",
+        height: "110%",
+        transition:
+          "width 0.2s cubic-bezier(0, 0, 0.5, 1), height 0.2s cubic-bezier(0, 0, 0.5, 1)",
+      },
+
       [`${theme.media.mobile}`]: {
         width: imageMobileWidth,
         height: imageMobileHeight,
@@ -116,6 +178,12 @@ export default createStyles((theme, {}: HotelCardStyles) => {
     },
     tagBox: {
       marginTop: "12px",
+    },
+    sellout: {
+      marginTop: "49px",
+      [`${theme.media.mobile}`]: {
+        marginTop: "419px",
+      },
     },
   };
 });

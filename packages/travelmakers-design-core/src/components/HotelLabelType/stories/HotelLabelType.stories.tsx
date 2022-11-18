@@ -11,6 +11,16 @@ export default {
       options: ["default", "hotel-mini", "residence"],
       control: { type: "inline-radio" },
     },
+    soldOut: {
+      defaultValue: false,
+      description: "HotelLabelType 컴포넌트의 판매가능 여부를 표시합니다.",
+      table: {
+        type: {
+          summary: "boolean",
+        },
+      },
+      control: { type: "boolean" },
+    },
   },
 };
 

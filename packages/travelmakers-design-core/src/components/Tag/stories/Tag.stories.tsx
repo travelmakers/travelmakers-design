@@ -47,6 +47,16 @@ export default {
       },
       control: { type: "boolean" },
     },
+    disabled: {
+      defaultValue: false,
+      description: "Tag 컴포넌트의 disable여부를 정합니다.",
+      table: {
+        type: {
+          summary: "boolean",
+        },
+      },
+      control: { type: "boolean" },
+    },
   },
 };
 

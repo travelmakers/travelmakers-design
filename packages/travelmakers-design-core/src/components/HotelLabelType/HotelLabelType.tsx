@@ -20,10 +20,24 @@ export interface HotelLabelTypeProps
     React.ComponentPropsWithoutRef<"div"> {
   /** HotelLabelType 컴포넌트의 type을 정합니다. */
   type?: "default" | "hotel-mini" | "residence";
+
+  /** HotelLabelType 컴포넌트의 판매가능 여부를 표시합니다. */
+  soldOut?: boolean;
 }
 
 export const HotelLabelType = forwardRef<HTMLDivElement, HotelLabelTypeProps>(
-  ({ type = "navy", title, className, co, overrideStyles, ...props }, ref) => {
+  (
+    {
+      type = "navy",
+      soldOut = false,
+      title,
+      className,
+      co,
+      overrideStyles,
+      ...props
+    },
+    ref
+  ) => {
     const theme = useTmTheme();
     const { classes, cx } = useStyles(
       {},
@@ -54,7 +68,7 @@ export const HotelLabelType = forwardRef<HTMLDivElement, HotelLabelTypeProps>(
         <Typography
           family="Pretendard"
           level="b3"
-          className={cx(classes.label, classes.textGray2)}
+          color={soldOut ? theme.colors.gray4 : theme.colors.navy2}
         >
           5성급 | 호텔
         </Typography>
@@ -70,7 +84,7 @@ export const HotelLabelType = forwardRef<HTMLDivElement, HotelLabelTypeProps>(
         <Typography
           family="Pretendard"
           level="b3"
-          className={cx(classes.label, classes.textGray2)}
+          color={soldOut ? theme.colors.gray4 : theme.colors.navy2}
         >
           | 미니 호텔
         </Typography>
@@ -86,7 +100,7 @@ export const HotelLabelType = forwardRef<HTMLDivElement, HotelLabelTypeProps>(
         <Typography
           family="Pretendard"
           level="b3"
-          className={cx(classes.label, classes.textGray2)}
+          color={soldOut ? theme.colors.gray4 : theme.colors.navy2}
         >
           | 레지던스 호텔
         </Typography>
