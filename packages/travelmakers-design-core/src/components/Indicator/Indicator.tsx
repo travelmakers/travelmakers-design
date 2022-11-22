@@ -22,6 +22,9 @@ export interface IndicatorProps
   /** Indicator 컴포넌트의 색상을 정합니다. */
   color?: "navy" | "white";
 
+  /** Indicator 컴포넌트의 크기를 정합니다. */
+  size?: "small" | "large";
+
   /** Indicator 컴포넌트의 토탈 page 수를 정합니다. */
   totalPage?: number;
 
@@ -34,6 +37,7 @@ export const Indicator = forwardRef<HTMLDivElement, IndicatorProps>(
     {
       type = "text",
       color = "navy",
+      size = "large",
       totalPage = 1,
       currentPage = 1,
       className,
@@ -45,7 +49,7 @@ export const Indicator = forwardRef<HTMLDivElement, IndicatorProps>(
   ) => {
     const theme = useTmTheme();
     const { classes, cx } = useStyles(
-      { type, color },
+      { type, color, size },
       { overrideStyles, name: "Indicator" }
     );
 

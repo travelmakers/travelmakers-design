@@ -11,6 +11,9 @@ interface ProgressStyles {
   /** Progress 컴포넌트의 색상을 정합니다. */
   color?: "navy" | "white";
 
+  /** Progress 컴포넌트의 색상을 정합니다. */
+  size?: "small" | "large";
+
   /** Progress 컴포넌트의 indicator 표시 여부를 정합니다. */
   indicator?: boolean;
 }
@@ -33,7 +36,10 @@ const getFontStyles = (theme: TmTheme) => ({
   },
 });
 export default createStyles(
-  (theme, { color = "navy", indicator = false }: ProgressStyles) => {
+  (
+    theme,
+    { color = "navy", indicator = false, size = "large" }: ProgressStyles
+  ) => {
     return {
       root: {
         display: "flex",
@@ -48,7 +54,7 @@ export default createStyles(
         display: "block",
         position: "relative",
         width: "30vw",
-        maxWidth: "456px",
+        maxWidth: size === "small" ? "171px" : "456px",
         height: "2px",
         borderRadius: "3px",
         backgroundColor:
