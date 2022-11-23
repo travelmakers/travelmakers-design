@@ -12,6 +12,12 @@ import useStyles from "./ControlIndicator.style";
 
 export type ProgressStylesNames = ClassNames<typeof useStyles>;
 
+let SELECTED_PAGE = 1;
+
+// 현재 탭 반환 메소드
+export function getCurrentPage(): number {
+  return SELECTED_PAGE;
+}
 export interface ControlIndicatorProps
   extends TmComponentProps,
     React.ComponentPropsWithoutRef<"div"> {
@@ -67,7 +73,7 @@ export const ControlIndicator = forwardRef<
       { size },
       { overrideStyles, name: "ControlIndicator" }
     );
-    const [selectedPage, setSelectedPage] = useState(currentPage);
+    const [selectedPage, setSelectedPage] = useState(SELECTED_PAGE);
 
     let previousButton =
       color === "navy"
@@ -113,6 +119,7 @@ export const ControlIndicator = forwardRef<
       }
 
       setSelectedPage(page);
+      SELECTED_PAGE = page;
 
       previousClick();
     };
@@ -138,6 +145,8 @@ export const ControlIndicator = forwardRef<
         }
       }
       setSelectedPage(page);
+      SELECTED_PAGE = page;
+
       nextClick();
     };
 

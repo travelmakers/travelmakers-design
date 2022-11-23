@@ -1,3 +1,4 @@
+import { CURRENT_SELECTION } from "@storybook/addon-docs";
 import {
   ClassNames,
   TmComponentProps,
@@ -11,6 +12,12 @@ import useStyles from "./ControlPagination.style";
 
 export type ProgressStylesNames = ClassNames<typeof useStyles>;
 
+let SELECTED_PAGE = 1;
+
+// 현재 탭 반환 메소드
+export function getCurrentPage(): number {
+  return SELECTED_PAGE;
+}
 export interface ControlPaginationProps
   extends TmComponentProps,
     React.ComponentPropsWithoutRef<"div"> {
@@ -61,7 +68,7 @@ export const ControlPagination = forwardRef<
       { color, size },
       { overrideStyles, name: "ControlPagination" }
     );
-    const [selectedPage, setSelectedPage] = useState(currentPage);
+    const [selectedPage, setSelectedPage] = useState(SELECTED_PAGE);
 
     let previousButton =
       color === "navy"
@@ -106,6 +113,7 @@ export const ControlPagination = forwardRef<
         }
       }
       setSelectedPage(page);
+      SELECTED_PAGE = page;
 
       previousClick();
     };
@@ -131,6 +139,8 @@ export const ControlPagination = forwardRef<
         }
       }
       setSelectedPage(page);
+      SELECTED_PAGE = page;
+
       nextClick();
     };
 
