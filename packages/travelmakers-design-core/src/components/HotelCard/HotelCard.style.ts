@@ -65,26 +65,16 @@ export default createStyles((theme, {}: HotelCardStyles) => {
         fontFamily: "PT Serif",
         fontStyle: "italic",
         fontWeight: 700,
-        fontSize: "40px",
-        lineHeight: "60px",
-
-        // @media screen and (max-width: 1000px) {
-        //   font-size: 24px,
-        //   line-height: 36px,
-        // }
+        fontSize: theme.fontSizes.h1,
+        lineHeight: `${theme.lineHeights.h1}px`,
       },
       ["& > small"]: {
         color: theme.colors.white,
         fontFamily: "Pretendard",
         fontStyle: "normal",
         fontWeight: 400,
-        fontSize: "20px",
-        lineHeight: "32px",
-
-        // @media screen and (max-width: 1000px) {
-        //   font-size: 14px,
-        //   line-height: 22px,
-        // }
+        fontSize: theme.fontSizes.h5,
+        lineHeight: `${theme.lineHeights.h5}px`,
       },
     },
     individualLabel: {
