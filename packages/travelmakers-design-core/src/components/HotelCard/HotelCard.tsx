@@ -26,6 +26,9 @@ export interface HotelCardProps
   /** HotelCard 컴포넌트의 호텔타입을 정합니다. */
   type?: "default" | "hotel-mini" | "residence";
 
+  /** HotelCard 컴포넌트의 이미지를 표시합니다. */
+  hotelImage?: string;
+  
   /** HotelCard 컴포넌트의 이미지 부분에 표시되는 레이블을 표시합니다. */
   hotelItems?: string[];
 
@@ -64,6 +67,7 @@ export const HotelCard = forwardRef<HTMLDivElement, HotelCardProps>(
   (
     {
       type = "default",
+      hotelImage,
       hotelItems = [],
       addressText,
       hotelName,
@@ -189,7 +193,7 @@ export const HotelCard = forwardRef<HTMLDivElement, HotelCardProps>(
             <div className={cx(classes.cardImageBox)}>
               <Image
                 className={cx(classes.image)}
-                src={"https://picsum.photos/600/400"}
+                src={hotelImage}
                 height={"100%"}
               >
                 {soldOut && (
