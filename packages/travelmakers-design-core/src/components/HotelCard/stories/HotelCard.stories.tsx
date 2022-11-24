@@ -28,6 +28,17 @@ export default {
       },
       control: { type: "text" },
     },
+    hotelImage: {
+      defaultValue: "https://picsum.photos/600/400",
+      description:
+        "HotelCard 컴포넌트의 이미지를 표시합니다.",
+      table: {
+        type: {
+          summary: "string",
+        },
+      },
+      control: { type: "text" },
+    },
     hotelName: {
       defaultValue: "호텔명",
       description: "HotelCard 컴포넌트의 호텔명을 표시합니다.",
