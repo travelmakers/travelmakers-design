@@ -19,6 +19,9 @@ export interface HotelItemsProps
   /** HotelItems 컴포넌트의 레이블을 만들어줍니다. */
   items?: string[];
 
+  /** HotelItems 컴포넌트의 fill 여부를 판단합니다. */
+  fill?: boolean;
+
   /** HotelItems 컴포넌트의 판매가능 여부를 표시합니다. */
   soldOut?: boolean;
 }
@@ -28,6 +31,7 @@ export const HotelItems = forwardRef<HTMLDivElement, HotelItemsProps>(
     {
       items = [],
       soldOut = false,
+      fill = false,
       title,
       className,
       co,
@@ -46,7 +50,13 @@ export const HotelItems = forwardRef<HTMLDivElement, HotelItemsProps>(
       return (
         <>
           {items.map((item) => (
-            <Tag color="gray" disabled={soldOut} fill roundness size="medium">
+            <Tag
+              color="gray"
+              disabled={soldOut}
+              fill={fill}
+              roundness
+              size="medium"
+            >
               {item}
             </Tag>
           ))}
