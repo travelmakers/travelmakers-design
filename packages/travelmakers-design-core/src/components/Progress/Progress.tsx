@@ -6,7 +6,7 @@ import {
   TmSize,
   useTmTheme,
 } from "@travelmakers-design/styles";
-import React, { forwardRef } from "react";
+import React, { forwardRef, useState } from "react";
 import { Indicator } from "../Indicator";
 
 import { View } from "../View";
@@ -19,6 +19,9 @@ export interface ProgressProps
     React.ComponentPropsWithoutRef<"div"> {
   /** Progress 컴포넌트의 색상을 정합니다. */
   color?: "navy" | "white";
+
+  /** Progress 컴포넌트의 색상을 정합니다. */
+  size?: "small" | "large";
 
   /** Progress 컴포넌트의 indicator 표시 여부를 정합니다. */
   indicator?: boolean;
@@ -38,6 +41,7 @@ export const Progress = forwardRef<HTMLDivElement, ProgressProps>(
     {
       color = "navy",
       indicator = false,
+      size = "large",
       totalPage = 1,
       currentPage = 1,
       activeBarTransition = false,
@@ -51,7 +55,7 @@ export const Progress = forwardRef<HTMLDivElement, ProgressProps>(
   ) => {
     const theme = useTmTheme();
     const { classes, cx } = useStyles(
-      { color, indicator },
+      { color, indicator, size },
       { overrideStyles, name: "Progress" }
     );
 
@@ -67,6 +71,7 @@ export const Progress = forwardRef<HTMLDivElement, ProgressProps>(
             currentPage={currentPage}
             totalPage={totalPage}
             color={color}
+            size={size}
             className={cx(classes.indicator)}
           />
         )}
