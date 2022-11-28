@@ -16,54 +16,57 @@ import { Tag } from "../Tag";
 import { Typography } from "../Typography";
 
 import { View } from "../View";
-import useStyles from "./HotelCard.style";
+import useStyles from "./HotelFeatureCard.style";
 
-export type HotelCardStylesNames = ClassNames<typeof useStyles>;
+export type HotelFeatureCardStylesNames = ClassNames<typeof useStyles>;
 
-export interface HotelCardProps
+export interface HotelFeatureCardProps
   extends TmComponentProps,
     React.ComponentPropsWithoutRef<"div"> {
-  /** HotelCard 컴포넌트의 호텔타입을 정합니다. */
+  /** HotelFeatureCard 컴포넌트의 호텔타입을 정합니다. */
   type?: "default" | "hotel-mini" | "residence";
 
-  /** HotelCard 컴포넌트의 이미지를 표시합니다. */
+  /** HotelFeatureCard 컴포넌트의 이미지를 표시합니다. */
   hotelImage?: string;
 
-  /** HotelCard 컴포넌트의 이미지 부분에 표시되는 레이블을 표시합니다. */
+  /** HotelFeatureCard 컴포넌트의 이미지 부분에 표시되는 레이블을 표시합니다. */
   hotelItems?: string[];
 
-  /** HotelCard 컴포넌트의 이미지 부분에 표시되는 주소를 표시합니다. */
+  /** HotelFeatureCard 컴포넌트의 이미지 부분에 표시되는 주소를 표시합니다. */
   addressText?: string;
 
-  /** HotelCard 컴포넌트의 호텔명을 표시합니다. */
+  /** HotelFeatureCard 컴포넌트의 호텔명을 표시합니다. */
   hotelName?: string;
 
-  /** HotelCard 컴포넌트의 할인되는 퍼센트를 표시합니다. */
+  /** HotelFeatureCard 컴포넌트의 할인되는 퍼센트를 표시합니다. */
   percentText?: string;
 
-  /** HotelCard 컴포넌트의 정가를 표시합니다. */
+  /** HotelFeatureCard 컴포넌트의 정가를 표시합니다. */
   beforePrice?: string;
 
-  /** HotelCard 컴포넌트의 시작가를 표시합니다. */
+  /** HotelFeatureCard 컴포넌트의 시작가를 표시합니다. */
   startPrice?: string;
 
-  /** HotelCard 컴포넌트의 가격을 표시합니다. */
+  /** HotelFeatureCard 컴포넌트의 가격을 표시합니다. */
   priceText?: number;
 
-  /** HotelCard 컴포넌트의 쿠폰여부를 정합니다. */
+  /** HotelFeatureCard 컴포넌트의 쿠폰여부를 정합니다. */
   couponBoolean?: boolean;
 
-  /** HotelCard 컴포넌트의 쿠폰데이터를 가져옵니다. */
+  /** HotelFeatureCard 컴포넌트의 쿠폰데이터를 가져옵니다. */
   coupons?: { coupon: { discounted: number } }[];
 
-  /** HotelCard 컴포넌트의 몇주살기에 대한 레이블을 표시합니다. */
+  /** HotelFeatureCard 컴포넌트의 몇주살기에 대한 레이블을 표시합니다. */
   timelineTags?: string[];
 
-  /** HotelCard 컴포넌트의 판매가능 여부를 표시합니다. */
+  /** HotelFeatureCard 컴포넌트의 판매가능 여부를 표시합니다. */
   soldOut?: boolean;
 }
 
-export const HotelCard = forwardRef<HTMLDivElement, HotelCardProps>(
+export const HotelFeatureCard = forwardRef<
+  HTMLDivElement,
+  HotelFeatureCardProps
+>(
   (
     {
       type = "default",
@@ -89,10 +92,10 @@ export const HotelCard = forwardRef<HTMLDivElement, HotelCardProps>(
     const theme = useTmTheme();
     const { classes, cx } = useStyles(
       {},
-      { overrideStyles, name: "HotelCard" }
+      { overrideStyles, name: "HotelFeatureCard" }
     );
 
-    const SaleTextBox = () => (
+    const SaleTextBox = ({ children }) => (
       <>
         <div className={cx(classes.flexBox, classes.labelBox)}>
           <Typography
@@ -126,6 +129,7 @@ export const HotelCard = forwardRef<HTMLDivElement, HotelCardProps>(
             priceText={priceText}
             type="primary"
           />
+          {children}
         </div>
       </>
     );
@@ -190,43 +194,70 @@ export const HotelCard = forwardRef<HTMLDivElement, HotelCardProps>(
                 </Typography>
               </div>
             </div>
-            <div className={cx(classes.cardImageBox)}>
-              <Image
-                className={cx(classes.image)}
-                src={hotelImage}
-                height={"100%"}
-              >
-                {soldOut && (
-                  <div className={cx(classes.soldOutBox)}>
-                    <b>Sold Out</b>
-                    <small>다음에 만나요</small>
-                  </div>
-                )}
-              </Image>
-            </div>
+          </div>
+          <div className={cx(classes.cardImageBox)}>
+            <Image
+              className={cx(classes.image)}
+              src={hotelImage}
+              height={"100%"}
+            >
+              {soldOut && (
+                <div className={cx(classes.soldOutBox)}>
+                  <b>Sold Out</b>
+                  <small>다음에 만나요</small>
+                </div>
+              )}
+            </Image>
           </div>
 
-          {/* SECTION: textWrapper */}
-          <div className={cx(classes.textWrapper)}>
-            <Typography
-              family="Pretendard"
-              level="h4"
-              mobileLevel="b2"
-              color={soldOut ? theme.colors.gray4 : theme.colors.navy1}
-              strong
-            >
-              {hotelName}
-            </Typography>
-            <div className={cx(classes.flexBox, classes.labelImageBox)}>
-              <HotelLabelType type={type} soldOut={soldOut} />
-            </div>
+          <div className={cx(classes.bottomSection)}>
+            {/* SECTION: timer */}
+            <div className={cx(classes.timer)}>timer</div>
 
-            <div className={cx(classes.divider)} />
-
-            {soldOut ? <SoldOutBox /> : <SaleTextBox />}
-
-            <div className={cx(classes.flexBox, classes.tagBox)}>
-              <HotelItems items={timelineTags} soldOut={soldOut} fill />
+            {/* SECTION: textWrapper */}
+            <div className={cx(classes.textWrapper)}>
+              <div className={cx(classes.flexBox, classes.tagBox)}>
+                <HotelItems
+                  items={timelineTags}
+                  soldOut={soldOut}
+                  fill={false}
+                />
+              </div>
+              <Typography
+                family="Pretendard"
+                level="h4"
+                mobileLevel="b2"
+                style={{ marginTop: "12px" }}
+                color={soldOut ? theme.colors.gray4 : theme.colors.navy1}
+                strong
+              >
+                {hotelName}
+              </Typography>
+              <div className={cx(classes.flexBox, classes.labelImageBox)}>
+                <HotelLabelType type={type} soldOut={soldOut} />
+              </div>
+              <div className={cx(classes.divider)} />
+              {soldOut ? (
+                <SoldOutBox />
+              ) : (
+                <SaleTextBox>
+                  <div className={cx(classes.goImageflexBox)}>
+                    <Typography
+                      family="PT Serif"
+                      level="h4"
+                      mobileLevel="b2"
+                      style={{ width: "auto", lineHeight: "24px" }}
+                      color={theme.colors.navy1}
+                    >
+                      Go
+                    </Typography>
+                    <Image
+                      src={require("../../assets/svg/ic-arrow-single.svg")}
+                      className={cx(classes.arrowImage)}
+                    />
+                  </div>
+                </SaleTextBox>
+              )}
             </div>
           </div>
         </div>
@@ -235,4 +266,4 @@ export const HotelCard = forwardRef<HTMLDivElement, HotelCardProps>(
   }
 );
 
-HotelCard.displayName = "@travelmakers-design/core/Header/Section";
+HotelFeatureCard.displayName = "@travelmakers-design/core/Header/Section";

@@ -6,26 +6,35 @@ import {
   TmTheme,
 } from "@travelmakers-design/styles";
 
-interface HotelCardStyles {}
+interface HotelFeatureCardStyles {}
 
-export default createStyles((theme, {}: HotelCardStyles) => {
-  const imageWidth = "580px";
-  const imageHeight = "264px";
-  const imageMobileWidth = "328px";
-  const imageMobileHeight = "200px";
+export default createStyles((theme, {}: HotelFeatureCardStyles) => {
+  const imageWidth = "533px";
+  const imageHeight = "344px";
+  const imageMobileWidth = "296px";
+  const imageMobileHeight = "180px";
+  const cardHeight = "328px";
   return {
     root: {
-      display: "flex",
+      display: "inline-flex",
       alignItems: "center",
       cursor: "default",
+      backgroundColor: theme.colors.white,
+      height: cardHeight,
+      [`${theme.media.tablet}`]: {
+        height: "auto",
+      },
     },
 
     cardContainer: {
-      display: "block",
+      display: "inline-flex",
+      height: cardHeight,
+      paddingLeft: "24px",
       position: "relative",
-      width: imageWidth,
-      [`${theme.media.mobile}`]: {
-        width: imageMobileWidth,
+      [`${theme.media.tablet}`]: {
+        display: "block",
+        height: "auto",
+        padding: "0",
       },
     },
     flexBox: {
@@ -33,16 +42,29 @@ export default createStyles((theme, {}: HotelCardStyles) => {
       flexDirection: "row",
       alignItems: "center",
     },
+    goImageflexBox: {
+      display: "flex",
+      flexDirection: "row",
+      alignItems: "baseline",
+      width: "fit-content",
+      borderBottom: `1px solid ${theme.colors.navy1}`,
+      marginLeft: "41px",
+      [`${theme.media.tablet}`]: {
+        display: "none",
+      },
+    },
     spaceBetweenBox: {
       justifyContent: "space-between",
     },
     groupLabel: {
       position: "absolute",
+      zIndex: 1,
+      top: "-32px",
       width: "100%",
       paddingLeft: "32px",
       paddingRight: "12px",
       alignItems: "flex-start",
-      [`${theme.media.mobile}`]: {
+      [`${theme.media.tablet}`]: {
         paddingLeft: "16px",
       },
     },
@@ -57,7 +79,7 @@ export default createStyles((theme, {}: HotelCardStyles) => {
       top: 0,
       left: 0,
       height: imageHeight,
-      [`${theme.media.mobile}`]: {
+      [`${theme.media.tablet}`]: {
         height: imageMobileHeight,
       },
       ["& > b"]: {
@@ -84,7 +106,7 @@ export default createStyles((theme, {}: HotelCardStyles) => {
       backgroundColor: theme.colors.navy2,
       flex: 1,
       height: "1px",
-      margin: "12px 0 15px 0",
+      margin: "45px 0 14px 0",
     },
     textRed: {
       color: theme.colors.red2,
@@ -114,9 +136,14 @@ export default createStyles((theme, {}: HotelCardStyles) => {
       width: imageWidth,
       height: imageHeight,
       overflow: "hidden",
-      [`${theme.media.mobile}`]: {
+      position: "absolute",
+      bottom: 16,
+      [`${theme.media.tablet}`]: {
         width: imageMobileWidth,
         height: imageMobileHeight,
+        top: "-32px",
+        left: "50%",
+        transform: "translate(-50%, 0)",
       },
     },
     labelBox: {
@@ -127,17 +154,18 @@ export default createStyles((theme, {}: HotelCardStyles) => {
     },
     addressBox: {
       marginTop: "11px",
-      [`${theme.media.mobile}`]: {
+      [`${theme.media.tablet}`]: {
         marginTop: "8px",
       },
     },
     imageWrapper: {
       width: imageWidth,
       height: imageHeight,
-      [`${theme.media.mobile}`]: {
+      [`${theme.media.tablet}`]: {
         width: imageMobileWidth,
         height: imageMobileHeight,
       },
+      position: "relative",
     },
     image: {
       width: imageWidth,
@@ -154,25 +182,42 @@ export default createStyles((theme, {}: HotelCardStyles) => {
           "width 0.2s cubic-bezier(0, 0, 0.5, 1), height 0.2s cubic-bezier(0, 0, 0.5, 1)",
       },
 
-      [`${theme.media.mobile}`]: {
+      [`${theme.media.tablet}`]: {
         width: imageMobileWidth,
         height: imageMobileHeight,
       },
     },
     textWrapper: {
-      padding: "16px 32px",
-      [`${theme.media.mobile}`]: {
-        padding: "16px 16px",
+      padding: "0 72px 16px 72px",
+      [`${theme.media.tablet}`]: {
+        padding: "0 16px 16px 16px",
       },
       backgroundColor: theme.colors.white,
     },
+    timer: {
+      padding: "0 16px",
+      backgroundColor: theme.colors.green3,
+      [`${theme.media.tablet}`]: {
+        width: imageMobileWidth,
+        margin: "auto",
+      },
+    },
     tagBox: {
-      marginTop: "12px",
+      marginTop: "24px",
     },
     sellout: {
       marginTop: "49px",
-      [`${theme.media.mobile}`]: {
+      [`${theme.media.tablet}`]: {
         marginTop: "41.5px",
+      },
+    },
+    arrowImage: {
+      width: "21px",
+      marginLeft: "9.5px",
+    },
+    bottomSection: {
+      [`${theme.media.tablet}`]: {
+        marginTop: "-32px",
       },
     },
   };
