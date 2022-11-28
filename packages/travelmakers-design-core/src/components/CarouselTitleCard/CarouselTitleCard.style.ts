@@ -49,5 +49,20 @@ export default createStyles((theme, {}: CarouselTitleCardStyles) => {
       marginBottom: "19px",
     },
     description: {},
+    goImageflexBox: {
+      display: "flex",
+      flexDirection: "row",
+      alignItems: "baseline",
+      width: "fit-content",
+      borderBottom: `1px solid ${theme.colors.navy1}`,
+      marginLeft: "41px",
+      [`${theme.media.tablet}`]: {
+        display: "none",
+      },
+    },
+    arrowImage: {
+      width: "21px",
+      marginLeft: "9.5px",
+    },
   };
 });

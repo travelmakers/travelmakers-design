@@ -7,10 +7,10 @@ import {
   useTmTheme,
 } from "@travelmakers-design/styles";
 import React, { forwardRef } from "react";
-import { Tag } from "../Tag";
 import { Typography } from "../Typography";
 import { View } from "../View";
 import useStyles from "./CarouselTitleCard.style";
+import { Image } from "../Image";
 
 export type CarouselTitleCardStylesNames = ClassNames<typeof useStyles>;
 
@@ -95,16 +95,33 @@ export const CarouselTitleCard = forwardRef<
           >
             {headline}
           </Typography>
-          <Typography
-            family="Pretendard"
-            level="h6"
-            mobileLevel="b3"
-            color={theme.colors.green3}
-            className={cx(classes.description)}
-            strong
-          >
-            {description}
-          </Typography>
+          <div style={{ display: "flex", justifyContent: "space-between" }}>
+            <Typography
+              family="Pretendard"
+              level="h6"
+              mobileLevel="b3"
+              color={theme.colors.green3}
+              className={cx(classes.description)}
+              strong
+            >
+              {description}
+            </Typography>
+            <div className={cx(classes.goImageflexBox)}>
+              <Typography
+                family="PT Serif"
+                level="h4"
+                mobileLevel="b2"
+                style={{ width: "auto", lineHeight: "24px" }}
+                color={theme.colors.navy1}
+              >
+                Go
+              </Typography>
+              <Image
+                src={require("../../assets/svg/ic-arrow-single.svg")}
+                className={cx(classes.arrowImage)}
+              />
+            </div>
+          </div>
         </div>
       </View>
     );
