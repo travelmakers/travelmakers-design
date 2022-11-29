@@ -2,7 +2,7 @@ import React from "react";
 import { HotelFeatureCard } from "../HotelFeatureCard";
 
 export default {
-  title: "@travelmakers-design/core/Component/HotelFeatureCard",
+  title: "@travelmakers-design/core/Component/Card/HotelFeatureCard",
   component: HotelFeatureCard,
   argTypes: {
     type: {
