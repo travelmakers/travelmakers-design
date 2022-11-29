@@ -2,7 +2,7 @@ import React from "react";
 import { HotelCard } from "../HotelCard";
 
 export default {
-  title: "@travelmakers-design/core/Component/HotelCard",
+  title: "@travelmakers-design/core/Component/Card/HotelCard",
   component: HotelCard,
   argTypes: {
     type: {
@@ -30,8 +30,7 @@ export default {
     },
     hotelImage: {
       defaultValue: "https://picsum.photos/600/400",
-      description:
-        "HotelCard 컴포넌트의 이미지를 표시합니다.",
+      description: "HotelCard 컴포넌트의 이미지를 표시합니다.",
       table: {
         type: {
           summary: "string",
