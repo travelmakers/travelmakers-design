@@ -2,7 +2,7 @@ import React from "react";
 import { CarouselTitleCard } from "../CarouselTitleCard";
 
 export default {
-  title: "@travelmakers-design/core/Component/CarouselTitleCard",
+  title: "@travelmakers-design/core/Component/Card/CarouselTitleCard",
   component: CarouselTitleCard,
   argTypes: {
     newBadge: {

@@ -2,7 +2,7 @@ import React from "react";
 import { MainReviewCard } from "../MainReviewCard";
 
 export default {
-  title: "@travelmakers-design/core/Component/MainReviewCard",
+  title: "@travelmakers-design/core/Component/Card/MainReviewCard",
   component: MainReviewCard,
   argTypes: {
     image: {

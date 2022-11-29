@@ -46,7 +46,7 @@ export default createStyles((theme, {}: MainReviewCardStyles) => {
     },
     reviewContainer: {
       padding: "29px 24px",
-      backgroundColor: theme.colors.gray5,
+      backgroundColor: theme.colors.white,
       minHeight: "200px",
       width: "auto",
       display: "flex",
