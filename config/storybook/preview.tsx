@@ -9,7 +9,7 @@ export const parameters = {
   docs: {
     theme: themes.light,
   },
-  darkMode: { current: "light" },
+  darkMode: { current: "dark" },
 };
 
 function ThemeWrapper(props: any) {
