@@ -8,10 +8,7 @@ import {
   useTmTheme,
 } from "@travelmakers-design/styles";
 import React, { forwardRef } from "react";
-import { Spinner, SpinnerProps } from "../Spinner";
-
-import { TM_HEIGHTS } from "../../constants";
-import { View } from "../View";
+import { View } from "@travelmakers-design/core";
 import useStyles from "./Button.style";
 
 export type ButtonStylesNames = ClassNames<typeof useStyles>;
