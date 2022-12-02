@@ -1,2 +1,2 @@
 export { SearchInput } from "./SearchInput";
-export type { InputProps, SearchInputBaseProps } from "./SearchInput";
+export type { SearchInputProps, SearchInputBaseProps } from "./SearchInput";

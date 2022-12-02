@@ -1,0 +1,1 @@
+{"version":3,"file":"spacing.js","sources":["../../../../src/theme/functions/fns/spacing.ts"],"sourcesContent":["export const spacing = (size: number): number => {\n  return size * 8;\n};\n"],"names":[],"mappings":"AAAY,MAAC,OAAO,GAAG,CAAC,IAAI,KAAK;AACjC,EAAE,OAAO,IAAI,GAAG,CAAC,CAAC;AAClB;;;;"}

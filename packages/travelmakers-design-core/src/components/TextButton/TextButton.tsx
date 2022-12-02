@@ -17,7 +17,7 @@ export type ButtonStylesNames = ClassNames<typeof useStyles>;
 
 export type ButtonPalette = "navy" | "white" | (string & {});
 
-export interface SharedButtonProps extends TmComponentProps<ButtonStylesNames> {
+export interface TextButtonProps extends TmComponentProps<ButtonStylesNames> {
   /** Button 컴포넌트의 크기를 정합니다. */
   size?: TmSize;
 
@@ -53,7 +53,7 @@ export interface SharedButtonProps extends TmComponentProps<ButtonStylesNames> {
 }
 
 export type ButtonProps<C extends React.ElementType> =
-  PolymorphicComponentProps<C, SharedButtonProps>;
+  PolymorphicComponentProps<C, TextButtonProps>;
 
 type ButtonComponent = <C extends React.ElementType = "button">(
   props: ButtonProps<C>

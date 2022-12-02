@@ -1,0 +1,1 @@
+{"version":3,"file":"Timer.style.d.ts","sourceRoot":"","sources":["../../../src/components/Timer/Timer.style.ts"],"names":[],"mappings":"AAAA,OAAO,EAAgB,OAAO,EAAE,MAAM,6BAA6B,CAAC;AAEpE,OAAO,EAAE,SAAS,EAAE,UAAU,EAAE,MAAM,SAAS,CAAC;AAEhD,UAAU,WAAW;IACnB,4BAA4B;IAC5B,IAAI,CAAC,EAAE,SAAS,CAAC;IAEjB,4BAA4B;IAC5B,KAAK,CAAC,EAAE,UAAU,CAAC;CACpB;;;;;;AAkBD,wBA+BE"}

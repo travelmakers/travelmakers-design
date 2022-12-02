@@ -1,0 +1,1 @@
+{"version":3,"file":"CalloutAlertIcon.d.ts","sourceRoot":"","sources":["../../../src/components/Callout/CalloutAlertIcon.tsx"],"names":[],"mappings":"AAAA,OAAO,KAAK,MAAM,OAAO,CAAC;AAE1B,UAAU,KAAK;IACb,KAAK,CAAC,EAAE,MAAM,CAAC;CAChB;AACD,eAAO,MAAM,gBAAgB,EAAE,KAAK,CAAC,EAAE,CAAC,KAAK,CAyB5C,CAAC"}
