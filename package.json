@@ -3,7 +3,6 @@
   "private": true,
   "author": "Travelmakers. Inc.",
   "license": "MIT",
-  "version": "0.0.1",
   "workspaces": {
     "packages": [
       "packages/*"
@@ -30,6 +29,7 @@
   "devDependencies": {
     "@rollup/plugin-alias": "^3.1.8",
     "@rollup/plugin-commonjs": "^21.0.1",
+    "@rollup/plugin-image": "^3.0.1",
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^13.0.6",
     "@rollup/plugin-replace": "^3.0.0",
@@ -43,6 +43,7 @@
     "@storybook/react": "^6.4.9",
     "@storybook/storybook-deployer": "^2.8.10",
     "@storybook/theming": "^6.5.10",
+    "@svgr/rollup": "^6.5.1",
     "@types/react": "^17.0.37",
     "@types/react-dom": "^17.0.11",
     "@types/yargs": "^17.0.7",
@@ -51,6 +52,7 @@
     "rollup": "^2.61.0",
     "rollup-plugin-esbuild": "^4.7.2",
     "rollup-plugin-node-externals": "^3.0.1",
+    "rollup-plugin-url": "^3.0.1",
     "rollup-plugin-visualizer": "^5.5.2",
     "storybook-addon-outline": "^1.4.2",
     "storybook-addon-turbo-build": "^1.0.1",
