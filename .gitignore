@@ -42,3 +42,42 @@ Temporary Items
 storybook-static/
 
 # End of https://www.toptal.com/developers/gitignore/api/macos,storybookjs
+
+# os
+.DS_Store
+
+# editor
+.idea/
+.vscode/
+.nova/
+
+# node
+node_modules/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# env
+.env.test
+.env*.local
+
+# build
+esm/
+cjs/
+lib/
+dist/
+docs/.docgen/
+
+# typescript
+*.tsbuildinfo
+
+# gatsby
+docs/.cache
+gallery/.cache
+docs/public
+gallery/public
