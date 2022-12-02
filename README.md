@@ -47,6 +47,8 @@ yarn add @travelmakers/travelmakers-design
 
 Tm Design is made available under the [MIT License](./LICENSE).
 
+## ✨ Contributors
+
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
