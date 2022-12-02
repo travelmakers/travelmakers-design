@@ -7,8 +7,8 @@ interface TagStyles {
     size?: TagSize;
     disabled?: boolean;
 }
-declare const _default: (params: TagStyles, options?: import("@travelmakers-design/styles/lib/tss/createStyles").UseStylesOptions<"inner" | "line" | "container">) => {
-    classes: Record<"inner" | "line" | "container", string>;
+declare const _default: (params: TagStyles, options?: import("@travelmakers-design/styles/lib/tss/createStyles").UseStylesOptions<"line" | "container" | "inner">) => {
+    classes: Record<"line" | "container" | "inner", string>;
     cx: (...args: any) => string;
     theme: TmTheme;
 };

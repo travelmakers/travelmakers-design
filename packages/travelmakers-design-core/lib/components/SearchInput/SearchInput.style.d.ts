@@ -6,8 +6,8 @@ interface InputStyles {
     width?: number;
     descriptionType?: InputDescriptionType;
 }
-declare const _default: (params: InputStyles, options?: import("@travelmakers-design/styles/lib/tss/createStyles").UseStylesOptions<"fill" | "icon" | "disabled" | "input" | "invalid" | "wrapper" | "withIcon" | "rightSection">) => {
-    classes: Record<"fill" | "icon" | "disabled" | "input" | "invalid" | "wrapper" | "withIcon" | "rightSection", string>;
+declare const _default: (params: InputStyles, options?: import("@travelmakers-design/styles/lib/tss/createStyles").UseStylesOptions<"input" | "fill" | "icon" | "disabled" | "invalid" | "wrapper" | "withIcon" | "rightSection">) => {
+    classes: Record<"input" | "fill" | "icon" | "disabled" | "invalid" | "wrapper" | "withIcon" | "rightSection", string>;
     cx: (...args: any) => string;
     theme: import("@travelmakers-design/styles").TmTheme;
 };

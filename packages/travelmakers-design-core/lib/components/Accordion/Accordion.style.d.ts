@@ -1,8 +1,8 @@
 interface AccordionStyles {
     open: boolean[];
 }
-declare const _default: (params: AccordionStyles, options?: import("@travelmakers-design/styles/lib/tss/createStyles").UseStylesOptions<"content" | "icon" | "title" | "row" | "container" | "titleWrap" | "titleIndex" | "divider" | "answerText" | "answer">) => {
-    classes: Record<"content" | "icon" | "title" | "row" | "container" | "titleWrap" | "titleIndex" | "divider" | "answerText" | "answer", string>;
+declare const _default: (params: AccordionStyles, options?: import("@travelmakers-design/styles/lib/tss/createStyles").UseStylesOptions<"title" | "row" | "container" | "content" | "titleWrap" | "titleIndex" | "icon" | "divider" | "answerText" | "answer">) => {
+    classes: Record<"title" | "row" | "container" | "content" | "titleWrap" | "titleIndex" | "icon" | "divider" | "answerText" | "answer", string>;
     cx: (...args: any) => string;
     theme: import("@travelmakers-design/styles").TmTheme;
 };

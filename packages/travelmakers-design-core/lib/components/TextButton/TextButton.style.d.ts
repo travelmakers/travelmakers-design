@@ -9,8 +9,8 @@ interface ButtonStylesProps {
     leftIcon?: React.ReactNode;
     rightIcon?: React.ReactNode;
 }
-declare const _default: (params: ButtonStylesProps, options?: import("@travelmakers-design/styles/lib/tss/createStyles").UseStylesOptions<"loading" | "solid" | "root" | "icon" | "leftIcon" | "rightIcon" | "inner" | "label">) => {
-    classes: Record<"loading" | "solid" | "root" | "icon" | "leftIcon" | "rightIcon" | "inner" | "label", string>;
+declare const _default: (params: ButtonStylesProps, options?: import("@travelmakers-design/styles/lib/tss/createStyles").UseStylesOptions<"label" | "icon" | "loading" | "solid" | "root" | "leftIcon" | "rightIcon" | "inner">) => {
+    classes: Record<"label" | "icon" | "loading" | "solid" | "root" | "leftIcon" | "rightIcon" | "inner", string>;
     cx: (...args: any) => string;
     theme: TmTheme;
 };

@@ -1,8 +1,8 @@
 import { TmTheme } from "@travelmakers-design/styles";
 interface CarouselTitleCardStyles {
 }
-declare const _default: (params: CarouselTitleCardStyles, options?: import("@travelmakers-design/styles/lib/tss/createStyles").UseStylesOptions<"root" | "description" | "newBadge" | "headlineWrapper" | "subHeadline" | "headline" | "goImageflexBox" | "arrowImage">) => {
-    classes: Record<"root" | "description" | "newBadge" | "headlineWrapper" | "subHeadline" | "headline" | "goImageflexBox" | "arrowImage", string>;
+declare const _default: (params: CarouselTitleCardStyles, options?: import("@travelmakers-design/styles/lib/tss/createStyles").UseStylesOptions<"root" | "newBadge" | "headlineWrapper" | "subHeadline" | "headline" | "description" | "goImageflexBox" | "arrowImage">) => {
+    classes: Record<"root" | "newBadge" | "headlineWrapper" | "subHeadline" | "headline" | "description" | "goImageflexBox" | "arrowImage", string>;
     cx: (...args: any) => string;
     theme: TmTheme;
 };

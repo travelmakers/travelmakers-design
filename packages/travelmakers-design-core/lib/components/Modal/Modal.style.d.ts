@@ -4,8 +4,8 @@ interface AccordionStyles {
     size?: ModalSize;
     type?: ModalType;
 }
-declare const _default: (params: AccordionStyles, options?: import("@travelmakers-design/styles/lib/tss/createStyles").UseStylesOptions<"container" | "modalContentText" | "absoluteContainer" | "closeContainer" | "modalContainer" | "modalContentsContainer" | "modalContents" | "modalHeader" | "modalTitle" | "modalBackIcon" | "modalCloseIcon" | "modalAbsolute">) => {
-    classes: Record<"container" | "modalContentText" | "absoluteContainer" | "closeContainer" | "modalContainer" | "modalContentsContainer" | "modalContents" | "modalHeader" | "modalTitle" | "modalBackIcon" | "modalCloseIcon" | "modalAbsolute", string>;
+declare const _default: (params: AccordionStyles, options?: import("@travelmakers-design/styles/lib/tss/createStyles").UseStylesOptions<"container" | "absoluteContainer" | "closeContainer" | "modalContainer" | "modalContentsContainer" | "modalContents" | "modalHeader" | "modalTitle" | "modalBackIcon" | "modalCloseIcon" | "modalContentText" | "modalAbsolute">) => {
+    classes: Record<"container" | "absoluteContainer" | "closeContainer" | "modalContainer" | "modalContentsContainer" | "modalContents" | "modalHeader" | "modalTitle" | "modalBackIcon" | "modalCloseIcon" | "modalContentText" | "modalAbsolute", string>;
     cx: (...args: any) => string;
     theme: TmTheme;
 };

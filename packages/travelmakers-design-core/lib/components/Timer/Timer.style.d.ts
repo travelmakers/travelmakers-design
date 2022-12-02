@@ -6,8 +6,8 @@ interface TimerStyles {
     /** Timer 컴포넌트의 색상을 정합니다. */
     color?: TimerColor;
 }
-declare const _default: (params: TimerStyles, options?: import("@travelmakers-design/styles/lib/tss/createStyles").UseStylesOptions<"icon" | "label" | "timer" | "container" | "labelContainer">) => {
-    classes: Record<"icon" | "label" | "timer" | "container" | "labelContainer", string>;
+declare const _default: (params: TimerStyles, options?: import("@travelmakers-design/styles/lib/tss/createStyles").UseStylesOptions<"label" | "timer" | "container" | "icon" | "labelContainer">) => {
+    classes: Record<"label" | "timer" | "container" | "icon" | "labelContainer", string>;
     cx: (...args: any) => string;
     theme: TmTheme;
 };

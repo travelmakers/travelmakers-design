@@ -2,8 +2,8 @@ import { CoRadius } from "@travelmakers-design/styles";
 interface ImageStyles {
     radius?: CoRadius | number;
 }
-declare const _default: (params: ImageStyles, options?: import("@travelmakers-design/styles/lib/tss/createStyles").UseStylesOptions<"root" | "image" | "placeholder">) => {
-    classes: Record<"root" | "image" | "placeholder", string>;
+declare const _default: (params: ImageStyles, options?: import("@travelmakers-design/styles/lib/tss/createStyles").UseStylesOptions<"image" | "placeholder" | "root">) => {
+    classes: Record<"image" | "placeholder" | "root", string>;
     cx: (...args: any) => string;
     theme: import("@travelmakers-design/styles").TmTheme;
 };

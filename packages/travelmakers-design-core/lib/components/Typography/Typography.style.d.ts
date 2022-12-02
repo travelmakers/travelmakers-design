@@ -13,8 +13,8 @@ interface TypographyStylesProps {
     color?: TmPalette | TmColor | string;
 }
 export declare const heights: Record<TmSize, number>;
-declare const _default: (params: TypographyStylesProps, options?: import("@travelmakers-design/styles/lib/tss/createStyles").UseStylesOptions<"loading" | "solid" | "root" | "inner" | "label">) => {
-    classes: Record<"loading" | "solid" | "root" | "inner" | "label", string>;
+declare const _default: (params: TypographyStylesProps, options?: import("@travelmakers-design/styles/lib/tss/createStyles").UseStylesOptions<"label" | "loading" | "solid" | "root" | "inner">) => {
+    classes: Record<"label" | "loading" | "solid" | "root" | "inner", string>;
     cx: (...args: any) => string;
     theme: TmTheme;
 };

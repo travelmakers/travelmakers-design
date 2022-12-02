@@ -5,8 +5,8 @@ interface ControlIndicatorStyles {
     /** ControlIndicator 컴포넌트의 색상을 정합니다. */
     size?: "small" | "large";
 }
-declare const _default: (params: ControlIndicatorStyles, options?: import("@travelmakers-design/styles/lib/tss/createStyles").UseStylesOptions<"root" | "button" | "indicator">) => {
-    classes: Record<"root" | "button" | "indicator", string>;
+declare const _default: (params: ControlIndicatorStyles, options?: import("@travelmakers-design/styles/lib/tss/createStyles").UseStylesOptions<"button" | "root" | "indicator">) => {
+    classes: Record<"button" | "root" | "indicator", string>;
     cx: (...args: any) => string;
     theme: TmTheme;
 };

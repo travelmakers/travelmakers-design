@@ -3,8 +3,8 @@ interface BottomSheetStyles {
     length?: number;
     popup?: boolean;
 }
-declare const _default: (params: BottomSheetStyles, options?: import("@travelmakers-design/styles/lib/tss/createStyles").UseStylesOptions<"label" | "option" | "container" | "optionIcon" | "moreIcon" | "labelContainer" | "moteIcon" | "modalContentText">) => {
-    classes: Record<"label" | "option" | "container" | "optionIcon" | "moreIcon" | "labelContainer" | "moteIcon" | "modalContentText", string>;
+declare const _default: (params: BottomSheetStyles, options?: import("@travelmakers-design/styles/lib/tss/createStyles").UseStylesOptions<"label" | "option" | "container" | "modalContentText" | "optionIcon" | "moreIcon" | "labelContainer" | "moteIcon">) => {
+    classes: Record<"label" | "option" | "container" | "modalContentText" | "optionIcon" | "moreIcon" | "labelContainer" | "moteIcon", string>;
     cx: (...args: any) => string;
     theme: TmTheme;
 };

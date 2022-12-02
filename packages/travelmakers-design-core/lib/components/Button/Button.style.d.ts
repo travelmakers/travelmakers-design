@@ -7,8 +7,8 @@ interface ButtonStylesProps {
     line?: boolean;
 }
 export declare const heights: Record<TmSize, number>;
-declare const _default: (params: ButtonStylesProps, options?: import("@travelmakers-design/styles/lib/tss/createStyles").UseStylesOptions<"loading" | "solid" | "root" | "icon" | "leftIcon" | "rightIcon" | "inner" | "label" | "ghost" | "spinnerWrapper">) => {
-    classes: Record<"loading" | "solid" | "root" | "icon" | "leftIcon" | "rightIcon" | "inner" | "label" | "ghost" | "spinnerWrapper", string>;
+declare const _default: (params: ButtonStylesProps, options?: import("@travelmakers-design/styles/lib/tss/createStyles").UseStylesOptions<"label" | "icon" | "loading" | "solid" | "ghost" | "root" | "leftIcon" | "rightIcon" | "inner" | "spinnerWrapper">) => {
+    classes: Record<"label" | "icon" | "loading" | "solid" | "ghost" | "root" | "leftIcon" | "rightIcon" | "inner" | "spinnerWrapper", string>;
     cx: (...args: any) => string;
     theme: TmTheme;
 };
