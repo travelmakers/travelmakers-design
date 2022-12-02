@@ -8,7 +8,7 @@ import {
   useTmTheme,
 } from "@travelmakers-design/styles";
 import React, { forwardRef } from "react";
-import { View } from "@travelmakers-design/core";
+import { View } from "../View/View";
 import useStyles from "./Button.style";
 
 export type ButtonStylesNames = ClassNames<typeof useStyles>;

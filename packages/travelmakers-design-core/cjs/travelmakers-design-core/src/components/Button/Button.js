@@ -4,8 +4,8 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 var styles = require('@travelmakers-design/styles');
 var React = require('react');
-var Button_style = require('./Button.style.js');
 var View = require('../View/View.js');
+var Button_style = require('./Button.style.js');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e["default"] : e; }
 
