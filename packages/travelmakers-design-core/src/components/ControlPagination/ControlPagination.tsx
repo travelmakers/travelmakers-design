@@ -10,7 +10,18 @@ import { Image } from "../Image";
 import { View } from "../View";
 import useStyles from "./ControlPagination.style";
 
+import {
+  IconArrowNext,
+  IconArrowNextDisabled,
+  IconArrowPrev,
+  IconArrowPrevDisabled,
+} from "../../assets/icon";
+
 export type ProgressStylesNames = ClassNames<typeof useStyles>;
+
+// arrow icon 지정
+let ArrowNext = IconArrowNext;
+let ArrowPrev = IconArrowPrev;
 
 let SELECTED_PAGE = 1;
 
@@ -83,11 +94,15 @@ export const ControlPagination = forwardRef<
     // 무한 루프가 불가능한 경우, 버튼 이미지 수정
     if (!infinity) {
       if (selectedPage > totalPage || selectedPage <= 1) {
-        previousButton = require("../../assets/svg/ic-arrow-previous-disable.svg");
+        ArrowPrev = IconArrowPrevDisabled;
+      } else {
+        ArrowPrev = IconArrowPrev;
       }
 
       if (selectedPage >= totalPage) {
-        nextButton = require("../../assets/svg/ic-arrow-next-disable.svg");
+        ArrowNext = IconArrowNextDisabled;
+      } else {
+        ArrowNext = IconArrowNext;
       }
     }
 
@@ -107,9 +122,10 @@ export const ControlPagination = forwardRef<
           page = 1; // 첫 번째 페이지 일 경우, 1페이지 유지
 
           // 버튼 disable 설정
-          previousButton = require("../../assets/svg/ic-arrow-previous-disable.svg");
+          ArrowPrev = IconArrowPrevDisabled;
         } else {
           page = selectedPage - 1; // 첫 번째 페이지가 아닌 경우, 이전 페이지로 이동
+          ArrowPrev = IconArrowPrev;
         }
       }
       setSelectedPage(page);
@@ -133,9 +149,10 @@ export const ControlPagination = forwardRef<
         if (selectedPage === totalPage) {
           page = totalPage; // 마지막 페이지 일 경우, 마지막 페이지 유지
 
-          nextButton = require("../../assets/svg/ic-arrow-next-disable.svg");
+          ArrowNext = IconArrowNextDisabled;
         } else {
           page = selectedPage + 1; // 마지막 페이지가 아닌 경우, 다음 페이지로 이동
+          ArrowNext = IconArrowNext;
         }
       }
       setSelectedPage(page);
@@ -151,19 +168,19 @@ export const ControlPagination = forwardRef<
         co={co}
         {...props}
       >
-        <Image
-          src={previousButton}
+        <ArrowPrev
           className={cx(classes.button)}
           onClick={handlePreviousClick}
+          color={color === "navy" ? theme.colors.navy1 : theme.colors.white}
         />
 
         <span className={cx(classes.indicator)}>
           {selectedPage} / {totalPage}
         </span>
-        <Image
-          src={nextButton}
+        <ArrowNext
           className={cx(classes.button)}
           onClick={handleNextClick}
+          color={color === "navy" ? theme.colors.navy1 : theme.colors.white}
         />
       </View>
     );
