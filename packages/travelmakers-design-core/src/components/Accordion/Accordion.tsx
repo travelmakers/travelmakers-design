@@ -4,7 +4,7 @@ import {
   PolymorphicRef,
   TmComponentProps,
 } from "@travelmakers-design/styles";
-import React, { Fragment, forwardRef, useState } from "react";
+import React, { forwardRef, useState } from "react";
 
 import { AccordionCheck } from "./AccordionCheck";
 import { AccordionIcon } from "./AccordionIcon";
