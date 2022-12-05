@@ -81,16 +81,6 @@ export const ControlPagination = forwardRef<
     );
     const [selectedPage, setSelectedPage] = useState(SELECTED_PAGE);
 
-    let previousButton =
-      color === "navy"
-        ? require("../../assets/svg/ic-arrow-previous-navy.svg")
-        : require("../../assets/svg/ic-arrow-previous-white.svg");
-
-    let nextButton =
-      color === "navy"
-        ? require("../../assets/svg/ic-arrow-next-navy.svg")
-        : require("../../assets/svg/ic-arrow-next-white.svg");
-
     // 무한 루프가 불가능한 경우, 버튼 이미지 수정
     if (!infinity) {
       if (selectedPage > totalPage || selectedPage <= 1) {
