@@ -11,4 +11,5 @@ export type {
   Co,
   TmComponentProps,
 } from "@travelmakers-design/styles";
+export * from "./assets/icon";
 export * from "./components";

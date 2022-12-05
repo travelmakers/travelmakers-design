@@ -7,9 +7,8 @@ import {
   useTmTheme,
 } from "@travelmakers-design/styles";
 import React, { forwardRef } from "react";
-import { Image } from "../Image";
 import { Typography } from "../Typography";
-
+import { IconStar, IconMini, IconResidence } from "../../assets/icon";
 import { View } from "../View";
 import useStyles from "./HotelLabelType.style";
 
@@ -60,11 +59,7 @@ export const HotelLabelType = forwardRef<HTMLDivElement, HotelLabelTypeProps>(
     };
     const DefaultImage = () => (
       <>
-        <Image
-          src={require("../../assets/svg/ic-star.svg")}
-          className={cx(classes.textImage)}
-          height={"16px"}
-        />
+        <IconStar className={cx(classes.textImage)} height={"16px"} />
         <Typography
           family="Pretendard"
           level="b3"
@@ -76,11 +71,7 @@ export const HotelLabelType = forwardRef<HTMLDivElement, HotelLabelTypeProps>(
     );
     const MiniHotelImage = () => (
       <>
-        <Image
-          src={require("../../assets/svg/ic-mini.svg")}
-          className={cx(classes.textImage)}
-          height={"16px"}
-        />
+        <IconMini className={cx(classes.textImage)} height={"16px"} />
         <Typography
           family="Pretendard"
           level="b3"
@@ -92,11 +83,7 @@ export const HotelLabelType = forwardRef<HTMLDivElement, HotelLabelTypeProps>(
     );
     const ResidenceHotelImage = () => (
       <>
-        <Image
-          src={require("../../assets/svg/ic-residence.svg")}
-          className={cx(classes.textImage)}
-          height={"16px"}
-        />
+        <IconResidence className={cx(classes.textImage)} height={"16px"} />
         <Typography
           family="Pretendard"
           level="b3"

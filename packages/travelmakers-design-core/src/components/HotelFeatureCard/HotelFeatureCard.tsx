@@ -7,6 +7,7 @@ import {
   useTmTheme,
 } from "@travelmakers-design/styles";
 import React, { forwardRef } from "react";
+import { IconArrowSingle } from "../../assets/icon";
 import { HotelItems } from "../HotelItems";
 import { HotelLabelType } from "../HotelLabelType";
 import { IconTag } from "../IconTag";
@@ -251,10 +252,7 @@ export const HotelFeatureCard = forwardRef<
                     >
                       Go
                     </Typography>
-                    <Image
-                      src={require("../../assets/svg/ic-arrow-single.svg")}
-                      className={cx(classes.arrowImage)}
-                    />
+                    <IconArrowSingle className={cx(classes.arrowImage)} />
                   </div>
                 </SaleTextBox>
               )}

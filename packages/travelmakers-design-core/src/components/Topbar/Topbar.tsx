@@ -8,10 +8,9 @@ import {
 } from "@travelmakers-design/styles";
 import React, { forwardRef } from "react";
 import { Badge } from "../Badge";
-
 import { View } from "../View";
 import { Image } from "../Image";
-import { Search } from "./Search";
+import { IconMobileMypage, IconLogo, IconSearch } from "../../assets/icon";
 
 import useStyles from "./Topbar.style";
 
@@ -71,18 +70,11 @@ export const Topbar = forwardRef<HTMLDivElement, TopbarProps>(
       >
         <div className={cx(classes.container)}>
           <div className={cx(classes.wrapper)}>
-            <Image
-              src={require("./svg/logo.svg")}
-              className={cx(classes.logo)}
-              onClick={logoClick}
-            />
+            <IconLogo className={cx(classes.logo)} onClick={logoClick} />
 
             <div className={cx(classes.section)}>
               <div className={cx(classes.searchBox)} onClick={searchClick}>
-                <Image
-                  src={require("./svg/search.svg")}
-                  className={cx(classes.searchIcon)}
-                />
+                <IconSearch className={cx(classes.searchIcon)} />
                 <span className={cx(classes.searchText)}>호텔 검색</span>
               </div>
               <div className={cx(classes.divider)} />
@@ -95,10 +87,7 @@ export const Topbar = forwardRef<HTMLDivElement, TopbarProps>(
 
               {/* NOTE: only Mobile */}
               <div className={cx(classes.mobileSearchBox)} onClick={onClick}>
-                <Image
-                  src={require("./svg/ic-mobile-mypage.svg")}
-                  className={cx(classes.mypageIcon)}
-                />
+                <IconMobileMypage className={cx(classes.mypageIcon)} />
                 {isLogin && isBadge && (
                   <Badge className={cx(classes.newBadge)}></Badge>
                 )}

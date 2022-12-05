@@ -10,7 +10,7 @@ import React, { forwardRef } from "react";
 import { Typography } from "../Typography";
 import { View } from "../View";
 import useStyles from "./CarouselTitleCard.style";
-import { Image } from "../Image";
+import { IconArrowSingle } from "../../assets/icon";
 
 export type CarouselTitleCardStylesNames = ClassNames<typeof useStyles>;
 
@@ -116,10 +116,7 @@ export const CarouselTitleCard = forwardRef<
               >
                 Go
               </Typography>
-              <Image
-                src={require("../../assets/svg/ic-arrow-single.svg")}
-                className={cx(classes.arrowImage)}
-              />
+              <IconArrowSingle className={cx(classes.arrowImage)} />
             </div>
           </div>
         </div>

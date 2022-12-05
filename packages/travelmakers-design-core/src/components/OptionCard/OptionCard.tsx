@@ -14,6 +14,7 @@ import { Image } from "../Image";
 import { Button } from "../Button";
 import { Tag } from "../Tag";
 import { IconTag } from "../IconTag";
+import { IconAngle } from "../../assets/icon";
 
 export type OptionCardStylesNames = ClassNames<typeof useStyles>;
 
@@ -185,10 +186,7 @@ export const OptionCard = forwardRef<HTMLDivElement, OptionCardProps>(
               >
                 더보기
               </Typography>
-              <Image
-                src={require("../../assets/svg/ic-angle.svg")}
-                className={cx(classes.arrowImage)}
-              />
+              <IconAngle className={cx(classes.arrowImage)} />
             </div>
           </div>
 

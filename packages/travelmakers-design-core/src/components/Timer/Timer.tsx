@@ -3,7 +3,7 @@ import React, { forwardRef, useState, useEffect } from "react";
 
 import useStyles from "./Timer.style";
 import { View } from "../View";
-import { Image } from "../Image";
+import { IconTimesale } from "../../assets/icon";
 
 export type TimerStylesNames = ClassNames<typeof useStyles>;
 
@@ -93,14 +93,9 @@ export const Timer = forwardRef<HTMLDivElement, TimerProps>(
         {...props}
       >
         <div className={cx(classes.labelContainer)}>
-          <Image
-            src={
-              color === "navy"
-                ? require("../../assets/svg/ic-timesale-navy.svg")
-                : require("../../assets/svg/ic-timesale-white.svg")
-            }
+          <IconTimesale
             className={cx(classes.icon)}
-            alt="timer"
+            color={color === "navy" ? "#30373F" : "white"}
           />
           <div className={cx(classes.label)}>{label}</div>
         </div>

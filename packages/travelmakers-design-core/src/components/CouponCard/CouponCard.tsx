@@ -11,6 +11,7 @@ import { Typography } from "../Typography";
 import { View } from "../View";
 import useStyles from "./CouponCard.style";
 import { Image } from "../Image";
+import { IconCheck } from "../../assets/icon";
 
 export type CouponCardStylesNames = ClassNames<typeof useStyles>;
 
@@ -110,12 +111,7 @@ export const CouponCard = forwardRef<HTMLDivElement, CouponCardProps>(
                   적용중
                 </Typography>
               ) : (
-                state === "applied" && (
-                  <Image
-                    src={require("../../assets/svg/ic-check.svg")}
-                    alt="check"
-                  />
-                )
+                state === "applied" && <IconCheck />
               )}
             </div>
             <Typography
