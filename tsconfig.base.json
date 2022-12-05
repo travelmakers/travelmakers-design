@@ -4,9 +4,9 @@
     "lib",
     "esm",
     "cjs",
-    "config/storybook/main.js",
-    "config/storybook/manager.js",
-    "config/storybook/theme.js"
+    "config/storybook/main.js"
+    // "config/storybook/manager.js",
+    // "config/storybook/theme.js"
   ],
   "compilerOptions": {
     "target": "es2015",

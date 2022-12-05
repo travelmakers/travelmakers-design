@@ -7,6 +7,8 @@ import {
   useTmTheme,
 } from "@travelmakers-design/styles";
 import React, { forwardRef, useState } from "react";
+import { IconAngle } from "../../assets/icon";
+
 import { HotelItems } from "../HotelItems";
 import { Image } from "../Image";
 import { Indicator } from "../Indicator";
@@ -75,10 +77,7 @@ export const HotelReviewCard = forwardRef<HTMLDivElement, HotelReviewCardProps>(
             >
               이런 점이 좋았어요.
             </Typography>
-            <Image
-              src={require("../../assets/svg/ic-angle.svg")}
-              className={cx(classes.arrowImage)}
-            />
+            <IconAngle className={cx(classes.arrowImage)} />
           </div>
           <HotelItems items={tags} fill className={cx(classes.tagList)} />
           <div className={cx(classes.contentBox)}>
