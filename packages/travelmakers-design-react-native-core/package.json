@@ -1,0 +1,29 @@
+{
+  "name": "@travelmakers-design/react-native-core",
+  "version": "0.0.5-alpha.3",
+  "main": "cjs/travelmakers-design-core/src/index.js",
+  "module": "esm/travelmakers-design-core/src/index.js",
+  "types": "lib/index.d.ts",
+  "license": "MIT",
+  "author": "Travelmakers. Inc.",
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "esno ../../scripts/build travelmakers-design-core"
+  },
+  "repository": {
+    "url": "https://github.com/travelmakers/travelmakers-design.git",
+    "type": "git",
+    "directory": "packages/travelmakers-design-core"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0",
+    "react-native": ">0.69.0"
+  },
+  "dependencies": {
+    "@travelmakers-design/styles": "^0.0.5-alpha.0"
+  }
+}

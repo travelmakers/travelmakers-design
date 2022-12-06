@@ -39,7 +39,8 @@ yarn add @travelmakers/travelmakers-design
 
 | Package name                                      | Description                                 |
 | ------------------------------------------------- | ------------------------------------------- |
-| [`@travelmakers-design/core`](https://github.com/travelmakers/travelmakers-design/tree/main/packages/travelmakers-design-core)    |  |
+| [`@travelmakers-design/core`](https://github.com/travelmakers/travelmakers-design/tree/main/packages/travelmakers-design-core)    | react에서 사용할 core |
+| [`@travelmakers-design/react-native-core`](https://github.com/travelmakers/travelmakers-design/tree/main/packages/travelmakers-design-react-native-core)    | react-native에서 사용할 core |
 | [`@travelmakers-design/hooks`](https://github.com/travelmakers/travelmakers-design/tree/main/packages/travelmakers-design-hooks)    |  |
 | [`@travelmakers-design/styles`](https://github.com/travelmakers/travelmakers-design/tree/main/packages/travelmakers-design-styles)    |  |
 
