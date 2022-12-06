@@ -1,8 +1,8 @@
 {
   "name": "@travelmakers-design/react-native-core",
   "version": "0.0.5-alpha.4",
-  "main": "cjs/travelmakers-design-react-native-core/src/index.js",
-  "module": "esm/travelmakers-design-react-native-core/src/index.js",
+  "main": "cjs/index.js",
+  "module": "esm/index.js",
   "types": "lib/index.d.ts",
   "license": "MIT",
   "author": "Travelmakers. Inc.",
