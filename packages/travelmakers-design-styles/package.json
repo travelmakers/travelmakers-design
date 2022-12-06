@@ -1,6 +1,6 @@
 {
   "name": "@travelmakers-design/styles",
-  "version": "0.0.5-alpha.0",
+  "version": "0.0.5-alpha.4",
   "main": "cjs/index.js",
   "module": "esm/index.js",
   "types": "lib/index.d.ts",
