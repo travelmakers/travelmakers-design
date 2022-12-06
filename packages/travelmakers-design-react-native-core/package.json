@@ -1,8 +1,8 @@
 {
   "name": "@travelmakers-design/react-native-core",
   "version": "0.0.5-alpha.3",
-  "main": "cjs/travelmakers-design-core/src/index.js",
-  "module": "esm/travelmakers-design-core/src/index.js",
+  "main": "cjs/travelmakers-design-react-native-core/src/index.js",
+  "module": "esm/travelmakers-design-react-native-core/src/index.js",
   "types": "lib/index.d.ts",
   "license": "MIT",
   "author": "Travelmakers. Inc.",
@@ -11,12 +11,12 @@
     "access": "public"
   },
   "scripts": {
-    "build": "esno ../../scripts/build travelmakers-design-core"
+    "build": "esno ../../scripts/build travelmakers-design-react-native-core"
   },
   "repository": {
     "url": "https://github.com/travelmakers/travelmakers-design.git",
     "type": "git",
-    "directory": "packages/travelmakers-design-core"
+    "directory": "packages/travelmakers-design-react-native-core"
   },
   "peerDependencies": {
     "react": ">=16.8.0",

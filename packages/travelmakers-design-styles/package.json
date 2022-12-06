@@ -20,7 +20,8 @@
   },
   "peerDependencies": {
     "react": ">=16.8.0",
-    "react-dom": ">=16.8.0"
+    "react-dom": ">=16.8.0",
+    "react-native": ">0.69.0"
   },
   "dependencies": {
     "@emotion/cache": "^11.6.0",

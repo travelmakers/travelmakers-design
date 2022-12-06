@@ -14,8 +14,9 @@ import {
   Image,
   Text,
   ImageSourcePropType,
+  StyleProp,
+  ViewStyle,
 } from "react-native";
-import { SvgProps } from "react-native-svg";
 import useStyles from "./Button.style";
 
 export type ButtonStylesNames = ClassNames<typeof useStyles>;
@@ -50,6 +51,8 @@ export interface SharedButtonProps extends TmComponentProps<ButtonStylesNames> {
 
   /** Button 컴포넌트 내부 내용을 추가합니다. */
   children?: string;
+
+  className?: StyleProp<any>;
 }
 
 // export type ButtonProps<C extends View> = SharedButtonProps;
@@ -63,7 +66,6 @@ export const Button: React.FC<SharedButtonProps> & { displayName?: string } =
     (
       {
         children,
-        // component,
         size = "medium",
         variant: _variant = "primary",
         line = false,
@@ -81,7 +83,7 @@ export const Button: React.FC<SharedButtonProps> & { displayName?: string } =
       ref: React.RefObject<View>
     ) => {
       const theme = useTmTheme();
-      const { classes, cx } = useStyles(
+      const { classesRn } = useStyles(
         {
           variant: _variant,
           size,
@@ -93,13 +95,28 @@ export const Button: React.FC<SharedButtonProps> & { displayName?: string } =
       );
 
       return (
-        <View ref={ref}>
+        <View
+          ref={ref}
+          style={[
+            classesRn.root,
+            line ? classesRn.ghost : classesRn.solid,
+            className,
+          ]}
+        >
           <TouchableOpacity onPress={() => {}} disabled={disabled}>
-            <View>
-              {leftIcon && <View>{leftIcon}</View>}
-              <Text>{children}</Text>
+            <View style={[classesRn.inner]}>
+              {leftIcon && (
+                <View style={[classesRn.icon, classesRn.leftIcon]}>
+                  {leftIcon}
+                </View>
+              )}
+              <Text style={[classesRn.label]}>{children}</Text>
 
-              {rightIcon && <View>{rightIcon}</View>}
+              {rightIcon && (
+                <View style={[classesRn.icon, classesRn.rightIcon]}>
+                  {rightIcon}
+                </View>
+              )}
             </View>
           </TouchableOpacity>
         </View>
