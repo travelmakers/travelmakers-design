@@ -1,12 +1,12 @@
-import clsx from 'clsx';
-import { serializeStyles, RegisteredCache } from '@emotion/serialize';
-import { insertStyles, getRegisteredStyles } from '@emotion/utils';
-import type { EmotionCache } from '@emotion/cache';
-import { useGuaranteedMemo } from './utils/useGuaranteedMemo';
-import type { CSS } from './types';
-import { useCache } from './CacheProvider';
+import clsx from "clsx";
+import { serializeStyles, RegisteredCache } from "@emotion/serialize";
+import { insertStyles, getRegisteredStyles } from "@emotion/utils";
+import type { EmotionCache } from "@emotion/cache";
+import { useGuaranteedMemo } from "./utils/useGuaranteedMemo";
+import type { CSS } from "./types";
+import { useCache } from "./CacheProvider";
 
-const refPropertyName = 'ref' as const;
+const refPropertyName = "ref" as const;
 
 function getRef(args: any[]) {
   let ref: string;
@@ -35,7 +35,11 @@ export const { cssFactory } = (() => {
   function merge(registered: RegisteredCache, css: CSS, className: string) {
     const registeredStyles: string[] = [];
 
-    const rawClassName = getRegisteredStyles(registered, registeredStyles, className);
+    const rawClassName = getRegisteredStyles(
+      registered,
+      registeredStyles,
+      className
+    );
 
     if (registeredStyles.length < 2) {
       return className;
@@ -51,12 +55,23 @@ export const { cssFactory } = (() => {
       const { ref, args } = getRef(styles);
       const serialized = serializeStyles(args, cache.registered);
       insertStyles(cache as any, serialized, false);
-      return `${cache.key}-${serialized.name}${ref === undefined ? '' : ` ${ref}`}`;
+      return `${cache.key}-${serialized.name}${
+        ref === undefined ? "" : ` ${ref}`
+      }`;
+    };
+
+    const cssRn: CSS = (...styles: any) => {
+      const { ref, args } = getRef(styles);
+      const serialized = serializeStyles(args, cache.registered);
+      insertStyles(cache as any, serialized, false);
+      return `${cache.key}${serialized.name}${
+        ref === undefined ? "" : ` ${ref}`
+      }`;
     };
 
     const cx = (...args: any) => merge(cache.registered, css, clsx(args));
 
-    return { css, cx };
+    return { css, cx, cssRn };
   }
 
   return { cssFactory: _cssFactory };

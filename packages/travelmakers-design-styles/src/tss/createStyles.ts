@@ -5,6 +5,7 @@ import type { CSSObject } from "./types";
 import { fromEntries } from "./utils/fromEntries";
 import { mergeClassNames } from "./utils/mergeClassNames";
 import { useCss } from "./useCss";
+import { StyleProp, ViewStyle } from "react-native";
 
 export interface UseStylesOptions<Key extends string> {
   co?: Co;
@@ -12,6 +13,9 @@ export interface UseStylesOptions<Key extends string> {
     | Partial<Record<Key, CSSObject>>
     | ((theme: TmTheme) => Partial<Record<Key, CSSObject>>);
   name: string;
+}
+interface CssObjectReactNative {
+  [index: string]: StyleProp<ViewStyle>;
 }
 
 export function createStyles<Key extends string = string, Params = void>(
@@ -32,7 +36,7 @@ export function createStyles<Key extends string = string, Params = void>(
     const theme = useTmTheme();
     const themeStyles = useTmThemeStyles()[options?.name];
 
-    const { css, cx } = useCss();
+    const { css, cx, cssRn } = useCss();
 
     let count = 0;
 
@@ -66,7 +70,24 @@ export function createStyles<Key extends string = string, Params = void>(
       })
     ) as Record<Key, string>;
 
-    return { classes: mergeClassNames(cx, classes, options?.name), cx, theme };
+    const classesRn = fromEntries(
+      Object.keys(cssObject).map((key) => {
+        const mergedStyles = cx(
+          cssRn(cssObject[key]),
+          cssRn(_themeStyles[key]),
+          cssRn(_overrideStyles[key]),
+          cssRn(_co)
+        );
+        return [key, mergedStyles];
+      })
+    ) as Record<Key, string>;
+
+    return {
+      classes: mergeClassNames(cx, classes, options?.name),
+      classesRn: cssObject as unknown as CssObjectReactNative,
+      cx,
+      theme,
+    };
   }
 
   return useStyles;
