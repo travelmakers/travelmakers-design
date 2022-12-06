@@ -6,7 +6,7 @@ import {
 } from "@travelmakers-design/styles";
 import { useHiddenBodyOverflow } from "@travelmakers-design/hooks";
 import React, { forwardRef } from "react";
-// import ReactDOM from "react-dom";
+import ReactDOM from "react-dom";
 
 import useStyles from "./Modal.style";
 import { Button } from "../Button";
@@ -101,7 +101,7 @@ export const Modal: TagComponent & { displayName?: string } = forwardRef(
 
     return (
       <>
-        {/* {open
+        {open
           ? ReactDOM.createPortal(
               <Element
                 ref={ref}
@@ -191,7 +191,7 @@ export const Modal: TagComponent & { displayName?: string } = forwardRef(
               </Element>,
               document.body as HTMLElement
             )
-          : null} */}
+          : null}
       </>
     );
   }
