@@ -8,9 +8,11 @@ import {
   useTmTheme,
 } from "@travelmakers-design/styles";
 import React, { forwardRef } from "react";
-import { View as RnView, ViewProps } from "react-native";
+import { View as RnView, ViewProps as RnViewProps } from "react-native";
 
-export const View: ViewProps & { displayName?: string } = forwardRef(
+type ViewComponent = (props: RnViewProps) => React.ReactElement;
+
+export const View: ViewComponent & { displayName?: string } = forwardRef(
   ({ component, style, ...props }: any, ref: React.RefObject<RnView>) => {
     const Element = component || "View";
     return (

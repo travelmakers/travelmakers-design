@@ -8,7 +8,14 @@ import {
   useTmTheme,
 } from "@travelmakers-design/styles";
 import React, { forwardRef } from "react";
-import { View } from "react-native";
+import {
+  View,
+  TouchableOpacity,
+  Image,
+  Text,
+  ImageSourcePropType,
+} from "react-native";
+import { SvgProps } from "react-native-svg";
 import useStyles from "./Button.style";
 
 export type ButtonStylesNames = ClassNames<typeof useStyles>;
@@ -36,85 +43,68 @@ export interface SharedButtonProps extends TmComponentProps<ButtonStylesNames> {
   disabled?: boolean;
 
   /** Button 컴포넌트 좌측 영역에 요소를 추가합니다. */
-  leftIcon?: React.ReactNode;
+  leftIcon?: any;
 
   /** Button 컴포넌트 좌측 영역에 요소를 추가합니다. */
-  rightIcon?: React.ReactNode;
+  rightIcon?: any;
+
+  /** Button 컴포넌트 내부 내용을 추가합니다. */
+  children?: string;
 }
 
-export type ButtonProps<C extends React.ElementType> =
-  PolymorphicComponentProps<C, SharedButtonProps>;
+// export type ButtonProps<C extends View> = SharedButtonProps;
 
-type ButtonComponent = <C extends React.ElementType = "button">(
-  props: ButtonProps<C>
-) => React.ReactElement;
+// type ButtonComponent = <C extends View>(
+//   props: ButtonProps<C>
+// ) => React.ReactElement;
 
-export const Button: ButtonComponent & { displayName?: string } = forwardRef(
-  <C extends React.ElementType = "button">(
-    {
-      children,
-      component,
-      size = "medium",
-      variant: _variant = "primary",
-      line = false,
-      roundness = false,
-      fullWidth = false,
-      type = "button",
-      disabled = false,
-      leftIcon = "",
-      rightIcon = "",
-      className,
-      co,
-      overrideStyles,
-      ...props
-    }: ButtonProps<C>,
-    ref: PolymorphicRef<C>
-  ) => {
-    const theme = useTmTheme();
-    const { classes, cx } = useStyles(
+export const Button: React.FC<SharedButtonProps> & { displayName?: string } =
+  forwardRef(
+    (
       {
-        variant: _variant,
-        size,
-        fullWidth,
-        roundness,
-        line,
+        children,
+        // component,
+        size = "medium",
+        variant: _variant = "primary",
+        line = false,
+        roundness = false,
+        fullWidth = false,
+        type = "button",
+        disabled = false,
+        leftIcon = "",
+        rightIcon = "",
+        className,
+        co,
+        overrideStyles,
+        ...props
       },
-      { overrideStyles, name: "Button" }
-    );
+      ref: React.RefObject<View>
+    ) => {
+      const theme = useTmTheme();
+      const { classes, cx } = useStyles(
+        {
+          variant: _variant,
+          size,
+          fullWidth,
+          roundness,
+          line,
+        },
+        { overrideStyles, name: "Button" }
+      );
 
-    return (
-      <View
-        component={component || "button"}
-        ref={ref}
-        type={type}
-        disabled={disabled}
-        className={cx(
-          classes.root,
-          classes[line ? "ghost" : "solid"],
-          className
-        )}
-        co={co}
-        onTouchStart={() => {}}
-        {...props}
-      >
-        <View style={classes.inner}>
-          {leftIcon && (
-            <span className={cx(classes.icon, classes.leftIcon)}>
-              {leftIcon}
-            </span>
-          )}
+      return (
+        <View ref={ref}>
+          <TouchableOpacity onPress={() => {}} disabled={disabled}>
+            <View>
+              {leftIcon && <View>{leftIcon}</View>}
+              <Text>{children}</Text>
 
-          <span className={classes.label}>{children}</span>
-
-          {rightIcon && (
-            <span className={cx(classes.icon, classes.rightIcon)}>
-              {rightIcon}
-            </span>
-          )}
+              {rightIcon && <View>{rightIcon}</View>}
+            </View>
+          </TouchableOpacity>
         </View>
-      </View>
-    );
-  }
-);
+      );
+    }
+  );
 
 Button.displayName = "@travelmakers-design/core/Button";

@@ -21,7 +21,8 @@
   "peerDependencies": {
     "react": ">=16.8.0",
     "react-dom": ">=16.8.0",
-    "react-native": ">0.69.0"
+    "react-native": ">0.69.0",
+    "react-native-svg": "^13.6.0"
   },
   "dependencies": {
     "@travelmakers-design/styles": "^0.0.5-alpha.0"
