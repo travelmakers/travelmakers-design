@@ -31,6 +31,39 @@ export default createStyles((theme, {}: TimeLineGuideStyles) => {
     root: {
       display: "flex",
       alignItems: "center",
+      justifyContent: "space-between",
+      backgroundColor: theme.colors.white,
+      padding: theme.spacing.small,
+      borderRadius: theme.radius.large,
+      cursor: "pointer",
+    },
+    image: {
+      width: "60px",
+      height: "60px",
+      ["& > img"]: {
+        height: "100% !important",
+        borderRadius: theme.radius.large,
+      },
+    },
+    description: {
+      marginLeft: theme.spacing.small,
+      ["& > div > span"]: {
+        overflow: "hidden",
+        textOverflow: "ellipsis",
+        height: `${theme.lineHeights.b3}px`,
+        wordWrap: "break-word",
+        display: "-webkit-box",
+        ["-webkit-line-clamp"]: "1",
+        ["-webkit-box-orient"]: "vertical",
+      },
+    },
+    flex: {
+      display: "flex",
+      alignItems: "center",
+    },
+    arrowImage: {
+      width: "24px",
+      height: "24px",
     },
   };
 });

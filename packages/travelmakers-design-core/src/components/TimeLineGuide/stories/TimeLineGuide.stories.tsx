@@ -15,14 +15,8 @@ export default {
   title: "@travelmakers-design/core/Component/TimeLineGuide",
   component: TimeLineGuide,
   argTypes: {
-    status: {
-      defaultValue: "default",
-      description: "해당 호텔에 대한 구매 상태를 의미합니다.",
-      options: ["default", "orange"],
-      control: { type: "inline-radio" },
-    },
-    title: {
-      defaultValue: "안녕하세요, 홍길동님",
+    hotelName: {
+      defaultValue: "서울 드래곤 시티",
       description: "Title 텍스트를 지정한다.",
       table: {
         type: {
@@ -31,9 +25,8 @@ export default {
       },
       control: { type: "text" },
     },
-    message: {
-      defaultValue:
-        "여행같은 일상이 필요하지 않으세요?여행같은 일상이 필요하지 않으세요?여행같은 일상이 필요하지 않으세요?여행같은 일상이 필요하지 않으세요?여행같은 일상이 필요하지 않으세요?",
+    caption: {
+      defaultValue: "To do 추천",
       description: "Message 텍스트를 지정한다.",
       table: {
         type: {
@@ -41,26 +34,6 @@ export default {
         },
       },
       control: { type: "text" },
-    },
-    label: {
-      defaultValue: "전체 호텔 보러가기",
-      description: "Label 텍스트를 지정한다.",
-      table: {
-        type: {
-          summary: "string",
-        },
-      },
-      control: { type: "text" },
-    },
-    arrowHidden: {
-      defaultValue: false,
-      description: "Label 우측에 표시되는 arrow 화살표 hidden 여부를 결정한다.",
-      table: {
-        type: {
-          summary: "boolean",
-        },
-      },
-      control: { type: "boolean" },
     },
     onClick: { action: "clicked" },
   },
