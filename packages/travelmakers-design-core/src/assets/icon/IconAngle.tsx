@@ -12,7 +12,7 @@ export const IconAngle = (props: SVGProps<SVGSVGElement>) => (
     <g clipPath="url(#clip0_1922_7961)">
       <path
         d="M4.84326 2.34314L10.5001 7.99999L4.84326 13.6568"
-        stroke="#30373F"
+        stroke={props.color ?? "#30373F"}
       />
     </g>
     <defs>

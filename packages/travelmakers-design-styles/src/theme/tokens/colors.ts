@@ -65,4 +65,6 @@ export const DEFAULT_COLORS = {
   cover3: "#463156",
   cover4: "#685537",
   cover5: "#5B2E2E",
+
+  custom_orange1: "#C96F48",
 } as Record<TmColor, string>;
