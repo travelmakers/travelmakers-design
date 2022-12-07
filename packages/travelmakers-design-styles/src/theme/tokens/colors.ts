@@ -21,6 +21,7 @@ export const DEFAULT_COLORS = {
   gray5: "#D7D7D7",
   gray6: "#EDEDED",
   gray7: "#FAFAFA",
+  gray8: "#FDFDFD",
 
   navy1: "#30373F",
   navy2: "#6E7378",

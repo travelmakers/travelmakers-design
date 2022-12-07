@@ -12,3 +12,4 @@ export * from "./IconTimesale";
 export * from "./IconMobileMypage";
 export * from "./IconLogo";
 export * from "./IconSearch";
+export * from "./IconProcess";

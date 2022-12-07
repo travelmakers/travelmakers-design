@@ -7,6 +7,8 @@ import {
   useTmTheme,
 } from "@travelmakers-design/styles";
 import React, { forwardRef, useState } from "react";
+import { IconProcess } from "../../assets/icon";
+import { Typography } from "../Typography";
 
 import { View } from "../View";
 import useStyles from "./TimeLineProcess.style";
@@ -15,12 +17,7 @@ export type TimeLineProcessStylesNames = ClassNames<typeof useStyles>;
 
 export interface TimeLineProcessProps
   extends TmComponentProps,
-    React.ComponentPropsWithoutRef<"div"> {
-  /** 해당 호텔에 대한 구매 상태를 의미합니다.
-   * (구매전, 투어확정전, 투어확정, 투어완료, 결제진행중, 예약확정전, 체크인전, 입주n일차, 연장결제전, 연장확정전, 예약변경중, 체크아웃전, 체크아웃n일차, 체크아웃, 투어취소, 예약취소완료)
-   */
-  status: string;
-}
+    React.ComponentPropsWithoutRef<"div"> {}
 
 export const TimeLineProcess = forwardRef<HTMLDivElement, TimeLineProcessProps>(
   ({ className, co, overrideStyles, ...props }, ref) => {
@@ -30,13 +27,44 @@ export const TimeLineProcess = forwardRef<HTMLDivElement, TimeLineProcessProps>(
       { overrideStyles, name: "TimeLineProcess" }
     );
 
+    const process = [
+      { text: "결제 대기", isProcess: false },
+      { text: "결제 완료", isProcess: true },
+      { text: "호텔에삶<br/>예약 전달", isProcess: false },
+      { text: "호텔<br/>예약 확정", isProcess: false },
+    ];
+
     return (
       <View
         ref={ref}
         className={cx(classes.root, className)}
         co={co}
         {...props}
-      ></View>
+      >
+        {process.map(({ text, isProcess }, index) => {
+          return (
+            <>
+              <Typography
+                family="Pretendard"
+                level="b3"
+                textAlign="center"
+                className={cx(classes.text, isProcess && classes.process)}
+              >
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: text,
+                  }}
+                />
+              </Typography>
+              {index !== process.length - 1 && (
+                <View className={cx(classes.flex)}>
+                  <IconProcess process={isProcess} />
+                </View>
+              )}
+            </>
+          );
+        })}
+      </View>
     );
   }
 );
