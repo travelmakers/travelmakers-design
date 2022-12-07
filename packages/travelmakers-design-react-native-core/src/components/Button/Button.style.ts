@@ -20,22 +20,22 @@ interface ButtonStylesProps {
 const sizes = {
   xsmall: {
     height: TM_HEIGHTS.xsmall,
-    padding: "0 24px",
+    paddingHorizontal: 24,
   },
 
   small: {
     height: TM_HEIGHTS.small,
-    padding: "0 24px",
+    paddingHorizontal: 24,
   },
 
   medium: {
     height: TM_HEIGHTS.medium,
-    padding: "0 24px",
+    paddingHorizontal: 24,
   },
 
   large: {
     height: TM_HEIGHTS.large,
-    padding: "0 24px",
+    paddingHorizontal: 24,
   },
 };
 
