@@ -85,8 +85,10 @@ export default {
 
 export const Default = (props) => {
   return (
-    <div style={{ padding: 24 }}>
-      <TimeLineBanner {...props} />
-    </div>
+    <>
+      <div style={{ padding: 24, width: 328 }}>
+        <TimeLineBanner {...props} />
+      </div>
+    </>
   );
 };

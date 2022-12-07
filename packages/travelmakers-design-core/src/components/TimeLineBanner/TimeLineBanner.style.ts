@@ -10,7 +10,6 @@ interface TimeLineBannerStyles {
 export default createStyles((theme, { status }: TimeLineBannerStyles) => {
   return {
     root: {
-      width: "fit-content",
       backgroundColor:
         status === "default"
           ? theme.colors.green2
