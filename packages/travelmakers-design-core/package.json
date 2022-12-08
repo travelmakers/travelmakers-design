@@ -1,8 +1,8 @@
 {
   "name": "@travelmakers-design/core",
   "version": "0.0.5-alpha.7",
-  "main": "cjs/travelmakers-design-core/src/index.js",
-  "module": "esm/travelmakers-design-core/src/index.js",
+  "main": "cjs/packages/travelmakers-design-core/src/index.js",
+  "module": "esm/packages/travelmakers-design-core/src/index.js",
   "types": "lib/index.d.ts",
   "license": "MIT",
   "author": "Travelmakers. Inc.",
