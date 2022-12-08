@@ -9,15 +9,21 @@ import {
 } from "@storybook/addon-docs";
 import { Meta } from "@storybook/react";
 import React from "react";
-import { TimeLineGuide } from "../TimeLineGuide";
+import { StatusCard } from "../StatusCard";
 
 export default {
-  title: "@travelmakers-design/core/Component/TimeLineGuide",
-  component: TimeLineGuide,
+  title: "@travelmakers-design/core/Component/Card/StatusCard",
+  component: StatusCard,
   argTypes: {
-    hotelName: {
-      defaultValue: "서울 드래곤 시티",
-      description: "해당 호텔의 이름을 표시합니다.",
+    status: {
+      defaultValue: "default",
+      description: "해당 호텔에 대한 구매 상태를 의미합니다.",
+      options: ["default", "alert"],
+      control: { type: "inline-radio" },
+    },
+    title: {
+      defaultValue: "안녕하세요, 홍길동님",
+      description: "Title 텍스트를 지정한다.",
       table: {
         type: {
           summary: "string",
@@ -25,9 +31,19 @@ export default {
       },
       control: { type: "text" },
     },
-    hotelImage: {
-      defaultValue: "https://picsum.photos/60/40",
-      description: "해당 호텔의 이미지를 표시합니다.",
+    contentDate: {
+      defaultValue: new Date(),
+      description: "정해진 일시에 대한 Date 객체",
+      table: {
+        type: {
+          summary: "string",
+        },
+      },
+      control: { type: "date" },
+    },
+    label: {
+      defaultValue: "전체 호텔 보러가기",
+      description: "Label 텍스트를 지정한다.",
       table: {
         type: {
           summary: "string",
@@ -35,16 +51,7 @@ export default {
       },
       control: { type: "text" },
     },
-    caption: {
-      defaultValue: "To do 추천",
-      description: "호텔의 이름뒤에 문구를 표시합니다.",
-      table: {
-        type: {
-          summary: "string",
-        },
-      },
-      control: { type: "text" },
-    },
+
     onClick: { action: "clicked" },
   },
   parameters: {
@@ -68,8 +75,10 @@ export default {
 
 export const Default = (props) => {
   return (
-    <div style={{ padding: 24 }}>
-      <TimeLineGuide {...props} />
-    </div>
+    <>
+      <div style={{ padding: 24 }}>
+        <StatusCard {...props} />
+      </div>
+    </>
   );
 };

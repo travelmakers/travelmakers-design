@@ -22,6 +22,9 @@ export interface TimeLineGuideProps
   /** 해당 호텔의 이름을 표시합니다. */
   hotelName: string;
 
+  /** 해당 호텔의 이미지를 표시합니다. */
+  hotelImage: string;
+
   /** 호텔의 이름뒤에 문구를 표시합니다. */
   caption: string;
 
@@ -31,8 +34,9 @@ export interface TimeLineGuideProps
 export const TimeLineGuide = forwardRef<HTMLDivElement, TimeLineGuideProps>(
   (
     {
-      hotelName = "서울 드래곤 시티",
-      caption = "To do 추천",
+      hotelName,
+      hotelImage,
+      caption,
       onClick,
       className,
       co,
@@ -57,7 +61,7 @@ export const TimeLineGuide = forwardRef<HTMLDivElement, TimeLineGuideProps>(
       >
         <View className={cx(classes.flex)}>
           <Image
-            src={"https://picsum.photos/60/40"}
+            src={hotelImage}
             className={cx(classes.image)}
             alt={"hotel-name"}
             width={60}
