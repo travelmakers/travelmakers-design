@@ -63,7 +63,7 @@ export const TimeLineGuide = forwardRef<HTMLDivElement, TimeLineGuideProps>(
           <Image
             src={hotelImage}
             className={cx(classes.image)}
-            alt={"hotel-name"}
+            alt={"hotel-image"}
             width={60}
             height={60}
           />
