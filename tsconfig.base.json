@@ -13,7 +13,7 @@
     "lib": ["dom", "esnext"],
     "module": "esnext",
     "moduleResolution": "node",
-    "jsx": "preserve",
+    "jsx": "react",
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
