@@ -1,13 +1,9 @@
 import {
   ClassNames,
-  TmColor,
   TmComponentProps,
-  TmPalette,
-  TmSize,
   useTmTheme,
 } from "@travelmakers-design/styles";
-import React, { forwardRef, useState } from "react";
-import { Indicator } from "../Indicator";
+import React, { forwardRef } from "react";
 import { Typography } from "../Typography";
 
 import { View } from "../View";
