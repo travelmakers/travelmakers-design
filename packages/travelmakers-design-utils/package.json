@@ -1,0 +1,24 @@
+{
+  "name": "@travelmakers-design/utils",
+  "version": "0.0.0",
+  "main": "cjs/index.js",
+  "module": "esm/index.js",
+  "types": "lib/index.d.ts",
+  "license": "MIT",
+  "author": "Travelmakers. Inc.",
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "esno ../../scripts/build travelmakers-design-utils"
+  },
+  "repository": {
+    "url": "https://github.com/travelmakers/travelmakers-design.git",
+    "type": "git",
+    "directory": "packages/travelmakers-design-utils"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0"
+  }
+}

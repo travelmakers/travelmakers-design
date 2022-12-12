@@ -24,6 +24,7 @@
     "react-native": ">0.69.0"
   },
   "dependencies": {
-    "@travelmakers-design/styles": "^0.0.5-alpha.5"
+    "@travelmakers-design/styles": "^0.0.5-alpha.5",
+    "@travelmakers-design/utils": "^0.0.0"
   }
 }

@@ -12,11 +12,13 @@
     "composite": true,
     "paths": {
       "@travelmakers-design/styles": ["../travelmakers-design-styles"],
-      "@travelmakers-design/hooks": ["../travelmakers-design-hooks"]
+      "@travelmakers-design/hooks": ["../travelmakers-design-hooks"],
+      "@travelmakers-design/utils": ["../travelmakers-design-utils"]
     }
   },
   "references": [
     { "path": "../travelmakers-design-hooks" },
-    { "path": "../travelmakers-design-styles" }
+    { "path": "../travelmakers-design-styles" },
+    { "path": "../travelmakers-design-utils" }
   ]
 }
