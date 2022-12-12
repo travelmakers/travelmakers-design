@@ -20,7 +20,7 @@ type ReservationState =
   | "reservation_cancel";
 
 export type timeLineStateParams = {
-  enum: string;
+  enum: ReservationState;
   firstLineText: (userName?: string, hotelName?: string) => string;
   secondLineText: (
     userName?: string,
@@ -31,7 +31,11 @@ export type timeLineStateParams = {
     dDay?: string
   ) => string;
   buttonText: (expectedDate?: string, endDate?: string) => string;
-  link?: string;
+  link: (url?: string) => {
+    url: string;
+    arrow: boolean;
+  };
+  color: "default" | "alert";
 };
 
 interface props {
@@ -41,24 +45,33 @@ interface props {
 export const timeLineState: props = {
   DEFAULT: {
     enum: "default",
-    firstLineText: (userName?: string) => `안녕하세요 ${userName}님`,
+    firstLineText: (userName?: string) => `안녕하세요, ${userName}님`,
     secondLineText: () => `여행같은 일상이 필요하지 않으세요?`,
     buttonText: () => `전체 호텔 보러가기`,
-    link: undefined,
+    link: (url?: string) => {
+      return { url, arrow: !!url };
+    },
+    color: "default",
   },
   TOUR_CONFIRM_BEFORE: {
     enum: "tour_confirm_before",
-    firstLineText: (userName?: string) => `안녕하세요 ${userName}님`,
+    firstLineText: (userName?: string) => `${userName}님`,
     secondLineText: (hotelName?: string) => `${hotelName}`,
     buttonText: () => `투어 확정 전이에요`,
-    link: undefined,
+    link: (url?: string) => {
+      return { url, arrow: !!url };
+    },
+    color: "default",
   },
   TOUR_CONFIRM: {
     enum: "tour_confirm",
     firstLineText: (userName?: string) => `${userName}님`,
     secondLineText: (hotelName?: string) => `${hotelName}`,
     buttonText: () => `투어 확정 전이에요`,
-    link: undefined,
+    link: (url?: string) => {
+      return { url, arrow: !!url };
+    },
+    color: "default",
   },
 };
 
