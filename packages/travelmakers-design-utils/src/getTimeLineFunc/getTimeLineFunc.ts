@@ -259,7 +259,7 @@ type Props = {
     expectedDate?: string;
     startDate?: string;
     endDate?: string;
-    dDay?: string;
+    dDay?: number;
   };
   buttonText?: {
     expectedDate?: string;
@@ -341,14 +341,14 @@ export function getTimeLineProps(
       // NOTE: 체크아웃 전
       return {
         first: props.first.userName,
-        second: props.second.dDay,
+        second: `${props.second.dDay}`,
         buttonText: null,
       };
     case "checkout_before_n":
       // NOTE: 체크아웃 N일 전
       return {
         first: props.first.userName,
-        second: props.second.dDay,
+        second: `${props.second.dDay}`,
         buttonText: props.buttonText.endDate,
       };
     case "checkout_done":
