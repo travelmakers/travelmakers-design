@@ -267,7 +267,7 @@ type Props = {
   };
 };
 
-interface GetTimeLinePropsReturnType {
+interface TimeLinePropsReturnType {
   first: string;
   second: string;
   buttonText: string;
@@ -276,7 +276,7 @@ interface GetTimeLinePropsReturnType {
 export function getTimeLineProps(
   state: ReservationState,
   props: Props
-): GetTimeLinePropsReturnType {
+): TimeLinePropsReturnType {
   switch (state) {
     case "default" || "tour_cancel" || "reservation_cancel":
       return {
