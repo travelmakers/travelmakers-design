@@ -268,9 +268,9 @@ type Props = {
 };
 
 interface GetTimeLinePropsReturnType {
-  first?: string;
-  second?: string;
-  buttonText?: string;
+  first: string;
+  second: string;
+  buttonText: string;
 }
 
 export function getTimeLineProps(
