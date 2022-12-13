@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 import { getTimeLineFunc } from "../getTimeLineFunc";
 
@@ -35,10 +35,19 @@ export default {
 export const Default = (props) => {
   return (
     <div>
-      firstLineText:{" "}
-      {getTimeLineFunc("default").firstLineText("홍길동", "서울드래곤시티")}
+      firstLineText: {getTimeLineFunc("default").firstLineText("홍길동")}
       <br />
-      secondLineText: {getTimeLineFunc("default").secondLineText()}
+      secondLineText(default): {getTimeLineFunc("default").secondLineText()}
+      <br />
+      secondLineText(tour_confirm_before):
+      {getTimeLineFunc("reservation_purchase_before").secondLineText(
+        "서울드래곤시티"
+      )}
+      <br />
+      secondLineText(tour_confirm):
+      {getTimeLineFunc("tour_confirm").secondLineText(
+        "2022-09-28T01:26:38.000000Z"
+      )}
       <br />
       buttonText: {getTimeLineFunc("default").buttonText()}
       <br />
