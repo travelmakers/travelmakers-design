@@ -247,3 +247,123 @@ export function getTimeLineFunc(state: ReservationState): AllTypes {
       };
   }
 }
+
+type Props = {
+  first: {
+    userName?: string;
+    hotelName?: string;
+  };
+  second: {
+    userName?: string;
+    hotelName?: string;
+    expectedDate?: string;
+    startDate?: string;
+    endDate?: string;
+    dDay?: string;
+  };
+  buttonText?: {
+    expectedDate?: string;
+    endDate?: string;
+  };
+};
+
+interface GetTimeLinePropsReturnType {
+  first?: string;
+  second?: string;
+  buttonText?: string;
+}
+
+export function getTimeLineProps(
+  state: ReservationState,
+  props: Props
+): GetTimeLinePropsReturnType {
+  switch (state) {
+    case "default" || "tour_cancel" || "reservation_cancel":
+      return {
+        first: props.first.userName,
+        second: null,
+        buttonText: null,
+      };
+
+    case "tour_confirm_before":
+      return {
+        first: props.first.userName,
+        second: props.second.hotelName,
+        buttonText: null,
+      };
+    case "tour_confirm":
+      // NOTE: 투어 확정
+      return {
+        first: props.first.userName,
+        second: props.second.startDate,
+        buttonText: null,
+      };
+    case "tour_done":
+      // NOTE: 투어 완료
+      return {
+        first: props.first.userName,
+        second: null,
+        buttonText: null,
+      };
+    case "reservation_purchase_before":
+      // NOTE: 결제 진행 중 (가상 계좌)
+      return {
+        first: props.first.userName,
+        second: props.second.hotelName,
+        buttonText: null,
+      };
+    case "reservation_purchase_done":
+      // NOTE: 예악 확정 전
+      return {
+        first: props.first.userName,
+        second: props.second.hotelName,
+        buttonText: props.buttonText.expectedDate,
+      };
+    case "checkin_before":
+      // NOTE: 체크인 전
+      return {
+        first: props.first.userName,
+        second: props.second.startDate,
+        buttonText: null,
+      };
+    case "day_n" ||
+      "extend_purchase_before" ||
+      "extend_purchase_done" ||
+      "extend_checkin_before" ||
+      "reservation_change_process":
+      // NOTE: 입주 N일차 / 연장결제전 / 연장확정전/ 연장확정
+      return {
+        first: props.first.userName,
+        second: props.second.endDate,
+        buttonText: null,
+      };
+    case "checkout_before":
+      // NOTE: 체크아웃 전
+      return {
+        first: props.first.userName,
+        second: props.second.dDay,
+        buttonText: null,
+      };
+    case "checkout_before_n":
+      // NOTE: 체크아웃 N일 전
+      return {
+        first: props.first.userName,
+        second: props.second.dDay,
+        buttonText: props.buttonText.endDate,
+      };
+    case "checkout_done":
+      // NOTE: 체크아웃
+      return {
+        first: props.first.userName,
+        second: props.second.hotelName,
+        buttonText: null,
+      };
+
+    default:
+      return {
+        first: null,
+        second: null,
+        buttonText: null,
+      };
+  }
+}
