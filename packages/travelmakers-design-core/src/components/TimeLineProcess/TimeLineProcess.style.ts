@@ -35,6 +35,7 @@ export default createStyles((theme, {}: TimeLineProcessStyles) => {
       color: theme.colors.white,
       backgroundColor: theme.colors.green2,
       borderRadius: "22px",
+      lineHeight: "14px",
     },
     flex: {
       display: "flex",

@@ -17,10 +17,12 @@ export type TimeLineProcessStylesNames = ClassNames<typeof useStyles>;
 
 export interface TimeLineProcessProps
   extends TmComponentProps,
-    React.ComponentPropsWithoutRef<"div"> {}
+    React.ComponentPropsWithoutRef<"div"> {
+  status: "reservation_purchase_before" | "reservation_purchase_done";
+}
 
 export const TimeLineProcess = forwardRef<HTMLDivElement, TimeLineProcessProps>(
-  ({ className, co, overrideStyles, ...props }, ref) => {
+  ({ status, className, co, overrideStyles, ...props }, ref) => {
     const theme = useTmTheme();
     const { classes, cx } = useStyles(
       {},
@@ -28,9 +30,18 @@ export const TimeLineProcess = forwardRef<HTMLDivElement, TimeLineProcessProps>(
     );
 
     const process = [
-      { text: "결제 대기", isProcess: false },
-      { text: "결제 완료", isProcess: true },
-      { text: "호텔에삶<br/>예약 전달", isProcess: false },
+      {
+        text: "결제 대기",
+        isProcess: status === "reservation_purchase_before" && true,
+      },
+      {
+        text: "결제 완료",
+        isProcess: false,
+      },
+      {
+        text: "호텔에삶<br/>예약 전달",
+        isProcess: status === "reservation_purchase_done" && true,
+      },
       { text: "호텔<br/>예약 확정", isProcess: false },
     ];
 

@@ -15,12 +15,12 @@ export default {
   title: "@travelmakers-design/core/Component/TimeLineProcess",
   component: TimeLineProcess,
   argTypes: {
-    // status: {
-    //   defaultValue: "default",
-    //   description: "해당 호텔에 대한 구매 상태를 의미합니다.",
-    //   options: ["default", "orange"],
-    //   control: { type: "inline-radio" },
-    // },
+    status: {
+      defaultValue: "reservation_purchase_before",
+      description: "결제 프로세스 상태값을 반환합니다.",
+      options: ["reservation_purchase_before", "reservation_purchase_done"],
+      control: { type: "inline-radio" },
+    },
   },
   parameters: {
     docs: {
