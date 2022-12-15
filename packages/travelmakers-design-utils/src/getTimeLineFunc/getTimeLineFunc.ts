@@ -196,7 +196,7 @@ export function getTimeLineFunc(state: ReservationState): AllTypes {
       "extend_purchase_done" ||
       "extend_checkin_before" ||
       "reservation_change_process":
-      // NOTE: 입주 N일차 / 연장결제전 / 연장확정전/ 연장확정
+      // NOTE: 입주 N일차 / 연장결제전 / 연장확정전/ 연장확정 / 예약 변경 중
       return {
         enum: state,
         firstLineText: (userName) => `${userName}님`,

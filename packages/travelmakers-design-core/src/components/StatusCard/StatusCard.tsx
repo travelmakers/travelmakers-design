@@ -26,8 +26,8 @@ export interface StatusCardProps
   /** Title 텍스트를 지정한다. */
   title: string;
 
-  /** 정해진 일시에 대한 Date 객체 */
-  contentDate?: Date;
+  /**  */
+  hotelImage?: string;
 
   /** Message 텍스트를 지정한다. */
   message: string;
@@ -35,17 +35,20 @@ export interface StatusCardProps
   /** Label 텍스트를 지정한다. */
   label: string;
 
+  roomType: string;
+
   onClick?: () => void;
 }
 
 export const StatusCard = forwardRef<HTMLDivElement, StatusCardProps>(
   (
     {
+      hotelImage = "https://picsum.photos/60/40",
       status,
       title,
-      contentDate = new Date(),
       message,
       label,
+      roomType,
       onClick,
       className,
       co,
@@ -70,7 +73,7 @@ export const StatusCard = forwardRef<HTMLDivElement, StatusCardProps>(
         >
           <View className={cx(classes.container)}>
             <Image
-              src={"https://picsum.photos/60/40"}
+              src={hotelImage}
               className={cx(classes.image)}
               alt={"hotel-name"}
               width={98}
@@ -83,7 +86,7 @@ export const StatusCard = forwardRef<HTMLDivElement, StatusCardProps>(
                 color={theme.colors.navy1}
                 strong
               >
-                투어 확정 전
+                {title}
               </Typography>
               <Typography
                 family="Pretendard"
@@ -91,7 +94,7 @@ export const StatusCard = forwardRef<HTMLDivElement, StatusCardProps>(
                 color={theme.colors.navy1}
                 strong
               >
-                {getTimeStamp(contentDate, false)} 이내 확정 예정
+                {message}
               </Typography>
               <Typography
                 family="Pretendard"
@@ -99,7 +102,7 @@ export const StatusCard = forwardRef<HTMLDivElement, StatusCardProps>(
                 color={theme.colors.navy1}
                 className={cx(classes.description, classes.textBreak)}
               >
-                서울 드래곤 시티 - 이비스 스타일 앰배서더 서울 용산
+                {label}
               </Typography>
               <View
                 className={cx(
@@ -114,7 +117,7 @@ export const StatusCard = forwardRef<HTMLDivElement, StatusCardProps>(
                   color={theme.colors.navy2}
                   className={cx(classes.footer, classes.textBreak)}
                 >
-                  한달살기・슈페리어 디럭스 트윈
+                  {roomType}
                 </Typography>
                 <IconAngle
                   className={cx(classes.arrowImage)}
