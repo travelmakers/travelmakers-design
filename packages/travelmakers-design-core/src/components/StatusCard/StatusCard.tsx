@@ -18,11 +18,6 @@ export type StatusCardStylesNames = ClassNames<typeof useStyles>;
 export interface StatusCardProps
   extends TmComponentProps,
     React.ComponentPropsWithoutRef<"div"> {
-  /** 해당 호텔에 대한 구매 상태를 의미합니다.
-   * (구매전, 투어확정전, 투어확정, 투어완료, 결제진행중, 예약확정전, 체크인전, 입주n일차, 연장결제전, 연장확정전, 예약변경중, 체크아웃전, 체크아웃n일차, 체크아웃, 투어취소, 예약취소완료)
-   */
-  status: "default" | "alert";
-
   /** Title 텍스트를 지정한다. */
   title: string;
 
@@ -43,8 +38,7 @@ export interface StatusCardProps
 export const StatusCard = forwardRef<HTMLDivElement, StatusCardProps>(
   (
     {
-      hotelImage = "https://picsum.photos/60/40",
-      status,
+      hotelImage,
       title,
       message,
       label,
@@ -59,7 +53,7 @@ export const StatusCard = forwardRef<HTMLDivElement, StatusCardProps>(
   ) => {
     const theme = useTmTheme();
     const { classes, cx } = useStyles(
-      { status },
+      {},
       { overrideStyles, name: "StatusCard" }
     );
 

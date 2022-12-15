@@ -15,14 +15,18 @@ export default {
   title: "@travelmakers-design/core/Component/Card/StatusCard",
   component: StatusCard,
   argTypes: {
-    status: {
-      defaultValue: "default",
-      description: "해당 호텔에 대한 구매 상태를 의미합니다.",
-      options: ["default", "alert"],
-      control: { type: "inline-radio" },
+    hotelImage: {
+      defaultValue: "https://picsum.photos/60/40",
+      description: "이미지 표시",
+      table: {
+        type: {
+          summary: "string",
+        },
+      },
+      control: { type: "text" },
     },
     title: {
-      defaultValue: "안녕하세요, 홍길동님",
+      defaultValue: "투어 확정 전",
       description: "Title 텍스트를 지정한다.",
       table: {
         type: {
@@ -31,15 +35,25 @@ export default {
       },
       control: { type: "text" },
     },
-    contentDate: {
-      defaultValue: new Date(),
-      description: "정해진 일시에 대한 Date 객체",
+    message: {
+      defaultValue: "00월 00일 이내 확정 예정",
+      description: "message 텍스트를 지정한다.",
       table: {
         type: {
           summary: "string",
         },
       },
-      control: { type: "date" },
+      control: { type: "text" },
+    },
+    roomType: {
+      defaultValue: "한달살기・슈페리어 디럭스 트윈, 홍길동님",
+      description: "message 텍스트를 지정한다.",
+      table: {
+        type: {
+          summary: "string",
+        },
+      },
+      control: { type: "text" },
     },
     label: {
       defaultValue: "전체 호텔 보러가기",

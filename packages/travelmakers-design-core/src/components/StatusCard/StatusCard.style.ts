@@ -1,13 +1,8 @@
 import { createStyles } from "@travelmakers-design/styles";
 
-interface StatusCardStyles {
-  /** 해당 호텔에 대한 구매 상태를 의미합니다.
-   * (구매전, 투어확정전, 투어확정, 투어완료, 결제진행중, 예약확정전, 체크인전, 입주n일차, 연장결제전, 연장확정전, 예약변경중, 체크아웃전, 체크아웃n일차, 체크아웃, 투어취소, 예약취소완료)
-   */
-  status: "default" | "alert";
-}
+interface StatusCardStyles {}
 
-export default createStyles((theme, { status }: StatusCardStyles) => {
+export default createStyles((theme, {}: StatusCardStyles) => {
   return {
     root: {
       backgroundColor: theme.colors.white,
