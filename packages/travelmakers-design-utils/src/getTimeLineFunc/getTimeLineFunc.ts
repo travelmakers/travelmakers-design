@@ -19,7 +19,7 @@ type ReservationState =
   | "tour_cancel"
   | "reservation_cancel";
 
-export interface timeLineStateParams {
+export interface timeLineParams {
   enum: ReservationState;
   link: (url?: string) => {
     url: string;
@@ -28,65 +28,62 @@ export interface timeLineStateParams {
   color: "default" | "alert";
 }
 
-interface timeLineStateParamsOnlyUserName extends timeLineStateParams {
+interface timeLineParamsOnlyUserName extends timeLineParams {
   firstLineText: (userName: string) => string;
   secondLineText: () => string;
   buttonText: () => string;
 }
-interface timeLineStateParamsWithUserName_HotelName
-  extends timeLineStateParams {
+interface timeLineParamsWithUserName_HotelName extends timeLineParams {
   firstLineText: (userName: string) => string;
   secondLineText: (hotelName: string) => string;
   buttonText: () => string;
 }
-interface timeLineStateParamsWithUserName_StartDate
-  extends timeLineStateParams {
+interface timeLineParamsWithUserName_StartDate extends timeLineParams {
   firstLineText: (userName: string) => string;
   secondLineText: (startDate: string) => string;
   buttonText: () => string;
 }
-interface timeLineStateParamsWithUserName_HotelName_ExpectedDate
-  extends timeLineStateParamsWithUserName_HotelName {
+interface timeLineParamsWithUserName_HotelName_ExpectedDate
+  extends timeLineParamsWithUserName_HotelName {
   buttonText: (expectedDate?: string) => string;
 }
-interface timeLineStateParamsWithUserName_EndDate extends timeLineStateParams {
+interface timeLineParamsWithUserName_EndDate extends timeLineParams {
   firstLineText: (userName: string) => string;
   secondLineText: (endDate: string) => string;
   buttonText: () => string;
 }
-interface timeLineStateParamsWithUserName_Dday extends timeLineStateParams {
+interface timeLineParamsWithUserName_Dday extends timeLineParams {
   firstLineText: (hotelName: string) => string;
   secondLineText: (dDay: number) => string;
   buttonText: () => string;
 }
-interface timeLineStateParamsWithUserName_EndDate_Dday
-  extends timeLineStateParams {
+interface timeLineParamsWithUserName_EndDate_Dday extends timeLineParams {
   firstLineText: (hotelName: string) => string;
   secondLineText: (dDay: number) => string;
   buttonText: (endDate: string) => string;
 }
 
 type AllTypes =
-  | timeLineStateParamsOnlyUserName
-  | timeLineStateParamsWithUserName_HotelName
-  | timeLineStateParamsWithUserName_StartDate
-  | timeLineStateParamsWithUserName_HotelName_ExpectedDate
-  | timeLineStateParamsWithUserName_EndDate
-  | timeLineStateParamsWithUserName_Dday
-  | timeLineStateParamsWithUserName_EndDate_Dday;
+  | timeLineParamsOnlyUserName
+  | timeLineParamsWithUserName_HotelName
+  | timeLineParamsWithUserName_StartDate
+  | timeLineParamsWithUserName_HotelName_ExpectedDate
+  | timeLineParamsWithUserName_EndDate
+  | timeLineParamsWithUserName_Dday
+  | timeLineParamsWithUserName_EndDate_Dday;
 
 export function getTimeLineFunc(
   t: "default" | "tour_done" | "tour_cancel" | "reservation_cancel"
-): timeLineStateParamsOnlyUserName;
+): timeLineParamsOnlyUserName;
 export function getTimeLineFunc(
   t: "tour_confirm_before" | "reservation_purchase_before" | "checkout_done"
-): timeLineStateParamsWithUserName_HotelName;
+): timeLineParamsWithUserName_HotelName;
 export function getTimeLineFunc(
   t: "tour_confirm" | "checkin_before"
-): timeLineStateParamsWithUserName_StartDate;
+): timeLineParamsWithUserName_StartDate;
 export function getTimeLineFunc(
   t: "reservation_purchase_done"
-): timeLineStateParamsWithUserName_HotelName_ExpectedDate;
+): timeLineParamsWithUserName_HotelName_ExpectedDate;
 export function getTimeLineFunc(
   t:
     | "day_n"
@@ -94,13 +91,13 @@ export function getTimeLineFunc(
     | "extend_purchase_done"
     | "extend_checkin_before"
     | "reservation_change_process"
-): timeLineStateParamsWithUserName_EndDate;
+): timeLineParamsWithUserName_EndDate;
 export function getTimeLineFunc(
   t: "checkout_before"
-): timeLineStateParamsWithUserName_Dday;
+): timeLineParamsWithUserName_Dday;
 export function getTimeLineFunc(
   t: "checkout_before_n"
-): timeLineStateParamsWithUserName_EndDate_Dday;
+): timeLineParamsWithUserName_EndDate_Dday;
 
 export function getTimeLineFunc(state: ReservationState): AllTypes {
   switch (state) {

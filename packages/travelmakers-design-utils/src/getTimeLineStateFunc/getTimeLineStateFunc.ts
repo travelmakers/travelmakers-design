@@ -46,7 +46,7 @@ interface timeLineStateParamsWithEndDate extends timeLineStateParams {
 }
 
 interface timeLineStateParamsWithEndDateDday extends timeLineStateParams {
-  firstLineText: (dDay: number) => string;
+  firstLineText: (dDay: number | string) => string;
   secondLineText: (end_date: string) => string;
 }
 
@@ -325,46 +325,100 @@ export function getTimeLineStateFunc(state: ReservationState): AllTypes {
 
 type Props = {
   first: {
-    userName?: string;
-    hotelName?: string;
+    dDay?: number;
   };
   second: {
     userName?: string;
     hotelName?: string;
     expectedDate?: string;
     startDate?: string;
+    cancelDate?: string;
     endDate?: string;
+    vBankDate?: string;
     dDay?: number;
   };
+  third?: {
+    hotelName?: string;
+  };
   roomTypeText?: {
-    expectedDate?: string;
-    endDate?: string;
+    roomType?: string;
   };
 };
 
-interface TimeLinePropsReturnType {
+interface TimeLineStatePropsReturnType {
   first: string;
   second: string;
+  third: string;
   roomTypeText: string;
 }
 
-export function getTimeLineProps(
+export function getTimeLineStateProps(
   state: ReservationState,
   props: Props
-): TimeLinePropsReturnType {
+): TimeLineStatePropsReturnType {
   switch (state) {
-    case "default":
+    case "checkout_before" || "checkout_before_n":
       return {
-        first: props.first.userName,
+        first: `${props.first.dDay}`,
+        second: props.second.endDate,
+        third: props.third.hotelName,
+        roomTypeText: props.roomTypeText.roomType,
+      };
+    case "tour_confirm_before" ||
+      "reservation_purchase_done" ||
+      "extend_purchase_done" ||
+      "reservation_change_process":
+      return {
+        first: null,
+        second: props.second.expectedDate,
+        third: props.third.hotelName,
+        roomTypeText: props.roomTypeText.roomType,
+      };
+    case "tour_confirm" ||
+      "tour_done" ||
+      "checkin_before" ||
+      "extend_checkin_before":
+      return {
+        first: null,
+        second: props.second.startDate,
+        third: props.third.hotelName,
+        roomTypeText: props.roomTypeText.roomType,
+      };
+    case "day_n":
+      return {
+        first: null,
+        second: props.second.endDate,
+        third: props.third.hotelName,
+        roomTypeText: props.roomTypeText.roomType,
+      };
+    case "reservation_purchase_before" || "extend_purchase_before":
+      return {
+        first: null,
+        second: props.second.vBankDate,
+        third: props.third.hotelName,
+        roomTypeText: props.roomTypeText.roomType,
+      };
+    case "checkout_done":
+      return {
+        first: null,
         second: null,
-        roomTypeText: null,
+        third: props.third.hotelName,
+        roomTypeText: props.roomTypeText.roomType,
+      };
+    case "tour_cancel" || "reservation_cancel":
+      return {
+        first: null,
+        second: props.second.cancelDate,
+        third: props.third.hotelName,
+        roomTypeText: props.roomTypeText.roomType,
       };
 
     default:
       return {
         first: null,
         second: null,
-        roomTypeText: null,
+        third: props.third.hotelName,
+        roomTypeText: props.roomTypeText.roomType,
       };
   }
 }
