@@ -12,7 +12,7 @@ interface IconButtonStylesProps {
   variant?: TmPalette;
   size: TmSize;
   line?: boolean;
-  roundness?: boolean;
+  roundness?: "default" | "full" | "half";
 }
 
 const sizes = {
@@ -105,7 +105,12 @@ export default createStyles(
             bottom: -2,
             left: -2,
             right: -2,
-            borderRadius: roundness ? theme.radius.round : 2,
+            borderRadius:
+              roundness === "full"
+                ? theme.radius.round
+                : roundness === "half"
+                ? theme.radius.large
+                : 2,
             outline: `1px solid ${
               theme.palettes[variant][theme.colorScheme === "light" ? 0 : 0]
             }`,
@@ -146,7 +151,12 @@ export default createStyles(
             bottom: -2,
             left: -2,
             right: -2,
-            borderRadius: roundness ? theme.radius.round : 2,
+            borderRadius:
+              roundness === "full"
+                ? theme.radius.round
+                : roundness === "half"
+                ? theme.radius.large
+                : 2,
             outline: `1px solid ${
               theme.palettes[variant][theme.colorScheme === "light" ? 0 : 0]
             }`,
@@ -162,7 +172,12 @@ export default createStyles(
       root: {
         ...sizes[size],
         ...defaultFontStyles(theme),
-        borderRadius: roundness ? theme.radius.round : theme.radius.small,
+        borderRadius:
+          roundness === "full"
+            ? theme.radius.round
+            : roundness === "half"
+            ? theme.radius.large
+            : theme.radius.small,
         position: "relative",
         padding: 0,
         lineHeight: 1,

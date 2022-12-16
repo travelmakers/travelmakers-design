@@ -29,7 +29,7 @@ export const IconButton: IconButtonComponent & { displayName?: string } =
         line,
         type = "button",
         disabled = false,
-        roundness = false,
+        roundness = "default",
         className,
         co,
         overrideStyles,
