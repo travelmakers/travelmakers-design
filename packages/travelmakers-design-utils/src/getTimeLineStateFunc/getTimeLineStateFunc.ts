@@ -319,7 +319,16 @@ export function getTimeLineStateFunc(state: ReservationState): AllTypes {
         },
       };
     default:
-      return null;
+      return {
+        enum: state,
+        firstLineText: () => ``,
+        secondLineText: () => ``,
+        thirdLineText: (hotelName) => hotelName,
+        roomTypeText: (roomType) => roomType,
+        link: (url?: string) => {
+          return { url, arrow: !!url };
+        },
+      };
   }
 }
 
