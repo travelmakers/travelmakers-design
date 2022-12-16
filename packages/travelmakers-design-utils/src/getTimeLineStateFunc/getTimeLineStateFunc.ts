@@ -31,17 +31,17 @@ export interface timeLineStateParams {
 }
 
 interface timeLineStateParamsWithExpectedDate extends timeLineStateParams {
-  firstLineText: () => string;
+  firstLineText: (state?: string) => string;
   secondLineText: (expectedDate: string) => string;
 }
 
 interface timeLineStateParamsWithStartDate extends timeLineStateParams {
-  firstLineText: () => string;
+  firstLineText: (state?: string) => string;
   secondLineText: (start_date: string) => string;
 }
 
 interface timeLineStateParamsWithEndDate extends timeLineStateParams {
-  firstLineText: () => string;
+  firstLineText: (state?: string) => string;
   secondLineText: (end_date: string) => string;
 }
 
@@ -51,18 +51,18 @@ interface timeLineStateParamsWithEndDateDday extends timeLineStateParams {
 }
 
 interface timeLineStateParamsWithBankDate extends timeLineStateParams {
-  firstLineText: () => string;
+  firstLineText: (state?: string) => string;
   secondLineText: (vbank_date: string) => string;
 }
 
 interface timeLineStateParamsWithNull extends timeLineStateParams {
-  firstLineText: () => string;
+  firstLineText: (state?: string) => string;
   secondLineText: () => string;
   secondLink: (url?: string) => string;
 }
 
 interface timeLineStateParamsWithCancelDate extends timeLineStateParams {
-  firstLineText: () => string;
+  firstLineText: (state?: string) => string;
   secondLineText: (cancelDate) => string;
 }
 
