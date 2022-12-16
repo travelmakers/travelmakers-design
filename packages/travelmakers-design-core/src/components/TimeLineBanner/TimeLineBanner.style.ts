@@ -35,6 +35,7 @@ export default createStyles((theme, { status }: TimeLineBannerStyles) => {
       display: "flex",
       alignItems: "center",
       cursor: "pointer",
+      width: "fit-content",
     },
     labelText: {
       width: "fit-content",

@@ -64,6 +64,7 @@ export const StatusCard = forwardRef<HTMLDivElement, StatusCardProps>(
           className={cx(classes.root, className)}
           co={co}
           {...props}
+          onClick={onClick}
         >
           <View className={cx(classes.container)}>
             <Image

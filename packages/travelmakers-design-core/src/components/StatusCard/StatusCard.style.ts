@@ -8,6 +8,7 @@ export default createStyles((theme, {}: StatusCardStyles) => {
       backgroundColor: theme.colors.white,
       borderRadius: theme.radius.large,
       padding: theme.spacing.medium,
+      cursor: "pointer",
     },
     container: {
       display: "flex",
