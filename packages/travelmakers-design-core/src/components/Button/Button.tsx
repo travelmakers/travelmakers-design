@@ -8,6 +8,7 @@ import {
   useTmTheme,
 } from "@travelmakers-design/styles";
 import React, { forwardRef } from "react";
+
 import { View } from "../View/View";
 import useStyles from "./Button.style";
 
@@ -23,8 +24,8 @@ export interface SharedButtonProps extends TmComponentProps<ButtonStylesNames> {
   /** Button 컴포넌트의 모양을 지정합니다. */
   line?: boolean;
 
-  /** true일 경우 radius를 100px로 지정합니다. (default: false) */
-  roundness?: boolean;
+  /** true일 경우 radius를 100px로 지정합니다. (default: full) */
+  roundness?: "default" | "full" | "half";
 
   /** true일 경우 좌우 공간을 모두 차지합니다. */
   fullWidth?: boolean;
@@ -57,7 +58,7 @@ export const Button: ButtonComponent & { displayName?: string } = forwardRef(
       size = "medium",
       variant: _variant = "primary",
       line = false,
-      roundness = false,
+      roundness = "default",
       fullWidth = false,
       type = "button",
       disabled = false,

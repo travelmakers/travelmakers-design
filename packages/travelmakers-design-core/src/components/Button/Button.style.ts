@@ -13,7 +13,7 @@ interface ButtonStylesProps {
   variant?: TmPalette;
   size: TmSize;
   fullWidth: boolean;
-  roundness?: boolean;
+  roundness?: "default" | "full" | "half";
   line?: boolean;
 }
 
@@ -138,7 +138,12 @@ export default createStyles(
             bottom: -2,
             left: -2,
             right: -2,
-            borderRadius: roundness ? theme.radius.round : 2,
+            borderRadius:
+              roundness === "full"
+                ? theme.radius.round
+                : roundness === "half"
+                ? theme.radius.large
+                : 2,
             outline: `1px solid ${
               theme.palettes[variant][theme.colorScheme === "light" ? 0 : 0]
             }`,
@@ -169,7 +174,12 @@ export default createStyles(
             bottom: -2,
             left: -2,
             right: -2,
-            borderRadius: roundness ? theme.radius.round : 2,
+            borderRadius:
+              roundness === "full"
+                ? theme.radius.round
+                : roundness === "half"
+                ? theme.radius.large
+                : 2,
             outline: `1px solid ${
               theme.palettes[variant][theme.colorScheme === "light" ? 0 : 0]
             }`,
@@ -190,7 +200,12 @@ export default createStyles(
         ...getWidthStyles(fullWidth),
         ...defaultFontStyles(theme),
         ...getFontStyles(theme)[size],
-        borderRadius: roundness ? theme.radius.round : theme.radius.small,
+        borderRadius:
+          roundness === "full"
+            ? theme.radius.round
+            : roundness === "half"
+            ? theme.radius.large
+            : theme.radius.small,
         position: "relative",
         lineHeight: `${1}px`,
         WebkitTapHighlightColor: "transparent",

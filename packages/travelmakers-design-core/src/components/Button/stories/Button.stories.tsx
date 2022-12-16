@@ -49,14 +49,15 @@ export default {
       control: { type: "boolean" },
     },
     roundness: {
-      defaultValue: false,
-      description: "true일 경우 radius를 100px로 지정합니다. (default: false)",
+      defaultValue: "default",
+      description: "true일 경우 radius를 100px로 지정합니다. (default: full)",
+      options: ["default", "full", "half"],
       table: {
         type: {
-          summary: "boolean",
+          summary: "string",
         },
       },
-      control: { type: "boolean" },
+      control: { type: "inline-radio" },
     },
     fullWidth: {
       defaultValue: false,
