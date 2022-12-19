@@ -30,7 +30,7 @@ export default {
     variant: {
       defaultValue: "primary",
       description: "Button 컴포넌트의 색상을 정합니다.",
-      options: ["primary", "secondary", "tertiary"],
+      options: ["primary", "secondary", "tertiary", "quaternary"],
       table: {
         type: {
           summary: "string",
