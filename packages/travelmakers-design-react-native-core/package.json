@@ -1,6 +1,6 @@
 {
   "name": "@travelmakers-design/react-native-core",
-  "version": "0.0.5-alpha.6",
+  "version": "0.0.5-alpha.7",
   "main": "cjs/index.js",
   "module": "esm/index.js",
   "types": "lib/index.d.ts",
@@ -25,6 +25,6 @@
     "react-native-svg": ">=13.6.0"
   },
   "dependencies": {
-    "@travelmakers-design/styles": "^0.0.5-alpha.5"
+    "@travelmakers-design/styles": "^0.0.5-alpha.6"
   }
 }
