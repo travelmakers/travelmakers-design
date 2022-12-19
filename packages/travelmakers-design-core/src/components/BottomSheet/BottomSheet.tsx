@@ -5,13 +5,13 @@ import {
   TmComponentProps,
 } from "@travelmakers-design/styles";
 import React, { forwardRef, useEffect, useMemo, useState } from "react";
-import { Modal } from "../Modal";
-import { IcChecked } from "./assets/IcChecked";
+
 import { IcCheckSelectedBeige } from "./assets/IcCheckSelectedBeige";
+import { IcChecked } from "./assets/IcChecked";
 import { IcDropDown } from "./assets/IcDropDown";
 import { IcDropDownWhite } from "./assets/IcDropDownWhite";
 import { IcUnCheck } from "./assets/IcUnCheck";
-
+import { Modal } from "../Modal";
 import useStyles from "./BottomSheet.style";
 
 export type BottomSheetStylesNames = ClassNames<typeof useStyles>;
@@ -28,6 +28,7 @@ export interface BottomSheetBaseProps
   defaultSelect?: string[];
   /** 팝업 여부 */
   popup?: boolean;
+  iframe?: boolean;
 
   /** BottomSheet 들어갈 내용 정의 */
   options?: Array<BottomSheetAgreement>;
@@ -61,6 +62,7 @@ export const BottomSheet: TagComponent & { displayName?: string } = forwardRef(
       setValue,
       containerStyle = {},
       popup = false,
+      iframe = false,
       children,
       className,
       overrideStyles,
@@ -224,7 +226,19 @@ export const BottomSheet: TagComponent & { displayName?: string } = forwardRef(
             title={selectedAgreement?.label}
             backIcon
           >
-            {selectedAgreement?.content}
+            {iframe ? (
+              <iframe
+                src={selectedAgreement?.content}
+                width="100%"
+                height="95%"
+              />
+            ) : (
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: selectedAgreement?.content,
+                }}
+              ></div>
+            )}
           </Modal>
         )}
       </Element>

@@ -1,9 +1,9 @@
+import { ModalSize, ModalType } from "./Modal";
 import {
+  TmTheme,
   createStyles,
   defaultFontStyles,
-  TmTheme,
 } from "@travelmakers-design/styles";
-import { ModalSize, ModalType } from "./Modal";
 
 interface AccordionStyles {
   size?: ModalSize;
@@ -177,8 +177,9 @@ export default createStyles((theme, { size, type }: AccordionStyles) => {
           justifyContent: "start",
           padding: "0 16px",
           height: "44px",
-          backgroundColor: theme.colors.navy1,
-          color: theme.colors.white,
+          backgroundColor: theme.colors.white,
+          color: theme.colors.black,
+          borderBottom: "1px solid #EDEDED",
         },
       },
       ["&.toastPopup"]: {
@@ -218,7 +219,7 @@ export default createStyles((theme, { size, type }: AccordionStyles) => {
           fontWeight: 400,
           fontSize: "12px",
           lineHeight: "20px",
-          color: theme.colors.white,
+          color: theme.colors.black,
         },
       },
 

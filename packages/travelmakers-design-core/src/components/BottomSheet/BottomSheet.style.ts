@@ -1,7 +1,7 @@
 import {
+  TmTheme,
   createStyles,
   defaultFontStyles,
-  TmTheme,
 } from "@travelmakers-design/styles";
 
 interface BottomSheetStyles {
