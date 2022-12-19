@@ -4,14 +4,14 @@ import {
   PolymorphicRef,
   TmComponentProps,
 } from "@travelmakers-design/styles";
-import { useHiddenBodyOverflow } from "@travelmakers-design/hooks";
 import React, { forwardRef } from "react";
-import ReactDOM from "react-dom";
 
-import useStyles from "./Modal.style";
 import { Button } from "../Button";
 import { IcBackArrow } from "./assets/IcBackArrow";
 import { IcClose } from "./assets/IcClose";
+import ReactDOM from "react-dom";
+import { useHiddenBodyOverflow } from "@travelmakers-design/hooks";
+import useStyles from "./Modal.style";
 
 export type ModalStylesNames = ClassNames<typeof useStyles>;
 
@@ -172,11 +172,7 @@ export const Modal: TagComponent & { displayName?: string } = forwardRef(
                             />
                           </div>
                           <div className={cx(classes.modalContentText)}>
-                            <div
-                              dangerouslySetInnerHTML={{
-                                __html: children,
-                              }}
-                            ></div>
+                            {children}
                           </div>
                         </div>
                         <div className={cx(classes.modalAbsolute)}>
