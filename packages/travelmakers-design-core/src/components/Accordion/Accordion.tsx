@@ -83,7 +83,7 @@ export const Accordion: AccordionComponent & { displayName?: string } =
             >
               {/* NOTE: Title */}
               <div
-                className={cx(classes.row)}
+                className={cx(classes.row, open[index] && classes.rowPadding)}
                 onClick={() =>
                   setOpen((prevState) => {
                     return prevState?.map((data, innerIndex) =>
@@ -117,7 +117,12 @@ export const Accordion: AccordionComponent & { displayName?: string } =
 
               {/* NOTE: Content */}
               {open[index] && (
-                <div className={cx(classes.content)}>
+                <div
+                  className={cx(
+                    classes.content,
+                    open[index] && classes.contentPadding
+                  )}
+                >
                   <div className={cx(classes.divider)} />
                   <div className={cx(classes.answerText)}>
                     <span

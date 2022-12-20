@@ -15,6 +15,7 @@ export default createStyles((theme, { open }: AccordionStyles) => {
       ...defaultFontStyles(theme),
       display: "flex",
       flexDirection: "column",
+      borderRadius: "8px",
       width: "100%",
       backgroundColor: theme.colors.white,
       marginBottom: "4px",
@@ -22,17 +23,16 @@ export default createStyles((theme, { open }: AccordionStyles) => {
         marginBottom: 0,
       },
     },
+    rowPadding: {
+      padding: "8px 16px !important",
+    },
     row: {
       display: "flex",
       width: "100%",
       justifyContent: "space-between",
       alignItems: "center",
       cursor: "pointer",
-      padding: "14px 24px 14px 24px",
-
-      [`${theme.media.desktop}`]: {
-        padding: "12px 16px 12px 16px",
-      },
+      padding: "16px",
     },
     titleWrap: {
       display: "flex",
@@ -77,10 +77,14 @@ export default createStyles((theme, { open }: AccordionStyles) => {
       },
     },
 
+    contentPadding: {
+      padding: "0 16px 8px 16px !important",
+    },
+
     divider: {
       width: "100%",
       height: "1px",
-      backgroundColor: theme.colors.navy1,
+      backgroundColor: "#E8E8E8",
       marginBottom: "14px",
       [`${theme.media.desktop}`]: {
         marginBottom: "11px",
