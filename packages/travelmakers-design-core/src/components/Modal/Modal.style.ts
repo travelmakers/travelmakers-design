@@ -56,7 +56,7 @@ export default createStyles((theme, { size, type }: AccordionStyles) => {
       backgroundColor: "rgba(0, 0, 0, 0.7)",
       width: "100%",
       height: "100%",
-      zIndex: "10000",
+      // zIndex: "10000",
       top: "0",
       left: "0",
     },
@@ -265,15 +265,8 @@ export default createStyles((theme, { size, type }: AccordionStyles) => {
         fontSize: "12px",
         padding: "12px 20px",
       },
-      ["&.Agreement"]: {
-        height: "calc(100% - 44px)",
-        [`${theme.media.tablet}`]: {
-          height: "calc(100% - 104px)",
-          ["@media screen and (max-height: 640px)"]: {
-            height: "calc(100% - 72px)",
-          },
-        },
-      },
+
+      height: "calc(100% - 120px)",
     },
     modalAbsolute: {
       display: "block",
