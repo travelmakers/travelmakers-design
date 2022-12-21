@@ -6,13 +6,14 @@ import {
   TmSize,
   useTmTheme,
 } from "@travelmakers-design/styles";
-import { Image } from "../Image";
 import React, { forwardRef, useState } from "react";
-import { Typography } from "../Typography";
+
 import { IconAngle } from "../../assets/icon";
+import { Image } from "../Image";
+import { Typography } from "../Typography";
 import { View } from "../View";
-import useStyles from "./StatusCard.style";
 import { getTimeStamp } from "../../utils";
+import useStyles from "./StatusCard.style";
 export type StatusCardStylesNames = ClassNames<typeof useStyles>;
 
 export interface StatusCardProps
@@ -64,9 +65,9 @@ export const StatusCard = forwardRef<HTMLDivElement, StatusCardProps>(
           className={cx(classes.root, className)}
           co={co}
           {...props}
-          onClick={onClick}
+          
         >
-          <View className={cx(classes.container)}>
+          <View className={cx(classes.container)} onClick={onClick}>
             <Image
               src={hotelImage}
               className={cx(classes.image)}
