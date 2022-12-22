@@ -20,8 +20,8 @@ export const DEFAULT_COLORS = {
   gray4: "#B6B6B6",
   gray5: "#D7D7D7",
   gray6: "#EDEDED",
-  gray7: "#FAFAFA",
-  gray8: "#FDFDFD",
+  gray7: "#F2F2F2",
+  gray8: "#FAFAFA",
 
   navy1: "#30373F",
   navy2: "#6E7378",
