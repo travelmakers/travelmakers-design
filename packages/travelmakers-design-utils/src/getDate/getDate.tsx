@@ -64,3 +64,15 @@ export function getDateTime(date: string, separators?: string) {
 
   return pad(d.getHours()) + separator + pad(d.getMinutes());
 }
+
+/**
+ * Date객체를 `월요일` 형태로 표출
+ * @param date 날짜객체
+ * @returns 요일
+ */
+export function getDay(date: string) {
+  const d = new Date(date);
+  const day = d.getDay(); // 요일
+  const WEEKDAY = ["일", "월", "화", "수", "목", "금", "토"];
+  return WEEKDAY[day] + "요일";
+}
