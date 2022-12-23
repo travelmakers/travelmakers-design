@@ -117,7 +117,6 @@ export const Modal: TagComponent & { displayName?: string } = forwardRef(
                   style={containerStyle}
                 >
                   <div
-                    onClick={onClose}
                     className={cx(
                       classes.closeContainer,
                       (modalPopup ? "modalPopup" : "") +
