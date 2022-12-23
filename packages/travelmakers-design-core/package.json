@@ -1,6 +1,6 @@
 {
   "name": "@travelmakers-design/core",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "main": "cjs/packages/travelmakers-design-core/src/index.js",
   "module": "esm/packages/travelmakers-design-core/src/index.js",
   "types": "lib/index.d.ts",
@@ -24,7 +24,7 @@
     "react-native": ">0.69.0"
   },
   "dependencies": {
-    "@travelmakers-design/styles": "^0.0.6",
+    "@travelmakers-design/styles": "^0.0.7",
     "@travelmakers-design/utils": "^0.0.3"
   }
 }
