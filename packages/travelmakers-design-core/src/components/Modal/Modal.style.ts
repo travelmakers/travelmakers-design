@@ -56,31 +56,25 @@ export default createStyles((theme, { size, type }: AccordionStyles) => {
       backgroundColor: "rgba(0, 0, 0, 0.7)",
       width: "100%",
       height: "100%",
-      // zIndex: "10000",
       top: "0",
       left: "0",
     },
     absoluteContainer: {
       width: "100%",
-      height: "100%",
-      position: "absolute",
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "flex-end",
-      top: "0",
-      backgroundColor: theme.colors.white,
       ["&.popup"]: {
         alignItems: "center",
         backgroundColor: "transparent",
       },
       ["&.modalPopup"]: {
         position: "relative",
-        maxWidth: "1200px",
-        margin: "0 auto",
-        maxHeight: "90vh",
+        maxWidth: "360px",
+        margin: "auto",
+        maxHeight: "60vh",
         height: "100%",
-        borderRadius: "30px 30px 0 0",
+        borderRadius: "8px",
         [`${theme.media.tablet}`]: {
+          margin: "0 auto",
+          maxWidth: "none",
           maxHeight: "100%",
           height: "100%",
           borderRadius: "0",
@@ -90,8 +84,10 @@ export default createStyles((theme, { size, type }: AccordionStyles) => {
     closeContainer: {
       position: "absolute",
       width: "100%",
-      height: "100%",
       zIndex: "100",
+      [`${theme.media.tablet}`]: {
+        height: "100%",
+      },
     },
     modalContainer: {
       display: "flex",
@@ -99,6 +95,7 @@ export default createStyles((theme, { size, type }: AccordionStyles) => {
       justifyContent: "start",
       alignItems: "center",
       width: "100%",
+      height: "100%",
       maxHeight: "100%",
       borderRadius: "6px",
       boxSizing: "border-box",
@@ -107,21 +104,17 @@ export default createStyles((theme, { size, type }: AccordionStyles) => {
         justifyContent: "center",
       },
       ["&.max-h"]: {
-        height: "100%",
+        // height: "100%",
       },
     },
     modalContentsContainer: {
-      display: "flex",
       position: "relative",
       justifyContent: "center",
       width: "100%",
       height: "100%",
-      padding: "40px",
+      padding: "0",
+      borderRadius: "6px",
       overflowY: "hidden",
-      // overflowY: "scroll",
-      [`${theme.media.tablet}`]: {
-        padding: "0",
-      },
       [`${theme.media.desktop}`]: {
         ["-ms-overflow-style"]: "none",
         ["&::-webkit-scrollbar"]: {
@@ -140,6 +133,14 @@ export default createStyles((theme, { size, type }: AccordionStyles) => {
       position: "relative",
       width: "100%",
       maxWidth: "768px",
+      maxHeight: "582px",
+      height: "100%",
+      margin: "auto",
+      backgroundColor: "white",
+      [`${theme.media.tablet}`]: {
+        maxHeight: "none",
+        height: "calc(100% - 70px)",
+      },
     },
     modalHeader: {
       display: "flex",
@@ -147,9 +148,6 @@ export default createStyles((theme, { size, type }: AccordionStyles) => {
       alignItems: "center",
       width: "100%",
       marginBottom: "0",
-      [`${theme.media.desktop}`]: {
-        padding: "24px 16px 12px 24px",
-      },
 
       ["&.optionsBox"]: {
         height: "40px",
@@ -162,25 +160,16 @@ export default createStyles((theme, { size, type }: AccordionStyles) => {
 
       ["&.modalPopup"]: {
         color: theme.colors.navy1,
-        height: "auto",
-        padding: "40px 12px",
-        ["@media screen and (min-width: 800px)"]: {
-          padding: "40px 0",
-        },
+        height: "48px",
+        borderBottom: "1px solid #EDEDED",
 
         ["@media screen and (max-height: 640px)"]: {
           paddingTop: "24px",
           paddingBottom: "24px",
         },
-        justifyContent: "space-between",
-        [`${theme.media.tablet}`]: {
-          justifyContent: "start",
-          padding: "0 16px",
-          height: "44px",
-          backgroundColor: theme.colors.white,
-          color: theme.colors.black,
-          borderBottom: "1px solid #EDEDED",
-        },
+        // justifyContent: "start",
+        padding: "0 16px",
+        backgroundColor: theme.colors.white,
       },
       ["&.toastPopup"]: {
         justifyContent: "space-between",
@@ -197,30 +186,19 @@ export default createStyles((theme, { size, type }: AccordionStyles) => {
         fontFamily: "Noto Serif KR",
         fontStyle: "normal",
         fontWeight: "400",
-        fontSize: "18px",
-        lineHeight: "24px",
+        fontSize: "14px",
+        lineHeight: "20px",
         color: "#FFFFFF",
-
-        [`${theme.media.tablet}`]: {
-          fontSize: "14px",
-          lineHeight: "20px",
-        },
       },
 
       ["&.modalPopup"]: {
-        color: theme.colors.navy1,
+        // color: theme.colors.navy1,
         fontFamily: "Pretendard",
         fontStyle: "normal",
-        fontWeight: 700,
-        fontSize: "18px",
-        lineHeight: "24px",
-
-        [`${theme.media.tablet}`]: {
-          fontWeight: 400,
-          fontSize: "12px",
-          lineHeight: "20px",
-          color: theme.colors.black,
-        },
+        fontWeight: 400,
+        fontSize: "12px",
+        lineHeight: "20px",
+        color: theme.colors.black,
       },
 
       [".toastPopup"]: {
@@ -237,9 +215,10 @@ export default createStyles((theme, { size, type }: AccordionStyles) => {
       height: "16px",
       cursor: "pointer",
       marginRight: "8px",
-      display: "none",
+      visibility: "hidden",
       [`${theme.media.tablet}`]: {
         display: "inline-block",
+        visibility: "visible",
       },
     },
     modalCloseIcon: {
@@ -249,38 +228,35 @@ export default createStyles((theme, { size, type }: AccordionStyles) => {
       marginRight: "8px",
       display: "inline-block",
       [`${theme.media.tablet}`]: {
-        display: "none",
+        visibility: "hidden",
       },
     },
     modalContentText: {
       display: "block",
       width: "100%",
-      maxHeight: "100%",
+
       lineHeight: 1.5,
       whiteSpace: "pre-wrap",
       color: theme.colors.navy1,
       overflowY: "auto",
       paddingBottom: "16px",
-      [`${theme.media.desktop}`]: {
-        fontSize: "12px",
-        padding: "12px 20px",
-      },
+      fontSize: "12px",
+      padding: "12px 16px",
+      height: "500px",
 
-      height: "calc(100% - 120px)",
+      [`${theme.media.tablet}`]: {
+        height: "calc(100% - 70px)",
+      },
     },
     modalAbsolute: {
       display: "block",
-      position: "fixed",
-      bottom: "0",
+      margin: "auto",
       width: "100%",
       maxWidth: "768px",
-      // padding: "16px 18px 24px 18px",
       zIndex: "100",
       backgroundColor: "white",
-      padding: "16px 0",
-      [`${theme.media.desktop}`]: {
-        padding: "16px",
-      },
+      padding: "16px",
+      borderRadius: "0 0 6px 6px",
     },
   };
 });
