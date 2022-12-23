@@ -7,6 +7,7 @@ import {
   useTmTheme,
 } from "@travelmakers-design/styles";
 import React, { forwardRef } from "react";
+
 import { Tag } from "../Tag";
 import { View } from "../View";
 import useStyles from "./HotelItems.style";
@@ -54,7 +55,7 @@ export const HotelItems = forwardRef<HTMLDivElement, HotelItemsProps>(
               color="gray"
               disabled={soldOut}
               fill={fill}
-              roundness
+              roundness="full"
               size="medium"
             >
               {item}

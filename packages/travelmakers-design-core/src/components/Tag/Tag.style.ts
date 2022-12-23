@@ -1,15 +1,14 @@
+import { TagColor, TagSize } from "./Tag";
 import {
+  TmTheme,
   createStyles,
   defaultFontStyles,
-  TmTheme,
 } from "@travelmakers-design/styles";
-
-import { TagColor, TagSize } from "./Tag";
 
 interface TagStyles {
   color?: TagColor;
   fill?: boolean;
-  roundness?: boolean;
+  roundness?: "default" | "full" | "half";
   size?: TagSize;
   disabled?: boolean;
 }
@@ -74,7 +73,12 @@ export default createStyles(
 
         marginRight: "6px",
         gap: "8px",
-        borderRadius: roundness && theme.radius.round,
+        borderRadius:
+          roundness === "full"
+            ? theme.radius.round
+            : roundness === "half"
+            ? "2px"
+            : "0px",
         backgroundColor:
           color === "green"
             ? theme.colors.green3

@@ -22,7 +22,7 @@ export interface TagBaseProps extends TmComponentProps<TagStylesNames> {
   color?: TagColor;
 
   /** Tag 컴포넌트의 모양을 정합니다. */
-  roundness?: boolean;
+  roundness?: "default" | "full" | "half";
 
   /** Tag 컴포넌트의 스타일을 정합니다. */
   fill?: boolean;
@@ -53,7 +53,7 @@ export const Tag: TagComponent & { displayName?: string } = forwardRef(
       component,
       size = "small",
       color = "green",
-      roundness = false,
+      roundness = "default",
       fill = true,
       disabled = false,
       children,

@@ -28,14 +28,15 @@ export default {
       control: { type: "inline-radio" },
     },
     roundness: {
-      defaultValue: false,
+      defaultValue: "default",
       description: "Tag 컴포넌트의 모양을 지정합니다.",
+      options: ["default", "full", "half"],
       table: {
         type: {
-          summary: "boolean",
+          summary: "string",
         },
       },
-      control: { type: "boolean" },
+      control: { type: "inline-radio" },
     },
     fill: {
       defaultValue: true,
