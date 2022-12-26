@@ -287,6 +287,7 @@ export function getTimeLineProps(
       };
 
     case "tour_confirm_before":
+      // NOTE: 투어 확정 전
       return {
         first: props.first.userName,
         second: props.second.hotelName,
