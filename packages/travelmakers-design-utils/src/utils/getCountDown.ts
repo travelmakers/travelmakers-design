@@ -37,6 +37,13 @@ export function getCountDown(date: string) {
           .toString()
           .padStart(2, "0"),
       };
+    } else {
+      timeLeft = {
+        days: 0,
+        hours: 0,
+        minutes: 0,
+        seconds: 0,
+      };
     }
     setTimeLeft(timeLeft);
   };
