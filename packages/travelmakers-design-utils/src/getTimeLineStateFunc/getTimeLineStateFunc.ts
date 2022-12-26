@@ -1,4 +1,5 @@
 import { getTimeStamp, getTimeStampCheckIn } from "../utils/getTimeStamp";
+
 import { getCountDown } from "../utils/getCountDown";
 
 type ReservationState =
@@ -366,27 +367,28 @@ export function getTimeLineStateProps(
   props: Props
 ): TimeLineStatePropsReturnType {
   switch (state) {
-    case "checkout_before" || "checkout_before_n":
+    case "checkout_before":
+    case "checkout_before_n":
       return {
         first: `${props.first.dDay}`,
         second: props.second.endDate,
         third: props.third.hotelName,
         roomTypeText: props.roomTypeText.roomType,
       };
-    case "tour_confirm_before" ||
-      "reservation_purchase_done" ||
-      "extend_purchase_done" ||
-      "reservation_change_process":
+    case "tour_confirm_before":
+    case "reservation_purchase_done":
+    case "extend_purchase_done":
+    case "reservation_change_process":
       return {
         first: null,
         second: props.second.expectedDate,
         third: props.third.hotelName,
         roomTypeText: props.roomTypeText.roomType,
       };
-    case "tour_confirm" ||
-      "tour_done" ||
-      "checkin_before" ||
-      "extend_checkin_before":
+    case "tour_confirm":
+    case "tour_done":
+    case "checkin_before":
+    case "extend_checkin_before":
       return {
         first: null,
         second: props.second.startDate,
@@ -400,7 +402,8 @@ export function getTimeLineStateProps(
         third: props.third.hotelName,
         roomTypeText: props.roomTypeText.roomType,
       };
-    case "reservation_purchase_before" || "extend_purchase_before":
+    case "reservation_purchase_before":
+    case "extend_purchase_before":
       return {
         first: null,
         second: props.second.vBankDate,
@@ -414,7 +417,8 @@ export function getTimeLineStateProps(
         third: props.third.hotelName,
         roomTypeText: props.roomTypeText.roomType,
       };
-    case "tour_cancel" || "reservation_cancel":
+    case "tour_cancel":
+    case "reservation_cancel":
       return {
         first: null,
         second: props.second.cancelDate,

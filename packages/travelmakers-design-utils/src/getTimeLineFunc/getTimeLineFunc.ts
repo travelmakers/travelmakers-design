@@ -101,7 +101,9 @@ export function getTimeLineFunc(
 
 export function getTimeLineFunc(state: ReservationState): AllTypes {
   switch (state) {
-    case "default" || "tour_cancel" || "reservation_cancel":
+    case "default":
+    case "tour_cancel":
+    case "reservation_cancel":
       // NOTE: 구매 전
       return {
         enum: state,
@@ -188,11 +190,11 @@ export function getTimeLineFunc(state: ReservationState): AllTypes {
         },
         color: "default",
       };
-    case "day_n" ||
-      "extend_purchase_before" ||
-      "extend_purchase_done" ||
-      "extend_checkin_before" ||
-      "reservation_change_process":
+    case "day_n":
+    case "extend_purchase_before":
+    case "extend_purchase_done":
+    case "extend_checkin_before":
+    case "reservation_change_process":
       // NOTE: 입주 N일차 / 연장결제전 / 연장확정전/ 연장확정 / 예약 변경 중
       return {
         enum: state,
@@ -275,7 +277,9 @@ export function getTimeLineProps(
   props: Props
 ): TimeLinePropsReturnType {
   switch (state) {
-    case "default" || "tour_cancel" || "reservation_cancel":
+    case "default":
+    case "tour_cancel":
+    case "reservation_cancel":
       return {
         first: props.first.userName,
         second: null,
@@ -323,11 +327,11 @@ export function getTimeLineProps(
         second: props.second.startDate,
         buttonText: null,
       };
-    case "day_n" ||
-      "extend_purchase_before" ||
-      "extend_purchase_done" ||
-      "extend_checkin_before" ||
-      "reservation_change_process":
+    case "day_n":
+    case "extend_purchase_before":
+    case "extend_purchase_done":
+    case "extend_checkin_before":
+    case "reservation_change_process":
       // NOTE: 입주 N일차 / 연장결제전 / 연장확정전/ 연장확정
       return {
         first: props.first.userName,

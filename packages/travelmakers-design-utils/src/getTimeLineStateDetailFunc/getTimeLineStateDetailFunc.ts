@@ -116,7 +116,7 @@ export function getTimeLineStateDetailFunc(state: ReservationState): AllTypes {
         firstLineText: () => `투어 확정 전`,
         secondLineText: (expectedDate) =>
           `${getTimeStamp(new Date(expectedDate))} 이내 확정 예정`,
-        thirdLineText: (hotelName) => hotelName,        
+        thirdLineText: (hotelName) => hotelName,
         link: (url?: string) => {
           return { url, arrow: !!url };
         },
@@ -128,7 +128,7 @@ export function getTimeLineStateDetailFunc(state: ReservationState): AllTypes {
         firstLineText: () => `투어 확정`,
         secondLineText: (startDate) =>
           `${getTimeStamp(new Date(startDate), true)} 방문`,
-        thirdLineText: (hotelName) => hotelName,        
+        thirdLineText: (hotelName) => hotelName,
         link: (url?: string) => {
           return { url, arrow: !!url };
         },
@@ -140,7 +140,7 @@ export function getTimeLineStateDetailFunc(state: ReservationState): AllTypes {
         firstLineText: () => `투어 완료`,
         secondLineText: (startDate) =>
           `${getTimeStamp(new Date(startDate), true)} 방문`,
-        thirdLineText: (hotelName) => hotelName,        
+        thirdLineText: (hotelName) => hotelName,
         link: (url?: string) => {
           return { url, arrow: !!url };
         },
@@ -152,7 +152,7 @@ export function getTimeLineStateDetailFunc(state: ReservationState): AllTypes {
         firstLineText: () => `결제 진행 중`,
         secondLineText: (vbank_date) =>
           `${getCountDown(vbank_date)} 내 입금 필요`,
-        thirdLineText: (hotelName) => hotelName,        
+        thirdLineText: (hotelName) => hotelName,
         link: (url?: string) => {
           return { url, arrow: !!url };
         },
@@ -164,7 +164,7 @@ export function getTimeLineStateDetailFunc(state: ReservationState): AllTypes {
         firstLineText: () => `연장 결제 전`,
         secondLineText: (vbank_date) =>
           `${getCountDown(vbank_date)} 내 입금 필요`,
-        thirdLineText: (hotelName) => hotelName,        
+        thirdLineText: (hotelName) => hotelName,
         link: (url?: string) => {
           return { url, arrow: !!url };
         },
@@ -176,7 +176,7 @@ export function getTimeLineStateDetailFunc(state: ReservationState): AllTypes {
         firstLineText: () => `예악 확정 전`,
         secondLineText: (expectedDate) =>
           `${getTimeStamp(new Date(expectedDate))} 이내 확정`,
-        thirdLineText: (hotelName) => hotelName,        
+        thirdLineText: (hotelName) => hotelName,
         link: (url?: string) => {
           return { url, arrow: !!url };
         },
@@ -188,7 +188,7 @@ export function getTimeLineStateDetailFunc(state: ReservationState): AllTypes {
         firstLineText: () => `체크인 D-Day`,
         secondLineText: (startDate) =>
           `${getTimeStamp(new Date(startDate), true)} 체크인`,
-        thirdLineText: (hotelName) => hotelName,        
+        thirdLineText: (hotelName) => hotelName,
         link: (url?: string) => {
           return { url, arrow: !!url };
         },
@@ -200,7 +200,7 @@ export function getTimeLineStateDetailFunc(state: ReservationState): AllTypes {
         firstLineText: () => `호텔 이용 중`,
         secondLineText: (endDate) =>
           `${getTimeStamp(new Date(endDate), true)} 체크아웃`,
-        thirdLineText: (hotelName) => hotelName,        
+        thirdLineText: (hotelName) => hotelName,
         link: (url?: string) => {
           return { url, arrow: !!url };
         },
@@ -212,7 +212,7 @@ export function getTimeLineStateDetailFunc(state: ReservationState): AllTypes {
         firstLineText: () => `연장 확정 전`,
         secondLineText: (expectedDate) =>
           `${getTimeStamp(new Date(expectedDate))} 이내 확정 예정`,
-        thirdLineText: (hotelName) => hotelName,        
+        thirdLineText: (hotelName) => hotelName,
         link: (url?: string) => {
           return { url, arrow: !!url };
         },
@@ -224,7 +224,7 @@ export function getTimeLineStateDetailFunc(state: ReservationState): AllTypes {
         firstLineText: () => `연장 확정`,
         secondLineText: (startDate) =>
           `${getTimeStamp(new Date(startDate), true)} 체크인`,
-        thirdLineText: (hotelName) => hotelName,        
+        thirdLineText: (hotelName) => hotelName,
         link: (url?: string) => {
           return { url, arrow: !!url };
         },
@@ -236,7 +236,7 @@ export function getTimeLineStateDetailFunc(state: ReservationState): AllTypes {
         firstLineText: () => `예약 변경 중`,
         secondLineText: (expectedDate) =>
           `${getTimeStamp(new Date(expectedDate))} 이내 확정`,
-        thirdLineText: (hotelName) => hotelName,        
+        thirdLineText: (hotelName) => hotelName,
         link: (url?: string) => {
           return { url, arrow: !!url };
         },
@@ -248,7 +248,7 @@ export function getTimeLineStateDetailFunc(state: ReservationState): AllTypes {
         firstLineText: (dDay) => `체크아웃 D-${dDay}`,
         secondLineText: (end_date) =>
           `${getTimeStamp(new Date(end_date), true)} 체크아웃`,
-        thirdLineText: (hotelName) => hotelName,        
+        thirdLineText: (hotelName) => hotelName,
         link: (url?: string) => {
           return { url, arrow: !!url };
         },
@@ -272,7 +272,7 @@ export function getTimeLineStateDetailFunc(state: ReservationState): AllTypes {
         firstLineText: () => `체크아웃 완료`,
         secondLineText: () => `재구매하기`,
         secondLink: (url) => url,
-        thirdLineText: (hotelName) => hotelName,        
+        thirdLineText: (hotelName) => hotelName,
         link: (url?: string) => {
           return { url, arrow: !!url };
         },
@@ -284,7 +284,7 @@ export function getTimeLineStateDetailFunc(state: ReservationState): AllTypes {
         firstLineText: () => `투어 취소`,
         secondLineText: (cancelDate) =>
           `${getTimeStamp(new Date(cancelDate), true)} 방문 취소`,
-        thirdLineText: (hotelName) => hotelName,        
+        thirdLineText: (hotelName) => hotelName,
         link: (url?: string) => {
           return { url, arrow: !!url };
         },
@@ -296,7 +296,7 @@ export function getTimeLineStateDetailFunc(state: ReservationState): AllTypes {
         firstLineText: () => `취소 완료`,
         secondLineText: (cancelDate) =>
           `${getTimeStamp(new Date(cancelDate), true)} 방문 취소`,
-        thirdLineText: (hotelName) => hotelName,        
+        thirdLineText: (hotelName) => hotelName,
         link: (url?: string) => {
           return { url, arrow: !!url };
         },
@@ -306,7 +306,7 @@ export function getTimeLineStateDetailFunc(state: ReservationState): AllTypes {
         enum: state,
         firstLineText: () => ``,
         secondLineText: () => ``,
-        thirdLineText: (hotelName) => hotelName,        
+        thirdLineText: (hotelName) => hotelName,
         link: (url?: string) => {
           return { url, arrow: !!url };
         },
@@ -339,7 +339,7 @@ type Props = {
 interface TimeLineStatePropsReturnType {
   first: string;
   second: string;
-  third: string;  
+  third: string;
 }
 
 export function getTimeLineStateProps(
@@ -347,60 +347,63 @@ export function getTimeLineStateProps(
   props: Props
 ): TimeLineStatePropsReturnType {
   switch (state) {
-    case "checkout_before" || "checkout_before_n":
+    case "checkout_before":
+    case "checkout_before_n":
       return {
         first: `${props.first.dDay}`,
         second: props.second.endDate,
-        third: props.third.hotelName,        
+        third: props.third.hotelName,
       };
-    case "tour_confirm_before" ||
-      "reservation_purchase_done" ||
-      "extend_purchase_done" ||
-      "reservation_change_process":
+    case "tour_confirm_before":
+    case "reservation_purchase_done":
+    case "extend_purchase_done":
+    case "reservation_change_process":
       return {
         first: null,
         second: props.second.expectedDate,
-        third: props.third.hotelName,        
+        third: props.third.hotelName,
       };
-    case "tour_confirm" ||
-      "tour_done" ||
-      "checkin_before" ||
-      "extend_checkin_before":
+    case "tour_confirm":
+    case "tour_done":
+    case "checkin_before":
+    case "extend_checkin_before":
       return {
         first: null,
         second: props.second.startDate,
-        third: props.third.hotelName,        
+        third: props.third.hotelName,
       };
     case "day_n":
       return {
         first: null,
         second: props.second.endDate,
-        third: props.third.hotelName,        
+        third: props.third.hotelName,
       };
-    case "reservation_purchase_before" || "extend_purchase_before":
+    case "reservation_purchase_before":
+    case "extend_purchase_before":
       return {
         first: null,
         second: props.second.vBankDate,
-        third: props.third.hotelName,        
+        third: props.third.hotelName,
       };
     case "checkout_done":
       return {
         first: null,
         second: null,
-        third: props.third.hotelName,        
+        third: props.third.hotelName,
       };
-    case "tour_cancel" || "reservation_cancel":
+    case "tour_cancel":
+    case "reservation_cancel":
       return {
         first: null,
         second: props.second.cancelDate,
-        third: props.third.hotelName,        
+        third: props.third.hotelName,
       };
 
     default:
       return {
         first: null,
         second: null,
-        third: props.third.hotelName,        
+        third: props.third.hotelName,
       };
   }
 }

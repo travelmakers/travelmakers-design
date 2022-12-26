@@ -88,12 +88,12 @@ interface returnType {
 
 export function getReservationsCallable(state: ReservationState): returnType {
   switch (state) {
-    case "reservation_purchase_before" ||
-      "reservation_purchase_done" ||
-      "checkin_before" ||
-      "day_n" ||
-      "checkout_before" ||
-      "checkout_done":
+    case "reservation_purchase_before":
+    case "reservation_purchase_done":
+    case "checkin_before":
+    case "day_n":
+    case "checkout_before":
+    case "checkout_done":
       // NOTE: 결제진행중
       // 결제 진행 중, 예약 확정 전, 체크인 전, 입주 NN일차, 체크아웃 전, 체크아웃
       return {
@@ -124,10 +124,10 @@ export function getReservationsCallable(state: ReservationState): returnType {
         },
       };
 
-    case "tour_confirm_before" ||
-      "tour_confirm" ||
-      "tour_done" ||
-      "tour_cancel":
+    case "tour_confirm_before":
+    case "tour_confirm":
+    case "tour_done":
+    case "tour_cancel":
       // NOTE: 투어관련
       return {
         reservationInfo: {
