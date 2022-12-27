@@ -37,5 +37,6 @@ export * from "./View";
 export * from "./TimeLineGuide";
 export * from "./TimeLineProcess";
 export * from "./TimeLineBanner";
+export * from "./SkeletonTimeLineBanner";
 export * from "./StatusCard";
 export * from "./List";
