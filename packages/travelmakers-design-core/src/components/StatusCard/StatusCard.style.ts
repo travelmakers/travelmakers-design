@@ -1,8 +1,10 @@
 import { createStyles } from "@travelmakers-design/styles";
 
-interface StatusCardStyles {}
+interface StatusCardStyles {
+  isArrow: boolean;
+}
 
-export default createStyles((theme, {}: StatusCardStyles) => {
+export default createStyles((theme, { isArrow = true }: StatusCardStyles) => {
   return {
     root: {
       backgroundColor: theme.colors.white,
@@ -12,7 +14,7 @@ export default createStyles((theme, {}: StatusCardStyles) => {
     container: {
       display: "flex",
       gap: "12px",
-      cursor: "pointer",
+      cursor: isArrow ? "pointer" : "auto",
     },
     image: {
       width: "98px",

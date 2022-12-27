@@ -7,8 +7,9 @@ import {
   useTmTheme,
 } from "@travelmakers-design/styles";
 import React, { forwardRef, useState } from "react";
-import { Typography } from "../Typography";
+
 import { IconAngle } from "../../assets/icon";
+import { Typography } from "../Typography";
 import { View } from "../View";
 import useStyles from "./TimeLineBanner.style";
 
@@ -23,13 +24,13 @@ export interface TimeLineBannerProps
   status: "default" | "alert";
 
   /** Title 텍스트를 지정한다. */
-  title: string;
+  title?: string;
 
   /** Message 텍스트를 지정한다. */
-  message: string;
+  message?: string;
 
   /** Label 텍스트를 지정한다. */
-  label: string;
+  label?: string;
 
   /** Label 우측에 표시되는 arrow 화살표 hidden 여부를 결정한다. */
   arrowHidden?: boolean;
@@ -41,9 +42,9 @@ export const TimeLineBanner = forwardRef<HTMLDivElement, TimeLineBannerProps>(
   (
     {
       status,
-      title,
-      message,
-      label,
+      title = "&nbsp;",
+      message = "&nbsp;",
+      label = "&nbsp;",
       arrowHidden = false,
       onClick,
       className,

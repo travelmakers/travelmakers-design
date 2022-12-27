@@ -7,6 +7,7 @@ import {
   Subtitle,
   Title,
 } from "@storybook/addon-docs";
+
 import { Meta } from "@storybook/react";
 import React from "react";
 import { TimeLineBanner } from "../TimeLineBanner";
@@ -88,6 +89,16 @@ export const Default = (props) => {
     <>
       <div style={{ padding: 24, width: 328 }}>
         <TimeLineBanner {...props} />
+      </div>
+    </>
+  );
+};
+
+export const Skeleton = (props) => {
+  return (
+    <>
+      <div style={{ padding: 24, width: 328 }}>
+        <TimeLineBanner status={"default"} arrowHidden={true} />
       </div>
     </>
   );

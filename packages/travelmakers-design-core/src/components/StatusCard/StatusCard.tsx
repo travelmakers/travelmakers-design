@@ -58,7 +58,7 @@ export const StatusCard = forwardRef<HTMLDivElement, StatusCardProps>(
   ) => {
     const theme = useTmTheme();
     const { classes, cx } = useStyles(
-      {},
+      { isArrow },
       { overrideStyles, name: "StatusCard" }
     );
 
