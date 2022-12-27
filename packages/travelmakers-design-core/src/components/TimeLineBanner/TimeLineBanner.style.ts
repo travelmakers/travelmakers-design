@@ -55,6 +55,7 @@ export default createStyles((theme, { status }: TimeLineBannerStyles) => {
         status === "default"
           ? "linear-gradient(149.99deg, rgba(19, 134, 104, 0.8) 0%, rgba(127, 102, 16, 0.8) 88.27%)"
           : "linear-gradient(103.18deg, rgba(222, 148, 80, 0.48) 40.51%, rgba(217, 59, 59, 0.8) 100%)",
+      // ? "linear-gradient(149.99deg, rgba(255, 255, 255, 0.5) 0%, rgba(200, 200, 200, 0.5) 88.27%)"
       borderRadius: "7575.76px",
     },
   };
