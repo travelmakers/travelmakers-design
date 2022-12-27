@@ -7,9 +7,9 @@ import {
   useTmTheme,
 } from "@travelmakers-design/styles";
 import React, { forwardRef, useState } from "react";
+
 import { IconProcess } from "../../assets/icon";
 import { Typography } from "../Typography";
-
 import { View } from "../View";
 import useStyles from "./TimeLineProcess.style";
 
@@ -18,11 +18,22 @@ export type TimeLineProcessStylesNames = ClassNames<typeof useStyles>;
 export interface TimeLineProcessProps
   extends TmComponentProps,
     React.ComponentPropsWithoutRef<"div"> {
+  /**
+   * 결제 프로세스 상태값을 반환합니다.
+   */
   status: "reservation_purchase_before" | "reservation_purchase_done";
+
+  /**
+   * 결제 프로세스의 타입을 반환합니다.
+   */
+  type?: "primary" | "secondary";
 }
 
 export const TimeLineProcess = forwardRef<HTMLDivElement, TimeLineProcessProps>(
-  ({ status, className, co, overrideStyles, ...props }, ref) => {
+  (
+    { status, type = "primary", className, co, overrideStyles, ...props },
+    ref
+  ) => {
     const theme = useTmTheme();
     const { classes, cx } = useStyles(
       {},
@@ -44,6 +55,11 @@ export const TimeLineProcess = forwardRef<HTMLDivElement, TimeLineProcessProps>(
       },
       { text: "호텔<br/>예약 확정", isProcess: false },
     ];
+
+    if (type === "secondary") {
+      // NOTE: 결제대기 제거
+      process.shift();
+    }
 
     return (
       <View

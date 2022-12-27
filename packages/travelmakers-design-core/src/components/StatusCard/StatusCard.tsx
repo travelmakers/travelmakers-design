@@ -14,6 +14,7 @@ import { Typography } from "../Typography";
 import { View } from "../View";
 import { getTimeStamp } from "../../utils";
 import useStyles from "./StatusCard.style";
+
 export type StatusCardStylesNames = ClassNames<typeof useStyles>;
 
 export interface StatusCardProps
@@ -34,6 +35,8 @@ export interface StatusCardProps
   roomType: string;
 
   onClick?: () => void;
+
+  isArrow?: boolean;
 }
 
 export const StatusCard = forwardRef<HTMLDivElement, StatusCardProps>(
@@ -45,6 +48,7 @@ export const StatusCard = forwardRef<HTMLDivElement, StatusCardProps>(
       label,
       roomType,
       onClick,
+      isArrow = true,
       className,
       co,
       overrideStyles,
@@ -65,7 +69,6 @@ export const StatusCard = forwardRef<HTMLDivElement, StatusCardProps>(
           className={cx(classes.root, className)}
           co={co}
           {...props}
-          
         >
           <View className={cx(classes.container)} onClick={onClick}>
             <Image
@@ -115,10 +118,14 @@ export const StatusCard = forwardRef<HTMLDivElement, StatusCardProps>(
                 >
                   {roomType}
                 </Typography>
-                <IconAngle
-                  className={cx(classes.arrowImage)}
-                  color={theme.colors.navy1}
-                />
+                {isArrow ? (
+                  <IconAngle
+                    className={cx(classes.arrowImage)}
+                    color={theme.colors.navy1}
+                  />
+                ) : (
+                  <></>
+                )}
               </View>
             </View>
           </View>
