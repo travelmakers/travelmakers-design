@@ -56,7 +56,7 @@ export const TimeLineBanner = forwardRef<HTMLDivElement, TimeLineBannerProps>(
   ) => {
     const theme = useTmTheme();
     const { classes, cx } = useStyles(
-      { status },
+      { status, arrowHidden },
       { overrideStyles, name: "TimeLineBanner" }
     );
 
@@ -85,7 +85,12 @@ export const TimeLineBanner = forwardRef<HTMLDivElement, TimeLineBannerProps>(
               }}
             />
           </Typography>
-          <div className={cx(classes.labelWrapper)} onClick={onClick}>
+          <div
+            className={cx(classes.labelWrapper)}
+            onClick={() => {
+              if (!arrowHidden) onClick();
+            }}
+          >
             <Typography
               className={cx(classes.labelText, classes.textMaxLength)}
               family="Pretendard"

@@ -50,6 +50,7 @@ export const SkeletonTimeLineBanner = forwardRef<
             style={{
               backgroundColor: "rgba(200, 200, 200, 0.5)",
               width: "20%",
+              borderRadius: 8,
             }}
           />
           <div
@@ -59,6 +60,7 @@ export const SkeletonTimeLineBanner = forwardRef<
             style={{
               backgroundColor: "rgba(200, 200, 200, 0.5)",
               marginTop: 2,
+              borderRadius: 8,
             }}
           />
         </Typography>
@@ -77,6 +79,7 @@ export const SkeletonTimeLineBanner = forwardRef<
               style={{
                 backgroundColor: "rgba(200, 200, 200, 0.5)",
                 width: "100px",
+                borderRadius: 8,
               }}
             />
           </Typography>
