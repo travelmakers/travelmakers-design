@@ -128,7 +128,10 @@ export const Accordion: AccordionComponent & { displayName?: string } =
                     <span
                       className={cx(classes.answer)}
                       dangerouslySetInnerHTML={{
-                        __html: AccordionData?.answer,
+                        __html: AccordionData?.answer?.replace(
+                          /(?:\r\n|\r|\n)/g,
+                          "<br />"
+                        ),
                       }}
                     />
                   </div>
