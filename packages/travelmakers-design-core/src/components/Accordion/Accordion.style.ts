@@ -32,7 +32,7 @@ export default createStyles((theme, { open }: AccordionStyles) => {
       justifyContent: "space-between",
       alignItems: "center",
       cursor: "pointer",
-      padding: "16px",
+      padding: "9px 16px",
     },
     titleWrap: {
       display: "flex",
@@ -48,33 +48,21 @@ export default createStyles((theme, { open }: AccordionStyles) => {
     title: {
       display: "block",
       width: "100%",
-      fontSize: theme.fontSizes.b1,
-      lineHeight: `${theme.lineHeights.b1}px`,
-      fontWeight: "bold",
       color: theme.colors.navy1,
-      [`${theme.media.mobile}`]: {
-        fontSize: theme.fontSizes.b2,
-        lineHeight: `${theme.lineHeights.b2}px`,
-        fontWeight: "400",
-      },
+      fontSize: theme.fontSizes.b2,
+      lineHeight: `${theme.lineHeights.b2}px`,
+      fontWeight: "400",
     },
     icon: {
-      width: "32px",
-      height: "32px",
       cursor: "pointer",
       marginLeft: "4px",
-      [`${theme.media.mobile}`]: {
-        width: "24px",
-        height: "24px",
-      },
+      width: "24px",
+      height: "24px",
     },
 
     // NOTE: Content
     content: {
-      padding: "0 24px 14px 24px",
-      [`${theme.media.desktop}`]: {
-        padding: "0 16px 12px 16px",
-      },
+      padding: "0 16px 12px 16px",
     },
 
     contentPadding: {
@@ -85,10 +73,7 @@ export default createStyles((theme, { open }: AccordionStyles) => {
       width: "100%",
       height: "1px",
       backgroundColor: "#E8E8E8",
-      marginBottom: "14px",
-      [`${theme.media.desktop}`]: {
-        marginBottom: "11px",
-      },
+      marginBottom: "11px",
     },
 
     answerText: {
@@ -97,17 +82,10 @@ export default createStyles((theme, { open }: AccordionStyles) => {
     },
 
     answer: {
-      fontSize: theme.fontSizes.b1,
-      lineHeight: `${theme.lineHeights.b1}px`,
       color: theme.colors.navy1,
       width: "100%",
-      [`${theme.media.desktop}`]: {
-        marginTop: "3px",
-      },
-      [`${theme.media.mobile}`]: {
-        fontSize: theme.fontSizes.b2,
-        lineHeight: `${theme.lineHeights.b2}px`,
-      },
+      fontSize: theme.fontSizes.b2,
+      lineHeight: `${theme.lineHeights.b2}px`,
     },
   };
 });
