@@ -1,6 +1,5 @@
-import { getTimeStamp, getTimeStampCheckIn } from "../utils/getTimeStamp";
-
 import { getCountDown } from "../utils/getCountDown";
+import { getTimeStamp } from "../utils/getTimeStamp";
 
 type ReservationState =
   | "default"
@@ -21,7 +20,7 @@ type ReservationState =
   | "tour_cancel"
   | "reservation_cancel";
 
-export interface timeLineStateParams {
+export interface timeLineStateDetailParams {
   enum: ReservationState;
   thirdLineText: (hotelName: string) => string;
   titleDisable?: () => boolean;
@@ -33,50 +32,56 @@ export interface timeLineStateParams {
   };
 }
 
-interface timeLineStateParamsWithExpectedDate extends timeLineStateParams {
+interface timeLineStateDetailParamsWithExpectedDate
+  extends timeLineStateDetailParams {
   firstLineText: (state?: string) => string;
   secondLineText: (expectedDate: string) => string;
 }
 
-interface timeLineStateParamsWithStartDate extends timeLineStateParams {
+interface timeLineStateDetailParamsWithStartDate
+  extends timeLineStateDetailParams {
   firstLineText: (state?: string) => string;
   secondLineText: (start_date: string) => string;
 }
 
-interface timeLineStateParamsWithEndDate extends timeLineStateParams {
+interface timeLineStateDetailParamsWithEndDate
+  extends timeLineStateDetailParams {
   firstLineText: (state?: string) => string;
   secondLineText: (end_date: string) => string;
 }
 
-interface timeLineStateParamsWithEndDateDday extends timeLineStateParams {
+interface timeLineStateDetailParamsWithEndDateDday
+  extends timeLineStateDetailParams {
   firstLineText: (dDay: number | string) => string;
   secondLineText: (end_date: string) => string;
 }
 
-interface timeLineStateParamsWithBankDate extends timeLineStateParams {
+interface timeLineStateDetailParamsWithBankDate
+  extends timeLineStateDetailParams {
   firstLineText: (state?: string) => string;
   secondLineText: (vbank_date: string) => string;
 }
 
-interface timeLineStateParamsWithNull extends timeLineStateParams {
+interface timeLineStateDetailParamsWithNull extends timeLineStateDetailParams {
   firstLineText: (state?: string) => string;
   secondLineText: () => string;
   secondLink: (url?: string) => string;
 }
 
-interface timeLineStateParamsWithCancelDate extends timeLineStateParams {
+interface timeLineStateDetailParamsWithCancelDate
+  extends timeLineStateDetailParams {
   firstLineText: (state?: string) => string;
   secondLineText: (cancelDate) => string;
 }
 
 type AllTypes =
-  | timeLineStateParamsWithExpectedDate
-  | timeLineStateParamsWithStartDate
-  | timeLineStateParamsWithEndDate
-  | timeLineStateParamsWithEndDateDday
-  | timeLineStateParamsWithBankDate
-  | timeLineStateParamsWithNull
-  | timeLineStateParamsWithCancelDate;
+  | timeLineStateDetailParamsWithExpectedDate
+  | timeLineStateDetailParamsWithStartDate
+  | timeLineStateDetailParamsWithEndDate
+  | timeLineStateDetailParamsWithEndDateDday
+  | timeLineStateDetailParamsWithBankDate
+  | timeLineStateDetailParamsWithNull
+  | timeLineStateDetailParamsWithCancelDate;
 
 export function getTimeLineStateDetailFunc(
   t:
@@ -84,31 +89,31 @@ export function getTimeLineStateDetailFunc(
     | "reservation_purchase_done"
     | "extend_purchase_done"
     | "reservation_change_process"
-): timeLineStateParamsWithExpectedDate;
+): timeLineStateDetailParamsWithExpectedDate;
 
 export function getTimeLineStateDetailFunc(
   t: "tour_confirm" | "tour_done" | "checkin_before" | "extend_checkin_before"
-): timeLineStateParamsWithStartDate;
+): timeLineStateDetailParamsWithStartDate;
 
 export function getTimeLineStateDetailFunc(
   t: "day_n"
-): timeLineStateParamsWithEndDate;
+): timeLineStateDetailParamsWithEndDate;
 
 export function getTimeLineStateDetailFunc(
   t: "checkout_before" | "checkout_before_n"
-): timeLineStateParamsWithEndDateDday;
+): timeLineStateDetailParamsWithEndDateDday;
 
 export function getTimeLineStateDetailFunc(
   t: "reservation_purchase_before" | "extend_purchase_before"
-): timeLineStateParamsWithBankDate;
+): timeLineStateDetailParamsWithBankDate;
 
 export function getTimeLineStateDetailFunc(
   t: "checkout_done"
-): timeLineStateParamsWithNull;
+): timeLineStateDetailParamsWithNull;
 
 export function getTimeLineStateDetailFunc(
   t: "tour_cancel" | "reservation_cancel"
-): timeLineStateParamsWithCancelDate;
+): timeLineStateDetailParamsWithCancelDate;
 
 export function getTimeLineStateDetailFunc(state: ReservationState): AllTypes {
   switch (state) {
@@ -396,7 +401,7 @@ interface TimeLineStatePropsReturnType {
   third: string;
 }
 
-export function getTimeLineStateProps(
+export function getTimeLineStateDetailProps(
   state: ReservationState,
   props: Props
 ): TimeLineStatePropsReturnType {

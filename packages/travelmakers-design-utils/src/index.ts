@@ -1,5 +1,6 @@
 export * from "./getTimeLineFunc";
 export * from "./getTimeLineStateFunc";
+export * from "./getTimeLineStateDetailFunc";
 export * from "./getReservationsCallable";
 export * from "./getPayMethod";
 export * from "./getDate";
