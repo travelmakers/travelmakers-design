@@ -25,6 +25,9 @@ export interface timeLineStateParams {
   enum: ReservationState;
   thirdLineText: (hotelName: string) => string;
   roomTypeText: (roomType: string) => string;
+  titleDisable?: () => boolean;
+  messageDisable?: () => boolean;
+  messageUnderline?: () => boolean;
   link: (url?: string) => {
     url: string;
     arrow: boolean;
@@ -119,6 +122,9 @@ export function getTimeLineStateFunc(state: ReservationState): AllTypes {
           `${getTimeStamp(new Date(expectedDate))} 이내 확정 예정`,
         thirdLineText: (hotelName) => hotelName,
         roomTypeText: (roomType) => roomType,
+        titleDisable: () => false,
+        messageDisable: () => false,
+        messageUnderline: () => false,
         link: (url?: string) => {
           return { url, arrow: !!url };
         },
@@ -132,6 +138,9 @@ export function getTimeLineStateFunc(state: ReservationState): AllTypes {
           `${getTimeStamp(new Date(startDate), true)} 방문`,
         thirdLineText: (hotelName) => hotelName,
         roomTypeText: (roomType) => roomType,
+        titleDisable: () => false,
+        messageDisable: () => false,
+        messageUnderline: () => false,
         link: (url?: string) => {
           return { url, arrow: !!url };
         },
@@ -145,6 +154,9 @@ export function getTimeLineStateFunc(state: ReservationState): AllTypes {
           `${getTimeStamp(new Date(startDate), true)} 방문`,
         thirdLineText: (hotelName) => hotelName,
         roomTypeText: (roomType) => roomType,
+        titleDisable: () => false,
+        messageDisable: () => false,
+        messageUnderline: () => false,
         link: (url?: string) => {
           return { url, arrow: !!url };
         },
@@ -158,6 +170,9 @@ export function getTimeLineStateFunc(state: ReservationState): AllTypes {
           `${getCountDown(vbank_date)} 내 입금 필요`,
         thirdLineText: (hotelName) => hotelName,
         roomTypeText: (roomType) => roomType,
+        titleDisable: () => false,
+        messageDisable: () => false,
+        messageUnderline: () => false,
         link: (url?: string) => {
           return { url, arrow: !!url };
         },
@@ -171,6 +186,9 @@ export function getTimeLineStateFunc(state: ReservationState): AllTypes {
           `${getCountDown(vbank_date)} 내 입금 필요`,
         thirdLineText: (hotelName) => hotelName,
         roomTypeText: (roomType) => roomType,
+        titleDisable: () => false,
+        messageDisable: () => false,
+        messageUnderline: () => false,
         link: (url?: string) => {
           return { url, arrow: !!url };
         },
@@ -184,6 +202,9 @@ export function getTimeLineStateFunc(state: ReservationState): AllTypes {
           `${getTimeStamp(new Date(expectedDate))} 이내 확정`,
         thirdLineText: (hotelName) => hotelName,
         roomTypeText: (roomType) => roomType,
+        titleDisable: () => false,
+        messageDisable: () => false,
+        messageUnderline: () => false,
         link: (url?: string) => {
           return { url, arrow: !!url };
         },
@@ -197,6 +218,9 @@ export function getTimeLineStateFunc(state: ReservationState): AllTypes {
           `${getTimeStamp(new Date(startDate), true)} 체크인`,
         thirdLineText: (hotelName) => hotelName,
         roomTypeText: (roomType) => roomType,
+        titleDisable: () => false,
+        messageDisable: () => false,
+        messageUnderline: () => false,
         link: (url?: string) => {
           return { url, arrow: !!url };
         },
@@ -210,6 +234,9 @@ export function getTimeLineStateFunc(state: ReservationState): AllTypes {
           `${getTimeStamp(new Date(endDate), true)} 체크아웃`,
         thirdLineText: (hotelName) => hotelName,
         roomTypeText: (roomType) => roomType,
+        titleDisable: () => false,
+        messageDisable: () => false,
+        messageUnderline: () => false,
         link: (url?: string) => {
           return { url, arrow: !!url };
         },
@@ -223,6 +250,9 @@ export function getTimeLineStateFunc(state: ReservationState): AllTypes {
           `${getTimeStamp(new Date(expectedDate))} 이내 확정 예정`,
         thirdLineText: (hotelName) => hotelName,
         roomTypeText: (roomType) => roomType,
+        titleDisable: () => false,
+        messageDisable: () => false,
+        messageUnderline: () => false,
         link: (url?: string) => {
           return { url, arrow: !!url };
         },
@@ -236,6 +266,9 @@ export function getTimeLineStateFunc(state: ReservationState): AllTypes {
           `${getTimeStamp(new Date(startDate), true)} 체크인`,
         thirdLineText: (hotelName) => hotelName,
         roomTypeText: (roomType) => roomType,
+        titleDisable: () => false,
+        messageDisable: () => false,
+        messageUnderline: () => false,
         link: (url?: string) => {
           return { url, arrow: !!url };
         },
@@ -249,6 +282,9 @@ export function getTimeLineStateFunc(state: ReservationState): AllTypes {
           `${getTimeStamp(new Date(expectedDate))} 이내 확정`,
         thirdLineText: (hotelName) => hotelName,
         roomTypeText: (roomType) => roomType,
+        titleDisable: () => false,
+        messageDisable: () => false,
+        messageUnderline: () => false,
         link: (url?: string) => {
           return { url, arrow: !!url };
         },
@@ -262,6 +298,9 @@ export function getTimeLineStateFunc(state: ReservationState): AllTypes {
           `${getTimeStamp(new Date(end_date), true)} 체크아웃`,
         thirdLineText: (hotelName) => hotelName,
         roomTypeText: (roomType) => roomType,
+        titleDisable: () => false,
+        messageDisable: () => false,
+        messageUnderline: () => false,
         link: (url?: string) => {
           return { url, arrow: !!url };
         },
@@ -289,6 +328,9 @@ export function getTimeLineStateFunc(state: ReservationState): AllTypes {
         secondLink: (url) => url,
         thirdLineText: (hotelName) => hotelName,
         roomTypeText: (roomType) => roomType,
+        titleDisable: () => true,
+        messageDisable: () => false,
+        messageUnderline: () => true,
         link: (url?: string) => {
           return { url, arrow: !!url };
         },
@@ -302,6 +344,9 @@ export function getTimeLineStateFunc(state: ReservationState): AllTypes {
           `${getTimeStamp(new Date(cancelDate), true)} 방문 취소`,
         thirdLineText: (hotelName) => hotelName,
         roomTypeText: (roomType) => roomType,
+        titleDisable: () => true,
+        messageDisable: () => true,
+        messageUnderline: () => false,
         link: (url?: string) => {
           return { url, arrow: !!url };
         },
@@ -315,6 +360,9 @@ export function getTimeLineStateFunc(state: ReservationState): AllTypes {
           `${getTimeStamp(new Date(cancelDate), true)} 방문 취소`,
         thirdLineText: (hotelName) => hotelName,
         roomTypeText: (roomType) => roomType,
+        titleDisable: () => true,
+        messageDisable: () => true,
+        messageUnderline: () => false,
         link: (url?: string) => {
           return { url, arrow: !!url };
         },
@@ -326,6 +374,9 @@ export function getTimeLineStateFunc(state: ReservationState): AllTypes {
         secondLineText: () => ``,
         thirdLineText: (hotelName) => hotelName,
         roomTypeText: (roomType) => roomType,
+        titleDisable: () => false,
+        messageDisable: () => false,
+        messageUnderline: () => false,
         link: (url?: string) => {
           return { url, arrow: !!url };
         },

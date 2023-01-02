@@ -23,11 +23,17 @@ export interface StatusCardProps
   /** Title 텍스트를 지정한다. */
   title: string;
 
+  titleDisable?: boolean;
+
   /**  */
   hotelImage?: string;
 
   /** Message 텍스트를 지정한다. */
   message: string;
+
+  messageDisable?: boolean;
+
+  messageUnderline?: boolean;
 
   /** Label 텍스트를 지정한다. */
   label: string;
@@ -44,7 +50,10 @@ export const StatusCard = forwardRef<HTMLDivElement, StatusCardProps>(
     {
       hotelImage,
       title,
+      titleDisable = false,
       message,
+      messageDisable = false,
+      messageUnderline = false,
       label,
       roomType,
       onClick,
@@ -58,7 +67,7 @@ export const StatusCard = forwardRef<HTMLDivElement, StatusCardProps>(
   ) => {
     const theme = useTmTheme();
     const { classes, cx } = useStyles(
-      { isArrow },
+      { isArrow, titleDisable, messageDisable, messageUnderline },
       { overrideStyles, name: "StatusCard" }
     );
 
@@ -82,7 +91,7 @@ export const StatusCard = forwardRef<HTMLDivElement, StatusCardProps>(
               <Typography
                 family="Pretendard"
                 level="b2"
-                color={theme.colors.navy1}
+                color={titleDisable ? theme.colors.navy3 : theme.colors.navy1}
                 strong
               >
                 {title}
@@ -90,7 +99,10 @@ export const StatusCard = forwardRef<HTMLDivElement, StatusCardProps>(
               <Typography
                 family="Pretendard"
                 level="b3"
-                color={theme.colors.navy1}
+                color={messageDisable ? theme.colors.navy3 : theme.colors.navy1}
+                style={{
+                  textDecorationLine: messageUnderline ? "underline" : "none",
+                }}
                 strong
               >
                 {message}
