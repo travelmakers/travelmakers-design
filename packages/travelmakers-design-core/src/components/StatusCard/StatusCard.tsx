@@ -35,6 +35,8 @@ export interface StatusCardProps
 
   messageUnderline?: boolean;
 
+  messageClick?: () => void;
+
   /** Label 텍스트를 지정한다. */
   label: string;
 
@@ -54,6 +56,7 @@ export const StatusCard = forwardRef<HTMLDivElement, StatusCardProps>(
       message,
       messageDisable = false,
       messageUnderline = false,
+      messageClick,
       label,
       roomType,
       onClick,
@@ -102,6 +105,13 @@ export const StatusCard = forwardRef<HTMLDivElement, StatusCardProps>(
                 color={messageDisable ? theme.colors.navy3 : theme.colors.navy1}
                 style={{
                   textDecorationLine: messageUnderline ? "underline" : "none",
+                  cursor: messageClick && "pointer",
+                }}
+                onClick={(e) => {
+                  if (!!messageClick) {
+                    e.stopPropagation();
+                    messageClick();
+                  }
                 }}
                 strong
               >
