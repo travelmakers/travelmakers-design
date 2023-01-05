@@ -1,6 +1,6 @@
 {
   "name": "@travelmakers-design/core",
-  "version": "0.0.27",
+  "version": "0.0.28",
   "main": "cjs/packages/travelmakers-design-core/src/index.js",
   "module": "esm/packages/travelmakers-design-core/src/index.js",
   "types": "lib/index.d.ts",
