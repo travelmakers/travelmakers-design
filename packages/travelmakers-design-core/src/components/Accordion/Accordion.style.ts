@@ -32,7 +32,7 @@ export default createStyles((theme, { open }: AccordionStyles) => {
       justifyContent: "space-between",
       alignItems: "center",
       cursor: "pointer",
-      padding: "9px 16px",
+      padding: "8px 16px",
     },
     titleWrap: {
       display: "flex",
