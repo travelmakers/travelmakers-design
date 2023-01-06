@@ -18,7 +18,7 @@ export default createStyles((theme, { open }: AccordionStyles) => {
       borderRadius: "8px",
       width: "100%",
       backgroundColor: theme.colors.white,
-      marginBottom: "4px",
+      marginBottom: "8px",
       ["&:last-child"]: {
         marginBottom: 0,
       },
