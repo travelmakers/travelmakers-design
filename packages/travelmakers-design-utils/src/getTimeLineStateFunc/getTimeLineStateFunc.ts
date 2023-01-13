@@ -313,8 +313,7 @@ export function getTimeLineStateFunc(state: ReservationState): AllTypes {
         secondLineText: (end_date) =>
           `${getTimeStamp(new Date(end_date), true)} 체크아웃`,
         thirdLineText: (hotelName) => hotelName,
-        roomTypeText: (endDate) =>
-          `${getTimeStampCheckIn(new Date(endDate))} 체크아웃 입니다`,
+        roomTypeText: (roomType) => roomType,
         link: (url?: string) => {
           return { url, arrow: !!url };
         },
