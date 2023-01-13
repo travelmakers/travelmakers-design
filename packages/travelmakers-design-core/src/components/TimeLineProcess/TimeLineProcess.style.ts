@@ -2,9 +2,10 @@ import {
   TmColor,
   TmPalette,
   TmSize,
-  createStyles,
   TmTheme,
+  createStyles,
 } from "@travelmakers-design/styles";
+
 import { deviceSizes } from "@travelmakers-design/styles/src/theme/types/TmSize";
 
 interface TimeLineProcessStyles {}
@@ -23,7 +24,7 @@ export default createStyles((theme, {}: TimeLineProcessStyles) => {
     textWrapper: {},
     text: {
       width: "fit-content",
-      padding: "12px",
+      padding: "8px 12px",
       color: theme.colors.navy1,
       ["& > div > span"]: {
         overflow: "hidden",

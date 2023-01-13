@@ -212,7 +212,7 @@ export function getTimeLineFunc(state: ReservationState): AllTypes {
       return {
         enum: state,
         firstLineText: (hotelName) => `${hotelName}`,
-        secondLineText: (dDay) => `퇴실까지 ${dDay} 남았어요`,
+        secondLineText: (dDay) => `퇴실까지 ${dDay}일 남았어요`,
         buttonText: () => `호텔에삶을 연장하시겠어요?`,
         link: (url?: string) => {
           return { url, arrow: !!url };
@@ -224,7 +224,7 @@ export function getTimeLineFunc(state: ReservationState): AllTypes {
       return {
         enum: state,
         firstLineText: (hotelName) => `${hotelName}`,
-        secondLineText: (dDay) => `퇴실까지 ${dDay} 남았어요`,
+        secondLineText: (dDay) => `퇴실까지 ${dDay}일 남았어요`,
         buttonText: (endDate) =>
           `${getTimeStampCheckIn(new Date(endDate))} 체크아웃 입니다`,
         link: (url?: string) => {
@@ -342,14 +342,14 @@ export function getTimeLineProps(
     case "checkout_before":
       // NOTE: 체크아웃 전
       return {
-        first: props.first.userName,
+        first: props.first.hotelName,
         second: `${props.second.dDay}`,
         buttonText: null,
       };
     case "checkout_before_n":
       // NOTE: 체크아웃 N일 전
       return {
-        first: props.first.userName,
+        first: props.first.hotelName,
         second: `${props.second.dDay}`,
         buttonText: props.buttonText.endDate,
       };
