@@ -138,7 +138,7 @@ export function getTimeLineFunc(state: ReservationState): AllTypes {
         link: (url?: string) => {
           return { url, arrow: !!url };
         },
-        color: "alert",
+        color: "default",
       };
     case "tour_done":
       // NOTE: 투어 완료
