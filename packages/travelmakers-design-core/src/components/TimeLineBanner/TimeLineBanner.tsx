@@ -36,6 +36,8 @@ export interface TimeLineBannerProps
   arrowHidden?: boolean;
 
   onClick?: () => void;
+
+  onBannerClick?: () => void;
 }
 
 export const TimeLineBanner = forwardRef<HTMLDivElement, TimeLineBannerProps>(
@@ -47,6 +49,7 @@ export const TimeLineBanner = forwardRef<HTMLDivElement, TimeLineBannerProps>(
       label = "&nbsp;",
       arrowHidden = false,
       onClick,
+      onBannerClick,
       className,
       co,
       overrideStyles,
@@ -56,7 +59,7 @@ export const TimeLineBanner = forwardRef<HTMLDivElement, TimeLineBannerProps>(
   ) => {
     const theme = useTmTheme();
     const { classes, cx } = useStyles(
-      { status, arrowHidden },
+      { status, arrowHidden, isClick: !!onBannerClick },
       { overrideStyles, name: "TimeLineBanner" }
     );
 
@@ -66,6 +69,7 @@ export const TimeLineBanner = forwardRef<HTMLDivElement, TimeLineBannerProps>(
           ref={ref}
           className={cx(classes.root, className)}
           co={co}
+          onClick={onBannerClick}
           {...props}
         >
           <Typography

@@ -8,10 +8,12 @@ interface TimeLineBannerStyles {
 
   /** Label 우측에 표시되는 arrow 화살표 hidden 여부를 결정한다. */
   arrowHidden?: boolean;
+
+  isClick?: boolean;
 }
 
 export default createStyles(
-  (theme, { status, arrowHidden }: TimeLineBannerStyles) => {
+  (theme, { status, arrowHidden, isClick = false }: TimeLineBannerStyles) => {
     return {
       root: {
         backgroundColor:
@@ -23,6 +25,7 @@ export default createStyles(
         position: "relative",
         overflow: "hidden",
         minWidth: "328px",
+        cursor: isClick ? "pointer" : "auto",
       },
       titleWrapper: {
         marginBottom: theme.spacing.small,
