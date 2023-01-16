@@ -99,13 +99,57 @@ interface returnType {
  */
 export function getReservationsCallable(state: ReservationState): returnType {
   switch (state) {
+    case "checkout_done":
+      // NOTE: 체크아웃
+      return {
+        reservationInfo: {
+          type: "payment",
+          visible: true,
+          callable: true,
+        },
+        extensionInfo: {
+          visible: false,
+          callable: false,
+        },
+        extensionGuideInfo: {
+          visible: false,
+          callable: false,
+        },
+        customerInfo: {
+          visible: true,
+          callable: false,
+        },
+        tenantHopeInfo: {
+          visible: false,
+          callable: false,
+        },
+        tenantInfo: {
+          visible: true,
+          callable: false,
+        },
+        paymentInfo: {
+          visible: true,
+          callable: true,
+        },
+        refundBox: {
+          visible: true,
+          callable: true,
+        },
+        paymentRefundInfo: {
+          visible: false,
+          callable: false,
+        },
+        reservationChangeButton: {
+          visible: false,
+          callable: false,
+        },
+      };
     case "reservation_purchase_before":
     case "reservation_purchase_done":
     case "checkin_before":
     case "checkout_before":
-    case "checkout_done":
       // NOTE: 결제진행중
-      // 결제 진행 중, 예약 확정 전, 체크인 전, 체크아웃 전, 체크아웃
+      // 결제 진행 중, 예약 확정 전, 체크인 전, 체크아웃 전
       return {
         reservationInfo: {
           type: "payment",
@@ -476,8 +520,52 @@ export function getReservationsCallable(state: ReservationState): returnType {
 
     case "tour_confirm_before":
     case "tour_confirm":
-    case "tour_done":
+      // NOTE: 투어관련
+      return {
+        reservationInfo: {
+          type: "tour",
+          visible: true,
+          callable: true,
+        },
+        extensionInfo: {
+          visible: false,
+          callable: false,
+        },
+        extensionGuideInfo: {
+          visible: false,
+          callable: false,
+        },
+        customerInfo: {
+          visible: true,
+          callable: true,
+        },
+        tenantHopeInfo: {
+          visible: true,
+          callable: true,
+        },
+        tenantInfo: {
+          visible: false,
+          callable: true,
+        },
+        paymentInfo: {
+          visible: false,
+          callable: true,
+        },
+        refundBox: {
+          visible: false,
+          callable: true,
+        },
+        paymentRefundInfo: {
+          visible: false,
+          callable: false,
+        },
+        reservationChangeButton: {
+          visible: true,
+          callable: true,
+        },
+      };
     case "tour_cancel":
+    case "tour_done":
       // NOTE: 투어관련
       return {
         reservationInfo: {

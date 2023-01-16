@@ -90,7 +90,7 @@ export const Modal: TagComponent & { displayName?: string } = forwardRef(
       title = "",
       handleAgree,
       agreeText = "동의하기",
-      isAgree = false,
+      isAgree = true,
       backIcon = true,
       __staticSelector = "span",
       ...props

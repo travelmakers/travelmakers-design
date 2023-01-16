@@ -21,7 +21,7 @@ export default createStyles(
       root: {
         backgroundColor: theme.colors.white,
         borderRadius: theme.radius.large,
-        padding: theme.spacing.medium,
+        padding: "12px",
       },
       container: {
         display: "flex",

@@ -24,7 +24,7 @@ export default createStyles((theme, { open }: AccordionStyles) => {
       },
     },
     rowPadding: {
-      padding: "8px 16px !important",
+      padding: "12px 16px !important",
     },
     row: {
       display: "flex",
@@ -32,7 +32,7 @@ export default createStyles((theme, { open }: AccordionStyles) => {
       justifyContent: "space-between",
       alignItems: "center",
       cursor: "pointer",
-      padding: "8px 16px",
+      padding: "12px 16px",
     },
     titleWrap: {
       display: "flex",
@@ -66,7 +66,7 @@ export default createStyles((theme, { open }: AccordionStyles) => {
     },
 
     contentPadding: {
-      padding: "0 16px 8px 16px !important",
+      padding: "0 16px 12px 16px !important",
     },
 
     divider: {
