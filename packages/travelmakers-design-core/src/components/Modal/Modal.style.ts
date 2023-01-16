@@ -251,7 +251,7 @@ export default createStyles((theme, { size, type }: AccordionStyles) => {
       height: "500px",
 
       [`${theme.media.tablet}`]: {
-        height: "calc(100% - 70px)",
+        height: "calc(100%)",
       },
     },
     modalAbsolute: {
