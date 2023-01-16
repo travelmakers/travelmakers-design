@@ -213,7 +213,12 @@ export function getTimeLineStateFunc(state: ReservationState): AllTypes {
       // NOTE: 체크인 전
       return {
         enum: state,
-        firstLineText: () => `체크인 D-Day`,
+        firstLineText: (dDay) => {
+          if (dDay && dDay === 0) {
+            return `체크인 D-Day`;
+          }
+          return `체크인 D-${dDay}`;
+        },
         secondLineText: (startDate) =>
           `${getTimeStamp(new Date(startDate), true)} 체크인`,
         thirdLineText: (hotelName) => hotelName,
@@ -293,7 +298,12 @@ export function getTimeLineStateFunc(state: ReservationState): AllTypes {
       // NOTE: 체크아웃 전
       return {
         enum: state,
-        firstLineText: (dDay) => `체크아웃 D-${dDay}`,
+        firstLineText: (dDay) => {
+          if (dDay && dDay === 0) {
+            return `체크아웃 D-Day`;
+          }
+          return `체크아웃 D-${dDay}`;
+        },
         secondLineText: (end_date) =>
           `${getTimeStamp(new Date(end_date), true)} 체크아웃`,
         thirdLineText: (hotelName) => hotelName,
@@ -440,7 +450,7 @@ export function getTimeLineStateProps(
     case "checkin_before":
     case "extend_checkin_before":
       return {
-        first: null,
+        first: `${props.first.dDay}`,
         second: props.second.startDate,
         third: props.third.hotelName,
         roomTypeText: props.roomTypeText.roomType,
