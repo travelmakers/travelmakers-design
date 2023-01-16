@@ -1,3 +1,7 @@
+function pad(n) {
+  return n;
+  // return n < 10 ? "0" + n : n;
+}
 /**
  * Date객체를 YYYY/MM/DD 형태로 표출
  * @param date 날짜객체
@@ -5,10 +9,6 @@
  * @returns YYYY/MM/DD
  */
 export function getDate(date: string, separators?: string) {
-  function pad(n) {
-    return n < 10 ? "0" + n : n;
-  }
-
   const d = new Date(date);
   const separator = separators ?? "/";
 
@@ -28,10 +28,6 @@ export function getDate(date: string, separators?: string) {
  * @returns YYYY/MM/DD HH:MM
  */
 export function getFullDate(date: string, separators?: string) {
-  function pad(n) {
-    return n < 10 ? "0" + n : n;
-  }
-
   const d = new Date(date);
   const separator = separators ?? "/";
 
@@ -55,10 +51,6 @@ export function getFullDate(date: string, separators?: string) {
  * @returns HH:MM
  */
 export function getDateTime(date: string, separators?: string) {
-  function pad(n) {
-    return n < 10 ? "0" + n : n;
-  }
-
   const d = new Date(date);
   const separator = separators ?? ":";
 
