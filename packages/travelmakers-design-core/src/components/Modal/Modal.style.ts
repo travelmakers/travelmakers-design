@@ -251,7 +251,12 @@ export default createStyles((theme, { size, type }: AccordionStyles) => {
       height: "500px",
 
       [`${theme.media.tablet}`]: {
-        height: "calc(100%)",
+        height: "calc(100% - 70px)",
+      },
+    },
+    isAgree: {
+      [`${theme.media.tablet}`]: {
+        height: "100% !important",
       },
     },
     modalAbsolute: {

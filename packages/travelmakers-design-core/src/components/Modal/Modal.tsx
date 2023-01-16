@@ -90,7 +90,7 @@ export const Modal: TagComponent & { displayName?: string } = forwardRef(
       title = "",
       handleAgree,
       agreeText = "동의하기",
-      isAgree = true,
+      isAgree = false,
       backIcon = true,
       __staticSelector = "span",
       ...props
@@ -142,6 +142,7 @@ export const Modal: TagComponent & { displayName?: string } = forwardRef(
                         <div
                           className={cx(
                             classes.modalContents,
+                            !isAgree && classes.isAgree,
                             "modalPopup Agreement"
                           )}
                         >
@@ -174,7 +175,12 @@ export const Modal: TagComponent & { displayName?: string } = forwardRef(
                               )}
                             />
                           </div>
-                          <div className={cx(classes.modalContentText)}>
+                          <div
+                            className={cx(
+                              classes.modalContentText,
+                              !isAgree && classes.isAgree
+                            )}
+                          >
                             {children}
                           </div>
                         </div>
