@@ -82,6 +82,13 @@ interface returnType {
     visible: boolean;
     callable: boolean;
   };
+  /**
+   * 예약변경 취소버튼 callable 여부
+   */
+  reservationChangeButton: {
+    visible: boolean;
+    callable: boolean;
+  };
 }
 
 // TODO: 예약취소완료, 환불처리중, 환불완료
@@ -98,7 +105,7 @@ export function getReservationsCallable(state: ReservationState): returnType {
     case "checkout_before":
     case "checkout_done":
       // NOTE: 결제진행중
-      // 결제 진행 중, 예약 확정 전, 체크인 전, 입주 NN일차, 체크아웃 전, 체크아웃
+      // 결제 진행 중, 예약 확정 전, 체크인 전, 체크아웃 전, 체크아웃
       return {
         reservationInfo: {
           type: "payment",
@@ -136,6 +143,10 @@ export function getReservationsCallable(state: ReservationState): returnType {
         paymentRefundInfo: {
           visible: false,
           callable: false,
+        },
+        reservationChangeButton: {
+          visible: true,
+          callable: true,
         },
       };
 
@@ -177,6 +188,10 @@ export function getReservationsCallable(state: ReservationState): returnType {
           callable: false,
         },
         paymentRefundInfo: {
+          visible: false,
+          callable: false,
+        },
+        reservationChangeButton: {
           visible: false,
           callable: false,
         },
@@ -223,6 +238,10 @@ export function getReservationsCallable(state: ReservationState): returnType {
           visible: false,
           callable: false,
         },
+        reservationChangeButton: {
+          visible: true,
+          callable: true,
+        },
       };
 
     case "extend_checkin_before":
@@ -265,6 +284,10 @@ export function getReservationsCallable(state: ReservationState): returnType {
           visible: false,
           callable: false,
         },
+        reservationChangeButton: {
+          visible: true,
+          callable: true,
+        },
       };
 
     case "reservation_change_process":
@@ -304,6 +327,10 @@ export function getReservationsCallable(state: ReservationState): returnType {
           callable: false,
         },
         paymentRefundInfo: {
+          visible: false,
+          callable: false,
+        },
+        reservationChangeButton: {
           visible: false,
           callable: false,
         },
@@ -349,6 +376,10 @@ export function getReservationsCallable(state: ReservationState): returnType {
           visible: false,
           callable: false,
         },
+        reservationChangeButton: {
+          visible: false,
+          callable: false,
+        },
       };
 
     case "checkout_before_n":
@@ -388,6 +419,10 @@ export function getReservationsCallable(state: ReservationState): returnType {
           callable: false,
         },
         paymentRefundInfo: {
+          visible: false,
+          callable: false,
+        },
+        reservationChangeButton: {
           visible: false,
           callable: false,
         },
@@ -432,6 +467,10 @@ export function getReservationsCallable(state: ReservationState): returnType {
         paymentRefundInfo: {
           visible: true,
           callable: true,
+        },
+        reservationChangeButton: {
+          visible: false,
+          callable: false,
         },
       };
 
@@ -478,6 +517,10 @@ export function getReservationsCallable(state: ReservationState): returnType {
           visible: false,
           callable: false,
         },
+        reservationChangeButton: {
+          visible: false,
+          callable: false,
+        },
       };
 
     default:
@@ -516,6 +559,10 @@ export function getReservationsCallable(state: ReservationState): returnType {
           callable: true,
         },
         paymentRefundInfo: {
+          visible: false,
+          callable: false,
+        },
+        reservationChangeButton: {
           visible: false,
           callable: false,
         },
