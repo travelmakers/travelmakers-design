@@ -25,7 +25,7 @@ export default createStyles((theme, {}: TimeLineProcessStyles) => {
     text: {
       width: "fit-content",
       padding: "8px 12px",
-      color: theme.colors.navy1,
+      color: theme.colors.gray3,
       ["& > div > span"]: {
         overflow: "hidden",
         textOverflow: "ellipsis",

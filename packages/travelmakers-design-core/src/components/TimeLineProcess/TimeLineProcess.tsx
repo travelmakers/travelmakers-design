@@ -50,10 +50,10 @@ export const TimeLineProcess = forwardRef<HTMLDivElement, TimeLineProcessProps>(
         isProcess: false,
       },
       {
-        text: "호텔에삶<br/>예약 전달",
+        text: "<b>호텔에삶</b><br/>예약 전달",
         isProcess: status === "reservation_purchase_done" && true,
       },
-      { text: "호텔<br/>예약 확정", isProcess: false },
+      { text: "<b>호텔</b><br/>예약 확정", isProcess: false },
     ];
 
     if (type === "secondary") {

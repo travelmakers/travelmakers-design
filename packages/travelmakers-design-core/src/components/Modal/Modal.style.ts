@@ -98,6 +98,9 @@ export default createStyles((theme, { size, type }: AccordionStyles) => {
       height: "100%",
       maxHeight: "100%",
       borderRadius: "6px",
+      [`${theme.media.tablet}`]: {
+        borderRadius: "0px",
+      },
       boxSizing: "border-box",
       zIndex: "200",
       ["&.popup"]: {
@@ -114,6 +117,9 @@ export default createStyles((theme, { size, type }: AccordionStyles) => {
       height: "100%",
       padding: "0",
       borderRadius: "6px",
+      [`${theme.media.tablet}`]: {
+        borderRadius: "0px",
+      },
       overflowY: "hidden",
       [`${theme.media.desktop}`]: {
         ["-ms-overflow-style"]: "none",

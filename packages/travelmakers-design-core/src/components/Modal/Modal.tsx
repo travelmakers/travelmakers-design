@@ -50,6 +50,9 @@ export interface ModalBaseProps extends TmComponentProps<ModalStylesNames> {
   /** Modal 컴포넌트에서 버튼의 이름을 지정한다.*/
   agreeText?: string;
 
+  /** Modal 컴포넌트에서 버튼 유무를 결정한다.*/
+  isAgree?: boolean;
+
   /** Modal 컴포넌트에서 뒤로가기 아이콘 표시 여부를 결정한다.*/
   backIcon?: boolean;
 }
@@ -87,6 +90,7 @@ export const Modal: TagComponent & { displayName?: string } = forwardRef(
       title = "",
       handleAgree,
       agreeText = "동의하기",
+      isAgree = true,
       backIcon = true,
       __staticSelector = "span",
       ...props
@@ -174,11 +178,13 @@ export const Modal: TagComponent & { displayName?: string } = forwardRef(
                             {children}
                           </div>
                         </div>
-                        <div className={cx(classes.modalAbsolute)}>
-                          <Button fullWidth onClick={handleAgree}>
-                            {agreeText}
-                          </Button>
-                        </div>
+                        {isAgree && (
+                          <div className={cx(classes.modalAbsolute)}>
+                            <Button fullWidth onClick={handleAgree}>
+                              {agreeText}
+                            </Button>
+                          </div>
+                        )}
                       </div>
                     </div>
                   </div>
