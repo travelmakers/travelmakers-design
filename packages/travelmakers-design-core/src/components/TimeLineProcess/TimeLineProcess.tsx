@@ -21,7 +21,11 @@ export interface TimeLineProcessProps
   /**
    * 결제 프로세스 상태값을 반환합니다.
    */
-  status: "reservation_purchase_before" | "reservation_purchase_done";
+  status:
+    | "reservation_purchase_before"
+    | "extend_purchase_before"
+    | "extend_purchase_done"
+    | "reservation_purchase_done";
 
   /**
    * 결제 프로세스의 타입을 반환합니다.
@@ -43,7 +47,10 @@ export const TimeLineProcess = forwardRef<HTMLDivElement, TimeLineProcessProps>(
     const process = [
       {
         text: "결제 대기",
-        isProcess: status === "reservation_purchase_before" && true,
+        isProcess:
+          (status === "reservation_purchase_before" ||
+            status === "extend_purchase_before") &&
+          true,
       },
       {
         text: "결제 완료",
@@ -51,7 +58,10 @@ export const TimeLineProcess = forwardRef<HTMLDivElement, TimeLineProcessProps>(
       },
       {
         text: "<b style='font-weight: 600'>호텔에삶</b><br/>예약 전달",
-        isProcess: status === "reservation_purchase_done" && true,
+        isProcess:
+          (status === "reservation_purchase_done" ||
+            status === "extend_purchase_done") &&
+          true,
       },
       {
         text: "<b style='font-weight: 600'>호텔</b><br/>예약 확정",

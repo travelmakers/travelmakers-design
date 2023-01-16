@@ -15,7 +15,7 @@ const getPayMethod = (
     : "";
   switch (pay_method) {
     case "card":
-      return `${card_name ?? "신용카드"}(${cardDescription})`;
+      return `${card_name ?? "신용카드"}${cardDescription}`;
     case "vbank":
       return `무통장입금 (가상계좌)`;
     case "naverpay":
