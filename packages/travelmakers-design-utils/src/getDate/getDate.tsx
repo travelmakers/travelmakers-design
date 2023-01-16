@@ -1,6 +1,5 @@
 function pad(n) {
-  return n;
-  // return n < 10 ? "0" + n : n;
+  return n < 10 ? "0" + n : n;
 }
 /**
  * Date객체를 YYYY/MM/DD 형태로 표출
@@ -13,11 +12,7 @@ export function getDate(date: string, separators?: string) {
   const separator = separators ?? "/";
 
   return (
-    pad(d.getFullYear()) +
-    separator +
-    pad(d.getMonth() + 1) +
-    separator +
-    pad(d.getDate())
+    d.getFullYear() + separator + (d.getMonth() + 1) + separator + d.getDate()
   );
 }
 
@@ -32,13 +27,13 @@ export function getFullDate(date: string, separators?: string) {
   const separator = separators ?? "/";
 
   return (
-    pad(d.getFullYear()) +
+    d.getFullYear() +
     separator +
-    pad(d.getMonth() + 1) +
+    (d.getMonth() + 1) +
     separator +
-    pad(d.getDate()) +
+    d.getDate() +
     " " +
-    pad(d.getHours()) +
+    d.getHours() +
     ":" +
     pad(d.getMinutes())
   );

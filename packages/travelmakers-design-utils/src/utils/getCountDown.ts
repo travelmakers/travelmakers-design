@@ -28,8 +28,12 @@ export function getCountDown(date: string) {
       timeLeft = {
         days: Math.floor(difference / _day).toString(),
         hours: Math.floor((difference / _hour) % 24).toString(),
-        minutes: Math.floor((difference / _second / 60) % 60).toString(),
-        seconds: Math.floor((difference / _second) % 60).toString(),
+        minutes: Math.floor((difference / _second / 60) % 60)
+          .toString()
+          .padStart(2, "0"),
+        seconds: Math.floor((difference / _second) % 60)
+          .toString()
+          .padStart(2, "0"),
       };
     } else {
       timeLeft = {

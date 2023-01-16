@@ -1,5 +1,5 @@
 function pad(n) {
-  return n;
+  return n < 10 ? "0" + n : n;
 }
 /**
  * Date객체를 MM월DD일 형태로 표출
@@ -11,14 +11,15 @@ export function getTimeStamp(date: Date, isHour?: boolean) {
   const d = date;
 
   return isHour
-    ? pad(d.getMonth() + 1) +
+    ? d.getMonth() +
+        1 +
         "월 " +
-        pad(d.getDate()) +
+        d.getDate() +
         "일 " +
-        pad(d.getHours()) +
+        d.getHours() +
         ":" +
         pad(d.getMinutes())
-    : pad(d.getMonth() + 1) + "월 " + pad(d.getDate()) + "일 ";
+    : d.getMonth() + 1 + "월 " + d.getDate() + "일 ";
 }
 
 /**
@@ -29,12 +30,5 @@ export function getTimeStamp(date: Date, isHour?: boolean) {
 export function getTimeStampCheckIn(date: Date) {
   const d = date;
 
-  return (
-    pad(d.getMonth() + 1) +
-    "월 " +
-    pad(d.getDate()) +
-    "일 " +
-    pad(d.getHours()) +
-    "시"
-  );
+  return d.getMonth() + 1 + "월 " + d.getDate() + "일 " + d.getHours() + "시";
 }
