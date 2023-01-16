@@ -233,11 +233,11 @@ export default createStyles(
       },
 
       leftIcon: {
-        marginRight: 10,
+        // marginRight: 10,
       },
 
       rightIcon: {
-        marginLeft: 10,
+        // marginLeft: 10,
       },
 
       inner: {
