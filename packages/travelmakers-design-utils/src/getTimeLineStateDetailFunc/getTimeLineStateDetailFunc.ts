@@ -311,7 +311,12 @@ export function getTimeLineStateDetailFunc(state: ReservationState): AllTypes {
       // NOTE: 체크아웃 N일 전
       return {
         enum: state,
-        firstLineText: (dDay) => `체크아웃 D-${dDay}`,
+        firstLineText: (dDay) => {
+          if (dDay && dDay === "0") {
+            return `체크아웃 D-Day`;
+          }
+          return `체크아웃 D-${dDay}`;
+        },
         secondLineText: (end_date) =>
           `${getTimeStamp(new Date(end_date), true)} 체크아웃`,
         thirdLineText: (hotelName) => hotelName,
