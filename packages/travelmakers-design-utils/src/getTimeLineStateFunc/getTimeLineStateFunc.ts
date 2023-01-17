@@ -214,7 +214,7 @@ export function getTimeLineStateFunc(state: ReservationState): AllTypes {
       return {
         enum: state,
         firstLineText: (dDay) => {
-          if (dDay && dDay === 0) {
+          if (dDay && dDay === "0") {
             return `체크인 D-Day`;
           }
           return `체크인 D-${dDay}`;
@@ -299,7 +299,7 @@ export function getTimeLineStateFunc(state: ReservationState): AllTypes {
       return {
         enum: state,
         firstLineText: (dDay) => {
-          if (dDay && dDay === 0) {
+          if (dDay && dDay === "0") {
             return `체크아웃 D-Day`;
           }
           return `체크아웃 D-${dDay}`;
