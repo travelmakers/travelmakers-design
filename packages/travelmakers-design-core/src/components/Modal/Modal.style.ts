@@ -58,6 +58,7 @@ export default createStyles((theme, { size, type }: AccordionStyles) => {
       height: "100%",
       top: "0",
       left: "0",
+      zIndex: "50",
     },
     absoluteContainer: {
       width: "100%",
