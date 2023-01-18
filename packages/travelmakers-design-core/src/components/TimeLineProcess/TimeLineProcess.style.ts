@@ -24,6 +24,7 @@ export default createStyles((theme, {}: TimeLineProcessStyles) => {
     textWrapper: {},
     text: {
       width: "fit-content",
+
       padding: "8px 12px",
       color: theme.colors.gray3,
       ["& > div > span"]: {
@@ -37,6 +38,17 @@ export default createStyles((theme, {}: TimeLineProcessStyles) => {
       backgroundColor: theme.colors.green2,
       borderRadius: "22px",
       lineHeight: "14px",
+      height: "100%",
+      ["& > div"]: {
+        display: "table",
+      },
+      ["& > div > span"]: {
+        overflow: "hidden",
+        textOverflow: "ellipsis",
+        whiteSpace: "nowrap",
+        verticalAlign: "middle",
+        display: "table-cell",
+      },
     },
     flex: {
       display: "flex",

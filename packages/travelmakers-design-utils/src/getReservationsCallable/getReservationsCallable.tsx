@@ -144,12 +144,56 @@ export function getReservationsCallable(state: ReservationState): returnType {
           callable: false,
         },
       };
+    case "checkout_before":
+      // NOTE: 체크아웃 전
+      return {
+        reservationInfo: {
+          type: "payment",
+          visible: true,
+          callable: true,
+        },
+        extensionInfo: {
+          visible: false,
+          callable: false,
+        },
+        extensionGuideInfo: {
+          visible: false,
+          callable: false,
+        },
+        customerInfo: {
+          visible: true,
+          callable: true,
+        },
+        tenantHopeInfo: {
+          visible: false,
+          callable: false,
+        },
+        tenantInfo: {
+          visible: true,
+          callable: true,
+        },
+        paymentInfo: {
+          visible: true,
+          callable: true,
+        },
+        refundBox: {
+          visible: true,
+          callable: true,
+        },
+        paymentRefundInfo: {
+          visible: false,
+          callable: false,
+        },
+        reservationChangeButton: {
+          visible: false,
+          callable: false,
+        },
+      };
     case "reservation_purchase_before":
     case "reservation_purchase_done":
     case "checkin_before":
-    case "checkout_before":
       // NOTE: 결제진행중
-      // 결제 진행 중, 예약 확정 전, 체크인 전, 체크아웃 전
+      // 결제 진행 중, 예약 확정 전, 체크인 전
       return {
         reservationInfo: {
           type: "payment",
