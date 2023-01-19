@@ -166,8 +166,17 @@ export function getTimeLineStateFunc(state: ReservationState): AllTypes {
       return {
         enum: state,
         firstLineText: () => `결제 진행 중`,
-        secondLineText: (vbank_date) =>
-          `${getCountDown(vbank_date)} 내 입금 필요`,
+        secondLineText: (vbank_date) => {
+          if (vbank_date) {
+            const countDate = getCountDown(vbank_date);
+            if (countDate && countDate === "0시간 0분") {
+              return "입금 기한 만료";
+            } else {
+              return countDate + " 내 입금 필요";
+            }
+          }
+          return "";
+        },
         thirdLineText: (hotelName) => hotelName,
         roomTypeText: (roomType) => roomType,
         titleDisable: () => false,
@@ -182,8 +191,17 @@ export function getTimeLineStateFunc(state: ReservationState): AllTypes {
       return {
         enum: state,
         firstLineText: () => `연장 결제 전`,
-        secondLineText: (vbank_date) =>
-          `${getCountDown(vbank_date)} 내 입금 필요`,
+        secondLineText: (vbank_date) => {
+          if (vbank_date) {
+            const countDate = getCountDown(vbank_date);
+            if (countDate && countDate === "0시간 0분") {
+              return "입금 기한 만료";
+            } else {
+              return countDate + " 내 입금 필요";
+            }
+          }
+          return "";
+        },
         thirdLineText: (hotelName) => hotelName,
         roomTypeText: (roomType) => roomType,
         titleDisable: () => false,
