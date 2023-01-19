@@ -136,7 +136,7 @@ export const StatusCard = forwardRef<HTMLDivElement, StatusCardProps>(
                 <Typography
                   family="Pretendard"
                   level="b3"
-                  color={theme.colors.navy2}
+                  color={theme.colors.navy1}
                   className={cx(classes.footer, classes.textBreak)}
                 >
                   {roomType}
