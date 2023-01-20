@@ -4,14 +4,15 @@ import {
   useTmTheme,
 } from "@travelmakers-design/styles";
 import React, { forwardRef } from "react";
-import { Typography } from "../Typography";
 
+import { Typography } from "../Typography";
 import { View } from "../View";
 import useStyles from "./List.style";
 
 export type ListStylesNames = ClassNames<typeof useStyles>;
 
 type item = {
+  id: string;
   title: string;
   onClick?: () => void;
 };
@@ -48,6 +49,7 @@ export const List = forwardRef<HTMLDivElement, ListProps>(
                     family="Pretendard"
                     level="b2"
                     color={theme.colors.navy1}
+                    id={item?.id}
                   >
                     {item.title}
                   </Typography>

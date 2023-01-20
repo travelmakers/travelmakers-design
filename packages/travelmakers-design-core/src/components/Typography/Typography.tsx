@@ -20,6 +20,8 @@ export type TypographyTextAlign = "left" | "center" | "right";
 
 export interface SharedTypographyProps
   extends TmComponentProps<TypographyStylesNames> {
+  id?: string;
+
   /** Typography 컴포넌트의 font-family를 정합니다. */
   family?: TmFontFamily;
 
@@ -62,6 +64,7 @@ export const Typography: TypographyComponent & { displayName?: string } =
   forwardRef(
     <C extends React.ElementType = "span">(
       {
+        id,
         children,
         component,
         family = "Noto Serif KR",
@@ -110,7 +113,9 @@ export const Typography: TypographyComponent & { displayName?: string } =
           {...props}
         >
           <div className={classes.inner}>
-            <span className={classes.label}>{children}</span>
+            <span id={id} className={classes.label}>
+              {children}
+            </span>
           </div>
         </View>
       );
