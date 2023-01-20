@@ -105,7 +105,7 @@ export const StatusCard = forwardRef<HTMLDivElement, StatusCardProps>(
                 color={messageDisable ? theme.colors.navy3 : theme.colors.navy1}
                 style={{
                   textDecorationLine: messageUnderline ? "underline" : "none",
-                  cursor: messageClick && "pointer",
+                  cursor: messageUnderline && "pointer",
                   width: "fit-content",
                 }}
                 onClick={(e) => {
