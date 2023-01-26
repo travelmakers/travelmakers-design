@@ -157,12 +157,12 @@ export function getReservationsCallable(state: ReservationState): returnType {
           callable: false,
         },
         extensionGuideInfo: {
-          visible: false,
-          callable: false,
+          visible: true,
+          callable: true,
         },
         customerInfo: {
           visible: true,
-          callable: true,
+          callable: false,
         },
         tenantHopeInfo: {
           visible: false,
@@ -424,52 +424,6 @@ export function getReservationsCallable(state: ReservationState): returnType {
         },
       };
 
-    case "checkout_before":
-      // NOTE: 체크아웃 전
-      return {
-        reservationInfo: {
-          type: "payment",
-          visible: true,
-          callable: true,
-        },
-        extensionInfo: {
-          visible: false,
-          callable: false,
-        },
-        extensionGuideInfo: {
-          visible: true,
-          callable: true,
-        },
-        customerInfo: {
-          visible: true,
-          callable: false,
-        },
-        tenantHopeInfo: {
-          visible: false,
-          callable: false,
-        },
-        tenantInfo: {
-          visible: true,
-          callable: true,
-        },
-        paymentInfo: {
-          visible: true,
-          callable: true,
-        },
-        refundBox: {
-          visible: false,
-          callable: false,
-        },
-        paymentRefundInfo: {
-          visible: false,
-          callable: false,
-        },
-        reservationChangeButton: {
-          visible: false,
-          callable: false,
-        },
-      };
-
     case "checkout_before_n":
       // NOTE: 체크아웃 N일 전
       return {
@@ -546,11 +500,11 @@ export function getReservationsCallable(state: ReservationState): returnType {
         },
         paymentInfo: {
           visible: true,
-          callable: false,
+          callable: true,
         },
         refundBox: {
-          visible: true,
-          callable: true,
+          visible: false,
+          callable: false,
         },
         paymentRefundInfo: {
           visible: true,
