@@ -100,7 +100,7 @@ interface returnType {
 export function getReservationsCallable(state: ReservationState): returnType {
   switch (state) {
     case "checkout_done":
-      // NOTE: 체크아웃
+      // NOTE: 체크아웃 N일전
       return {
         reservationInfo: {
           type: "payment",
@@ -132,8 +132,8 @@ export function getReservationsCallable(state: ReservationState): returnType {
           callable: true,
         },
         refundBox: {
-          visible: true,
-          callable: true,
+          visible: false,
+          callable: false,
         },
         paymentRefundInfo: {
           visible: false,
@@ -177,8 +177,8 @@ export function getReservationsCallable(state: ReservationState): returnType {
           callable: true,
         },
         refundBox: {
-          visible: true,
-          callable: true,
+          visible: false,
+          callable: false,
         },
         paymentRefundInfo: {
           visible: false,
@@ -597,7 +597,7 @@ export function getReservationsCallable(state: ReservationState): returnType {
         },
         refundBox: {
           visible: false,
-          callable: true,
+          callable: false,
         },
         paymentRefundInfo: {
           visible: false,
@@ -643,7 +643,7 @@ export function getReservationsCallable(state: ReservationState): returnType {
         },
         refundBox: {
           visible: false,
-          callable: true,
+          callable: false,
         },
         paymentRefundInfo: {
           visible: false,
