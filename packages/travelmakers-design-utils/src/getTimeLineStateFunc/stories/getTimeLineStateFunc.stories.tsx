@@ -36,7 +36,7 @@ export const Default = (props) => {
   return (
     <div>
       {getTimeLineStateFunc("reservation_purchase_before").secondLineText(
-        "2022-12-24T02:24:01.616Z"
+        "2023-02-08T23:24:01.616Z"
       )}
     </div>
   );

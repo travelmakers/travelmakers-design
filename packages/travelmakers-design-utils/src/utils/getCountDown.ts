@@ -1,9 +1,5 @@
-import { useEffect, useState } from "react";
-
 export function getCountDown(date: string) {
-  const INTERVAL_TIME = 1000;
-  const TIMER_FORMAT = "HH시간 mm분"; //TODO: 국가에 따라 날짜 포멧 다르게 지정하도록 하는 로직 추가
-  const [timeLeft, setTimeLeft] = useState<any>(null);
+  const TIMER_FORMAT = "HH시간 mm분";
 
   const _vDate = new Date(date); // 전달 받은 일자
   const _second = 1000;
@@ -12,18 +8,13 @@ export function getCountDown(date: string) {
   const _day = _hour * 24;
 
   const getTimeFormat = () => {
-    if (!_vDate || !timeLeft) return "";
-    return TIMER_FORMAT.replace("D", timeLeft.days)
-      .replace("HH", timeLeft.hours)
-      .replace("mm", timeLeft.minutes)
-      .replace("ss", timeLeft.seconds);
-  };
-
-  const calculateTimeLeft = () => {
     const difference = new Date(_vDate).getTime() - new Date().getTime();
-
-    let timeLeft = {};
-
+    let timeLeft = {
+      days: "0",
+      hours: "0",
+      minutes: "0",
+      seconds: "0",
+    };
     if (difference > 0) {
       timeLeft = {
         days: Math.floor(difference / _day).toString(),
@@ -35,23 +26,14 @@ export function getCountDown(date: string) {
           .toString()
           .padStart(2, "0"),
       };
-    } else {
-      timeLeft = {
-        days: 0,
-        hours: 0,
-        minutes: 0,
-        seconds: 0,
-      };
     }
-    setTimeLeft(timeLeft);
-  };
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      calculateTimeLeft();
-    }, INTERVAL_TIME);
-    return () => clearInterval(interval);
-  }, [timeLeft]);
+    if (!_vDate || !timeLeft) return "";
+    return TIMER_FORMAT.replace("D", timeLeft.days)
+      .replace("HH", timeLeft.hours)
+      .replace("mm", timeLeft.minutes)
+      .replace("ss", timeLeft.seconds);
+  };
 
   return getTimeFormat();
 }
