@@ -1,3 +1,4 @@
+import { getKorDate } from "../getDate";
 import { getTimeStamp, getTimeStampCheckIn } from "../utils/getTimeStamp";
 
 type ReservationState =
@@ -133,7 +134,7 @@ export function getTimeLineFunc(state: ReservationState): AllTypes {
         enum: state,
         firstLineText: (userName) => `${userName}님`,
         secondLineText: (startDate) =>
-          `${getTimeStamp(new Date(startDate))} 투어가 확정됐어요`,
+          `${getTimeStamp(getKorDate(startDate))} 투어가 확정됐어요`,
         buttonText: () => `약속시간에 꼭 방문해주세요`,
         link: (url?: string) => {
           return { url, arrow: !!url };
@@ -171,7 +172,7 @@ export function getTimeLineFunc(state: ReservationState): AllTypes {
         firstLineText: (userName) => `안녕하세요, ${userName}님`,
         secondLineText: (hotelName) => `${hotelName}`,
         buttonText: (expectedDate) =>
-          `${getTimeStamp(new Date(expectedDate))} 이내 확정 예정이예요`,
+          `${getTimeStamp(getKorDate(expectedDate))} 이내 확정 예정이예요`,
         link: (url?: string) => {
           return { url, arrow: !!url };
         },
@@ -183,7 +184,7 @@ export function getTimeLineFunc(state: ReservationState): AllTypes {
         enum: state,
         firstLineText: (userName) => `${userName}님`,
         secondLineText: (startDate) =>
-          `${getTimeStampCheckIn(new Date(startDate))} 체크인 예정이예요`,
+          `${getTimeStampCheckIn(getKorDate(startDate))} 체크인 예정이예요`,
         buttonText: () => `편안한 호텔에삶 되세요`,
         link: (url?: string) => {
           return { url, arrow: !!url };
@@ -200,7 +201,7 @@ export function getTimeLineFunc(state: ReservationState): AllTypes {
         enum: state,
         firstLineText: (userName) => `${userName}님`,
         secondLineText: (endDate) =>
-          `체크아웃은 ${getTimeStampCheckIn(new Date(endDate))}예요`,
+          `체크아웃은 ${getTimeStampCheckIn(getKorDate(endDate))}예요`,
         buttonText: () => `편안한 호텔에삶 되세요`,
         link: (url?: string) => {
           return { url, arrow: !!url };
@@ -226,7 +227,7 @@ export function getTimeLineFunc(state: ReservationState): AllTypes {
         firstLineText: (hotelName) => `${hotelName}`,
         secondLineText: (dDay) => `퇴실까지 ${dDay}일 남았어요`,
         buttonText: (endDate) =>
-          `${getTimeStampCheckIn(new Date(endDate))} 체크아웃 입니다`,
+          `${getTimeStampCheckIn(getKorDate(endDate))} 체크아웃 입니다`,
         link: (url?: string) => {
           return { url, arrow: !!url };
         },
