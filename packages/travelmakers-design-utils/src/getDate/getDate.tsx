@@ -18,7 +18,11 @@ export function getKorDate(date?: string) {
 }
 
 export function getKorMoment(date?: string) {
-  const kr_curr = moment(date).tz("Asia/Seoul");
+  const kr_curr = moment(`${date}+0900`).tz("Asia/Seoul");
+  if (!kr_curr.isValid()) {
+    const curr = moment(`${date}`).tz("Asia/Seoul");
+    return curr;
+  }
   return kr_curr;
 }
 /**
