@@ -7,19 +7,19 @@ function pad(n) {
  * @param isHour 시분(HH:SS)을 표시해야 하는지 여부
  * @returns MM월DD일 HH:SS
  */
-export function getTimeStamp(date: Date, isHour?: boolean) {
+export function getTimeStamp(date: moment.Moment, isHour?: boolean) {
   const d = date;
 
   return isHour
-    ? d.getMonth() +
+    ? d.month() +
         1 +
         "월 " +
-        d.getDate() +
+        d.date() +
         "일 " +
-        d.getHours() +
+        d.hours() +
         ":" +
-        pad(d.getMinutes())
-    : d.getMonth() + 1 + "월 " + d.getDate() + "일 ";
+        pad(d.minutes())
+    : d.month() + 1 + "월 " + d.date() + "일 ";
 }
 
 /**
@@ -27,8 +27,8 @@ export function getTimeStamp(date: Date, isHour?: boolean) {
  * @param date 날짜객체
  * @returns MM월DD일 HH시
  */
-export function getTimeStampCheckIn(date: Date) {
+export function getTimeStampCheckIn(date: moment.Moment) {
   const d = date;
 
-  return d.getMonth() + 1 + "월 " + d.getDate() + "일 " + d.getHours() + "시";
+  return d.month() + 1 + "월 " + d.date() + "일 " + d.hours() + "시";
 }

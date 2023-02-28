@@ -10,7 +10,8 @@ export function getCountDown(date: string) {
   const _day = _hour * 24;
 
   const getTimeFormat = () => {
-    const difference = _vDate.getTime() - getKorDate().getTime();
+    const difference =
+      _vDate.toDate().getTime() - getKorDate().toDate().getTime();
     let timeLeft = {
       days: "0",
       hours: "0",
