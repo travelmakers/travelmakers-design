@@ -10,10 +10,14 @@ function pad(n) {
  * @returns
  */
 export function getKorDate(date?: string) {
-  // const d = date ? new Date(date) : new Date();
-  // const utc = d.getTime() + d.getTimezoneOffset() * 60 * 1000;
-  // const KR_TIME_DIFF = 9 * 60 * 60 * 1000;
-  // const kr_curr = new Date(utc + KR_TIME_DIFF);
+  const d = date ? new Date(date) : new Date();
+  const utc = d.getTime() + d.getTimezoneOffset() * 60 * 1000;
+  const KR_TIME_DIFF = 9 * 60 * 60 * 1000;
+  const kr_curr = new Date(utc + KR_TIME_DIFF);
+  return kr_curr;
+}
+
+export function getKorMoment(date?: string) {
   const kr_curr = moment(date).tz("Asia/Seoul");
   return kr_curr;
 }
@@ -24,7 +28,7 @@ export function getKorDate(date?: string) {
  * @returns YYYY/MM/DD
  */
 export function getDate(date: string, separators?: string) {
-  const d = moment(date).tz("Asia/Seoul");
+  const d = getKorMoment(date);
   const separator = separators ?? "/";
 
   return d.year() + separator + (d.month() + 1) + separator + d.date();
@@ -37,7 +41,7 @@ export function getDate(date: string, separators?: string) {
  * @returns YYYY/MM/DD HH:MM
  */
 export function getFullDate(date: string, separators?: string) {
-  const d = moment(date).tz("Asia/Seoul");
+  const d = getKorMoment(date);
   const separator = separators ?? "/";
 
   return (
@@ -60,7 +64,7 @@ export function getFullDate(date: string, separators?: string) {
  * @returns HH:MM
  */
 export function getDateTime(date: string, separators?: string) {
-  const d = moment(date).tz("Asia/Seoul");
+  const d = getKorMoment(date);
   const separator = separators ?? ":";
 
   return pad(d.hours()) + separator + pad(d.minutes());
@@ -72,7 +76,7 @@ export function getDateTime(date: string, separators?: string) {
  * @returns 요일
  */
 export function getDay(date: string) {
-  const d = moment(date).tz("Asia/Seoul");
+  const d = getKorMoment(date);
   const day = d.day(); // 요일
   const WEEKDAY = ["일", "월", "화", "수", "목", "금", "토"];
   return WEEKDAY[day] + "요일";

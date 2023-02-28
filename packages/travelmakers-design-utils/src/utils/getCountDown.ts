@@ -1,9 +1,9 @@
-import { getKorDate } from "../getDate";
+import { getKorMoment } from "../getDate";
 
 export function getCountDown(date: string) {
   const TIMER_FORMAT = "HH시간 mm분";
 
-  const _vDate = getKorDate(date); // 전달 받은 일자
+  const _vDate = getKorMoment(date); // 전달 받은 일자
   const _second = 1000;
   const _minute = _second * 60;
   const _hour = _minute * 60;
@@ -11,7 +11,7 @@ export function getCountDown(date: string) {
 
   const getTimeFormat = () => {
     const difference =
-      _vDate.toDate().getTime() - getKorDate().toDate().getTime();
+      _vDate.toDate().getTime() - getKorMoment().toDate().getTime();
     let timeLeft = {
       days: "0",
       hours: "0",
