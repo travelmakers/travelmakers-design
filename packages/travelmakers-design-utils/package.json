@@ -1,6 +1,6 @@
 {
   "name": "@travelmakers-design/utils",
-  "version": "0.0.30",
+  "version": "0.0.31",
   "main": "cjs/index.js",
   "module": "esm/index.js",
   "types": "lib/index.d.ts",
@@ -19,7 +19,7 @@
     "directory": "packages/travelmakers-design-utils"
   },
   "peerDependencies": {
-    "react": ">=16.8.0",
-    "moment-timezone": ">=0.5.41"
+    "moment-timezone": ">=0.5.41",
+    "react": ">=16.8.0"
   }
 }
