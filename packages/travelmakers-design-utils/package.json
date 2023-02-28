@@ -19,6 +19,7 @@
     "directory": "packages/travelmakers-design-utils"
   },
   "peerDependencies": {
-    "react": ">=16.8.0"
+    "react": ">=16.8.0",
+    "moment-timezone": ">=0.5.41"
   }
 }
