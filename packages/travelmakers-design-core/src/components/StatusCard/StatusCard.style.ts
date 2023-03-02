@@ -49,10 +49,10 @@ export default createStyles(
       textBreak: {
         overflow: "hidden",
         textOverflow: "ellipsis",
-        height: `${theme.lineHeights.b3}px`,
+        // height: `${theme.lineHeights.b3}px`,
         wordWrap: "break-word",
         display: "-webkit-box",
-        ["-webkit-line-clamp"]: "1",
+        ["-webkit-line-clamp"]: isArrow ? "1" : "2",
         ["-webkit-box-orient"]: "vertical",
       },
       flex: {
