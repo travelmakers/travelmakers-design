@@ -45,6 +45,8 @@ export interface StatusCardProps
   onClick?: () => void;
 
   isArrow?: boolean;
+
+  isLabel?: boolean;
 }
 
 export const StatusCard = forwardRef<HTMLDivElement, StatusCardProps>(
@@ -61,6 +63,7 @@ export const StatusCard = forwardRef<HTMLDivElement, StatusCardProps>(
       roomType,
       onClick,
       isArrow = true,
+      isLabel = true,
       className,
       co,
       overrideStyles,
@@ -70,7 +73,7 @@ export const StatusCard = forwardRef<HTMLDivElement, StatusCardProps>(
   ) => {
     const theme = useTmTheme();
     const { classes, cx } = useStyles(
-      { isArrow, titleDisable, messageDisable, messageUnderline },
+      { isArrow, isLabel, titleDisable, messageDisable, messageUnderline },
       { overrideStyles, name: "StatusCard" }
     );
 
@@ -118,14 +121,16 @@ export const StatusCard = forwardRef<HTMLDivElement, StatusCardProps>(
               >
                 {message}
               </Typography>
-              <Typography
-                family="Pretendard"
-                level="b3"
-                color={theme.colors.navy1}
-                className={cx(classes.description, classes.textBreak)}
-              >
-                {label}
-              </Typography>
+              {isLabel && (
+                <Typography
+                  family="Pretendard"
+                  level="b3"
+                  color={theme.colors.navy1}
+                  className={cx(classes.description, classes.textBreak)}
+                >
+                  {label}
+                </Typography>
+              )}
               <View
                 className={cx(
                   classes.flex,
@@ -137,7 +142,7 @@ export const StatusCard = forwardRef<HTMLDivElement, StatusCardProps>(
                   family="Pretendard"
                   level="b3"
                   color={theme.colors.navy1}
-                  className={cx(classes.footer, classes.textBreak)}
+                  className={cx(classes.footer, classes.textRoomBreak)}
                 >
                   {roomType}
                 </Typography>

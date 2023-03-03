@@ -65,6 +65,16 @@ export default {
       },
       control: { type: "text" },
     },
+    isArrow: {
+      defaultValue: true,
+      description: "Arrow 표시 여부를 결정한다.",
+      control: { type: "boolean" },
+    },
+    isLabel: {
+      defaultValue: true,
+      description: "Label 표시 여부를 결정한다.",
+      control: { type: "boolean" },
+    },
 
     onClick: { action: "clicked" },
   },
