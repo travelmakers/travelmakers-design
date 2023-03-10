@@ -18,6 +18,10 @@ export function getKorDate(date?: string) {
 }
 
 export function getKorMoment(date?: string) {
+  if (!date) {
+    const curr = moment().tz("Asia/Seoul");
+    return curr;
+  }
   const kr_curr = moment(`${date}+0900`).tz("Asia/Seoul");
   if (!kr_curr.isValid()) {
     const curr = moment(`${date}`).tz("Asia/Seoul");
@@ -31,7 +35,7 @@ export function getKorMoment(date?: string) {
  * @param separators 구분좌(/)
  * @returns YYYY/MM/DD
  */
-export function getDate(date: string, separators?: string) {
+export function getDate(date?: string, separators?: string) {
   const d = getKorMoment(date);
   const separator = separators ?? "/";
 
@@ -44,7 +48,7 @@ export function getDate(date: string, separators?: string) {
  * @param separators 구분좌(/)
  * @returns YYYY/MM/DD HH:MM
  */
-export function getFullDate(date: string, separators?: string) {
+export function getFullDate(date?: string, separators?: string) {
   const d = getKorMoment(date);
   const separator = separators ?? "/";
 
@@ -67,7 +71,7 @@ export function getFullDate(date: string, separators?: string) {
  * @param separators 구분좌(:)
  * @returns HH:MM
  */
-export function getDateTime(date: string, separators?: string) {
+export function getDateTime(date?: string, separators?: string) {
   const d = getKorMoment(date);
   const separator = separators ?? ":";
 
@@ -79,7 +83,7 @@ export function getDateTime(date: string, separators?: string) {
  * @param date 날짜객체
  * @returns 요일
  */
-export function getDay(date: string) {
+export function getDay(date?: string) {
   const d = getKorMoment(date);
   const day = d.day(); // 요일
   const WEEKDAY = ["일", "월", "화", "수", "목", "금", "토"];
