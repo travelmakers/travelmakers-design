@@ -212,10 +212,10 @@ export function getTimeLineStateDetailFunc(state: ReservationState): AllTypes {
         },
       };
     case "reservation_purchase_done":
-      // NOTE: 예악 확정 전
+      // NOTE: 예약 확정 전
       return {
         enum: state,
-        firstLineText: () => `예악 확정 전`,
+        firstLineText: () => `예약 확정 전`,
         secondLineText: (expectedDate) =>
           `${getTimeStamp(getKorMoment(expectedDate))} 이내 확정`,
         thirdLineText: (hotelName) => hotelName,

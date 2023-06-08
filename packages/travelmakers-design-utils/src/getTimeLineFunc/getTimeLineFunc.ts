@@ -166,7 +166,7 @@ export function getTimeLineFunc(state: ReservationState): AllTypes {
         color: "alert",
       };
     case "reservation_purchase_done":
-      // NOTE: 예악 확정 전
+      // NOTE: 예약 확정 전
       return {
         enum: state,
         firstLineText: (userName) => `안녕하세요, ${userName}님`,
@@ -316,7 +316,7 @@ export function getTimeLineProps(
         buttonText: null,
       };
     case "reservation_purchase_done":
-      // NOTE: 예악 확정 전
+      // NOTE: 예약 확정 전
       return {
         first: props.first.userName,
         second: props.second.hotelName,
